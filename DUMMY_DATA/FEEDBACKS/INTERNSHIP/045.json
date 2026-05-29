@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "feedback_id": "INT-2025-045",
+    "date": "2025-05-05",
+    "type": "INTERNSHIP",
+    "persona": {
+      "id": "EMP0045",
+      "company": "Shopee Vietnam",
+      "industry": "Consulting",
+      "evaluator_name": "Truong Phuong Thanh",
+      "evaluator_role": "Engineering Manager",
+      "role": "employer",
+      "intern_id": "SV20231045",
+      "intern_name": "Duong Kim Hai",
+      "intern_school": "School of Information Technology",
+      "intern_school_id": "IT",
+      "intern_program": "Software Engineering"
+    },
+    "related_schools": [
+      "IT"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "CAREER"
+    ],
+    "overall_sentiment": "mostly_negative"
+  },
+  "body": [
+    {
+      "question_1": "How would you rate the technical competency of the student intern in their relevant field of study?",
+      "answer_1": "The intern from the School of Information Technology's Software Engineering program showed fair technical competency, with a solid theoretical foundation that required additional scaffolding to translate effectively into professional practice. Core technical knowledge in the primary discipline areas was present and generally accurate, enabling the intern to engage meaningfully with assigned tasks after an initial onboarding period. However, familiarity with specific industry-standard tools and processes was limited, requiring time investment from senior staff to bridge the gap. Stronger emphasis on applied tool training and industry-facing projects within the curriculum would produce more immediately effective graduates and reduce the onboarding burden on host companies."
+    },
+    {
+      "question_2": "How well did the intern demonstrate professional communication and interpersonal skills in the workplace?",
+      "answer_2": "The intern's professional conduct required concerning levels of management intervention that were unexpected for a student from the School of Information Technology's Software Engineering program at this career stage. Punctuality was inconsistent during the first half of the internship period, and proactive communication about delays or challenges was largely absent without repeated prompting from supervisors. Response to constructive feedback was occasionally defensive, and the intern demonstrated some difficulty adapting to workplace expectations around presentation, tone, and professional documentation standards. We recommend the School of Information Technology incorporate more structured professional readiness training — including workplace simulation, communication skills, and feedback-receiving practice — into its curriculum before students enter the workforce."
+    },
+    {
+      "question_3": "How effectively did the intern collaborate with team members and contribute to group projects?",
+      "answer_3": "The intern integrated into our team environment exceptionally and became a valued collaborative contributor from an early stage of the internship, consistently demonstrating the interpersonal skills required to function effectively in a professional team setting. They participated actively in team meetings, contributed ideas respectfully and constructively, and took clear ownership of their assigned workstreams without requiring constant supervision or direction from colleagues. During group project phases, the intern's ability to coordinate tasks, manage shared deadlines, and maintain positive relationships under pressure was impressive and significantly contributed to successful outcomes. These teamwork capabilities reflect very well on the interpersonal skills development embedded in the School of Information Technology's Software Engineering program."
+    },
+    {
+      "question_4": "How would you assess the intern's problem-solving abilities and approach to challenging or unfamiliar tasks?",
+      "answer_4": "Problem-solving capabilities for this intern from the School of Information Technology's Software Engineering program were satisfactory, reflecting a sound foundational analytical approach with room for development in handling more complex, ambiguous challenges. For well-defined problems with clear parameters, the intern performed competently and demonstrated sound logical reasoning and structured analysis. However, when problems were ambiguous, multi-layered, or required creative reframing of assumptions, the intern benefited significantly from supervisor guidance to stay productive. Incorporating more open-ended, ill-defined problem scenarios into coursework and assessments would better prepare graduates for the messy, constraint-rich challenges of professional practice."
+    },
+    {
+      "question_5": "How quickly and effectively did the intern adapt to your company's work culture, tools, and environment?",
+      "answer_5": "The intern's adaptability to our workplace culture, processes, and evolving project requirements was exceptional and demonstrated a level of professional resilience and flexibility that we consistently value in permanent hires. Changes to project scope, team structure, and delivery timelines were managed with composure, and the intern made adjustments to their work approach quickly and effectively without requiring extended support or reassurance from management. They were proactive in seeking to understand the context behind changes rather than simply executing instructions, which allowed them to contribute meaningfully even in fluid project environments. This quality reflects a well-rounded education at the School of Information Technology that extends beyond technical training to genuine professional agility."
+    },
+    {
+      "question_6": "How proficient was the intern in English communication, both written and verbal, for professional purposes?",
+      "answer_6": "English communication proficiency was a disappointing limitation for this intern from the School of Information Technology's Software Engineering program that impacted their effectiveness in several key areas of their role. Written communication — including emails and technical documentation — frequently contained grammatical and structural errors that required editing by supervisors before use in internal or external contexts. Verbal participation in English-language meetings was hesitant, limiting the intern's ability to contribute fully to discussions or to represent the team confidently in broader organizational settings. We strongly recommend the School of Information Technology elevate its English communication training requirements — particularly for professional writing and spoken business English — as a core graduation competency for all programs."
+    },
+    {
+      "question_7": "How well did the intern's academic training align with the practical demands and standards of your industry?",
+      "answer_7": "Our experience with this intern has highlighted concerning gaps between what the School of Information Technology's Software Engineering curriculum delivers and what the professional industry actually requires from graduates in this field. Specifically, the intern lacked working proficiency in several tools and methodologies that are now industry standard, requiring us to invest significant onboarding time in areas that should be covered academically. Soft skills — particularly professional communication, project management, and stakeholder management — also appeared underdeveloped relative to what professional roles at this level require from day one. We would welcome the opportunity to engage with the School of Information Technology's curriculum design team to provide specific, actionable recommendations for improvement."
+    },
+    {
+      "question_8": "What specific technical or soft skill areas do you believe the university curriculum should strengthen for future graduates?",
+      "answer_8": "Our experience with this intern has highlighted inadequate gaps between what the School of Information Technology's Software Engineering curriculum delivers and what the professional industry actually requires from graduates in this field. Specifically, the intern lacked working proficiency in several tools and methodologies that are now industry standard, requiring us to invest significant onboarding time in areas that should be covered academically. Soft skills — particularly professional communication, project management, and stakeholder management — also appeared underdeveloped relative to what professional roles at this level require from day one. We would welcome the opportunity to engage with the School of Information Technology's curriculum design team to provide specific, actionable recommendations for improvement."
+    },
+    {
+      "question_9": "How would you rate the intern's overall performance and value contribution to your organization during the placement?",
+      "answer_9": "This intern's overall performance was decent, delivering a useful contribution to the team while also clearly indicating areas where additional academic preparation would improve professional readiness. Assigned tasks were generally completed to a functional standard, with quality improving progressively as the intern built familiarity with our tools, processes, and expectations over the placement period. The growth trajectory was positive and suggests genuine potential that a stronger academic foundation would help realize more quickly. We see this internship as a successful learning experience for the student and encourage the School of Information Technology to continue building practical readiness into its curriculum to produce even more effective graduates."
+    },
+    {
+      "question_10": "Based on your experience with this intern, would you consider hiring from this university in the future, and why?",
+      "answer_10": "Based on this intern's performance and the overall quality of graduates we have observed from the School of Information Technology's Software Engineering program, we would absolutely consider hiring from this institution in the future — both for internships and for permanent graduate positions. The intern's technical competency, professional attitude, collaborative skills, and growth mindset align closely with the profile we seek when making graduate hiring decisions. We are actively discussing a return internship offer for this individual and have already flagged the School of Information Technology as a preferred graduate source institution for our talent acquisition team. We would encourage the School of Information Technology to continue deepening its industry partnerships and look forward to an ongoing and mutually beneficial relationship with the institution in the years ahead."
+    }
+  ]
+}

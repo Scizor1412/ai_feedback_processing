@@ -1,0 +1,71 @@
+{
+  "metadata": {
+    "feedback_id": "YE-2025-004",
+    "date": "2025-05-28",
+    "type": "YEAR_END",
+    "persona": {
+      "id": "SV20240004",
+      "name": "Duong Van Binh",
+      "gender": "Male",
+      "role": "student",
+      "school": "School of Business Administration",
+      "school_id": "BUS",
+      "year": 2,
+      "program": "Marketing"
+    },
+    "related_schools": [
+      "BUS"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "CAREER",
+      "FINANCE",
+      "IT_SUPPORT",
+      "LIBRARY",
+      "STUDENT_AFFAIRS"
+    ],
+    "overall_sentiment": "mostly_negative"
+  },
+  "body": [
+    {
+      "question_1": "Reflecting on the full academic year, how would you rate your overall educational experience at this university?",
+      "answer_1": "My overall academic year experience in the Marketing program at the School of Business Administration has unfortunately been inadequate and has fallen considerably short of the expectations I had when I enrolled. Persistent issues with teaching quality, administrative responsiveness, infrastructure reliability, and student support have collectively impacted my ability to learn and thrive in this environment. I feel that despite making this feedback heard through multiple channels, meaningful change has been slow and the institution's response to student concerns has lacked urgency and accountability. I sincerely hope the upcoming academic year brings substantive improvements in all the areas I have identified, not only for my own benefit but for all students who will follow in future cohorts."
+    },
+    {
+      "question_2": "How effectively do you believe this year's coursework has prepared you for your future career or further academic studies?",
+      "answer_2": "Career preparation support from the Career Center at the School of Business Administration has been concerning and has left many students — including myself — feeling ill-equipped for the competitive graduate employment market. Career workshops are infrequent, poorly promoted, and often scheduled at times that conflict with lecture commitments, reducing student participation. The internship database is outdated and contains many positions that are no longer active, and support for students during internship placements is minimal to nonexistent. I suggest the university to substantially reinvest in the Career Center — expanding its employer network, modernizing its tools, and increasing the frequency and quality of career development programming across all academic programs and year levels."
+    },
+    {
+      "question_3": "How would you assess the progression of your academic skills and knowledge throughout this academic year?",
+      "answer_3": "The curriculum for my Marketing program at the School of Business Administration is well-designed and clearly aligned with current industry demands and emerging professional trends in the field. Course structures are logical, building progressively on foundational concepts before introducing advanced topics, which gives students a solid intellectual scaffold. The balance between theoretical foundations and practical application is outstanding, with project-based assessments, case studies, and laboratory work that directly reflect real-world professional scenarios I will encounter in my career. I particularly value the inclusion of contemporary tools and technologies, which ensures graduates are competitive and well-prepared for the demands of the modern job market."
+    },
+    {
+      "question_4": "How satisfied are you with the extracurricular activities, student clubs, and personal development opportunities available?",
+      "answer_4": "Extracurricular activities at the School of Business Administration offer a reasonable range of options that serve the interests of a portion of the student body but do not yet reflect the full diversity of student interests and backgrounds. Core clubs and major university events are reasonably well-organized and attended, but support for emerging student initiatives is limited and the process for establishing new clubs is unnecessarily bureaucratic. Increasing the budget allocated to student activities, streamlining club registration procedures, and investing in purpose-built student activity spaces would encourage broader participation and strengthen the campus culture for the benefit of all enrolled students."
+    },
+    {
+      "question_5": "How well has the university's Career Center prepared you for internship opportunities and graduate employment?",
+      "answer_5": "Career preparation support from the Career Center at the School of Business Administration has been insufficient and has left many students — including myself — feeling ill-equipped for the competitive graduate employment market. Career workshops are infrequent, poorly promoted, and often scheduled at times that conflict with lecture commitments, reducing student participation. The internship database is outdated and contains many positions that are no longer active, and support for students during internship placements is minimal to nonexistent. I recommend the university to substantially reinvest in the Career Center — expanding its employer network, modernizing its tools, and increasing the frequency and quality of career development programming across all academic programs and year levels."
+    },
+    {
+      "question_6": "How would you rate the university's financial services, including tuition fee management and scholarship support?",
+      "answer_6": "The financial services managed by the Finance Department at the School of Business Administration have been a source of substandard experiences for me and several of my peers this semester, and I feel it is important to communicate these concerns formally. Scholarship disbursements were delayed by over six weeks this semester without advance notice or clear explanation to affected students, creating significant financial hardship for those who rely on these payments. Fee statements are sometimes inaccurate, requiring multiple correction requests that take considerable time and follow-up effort to resolve. I strongly raise concerns about the Finance Department to implement automated disbursement tracking, improve error-checking processes, and establish proactive communication protocols when delays are anticipated."
+    },
+    {
+      "question_7": "How would you evaluate the IT infrastructure and digital services provided by the university over the course of the year?",
+      "answer_7": "The IT infrastructure managed by the IT Support Department presents inadequate challenges that significantly disrupt the academic experience at the School of Business Administration. Wi-Fi connectivity is unreliable in several key areas of the campus, including the main library, multiple lecture halls, and postgraduate study rooms, making online coursework and research frustrating and inefficient. Computer labs frequently have outdated or malfunctioning equipment, and software licensing issues occasionally prevent students from accessing tools required for coursework. The IT helpdesk response time is concerning, often taking several days to resolve straightforward technical issues. Urgent investment in infrastructure upgrades and improved support staffing is needed."
+    },
+    {
+      "question_8": "How satisfied are you with the library resources — both physical and digital — that were available throughout the academic year?",
+      "answer_8": "The learning materials provided for several of my Marketing courses at the School of Business Administration are inconsistent and fall short of what students need to succeed academically. Required textbooks are outdated and frequently out of stock in both the campus bookstore and the library, forcing students to source materials independently at considerable expense and inconvenience. The Learning Management System is inconsistently used by lecturers — some post materials days after class, and some modules have no digital resources whatsoever. I strongly urge the Library Services and IT Support Department to collaborate on ensuring all course resources are accessible digitally, current, and available before the semester commences."
+    },
+    {
+      "question_9": "How effectively did the university communicate important information, deadlines, and updates throughout the academic year?",
+      "answer_9": "Academic administrative processes at the School of Business Administration are reasonable in their execution, meeting basic requirements but leaving clear room for improvement in both speed and user-friendliness. The online student portal functions adequately for routine tasks such as registration and fee payment, but navigating more complex requests — such as grade appeals or course exemptions — remains unnecessarily cumbersome. Communication timelines are inconsistent, with some requests handled promptly and others taking weeks without updates or acknowledgment. Streamlining administrative workflows, improving the student portal's UX, and setting clear service-level response standards would meaningfully reduce administrative friction for the entire student body."
+    },
+    {
+      "question_10": "What are your key recommendations for improving the overall student experience in the coming academic year?",
+      "answer_10": "I have very few concerns to raise about my overall experience in the Marketing program at the School of Business Administration, and I genuinely believe this institution provides an excellent educational environment that prepares students well for their future careers. If I were to recommend any improvement, I would suggest further expanding industry partnership opportunities — additional mentorship programs, sponsored capstone projects, and guest lecture series from senior professionals would enrich an already strong academic offering. Increasing the frequency of student feedback collection and demonstrating visible action on that feedback would further strengthen trust between students and the institution. Overall, I am proud to be a student here and would highly recommend this university to future applicants without hesitation."
+    }
+  ]
+}

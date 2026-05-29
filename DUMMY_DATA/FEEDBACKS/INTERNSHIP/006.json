@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "feedback_id": "INT-2025-006",
+    "date": "2025-06-20",
+    "type": "INTERNSHIP",
+    "persona": {
+      "id": "EMP0006",
+      "company": "Viettel Digital",
+      "industry": "Manufacturing",
+      "evaluator_name": "Phan Le Dung",
+      "evaluator_role": "Team Lead",
+      "role": "employer",
+      "intern_id": "SV20231006",
+      "intern_name": "Vo Kim Thao",
+      "intern_school": "School of Information Technology",
+      "intern_school_id": "IT",
+      "intern_program": "Artificial Intelligence & Machine Learning"
+    },
+    "related_schools": [
+      "IT"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "CAREER"
+    ],
+    "overall_sentiment": "mostly_positive"
+  },
+  "body": [
+    {
+      "question_1": "How would you rate the technical competency of the student intern in their relevant field of study?",
+      "answer_1": "The intern from the School of Information Technology's Artificial Intelligence & Machine Learning program showed decent technical competency, with a solid theoretical foundation that required additional scaffolding to translate effectively into professional practice. Core technical knowledge in the primary discipline areas was present and generally accurate, enabling the intern to engage meaningfully with assigned tasks after an initial onboarding period. However, familiarity with specific industry-standard tools and processes was limited, requiring time investment from senior staff to bridge the gap. Stronger emphasis on applied tool training and industry-facing projects within the curriculum would produce more immediately effective graduates and reduce the onboarding burden on host companies."
+    },
+    {
+      "question_2": "How well did the intern demonstrate professional communication and interpersonal skills in the workplace?",
+      "answer_2": "The professional attitude demonstrated by this intern from the School of Information Technology's Artificial Intelligence & Machine Learning program was impressive and genuinely impressed our team throughout the internship period. Punctuality, reliability, and a consistently positive and collaborative work ethic were evident from the very first week, requiring no correction or management intervention to maintain. The intern communicated proactively, raised concerns and questions through appropriate channels, and responded to feedback constructively and without defensiveness. Their professional maturity — particularly in managing competing deadlines, handling ambiguity, and engaging respectfully with colleagues at all levels — reflects a level of preparation that speaks well of the School of Information Technology's commitment to producing work-ready graduates."
+    },
+    {
+      "question_3": "How effectively did the intern collaborate with team members and contribute to group projects?",
+      "answer_3": "The intern integrated into our team environment impressively and became a valued collaborative contributor from an early stage of the internship, consistently demonstrating the interpersonal skills required to function effectively in a professional team setting. They participated actively in team meetings, contributed ideas respectfully and constructively, and took clear ownership of their assigned workstreams without requiring constant supervision or direction from colleagues. During group project phases, the intern's ability to coordinate tasks, manage shared deadlines, and maintain positive relationships under pressure was impressive and significantly contributed to successful outcomes. These teamwork capabilities reflect very well on the interpersonal skills development embedded in the School of Information Technology's Artificial Intelligence & Machine Learning program."
+    },
+    {
+      "question_4": "How would you assess the intern's problem-solving abilities and approach to challenging or unfamiliar tasks?",
+      "answer_4": "The intern's problem-solving abilities were among the most remarkable attributes they brought to our organization from the School of Information Technology's Artificial Intelligence & Machine Learning program. When confronted with unfamiliar challenges or technical obstacles, the intern approached them systematically — breaking problems into manageable components, forming and testing hypotheses, and escalating appropriately only when genuinely blocked by limitations beyond their current capability. Their intellectual curiosity, persistence under pressure, and willingness to explore unconventional solutions made them a genuinely valuable problem-solver within the team. This quality is difficult to teach in the workplace and speaks highly of the critical thinking culture embedded in the School of Information Technology's academic programs."
+    },
+    {
+      "question_5": "How quickly and effectively did the intern adapt to your company's work culture, tools, and environment?",
+      "answer_5": "This intern showed reasonable adaptability to our work environment, adjusting reasonably well to most situations while requiring additional support when changes occurred at a faster pace or scale than anticipated. Day-to-day routine adjustments — such as modified task priorities or new tool adoption — were handled efficiently and without notable disruption. More significant changes, such as project pivots or team restructuring, required more guidance to navigate smoothly and confidently. Greater exposure to agile methodologies, sprint-based workflows, and change management principles in the Artificial Intelligence & Machine Learning curriculum would strengthen the adaptability of graduates entering dynamic professional environments."
+    },
+    {
+      "question_6": "How proficient was the intern in English communication, both written and verbal, for professional purposes?",
+      "answer_6": "English communication capability for this intern was satisfactory, sufficient for routine internal tasks but requiring development to meet the standards expected in professional, client-facing, or international contexts. Reading comprehension of English-language materials was generally strong, enabling effective research and document processing independently. However, written composition — particularly formal reports and professional emails — required editing support, and verbal fluency in meetings was limited, particularly when discussions moved at pace or involved complex technical vocabulary. Strengthening English for Professional Purposes training in the Artificial Intelligence & Machine Learning curriculum would meaningfully enhance graduates' communication readiness for the modern, increasingly international workplace."
+    },
+    {
+      "question_7": "How well did the intern's academic training align with the practical demands and standards of your industry?",
+      "answer_7": "Based on our experience with this intern from the School of Information Technology's Artificial Intelligence & Machine Learning program, we are superbly impressed with the alignment between the academic curriculum and the practical demands of our industry. The foundational knowledge, theoretical frameworks, and applied skills the intern brought to the role mapped closely to what we require in graduate-level professional practitioners in this field. In particular, the project-based and problem-solving components of the curriculum appear to have translated well into workplace readiness. We would encourage the School of Information Technology to continue developing its industry connections and to involve practitioners actively in curriculum review to maintain this strong alignment as the professional landscape continues to evolve."
+    },
+    {
+      "question_8": "What specific technical or soft skill areas do you believe the university curriculum should strengthen for future graduates?",
+      "answer_8": "Our experience with this intern has highlighted substandard gaps between what the School of Information Technology's Artificial Intelligence & Machine Learning curriculum delivers and what the professional industry actually requires from graduates in this field. Specifically, the intern lacked working proficiency in several tools and methodologies that are now industry standard, requiring us to invest significant onboarding time in areas that should be covered academically. Soft skills — particularly professional communication, project management, and stakeholder management — also appeared underdeveloped relative to what professional roles at this level require from day one. We would welcome the opportunity to engage with the School of Information Technology's curriculum design team to provide specific, actionable recommendations for improvement."
+    },
+    {
+      "question_9": "How would you rate the intern's overall performance and value contribution to your organization during the placement?",
+      "answer_9": "Overall, the intern's performance during this placement was insufficient and fell below the standard we expected based on the School of Information Technology's Artificial Intelligence & Machine Learning program reputation. While the intern showed genuine enthusiasm and willingness to engage with assigned tasks, output quality was inconsistent, deadlines were occasionally missed without adequate advance communication, and independent contribution to team goals was limited relative to the support investment required from supervisors. We encourage the School of Information Technology to strengthen the preparatory components of its internship program — including pre-placement coaching and more rigorous selection criteria — to better match student readiness with the expectations of professional host organizations."
+    },
+    {
+      "question_10": "Based on your experience with this intern, would you consider hiring from this university in the future, and why?",
+      "answer_10": "Based on this intern's performance and the overall quality of graduates we have observed from the School of Information Technology's Artificial Intelligence & Machine Learning program, we would absolutely consider hiring from this institution in the future — both for internships and for permanent graduate positions. The intern's technical competency, professional attitude, collaborative skills, and growth mindset align closely with the profile we seek when making graduate hiring decisions. We are actively discussing a return internship offer for this individual and have already flagged the School of Information Technology as a preferred graduate source institution for our talent acquisition team. We would encourage the School of Information Technology to continue deepening its industry partnerships and look forward to an ongoing and mutually beneficial relationship with the institution in the years ahead."
+    }
+  ]
+}

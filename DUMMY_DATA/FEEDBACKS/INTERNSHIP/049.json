@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "feedback_id": "INT-2025-049",
+    "date": "2025-04-15",
+    "type": "INTERNSHIP",
+    "persona": {
+      "id": "EMP0049",
+      "company": "Lazada Vietnam",
+      "industry": "Consulting",
+      "evaluator_name": "Tran Thanh Thu",
+      "evaluator_role": "Department Head",
+      "role": "employer",
+      "intern_id": "SV20231049",
+      "intern_name": "Pham Dinh Hai",
+      "intern_school": "School of Information Technology",
+      "intern_school_id": "IT",
+      "intern_program": "Data Science"
+    },
+    "related_schools": [
+      "IT"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "CAREER"
+    ],
+    "overall_sentiment": "mostly_positive"
+  },
+  "body": [
+    {
+      "question_1": "How would you rate the technical competency of the student intern in their relevant field of study?",
+      "answer_1": "The intern from the School of Information Technology's Data Science program demonstrated superb technical competency that significantly exceeded our initial expectations for a student at this stage of their academic career. Their foundational knowledge in core discipline areas was solid, well-structured, and readily applicable to real workplace challenges encountered during the internship period. They adapted quickly to our internal tools, methodologies, and technical standards, requiring minimal remedial instruction before becoming a productive and largely self-directed contributor to assigned projects. The depth of practical skills, particularly in applied problem-solving and technical documentation, was notably strong and reflects well on the quality of the School of Information Technology's curriculum design and delivery."
+    },
+    {
+      "question_2": "How well did the intern demonstrate professional communication and interpersonal skills in the workplace?",
+      "answer_2": "This intern's professionalism was adequate, showing genuine commitment and a positive attitude that formed a solid foundation, with some areas requiring coaching and development during the placement period. Reliability and punctuality were good overall, though proactive communication about progress and obstacles was inconsistent and required encouragement from supervisors. The intern engaged positively with team members and accepted feedback constructively in most situations, demonstrating the willingness to learn that is essential for professional growth. Additional preparation in formal workplace communication — particularly written reporting standards and stakeholder update practices — would improve the professional impact of graduates from this program."
+    },
+    {
+      "question_3": "How effectively did the intern collaborate with team members and contribute to group projects?",
+      "answer_3": "The intern integrated into our team environment impressively and became a valued collaborative contributor from an early stage of the internship, consistently demonstrating the interpersonal skills required to function effectively in a professional team setting. They participated actively in team meetings, contributed ideas respectfully and constructively, and took clear ownership of their assigned workstreams without requiring constant supervision or direction from colleagues. During group project phases, the intern's ability to coordinate tasks, manage shared deadlines, and maintain positive relationships under pressure was superb and significantly contributed to successful outcomes. These teamwork capabilities reflect very well on the interpersonal skills development embedded in the School of Information Technology's Data Science program."
+    },
+    {
+      "question_4": "How would you assess the intern's problem-solving abilities and approach to challenging or unfamiliar tasks?",
+      "answer_4": "Problem-solving was a inadequate area for this intern, representing the most significant gap between the School of Information Technology's Data Science graduates and our professional workforce expectations. The intern often sought direct guidance from supervisors before attempting independent analysis or solution development, limiting their ability to work autonomously on complex assignments. When initial approaches failed, pivoting strategy independently proved difficult, and the intern sometimes became visibly discouraged rather than treating failure as diagnostic information to inform the next attempt. Building a stronger culture of structured problem-solving — through case studies, debugging exercises, and open-ended challenges — in the Data Science curriculum would produce significantly more effective graduates."
+    },
+    {
+      "question_5": "How quickly and effectively did the intern adapt to your company's work culture, tools, and environment?",
+      "answer_5": "This intern showed satisfactory adaptability to our work environment, adjusting reasonably well to most situations while requiring additional support when changes occurred at a faster pace or scale than anticipated. Day-to-day routine adjustments — such as modified task priorities or new tool adoption — were handled efficiently and without notable disruption. More significant changes, such as project pivots or team restructuring, required more guidance to navigate smoothly and confidently. Greater exposure to agile methodologies, sprint-based workflows, and change management principles in the Data Science curriculum would strengthen the adaptability of graduates entering dynamic professional environments."
+    },
+    {
+      "question_6": "How proficient was the intern in English communication, both written and verbal, for professional purposes?",
+      "answer_6": "English communication capability for this intern was satisfactory, sufficient for routine internal tasks but requiring development to meet the standards expected in professional, client-facing, or international contexts. Reading comprehension of English-language materials was generally strong, enabling effective research and document processing independently. However, written composition — particularly formal reports and professional emails — required editing support, and verbal fluency in meetings was limited, particularly when discussions moved at pace or involved complex technical vocabulary. Strengthening English for Professional Purposes training in the Data Science curriculum would meaningfully enhance graduates' communication readiness for the modern, increasingly international workplace."
+    },
+    {
+      "question_7": "How well did the intern's academic training align with the practical demands and standards of your industry?",
+      "answer_7": "Our curriculum-related feedback for the School of Information Technology's Data Science program, based on this internship experience, is moderate: there is a reasonable foundation but meaningful gaps that the institution could address to significantly improve graduate readiness. Core theoretical knowledge is adequately covered, and the intern was able to apply foundational concepts with reasonable effectiveness. However, gaps exist in applied tool proficiency, project management fundamentals, and the professional communication standards expected in industry settings. We recommend more regular and structured industry consultations to ensure the curriculum remains current, and greater emphasis on workplace simulation through live projects, internships, and industry-sponsored assessments."
+    },
+    {
+      "question_8": "What specific technical or soft skill areas do you believe the university curriculum should strengthen for future graduates?",
+      "answer_8": "Our curriculum-related feedback for the School of Information Technology's Data Science program, based on this internship experience, is adequate: there is a reasonable foundation but meaningful gaps that the institution could address to significantly improve graduate readiness. Core theoretical knowledge is adequately covered, and the intern was able to apply foundational concepts with reasonable effectiveness. However, gaps exist in applied tool proficiency, project management fundamentals, and the professional communication standards expected in industry settings. We recommend more regular and structured industry consultations to ensure the curriculum remains current, and greater emphasis on workplace simulation through live projects, internships, and industry-sponsored assessments."
+    },
+    {
+      "question_9": "How would you rate the intern's overall performance and value contribution to your organization during the placement?",
+      "answer_9": "This intern's overall performance was moderate, delivering a useful contribution to the team while also clearly indicating areas where additional academic preparation would improve professional readiness. Assigned tasks were generally completed to a functional standard, with quality improving progressively as the intern built familiarity with our tools, processes, and expectations over the placement period. The growth trajectory was positive and suggests genuine potential that a stronger academic foundation would help realize more quickly. We see this internship as a successful learning experience for the student and encourage the School of Information Technology to continue building practical readiness into its curriculum to produce even more effective graduates."
+    },
+    {
+      "question_10": "Based on your experience with this intern, would you consider hiring from this university in the future, and why?",
+      "answer_10": "Based on this intern's performance and the overall quality of graduates we have observed from the School of Information Technology's Data Science program, we would absolutely consider hiring from this institution in the future — both for internships and for permanent graduate positions. The intern's technical competency, professional attitude, collaborative skills, and growth mindset align closely with the profile we seek when making graduate hiring decisions. We are actively discussing a return internship offer for this individual and have already flagged the School of Information Technology as a preferred graduate source institution for our talent acquisition team. We would encourage the School of Information Technology to continue deepening its industry partnerships and look forward to an ongoing and mutually beneficial relationship with the institution in the years ahead."
+    }
+  ]
+}

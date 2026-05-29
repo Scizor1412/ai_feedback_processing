@@ -1,0 +1,71 @@
+{
+  "metadata": {
+    "feedback_id": "YE-2025-011",
+    "date": "2025-04-27",
+    "type": "YEAR_END",
+    "persona": {
+      "id": "SV20240011",
+      "name": "Truong Duc Linh",
+      "gender": "Male",
+      "role": "student",
+      "school": "School of Information Technology",
+      "school_id": "IT",
+      "year": 2,
+      "program": "Computer Science"
+    },
+    "related_schools": [
+      "IT"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "CAREER",
+      "FINANCE",
+      "IT_SUPPORT",
+      "LIBRARY",
+      "STUDENT_AFFAIRS"
+    ],
+    "overall_sentiment": "mostly_positive"
+  },
+  "body": [
+    {
+      "question_1": "Reflecting on the full academic year, how would you rate your overall educational experience at this university?",
+      "answer_1": "Reflecting on the full academic year in the Computer Science program at the School of Information Technology, I can say with confidence that this has been an impressive and transformative educational experience that has exceeded my expectations in most meaningful ways. The combination of rigorous coursework, dedicated faculty, strong peer community, and access to industry connections has equipped me with both the technical competencies and professional mindset needed to succeed in my chosen field. I have grown significantly as a learner and feel genuinely prepared for the next stage of my academic or professional journey. I applaud the institution for maintaining high standards throughout and look forward to continuing my studies here with great enthusiasm."
+    },
+    {
+      "question_2": "How effectively do you believe this year's coursework has prepared you for your future career or further academic studies?",
+      "answer_2": "Career preparation services at the School of Information Technology, offered through the Career Center, are reasonable and meet some student needs while falling short in others. Basic resume guidance and periodic career fairs provide a foundation, but more intensive and personalized support would greatly benefit students planning to enter a competitive and rapidly evolving job market. The internship program has room for significant growth — expanding the employer partner network, improving placement matching, and providing structured mentorship during internship periods would make it substantially more valuable. Regular industry panels and alumni engagement events would also meaningfully bridge the gap between academic preparation and professional workplace expectations."
+    },
+    {
+      "question_3": "How would you assess the progression of your academic skills and knowledge throughout this academic year?",
+      "answer_3": "The curriculum for my Computer Science program at the School of Information Technology is well-designed and clearly aligned with current industry demands and emerging professional trends in the field. Course structures are logical, building progressively on foundational concepts before introducing advanced topics, which gives students a solid intellectual scaffold. The balance between theoretical foundations and practical application is exceptional, with project-based assessments, case studies, and laboratory work that directly reflect real-world professional scenarios I will encounter in my career. I particularly value the inclusion of contemporary tools and technologies, which ensures graduates are competitive and well-prepared for the demands of the modern job market."
+    },
+    {
+      "question_4": "How satisfied are you with the extracurricular activities, student clubs, and personal development opportunities available?",
+      "answer_4": "Extracurricular activities at the School of Information Technology offer a reasonable range of options that serve the interests of a portion of the student body but do not yet reflect the full diversity of student interests and backgrounds. Core clubs and major university events are reasonably well-organized and attended, but support for emerging student initiatives is limited and the process for establishing new clubs is unnecessarily bureaucratic. Increasing the budget allocated to student activities, streamlining club registration procedures, and investing in purpose-built student activity spaces would encourage broader participation and strengthen the campus culture for the benefit of all enrolled students."
+    },
+    {
+      "question_5": "How well has the university's Career Center prepared you for internship opportunities and graduate employment?",
+      "answer_5": "Career preparation services at the School of Information Technology, offered through the Career Center, are fair and meet some student needs while falling short in others. Basic resume guidance and periodic career fairs provide a foundation, but more intensive and personalized support would greatly benefit students planning to enter a competitive and rapidly evolving job market. The internship program has room for significant growth — expanding the employer partner network, improving placement matching, and providing structured mentorship during internship periods would make it substantially more valuable. Regular industry panels and alumni engagement events would also meaningfully bridge the gap between academic preparation and professional workplace expectations."
+    },
+    {
+      "question_6": "How would you rate the university's financial services, including tuition fee management and scholarship support?",
+      "answer_6": "Financial services at the School of Information Technology, managed by the Finance Department, operate at a acceptable level that fulfills basic requirements without particular distinction in either efficiency or student-centeredness. Tuition fee management and billing are generally accurate, though occasional discrepancies require follow-up that can be time-consuming. Scholarship and financial aid communication could be significantly improved — students often report uncertainty about disbursement timelines and eligibility criteria that creates unnecessary anxiety during critical financial planning periods. Greater transparency through automated notifications, a clearer scholarship portal, and improved staff responsiveness to financial queries would substantially raise the standard of financial services for the student community."
+    },
+    {
+      "question_7": "How would you evaluate the IT infrastructure and digital services provided by the university over the course of the year?",
+      "answer_7": "The IT infrastructure and digital learning environment provided by the IT Support Department is excellent and has greatly supported my studies at the School of Information Technology this semester. Campus Wi-Fi coverage is consistently strong and reliable across all academic buildings, laboratories, and study spaces, enabling seamless online collaboration and research activities throughout the day. Computer labs are well-equipped with up-to-date hardware and licensed software relevant to my field, reducing the burden on students to source tools independently. The IT helpdesk is responsive and knowledgeable, resolving technical issues promptly and minimizing disruption to student workflows. I applaud the university's ongoing investment in digital infrastructure."
+    },
+    {
+      "question_8": "How satisfied are you with the library resources — both physical and digital — that were available throughout the academic year?",
+      "answer_8": "The learning materials provided for several of my Computer Science courses at the School of Information Technology are disappointing and fall short of what students need to succeed academically. Required textbooks are outdated and frequently out of stock in both the campus bookstore and the library, forcing students to source materials independently at considerable expense and inconvenience. The Learning Management System is inconsistently used by lecturers — some post materials days after class, and some modules have no digital resources whatsoever. I strongly recommend the Library Services and IT Support Department to collaborate on ensuring all course resources are accessible digitally, current, and available before the semester commences."
+    },
+    {
+      "question_9": "How effectively did the university communicate important information, deadlines, and updates throughout the academic year?",
+      "answer_9": "The academic administrative processes at the School of Information Technology, overseen by the Academic Affairs Office, have been a source of considerable frustration for many students this semester. Course registration was plagued by system errors and conflicting timetables that took weeks to resolve, causing students to miss early enrollment advantages. Grade dispute processes are opaque and slow, with students waiting over a month without updates or acknowledgment of their submissions. Communication from administrative offices is reactive rather than proactive, and staff sometimes provide inconsistent information depending on who is contacted. I raise concerns about a comprehensive review of administrative workflows, with investment in both system improvements and staff training as a matter of urgency."
+    },
+    {
+      "question_10": "What are your key recommendations for improving the overall student experience in the coming academic year?",
+      "answer_10": "I have very few concerns to raise about my overall experience in the Computer Science program at the School of Information Technology, and I genuinely believe this institution provides an excellent educational environment that prepares students well for their future careers. If I were to recommend any improvement, I would suggest further expanding industry partnership opportunities — additional mentorship programs, sponsored capstone projects, and guest lecture series from senior professionals would enrich an already strong academic offering. Increasing the frequency of student feedback collection and demonstrating visible action on that feedback would further strengthen trust between students and the institution. Overall, I am proud to be a student here and would highly recommend this university to future applicants without hesitation."
+    }
+  ]
+}

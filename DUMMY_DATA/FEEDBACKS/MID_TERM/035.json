@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "feedback_id": "MID-2025-035",
+    "date": "2025-11-27",
+    "type": "MID_TERM",
+    "persona": {
+      "id": "SV20240035",
+      "name": "Duong Le Thao",
+      "gender": "Female",
+      "role": "student",
+      "school": "School of Information Technology",
+      "school_id": "IT",
+      "year": 2,
+      "program": "Software Engineering"
+    },
+    "related_schools": [
+      "IT"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "FACILITIES",
+      "IT_SUPPORT",
+      "LIBRARY",
+      "STUDENT_AFFAIRS"
+    ],
+    "overall_sentiment": "mostly_negative"
+  },
+  "body": [
+    {
+      "question_1": "How would you rate the overall quality of teaching in your courses this semester so far?",
+      "answer_1": "I have observed several disappointing aspects of teaching quality in my Software Engineering courses at the School of Information Technology this semester that I feel compelled to bring to attention. Certain lectures are delivered without adequate structure, making it difficult to follow the logical progression of content, and some lecturers rely heavily on reading directly from slides rather than elaborating or encouraging discussion. Assessment criteria are sometimes communicated after assignments are already underway, which creates unnecessary confusion and unfair evaluation conditions. I strongly highlight the institution to invest in faculty development programs focused on modern pedagogy, student engagement techniques, and constructive feedback practices to address these shortcomings urgently."
+    },
+    {
+      "question_2": "How well does the course content align with current industry standards and your career aspirations?",
+      "answer_2": "The curriculum for my Software Engineering program at the School of Information Technology is well-designed and clearly aligned with current industry demands and emerging professional trends in the field. Course structures are logical, building progressively on foundational concepts before introducing advanced topics, which gives students a solid intellectual scaffold. The balance between theoretical foundations and practical application is excellent, with project-based assessments, case studies, and laboratory work that directly reflect real-world professional scenarios I will encounter in my career. I particularly value the inclusion of contemporary tools and technologies, which ensures graduates are competitive and well-prepared for the demands of the modern job market."
+    },
+    {
+      "question_3": "How effective are the assessment methods (assignments, quizzes, exams) in evaluating your understanding of the subject matter?",
+      "answer_3": "The assessment practices in several of my Software Engineering modules at the School of Information Technology are inconsistent and require significant restructuring to be fair and effective. Grading rubrics are frequently absent or vague, leaving students uncertain about the criteria used to evaluate their work, which undermines the integrity of the process. Feedback on submitted assessments is often delayed by several weeks or is limited to a single grade without actionable commentary to guide improvement. I strongly flag the Academic Affairs Office to establish clear university-wide assessment standards, enforce timely feedback policies, and require all lecturers to publish detailed marking criteria before assessments are assigned."
+    },
+    {
+      "question_4": "How would you describe the availability and responsiveness of your lecturers outside of scheduled class time?",
+      "answer_4": "Lecturer accessibility has been a inconsistent aspect of my experience in the Software Engineering program at the School of Information Technology this semester, and I believe it warrants serious attention. Office hours are infrequently held and rarely communicated through official channels, making it difficult for students to plan consultations around their own timetables. Email responses are often delayed by more than a week, and some lecturers appear unresponsive to student queries outside of formal class time entirely. This lack of availability creates unnecessary barriers to learning and discourages students from seeking help when they need it most. I urge the school to enforce minimum availability standards for all faculty members."
+    },
+    {
+      "question_5": "How satisfied are you with the learning resources and materials provided for your courses this semester?",
+      "answer_5": "The learning materials provided for several of my Software Engineering courses at the School of Information Technology are substandard and fall short of what students need to succeed academically. Required textbooks are outdated and frequently out of stock in both the campus bookstore and the library, forcing students to source materials independently at considerable expense and inconvenience. The Learning Management System is inconsistently used by lecturers — some post materials days after class, and some modules have no digital resources whatsoever. I strongly suggest the Library Services and IT Support Department to collaborate on ensuring all course resources are accessible digitally, current, and available before the semester commences."
+    },
+    {
+      "question_6": "How would you rate the IT infrastructure and digital learning tools provided by the university to support your studies?",
+      "answer_6": "The IT infrastructure and digital learning environment provided by the IT Support Department is exceptional and has greatly supported my studies at the School of Information Technology this semester. Campus Wi-Fi coverage is consistently strong and reliable across all academic buildings, laboratories, and study spaces, enabling seamless online collaboration and research activities throughout the day. Computer labs are well-equipped with up-to-date hardware and licensed software relevant to my field, reducing the burden on students to source tools independently. The IT helpdesk is responsive and knowledgeable, resolving technical issues promptly and minimizing disruption to student workflows. I praise the university's ongoing investment in digital infrastructure."
+    },
+    {
+      "question_7": "How efficient have you found the academic administrative processes such as registration, grade appeals, and scheduling?",
+      "answer_7": "Academic administrative processes at the School of Information Technology are fair in their execution, meeting basic requirements but leaving clear room for improvement in both speed and user-friendliness. The online student portal functions adequately for routine tasks such as registration and fee payment, but navigating more complex requests — such as grade appeals or course exemptions — remains unnecessarily cumbersome. Communication timelines are inconsistent, with some requests handled promptly and others taking weeks without updates or acknowledgment. Streamlining administrative workflows, improving the student portal's UX, and setting clear service-level response standards would meaningfully reduce administrative friction for the entire student body."
+    },
+    {
+      "question_8": "How would you evaluate the quality and accessibility of student support services currently available at this university?",
+      "answer_8": "The student support services offered by the Student Affairs Office at the School of Information Technology have been commendable and have made a genuine difference to my overall well-being and university experience throughout the semester. Counseling services are readily accessible, professionally delivered, and clearly communicated to students through multiple channels including the student portal, orientation sessions, and notice boards. The range of support available — from academic counseling to mental health resources and financial hardship assistance — reflects a comprehensive understanding of the diverse challenges students face during their academic journey. I also value the regular student welfare check-ins organized by the office, which foster a sense of community and belonging on campus."
+    },
+    {
+      "question_9": "How well does the university's physical environment and facilities support your daily learning experience?",
+      "answer_9": "The physical campus environment and facilities managed by the Facilities Management provide a exceptional learning atmosphere that I believe genuinely contributes to academic productivity and student well-being at the School of Information Technology. Lecture halls are spacious, well-ventilated, and equipped with modern audio-visual technology that facilitates clear and engaging presentations. Study spaces — including individual carrels, group collaboration rooms, and outdoor relaxation areas — are thoughtfully designed and well-maintained throughout the academic week. Cleaning and security standards are consistently high, and campus maintenance requests are typically resolved within a reasonable timeframe. The overall physical environment reflects a commitment to providing students with a safe, comfortable, and inspiring place to learn."
+    },
+    {
+      "question_10": "What specific improvements would you most like to see implemented for the remainder of this semester?",
+      "answer_10": "My key recommendation for the School of Information Technology is to urgently address the concerning systemic issues that have affected Software Engineering students this semester, rather than treating them as isolated incidents. A structured, transparent student feedback mechanism — where concerns are acknowledged within a set timeframe and outcomes communicated back to students — would significantly rebuild trust that has been eroded by unaddressed issues. I also strongly point out leadership to conduct a comprehensive curriculum and service quality review in genuine consultation with current students, alumni, and industry partners. Without meaningful action on the concerns raised in this feedback, student satisfaction and the institution's competitive standing will continue to decline in the years ahead."
+    }
+  ]
+}

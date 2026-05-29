@@ -1,0 +1,71 @@
+{
+  "metadata": {
+    "feedback_id": "YE-2025-039",
+    "date": "2025-05-16",
+    "type": "YEAR_END",
+    "persona": {
+      "id": "SV20240039",
+      "name": "Nguyen Van Lan",
+      "gender": "Male",
+      "role": "student",
+      "school": "School of Engineering",
+      "school_id": "ENG",
+      "year": 2,
+      "program": "Industrial Engineering"
+    },
+    "related_schools": [
+      "ENG"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "CAREER",
+      "FINANCE",
+      "IT_SUPPORT",
+      "LIBRARY",
+      "STUDENT_AFFAIRS"
+    ],
+    "overall_sentiment": "mostly_positive"
+  },
+  "body": [
+    {
+      "question_1": "Reflecting on the full academic year, how would you rate your overall educational experience at this university?",
+      "answer_1": "My overall experience in the Industrial Engineering program at the School of Engineering during this academic year has been satisfactory, with meaningful highs and some notable lows that I believe the institution has both the capacity and responsibility to address. The academic content, when delivered well, is genuinely rigorous and relevant, and I have formed valuable relationships with peers and some excellent faculty members. However, structural issues — inconsistent teaching quality, administrative inefficiencies, and gaps in student support — have at times undermined what could otherwise be an exceptional educational experience. With targeted improvements and a genuine commitment to acting on student feedback, this institution has the foundations to become truly outstanding."
+    },
+    {
+      "question_2": "How effectively do you believe this year's coursework has prepared you for your future career or further academic studies?",
+      "answer_2": "Career preparation support from the Career Center at the School of Engineering has been inadequate and has left many students — including myself — feeling ill-equipped for the competitive graduate employment market. Career workshops are infrequent, poorly promoted, and often scheduled at times that conflict with lecture commitments, reducing student participation. The internship database is outdated and contains many positions that are no longer active, and support for students during internship placements is minimal to nonexistent. I suggest the university to substantially reinvest in the Career Center — expanding its employer network, modernizing its tools, and increasing the frequency and quality of career development programming across all academic programs and year levels."
+    },
+    {
+      "question_3": "How would you assess the progression of your academic skills and knowledge throughout this academic year?",
+      "answer_3": "The Industrial Engineering curriculum at the School of Engineering covers the essential theoretical foundations competently and provides a reasonable structure for academic progression throughout the degree. Core modules are satisfactory in their depth and breadth, covering key concepts that form the basis of professional practice in this field. However, the elective offerings could be significantly expanded to reflect emerging trends and specialized career pathways that students are increasingly interested in. Greater integration of industry collaboration — such as guest lectures, live projects, and sponsored capstone work — would substantially strengthen the curriculum's practical relevance and better prepare graduates for competitive employment."
+    },
+    {
+      "question_4": "How satisfied are you with the extracurricular activities, student clubs, and personal development opportunities available?",
+      "answer_4": "The extracurricular opportunities available at the School of Engineering, coordinated by the Student Affairs Office, are exceptional and represent a genuinely important complement to the formal academic curriculum. A wide and diverse range of student clubs, cultural societies, sports teams, and volunteer programs are actively supported and well-resourced by the university, enabling students to develop leadership skills, build social connections, and pursue interests outside their academic programs. Events are well-promoted, regularly scheduled, and inclusive in their design, welcoming students from all backgrounds and programs to participate equally. I commend the institution's recognition that holistic student development extends beyond classroom performance and into every dimension of campus life."
+    },
+    {
+      "question_5": "How well has the university's Career Center prepared you for internship opportunities and graduate employment?",
+      "answer_5": "The career preparation support provided by the Career Center at the School of Engineering has been superb and has made a tangible difference to my professional readiness and employment prospects as I approach graduation. Resume writing workshops, mock interviews, and industry networking events have been well-organized, highly practical, and attended by credible industry professionals who provided genuinely actionable feedback. The internship matching program is effective, with clear communication about available placements and strong follow-up support for students during their internship periods. I acknowledge the Career Center's proactive approach and its strong relationships with employers, which have opened real opportunities for students across all programs."
+    },
+    {
+      "question_6": "How would you rate the university's financial services, including tuition fee management and scholarship support?",
+      "answer_6": "The financial services managed by the Finance Department at the School of Engineering have been a source of disappointing experiences for me and several of my peers this semester, and I feel it is important to communicate these concerns formally. Scholarship disbursements were delayed by over six weeks this semester without advance notice or clear explanation to affected students, creating significant financial hardship for those who rely on these payments. Fee statements are sometimes inaccurate, requiring multiple correction requests that take considerable time and follow-up effort to resolve. I strongly suggest the Finance Department to implement automated disbursement tracking, improve error-checking processes, and establish proactive communication protocols when delays are anticipated."
+    },
+    {
+      "question_7": "How would you evaluate the IT infrastructure and digital services provided by the university over the course of the year?",
+      "answer_7": "The IT infrastructure at the School of Engineering, maintained by the IT Support Department, performs at a moderate level that meets basic student needs but falls short of what is required to fully support a modern, technology-dependent academic environment. Wi-Fi connectivity is generally stable in primary teaching spaces but becomes inconsistent during peak usage hours and in peripheral campus locations. Software availability in computer labs is adequate for core coursework but limited for students requiring specialized applications for advanced projects. Expanding bandwidth capacity, updating hardware on a regular replacement cycle, and improving helpdesk responsiveness would meaningfully elevate the digital learning experience for the entire student community."
+    },
+    {
+      "question_8": "How satisfied are you with the library resources — both physical and digital — that were available throughout the academic year?",
+      "answer_8": "Learning resources for my Industrial Engineering program at the School of Engineering are moderate, with some courses providing excellent, well-curated materials and others offering minimal guidance beyond the core required textbook. The library's digital collection is reasonable in scope but has some notable gaps in specialized resources relevant to advanced topics in our field. The LMS functions adequately as a distribution platform, though its use varies significantly between lecturers, creating an inconsistent experience across modules. A more standardized approach to resource provision, with minimum content requirements per course, would considerably improve the consistency and quality of the learning environment."
+    },
+    {
+      "question_9": "How effectively did the university communicate important information, deadlines, and updates throughout the academic year?",
+      "answer_9": "The academic administrative processes managed by the Academic Affairs Office at the School of Engineering have been commendable this semester, and I praise the efficiency and transparency with which they are handled. Course registration was smooth and intuitive via the student portal, with clear instructions provided well in advance of enrollment deadlines. Grade appeals and transcript requests are processed promptly and communicated through official channels with regular status updates that reduce student anxiety. Administrative staff are approachable, knowledgeable, and genuinely helpful when students encounter difficulties navigating university policies or procedures. The overall administrative experience reflects a student-centered approach that I believe enhances the broader university experience significantly."
+    },
+    {
+      "question_10": "What are your key recommendations for improving the overall student experience in the coming academic year?",
+      "answer_10": "My main recommendations for improving the Industrial Engineering student experience at the School of Engineering center on consistency, communication, and investment in areas that currently deliver only acceptable outcomes. First, standardizing teaching quality, assessment practices, and resource provision across all modules would significantly reduce the frustration caused by the wide variability students currently experience between courses. Second, improving the speed and transparency of administrative and financial communications would reduce unnecessary anxiety and wasted time for students. Finally, expanding industry engagement through internship pipelines, career workshops, and alumni networking events would better equip graduates for the increasingly competitive job market they will enter upon graduation."
+    }
+  ]
+}

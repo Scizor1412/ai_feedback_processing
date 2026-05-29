@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "feedback_id": "MID-2025-050",
+    "date": "2025-11-07",
+    "type": "MID_TERM",
+    "persona": {
+      "id": "SV20240050",
+      "name": "Duong Le Vy",
+      "gender": "Female",
+      "role": "student",
+      "school": "School of Communication",
+      "school_id": "COM",
+      "year": 4,
+      "program": "Public Relations"
+    },
+    "related_schools": [
+      "COM"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "FACILITIES",
+      "IT_SUPPORT",
+      "LIBRARY",
+      "STUDENT_AFFAIRS"
+    ],
+    "overall_sentiment": "mostly_positive"
+  },
+  "body": [
+    {
+      "question_1": "How would you rate the overall quality of teaching in your courses this semester so far?",
+      "answer_1": "I have observed several concerning aspects of teaching quality in my Public Relations courses at the School of Communication this semester that I feel compelled to bring to attention. Certain lectures are delivered without adequate structure, making it difficult to follow the logical progression of content, and some lecturers rely heavily on reading directly from slides rather than elaborating or encouraging discussion. Assessment criteria are sometimes communicated after assignments are already underway, which creates unnecessary confusion and unfair evaluation conditions. I strongly urge the institution to invest in faculty development programs focused on modern pedagogy, student engagement techniques, and constructive feedback practices to address these shortcomings urgently."
+    },
+    {
+      "question_2": "How well does the course content align with current industry standards and your career aspirations?",
+      "answer_2": "The Public Relations curriculum at the School of Communication covers the essential theoretical foundations competently and provides a reasonable structure for academic progression throughout the degree. Core modules are fair in their depth and breadth, covering key concepts that form the basis of professional practice in this field. However, the elective offerings could be significantly expanded to reflect emerging trends and specialized career pathways that students are increasingly interested in. Greater integration of industry collaboration — such as guest lectures, live projects, and sponsored capstone work — would substantially strengthen the curriculum's practical relevance and better prepare graduates for competitive employment."
+    },
+    {
+      "question_3": "How effective are the assessment methods (assignments, quizzes, exams) in evaluating your understanding of the subject matter?",
+      "answer_3": "The assessment methods employed in my Public Relations courses at the School of Communication are remarkable and demonstrate a thoughtful approach to measuring genuine student understanding. The balanced mix of individual assignments, group projects, presentations, and written examinations ensures that different learning styles and competencies are recognized and fairly evaluated throughout the semester. Rubrics are consistently shared in advance, assessment criteria are transparent, and feedback is provided promptly enough to inform improvement in subsequent tasks. I particularly recognize the emphasis on applied problem-solving assessments rather than rote memorization, which I believe is a much stronger indicator of actual competency and readiness for professional practice."
+    },
+    {
+      "question_4": "How would you describe the availability and responsiveness of your lecturers outside of scheduled class time?",
+      "answer_4": "Lecturer availability and responsiveness at the School of Communication has been one of the strongest aspects of my Public Relations student experience this semester, and I genuinely applaud it. Faculty members consistently maintain clearly communicated office hours, respond to email inquiries within one to two business days, and frequently offer additional consultation sessions during busy assessment periods. The approachable attitude of lecturers creates a supportive learning environment where students feel comfortable raising questions, discussing challenges, and seeking guidance on both academic work and career-related concerns. This level of accessibility significantly enhances engagement and outcomes and is something I hope will be maintained and encouraged across all departments."
+    },
+    {
+      "question_5": "How satisfied are you with the learning resources and materials provided for your courses this semester?",
+      "answer_5": "Learning resources for my Public Relations program at the School of Communication are moderate, with some courses providing excellent, well-curated materials and others offering minimal guidance beyond the core required textbook. The library's digital collection is reasonable in scope but has some notable gaps in specialized resources relevant to advanced topics in our field. The LMS functions adequately as a distribution platform, though its use varies significantly between lecturers, creating an inconsistent experience across modules. A more standardized approach to resource provision, with minimum content requirements per course, would considerably improve the consistency and quality of the learning environment."
+    },
+    {
+      "question_6": "How would you rate the IT infrastructure and digital learning tools provided by the university to support your studies?",
+      "answer_6": "The IT infrastructure at the School of Communication, maintained by the IT Support Department, performs at a adequate level that meets basic student needs but falls short of what is required to fully support a modern, technology-dependent academic environment. Wi-Fi connectivity is generally stable in primary teaching spaces but becomes inconsistent during peak usage hours and in peripheral campus locations. Software availability in computer labs is adequate for core coursework but limited for students requiring specialized applications for advanced projects. Expanding bandwidth capacity, updating hardware on a regular replacement cycle, and improving helpdesk responsiveness would meaningfully elevate the digital learning experience for the entire student community."
+    },
+    {
+      "question_7": "How efficient have you found the academic administrative processes such as registration, grade appeals, and scheduling?",
+      "answer_7": "Academic administrative processes at the School of Communication are moderate in their execution, meeting basic requirements but leaving clear room for improvement in both speed and user-friendliness. The online student portal functions adequately for routine tasks such as registration and fee payment, but navigating more complex requests — such as grade appeals or course exemptions — remains unnecessarily cumbersome. Communication timelines are inconsistent, with some requests handled promptly and others taking weeks without updates or acknowledgment. Streamlining administrative workflows, improving the student portal's UX, and setting clear service-level response standards would meaningfully reduce administrative friction for the entire student body."
+    },
+    {
+      "question_8": "How would you evaluate the quality and accessibility of student support services currently available at this university?",
+      "answer_8": "Student support services at the School of Communication are moderate in their scope and delivery, covering the essential categories but lacking depth and proactivity in several important areas that affect student well-being. Counseling services exist and are functional, but appointment availability is limited and wait times are often longer than appropriate for students in need. Financial support processes are reasonably accessible but require significant paperwork and involve delays that reduce their effectiveness in urgent situations. Investing in additional counseling staff, simplifying support request processes, and proactively promoting available services — especially during high-stress periods like mid-terms — would markedly improve the student experience."
+    },
+    {
+      "question_9": "How well does the university's physical environment and facilities support your daily learning experience?",
+      "answer_9": "Campus facilities at the School of Communication, maintained by the Facilities Management, are generally acceptable and adequate for day-to-day academic activities, though several areas require attention and investment to meet growing needs. Core academic spaces — including lecture halls and laboratories — are functional and reasonably maintained, though some equipment is beginning to show age and inconsistency in performance. Student study and relaxation spaces are insufficient during peak periods, and the condition of older campus buildings varies considerably. A systematic facilities audit followed by a prioritized improvement plan would help address longstanding issues and ensure the campus environment supports the academic ambitions of all students more effectively."
+    },
+    {
+      "question_10": "What specific improvements would you most like to see implemented for the remainder of this semester?",
+      "answer_10": "My main recommendations for improving the Public Relations student experience at the School of Communication center on consistency, communication, and investment in areas that currently deliver only acceptable outcomes. First, standardizing teaching quality, assessment practices, and resource provision across all modules would significantly reduce the frustration caused by the wide variability students currently experience between courses. Second, improving the speed and transparency of administrative and financial communications would reduce unnecessary anxiety and wasted time for students. Finally, expanding industry engagement through internship pipelines, career workshops, and alumni networking events would better equip graduates for the increasingly competitive job market they will enter upon graduation."
+    }
+  ]
+}

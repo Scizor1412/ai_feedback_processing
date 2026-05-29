@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "feedback_id": "MID-2025-017",
+    "date": "2025-10-15",
+    "type": "MID_TERM",
+    "persona": {
+      "id": "SV20240017",
+      "name": "Nguyen Van Khanh",
+      "gender": "Male",
+      "role": "student",
+      "school": "School of Communication",
+      "school_id": "COM",
+      "year": 4,
+      "program": "Digital Communication"
+    },
+    "related_schools": [
+      "COM"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "FACILITIES",
+      "IT_SUPPORT",
+      "LIBRARY",
+      "STUDENT_AFFAIRS"
+    ],
+    "overall_sentiment": "mostly_positive"
+  },
+  "body": [
+    {
+      "question_1": "How would you rate the overall quality of teaching in your courses this semester so far?",
+      "answer_1": "Teaching quality in my Digital Communication program at the School of Communication has been decent overall, though noticeably inconsistent across different modules this semester. Several lecturers deliver material with clarity and genuine enthusiasm, making those sessions highly productive and intellectually stimulating for the class. However, a few courses suffer from disorganized delivery, limited interaction, and minimal feedback on submitted work, which hampers the learning experience considerably. I would point out the school to standardize teaching quality benchmarks and conduct regular peer evaluations to ensure a more consistent and high-quality educational experience for all students across every module and year level."
+    },
+    {
+      "question_2": "How well does the course content align with current industry standards and your career aspirations?",
+      "answer_2": "The curriculum for my Digital Communication program at the School of Communication is well-designed and clearly aligned with current industry demands and emerging professional trends in the field. Course structures are logical, building progressively on foundational concepts before introducing advanced topics, which gives students a solid intellectual scaffold. The balance between theoretical foundations and practical application is superb, with project-based assessments, case studies, and laboratory work that directly reflect real-world professional scenarios I will encounter in my career. I particularly value the inclusion of contemporary tools and technologies, which ensures graduates are competitive and well-prepared for the demands of the modern job market."
+    },
+    {
+      "question_3": "How effective are the assessment methods (assignments, quizzes, exams) in evaluating your understanding of the subject matter?",
+      "answer_3": "The assessment practices in several of my Digital Communication modules at the School of Communication are inadequate and require significant restructuring to be fair and effective. Grading rubrics are frequently absent or vague, leaving students uncertain about the criteria used to evaluate their work, which undermines the integrity of the process. Feedback on submitted assessments is often delayed by several weeks or is limited to a single grade without actionable commentary to guide improvement. I strongly point out the Academic Affairs Office to establish clear university-wide assessment standards, enforce timely feedback policies, and require all lecturers to publish detailed marking criteria before assessments are assigned."
+    },
+    {
+      "question_4": "How would you describe the availability and responsiveness of your lecturers outside of scheduled class time?",
+      "answer_4": "Lecturer accessibility has been a insufficient aspect of my experience in the Digital Communication program at the School of Communication this semester, and I believe it warrants serious attention. Office hours are infrequently held and rarely communicated through official channels, making it difficult for students to plan consultations around their own timetables. Email responses are often delayed by more than a week, and some lecturers appear unresponsive to student queries outside of formal class time entirely. This lack of availability creates unnecessary barriers to learning and discourages students from seeking help when they need it most. I urge the school to enforce minimum availability standards for all faculty members."
+    },
+    {
+      "question_5": "How satisfied are you with the learning resources and materials provided for your courses this semester?",
+      "answer_5": "The learning resources and materials provided for my Digital Communication courses at the School of Communication are outstanding and represent a significant strength of the program. Course packs are comprehensive, well-organized, and current, incorporating recent academic publications, industry white papers, and multimedia content that enriches the learning experience beyond traditional textbooks. The university's digital library provides broad access to peer-reviewed journals and e-books, and the Learning Management System is intuitive, well-maintained, and effectively used by lecturers to share materials in a timely manner. I also appreciate the provision of recorded lectures, which allows students to revisit complex material at their own pace — a genuinely valuable academic resource."
+    },
+    {
+      "question_6": "How would you rate the IT infrastructure and digital learning tools provided by the university to support your studies?",
+      "answer_6": "The IT infrastructure at the School of Communication, maintained by the IT Support Department, performs at a decent level that meets basic student needs but falls short of what is required to fully support a modern, technology-dependent academic environment. Wi-Fi connectivity is generally stable in primary teaching spaces but becomes inconsistent during peak usage hours and in peripheral campus locations. Software availability in computer labs is adequate for core coursework but limited for students requiring specialized applications for advanced projects. Expanding bandwidth capacity, updating hardware on a regular replacement cycle, and improving helpdesk responsiveness would meaningfully elevate the digital learning experience for the entire student community."
+    },
+    {
+      "question_7": "How efficient have you found the academic administrative processes such as registration, grade appeals, and scheduling?",
+      "answer_7": "The academic administrative processes at the School of Communication, overseen by the Academic Affairs Office, have been a source of considerable frustration for many students this semester. Course registration was plagued by system errors and conflicting timetables that took weeks to resolve, causing students to miss early enrollment advantages. Grade dispute processes are opaque and slow, with students waiting over a month without updates or acknowledgment of their submissions. Communication from administrative offices is reactive rather than proactive, and staff sometimes provide inconsistent information depending on who is contacted. I raise concerns about a comprehensive review of administrative workflows, with investment in both system improvements and staff training as a matter of urgency."
+    },
+    {
+      "question_8": "How would you evaluate the quality and accessibility of student support services currently available at this university?",
+      "answer_8": "The student support services offered by the Student Affairs Office at the School of Communication have been excellent and have made a genuine difference to my overall well-being and university experience throughout the semester. Counseling services are readily accessible, professionally delivered, and clearly communicated to students through multiple channels including the student portal, orientation sessions, and notice boards. The range of support available — from academic counseling to mental health resources and financial hardship assistance — reflects a comprehensive understanding of the diverse challenges students face during their academic journey. I also recognize the regular student welfare check-ins organized by the office, which foster a sense of community and belonging on campus."
+    },
+    {
+      "question_9": "How well does the university's physical environment and facilities support your daily learning experience?",
+      "answer_9": "Campus facilities at the School of Communication, maintained by the Facilities Management, are generally adequate and adequate for day-to-day academic activities, though several areas require attention and investment to meet growing needs. Core academic spaces — including lecture halls and laboratories — are functional and reasonably maintained, though some equipment is beginning to show age and inconsistency in performance. Student study and relaxation spaces are insufficient during peak periods, and the condition of older campus buildings varies considerably. A systematic facilities audit followed by a prioritized improvement plan would help address longstanding issues and ensure the campus environment supports the academic ambitions of all students more effectively."
+    },
+    {
+      "question_10": "What specific improvements would you most like to see implemented for the remainder of this semester?",
+      "answer_10": "I have very few concerns to raise about my overall experience in the Digital Communication program at the School of Communication, and I genuinely believe this institution provides an excellent educational environment that prepares students well for their future careers. If I were to recommend any improvement, I would suggest further expanding industry partnership opportunities — additional mentorship programs, sponsored capstone projects, and guest lecture series from senior professionals would enrich an already strong academic offering. Increasing the frequency of student feedback collection and demonstrating visible action on that feedback would further strengthen trust between students and the institution. Overall, I am proud to be a student here and would highly recommend this university to future applicants without hesitation."
+    }
+  ]
+}

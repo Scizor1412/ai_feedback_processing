@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "feedback_id": "INT-2025-030",
+    "date": "2025-03-06",
+    "type": "INTERNSHIP",
+    "persona": {
+      "id": "EMP0030",
+      "company": "VNG Corporation",
+      "industry": "Telecommunications",
+      "evaluator_name": "Ha Minh Linh",
+      "evaluator_role": "Team Lead",
+      "role": "employer",
+      "intern_id": "SV20231030",
+      "intern_name": "Pham Duc Huong",
+      "intern_school": "School of Communication",
+      "intern_school_id": "COM",
+      "intern_program": "Journalism"
+    },
+    "related_schools": [
+      "COM"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "CAREER"
+    ],
+    "overall_sentiment": "mostly_negative"
+  },
+  "body": [
+    {
+      "question_1": "How would you rate the technical competency of the student intern in their relevant field of study?",
+      "answer_1": "The intern's technical competency revealed insufficient gaps between what the School of Communication's Journalism curriculum covers and the practical skills required in a professional workplace environment. While the intern possessed a reasonable theoretical grounding in core concepts, they struggled to translate this knowledge into practical application without significant guidance and hand-holding from senior team members. Proficiency in industry-standard tools and workflows was below the level we typically expect from graduates at a comparable stage, and several foundational technical skills needed to be reinforced on the job. We strongly recommend the School of Communication review its curriculum to better align academic content with current industry tool and practice standards."
+    },
+    {
+      "question_2": "How well did the intern demonstrate professional communication and interpersonal skills in the workplace?",
+      "answer_2": "The professional attitude demonstrated by this intern from the School of Communication's Journalism program was commendable and genuinely impressed our team throughout the internship period. Punctuality, reliability, and a consistently positive and collaborative work ethic were evident from the very first week, requiring no correction or management intervention to maintain. The intern communicated proactively, raised concerns and questions through appropriate channels, and responded to feedback constructively and without defensiveness. Their professional maturity — particularly in managing competing deadlines, handling ambiguity, and engaging respectfully with colleagues at all levels — reflects a level of preparation that speaks well of the School of Communication's commitment to producing work-ready graduates."
+    },
+    {
+      "question_3": "How effectively did the intern collaborate with team members and contribute to group projects?",
+      "answer_3": "The intern's ability to collaborate effectively within a team environment was inadequate and required more management attention than anticipated. Contribution to group tasks was often uneven — the intern sometimes worked in isolation rather than coordinating with colleagues, leading to duplicated effort and avoidable misalignments in shared workstreams. Communication within the team was reactive rather than proactive, and the intern occasionally struggled with the shared accountability and compromise that effective team collaboration demands. We recommend the School of Communication incorporate more structured team-based project work and collaborative simulation into the Journalism curriculum to better prepare students for the realities of modern workplace team dynamics."
+    },
+    {
+      "question_4": "How would you assess the intern's problem-solving abilities and approach to challenging or unfamiliar tasks?",
+      "answer_4": "Problem-solving capabilities for this intern from the School of Communication's Journalism program were reasonable, reflecting a sound foundational analytical approach with room for development in handling more complex, ambiguous challenges. For well-defined problems with clear parameters, the intern performed competently and demonstrated sound logical reasoning and structured analysis. However, when problems were ambiguous, multi-layered, or required creative reframing of assumptions, the intern benefited significantly from supervisor guidance to stay productive. Incorporating more open-ended, ill-defined problem scenarios into coursework and assessments would better prepare graduates for the messy, constraint-rich challenges of professional practice."
+    },
+    {
+      "question_5": "How quickly and effectively did the intern adapt to your company's work culture, tools, and environment?",
+      "answer_5": "Adaptability to changing conditions and evolving requirements was a concerning challenge for this intern from the School of Communication's Journalism program, and it became a recurring obstacle during the internship period. When project scope or priorities shifted — as they regularly do in a professional environment — the intern's response was often slow and required significant reassurance and directive guidance from supervisors. Tolerance for ambiguity and the ability to operate effectively without complete information or a fully defined task specification were noticeably underdeveloped relative to our expectations. We recommend the School of Communication expose students to more dynamic, ambiguity-tolerant project environments during their studies to develop this critical professional competency before graduation."
+    },
+    {
+      "question_6": "How proficient was the intern in English communication, both written and verbal, for professional purposes?",
+      "answer_6": "The intern's English communication proficiency — both written and spoken — was exceptional and met the professional standards required for effective participation in our bilingual team environment. Written reports, emails, and documentation were consistently clear, professionally structured, and free of errors that would compromise understanding or credibility in a client-facing context. Verbal communication in meetings and collaborative sessions was confident and coherent, enabling full participation in discussions with both local and international colleagues. The intern's English proficiency reflects well on the language preparation embedded in the School of Communication's Journalism program and is a strong asset in our increasingly international work environment."
+    },
+    {
+      "question_7": "How well did the intern's academic training align with the practical demands and standards of your industry?",
+      "answer_7": "Our curriculum-related feedback for the School of Communication's Journalism program, based on this internship experience, is acceptable: there is a reasonable foundation but meaningful gaps that the institution could address to significantly improve graduate readiness. Core theoretical knowledge is adequately covered, and the intern was able to apply foundational concepts with reasonable effectiveness. However, gaps exist in applied tool proficiency, project management fundamentals, and the professional communication standards expected in industry settings. We recommend more regular and structured industry consultations to ensure the curriculum remains current, and greater emphasis on workplace simulation through live projects, internships, and industry-sponsored assessments."
+    },
+    {
+      "question_8": "What specific technical or soft skill areas do you believe the university curriculum should strengthen for future graduates?",
+      "answer_8": "Based on our experience with this intern from the School of Communication's Journalism program, we are excellently impressed with the alignment between the academic curriculum and the practical demands of our industry. The foundational knowledge, theoretical frameworks, and applied skills the intern brought to the role mapped closely to what we require in graduate-level professional practitioners in this field. In particular, the project-based and problem-solving components of the curriculum appear to have translated well into workplace readiness. We would encourage the School of Communication to continue developing its industry connections and to involve practitioners actively in curriculum review to maintain this strong alignment as the professional landscape continues to evolve."
+    },
+    {
+      "question_9": "How would you rate the intern's overall performance and value contribution to your organization during the placement?",
+      "answer_9": "Overall, the intern's performance during this placement was inconsistent and fell below the standard we expected based on the School of Communication's Journalism program reputation. While the intern showed genuine enthusiasm and willingness to engage with assigned tasks, output quality was inconsistent, deadlines were occasionally missed without adequate advance communication, and independent contribution to team goals was limited relative to the support investment required from supervisors. We encourage the School of Communication to strengthen the preparatory components of its internship program — including pre-placement coaching and more rigorous selection criteria — to better match student readiness with the expectations of professional host organizations."
+    },
+    {
+      "question_10": "Based on your experience with this intern, would you consider hiring from this university in the future, and why?",
+      "answer_10": "While we respect the School of Communication as an institution and do not question its academic credentials, our experience with this particular intern from the Journalism program has given us concerning reservations about recruiting heavily from this cohort in the near future. The skill gaps and professional readiness challenges encountered during this placement represent a significant onboarding investment that strains our capacity as a host organization. We would encourage the School of Communication to engage directly with industry partners — including ourselves — to understand the specific competency gaps and develop targeted solutions before we could confidently increase our intake of graduates from this program. We remain open to future engagement if meaningful curriculum improvements are implemented and communicated to the industry community."
+    }
+  ]
+}

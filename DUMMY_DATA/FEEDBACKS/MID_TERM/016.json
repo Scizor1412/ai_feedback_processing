@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "feedback_id": "MID-2025-016",
+    "date": "2025-11-08",
+    "type": "MID_TERM",
+    "persona": {
+      "id": "SV20240016",
+      "name": "Cao Huu Linh",
+      "gender": "Male",
+      "role": "student",
+      "school": "School of Engineering",
+      "school_id": "ENG",
+      "year": 4,
+      "program": "Industrial Engineering"
+    },
+    "related_schools": [
+      "ENG"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "FACILITIES",
+      "IT_SUPPORT",
+      "LIBRARY",
+      "STUDENT_AFFAIRS"
+    ],
+    "overall_sentiment": "mixed"
+  },
+  "body": [
+    {
+      "question_1": "How would you rate the overall quality of teaching in your courses this semester so far?",
+      "answer_1": "Teaching quality in my Industrial Engineering program at the School of Engineering has been decent overall, though noticeably inconsistent across different modules this semester. Several lecturers deliver material with clarity and genuine enthusiasm, making those sessions highly productive and intellectually stimulating for the class. However, a few courses suffer from disorganized delivery, limited interaction, and minimal feedback on submitted work, which hampers the learning experience considerably. I would raise concerns about the school to standardize teaching quality benchmarks and conduct regular peer evaluations to ensure a more consistent and high-quality educational experience for all students across every module and year level."
+    },
+    {
+      "question_2": "How well does the course content align with current industry standards and your career aspirations?",
+      "answer_2": "The curriculum for my Industrial Engineering program at the School of Engineering is well-designed and clearly aligned with current industry demands and emerging professional trends in the field. Course structures are logical, building progressively on foundational concepts before introducing advanced topics, which gives students a solid intellectual scaffold. The balance between theoretical foundations and practical application is outstanding, with project-based assessments, case studies, and laboratory work that directly reflect real-world professional scenarios I will encounter in my career. I particularly value the inclusion of contemporary tools and technologies, which ensures graduates are competitive and well-prepared for the demands of the modern job market."
+    },
+    {
+      "question_3": "How effective are the assessment methods (assignments, quizzes, exams) in evaluating your understanding of the subject matter?",
+      "answer_3": "The assessment methods employed in my Industrial Engineering courses at the School of Engineering are remarkable and demonstrate a thoughtful approach to measuring genuine student understanding. The balanced mix of individual assignments, group projects, presentations, and written examinations ensures that different learning styles and competencies are recognized and fairly evaluated throughout the semester. Rubrics are consistently shared in advance, assessment criteria are transparent, and feedback is provided promptly enough to inform improvement in subsequent tasks. I particularly commend the emphasis on applied problem-solving assessments rather than rote memorization, which I believe is a much stronger indicator of actual competency and readiness for professional practice."
+    },
+    {
+      "question_4": "How would you describe the availability and responsiveness of your lecturers outside of scheduled class time?",
+      "answer_4": "Lecturer availability at the School of Engineering for my Industrial Engineering courses is moderate, with noticeable differences between individual faculty members in their accessibility and responsiveness to student needs outside of scheduled class sessions. A number of lecturers are readily available and proactive in offering support, which I find invaluable during intensive assignment and examination periods. Others, however, have limited and poorly communicated office hours, making it challenging to get timely guidance on coursework challenges. Establishing a standardized minimum availability requirement and publishing these schedules on the student portal would greatly improve accessibility for all students."
+    },
+    {
+      "question_5": "How satisfied are you with the learning resources and materials provided for your courses this semester?",
+      "answer_5": "The learning materials provided for several of my Industrial Engineering courses at the School of Engineering are concerning and fall short of what students need to succeed academically. Required textbooks are outdated and frequently out of stock in both the campus bookstore and the library, forcing students to source materials independently at considerable expense and inconvenience. The Learning Management System is inconsistently used by lecturers — some post materials days after class, and some modules have no digital resources whatsoever. I strongly raise concerns about the Library Services and IT Support Department to collaborate on ensuring all course resources are accessible digitally, current, and available before the semester commences."
+    },
+    {
+      "question_6": "How would you rate the IT infrastructure and digital learning tools provided by the university to support your studies?",
+      "answer_6": "The IT infrastructure and digital learning environment provided by the IT Support Department is remarkable and has greatly supported my studies at the School of Engineering this semester. Campus Wi-Fi coverage is consistently strong and reliable across all academic buildings, laboratories, and study spaces, enabling seamless online collaboration and research activities throughout the day. Computer labs are well-equipped with up-to-date hardware and licensed software relevant to my field, reducing the burden on students to source tools independently. The IT helpdesk is responsive and knowledgeable, resolving technical issues promptly and minimizing disruption to student workflows. I applaud the university's ongoing investment in digital infrastructure."
+    },
+    {
+      "question_7": "How efficient have you found the academic administrative processes such as registration, grade appeals, and scheduling?",
+      "answer_7": "The academic administrative processes at the School of Engineering, overseen by the Academic Affairs Office, have been a source of considerable frustration for many students this semester. Course registration was plagued by system errors and conflicting timetables that took weeks to resolve, causing students to miss early enrollment advantages. Grade dispute processes are opaque and slow, with students waiting over a month without updates or acknowledgment of their submissions. Communication from administrative offices is reactive rather than proactive, and staff sometimes provide inconsistent information depending on who is contacted. I suggest a comprehensive review of administrative workflows, with investment in both system improvements and staff training as a matter of urgency."
+    },
+    {
+      "question_8": "How would you evaluate the quality and accessibility of student support services currently available at this university?",
+      "answer_8": "Student support services at the School of Engineering are adequate in their scope and delivery, covering the essential categories but lacking depth and proactivity in several important areas that affect student well-being. Counseling services exist and are functional, but appointment availability is limited and wait times are often longer than appropriate for students in need. Financial support processes are reasonably accessible but require significant paperwork and involve delays that reduce their effectiveness in urgent situations. Investing in additional counseling staff, simplifying support request processes, and proactively promoting available services — especially during high-stress periods like mid-terms — would markedly improve the student experience."
+    },
+    {
+      "question_9": "How well does the university's physical environment and facilities support your daily learning experience?",
+      "answer_9": "The physical facilities at the School of Engineering, under the responsibility of the Facilities Management, present problematic conditions that negatively impact the daily learning experience of students. Several lecture halls have malfunctioning air conditioning systems that make studying in warm months genuinely uncomfortable and distracting. Toilet facilities in older buildings are poorly maintained and frequently reported without timely resolution from the facilities team. Study spaces are chronically insufficient relative to the student population, particularly during examination periods when demand peaks significantly. I urge the university to prioritize facilities maintenance budgets, establish a transparent issue-reporting system, and expand study space capacity as part of its next capital improvement plan."
+    },
+    {
+      "question_10": "What specific improvements would you most like to see implemented for the remainder of this semester?",
+      "answer_10": "My main recommendations for improving the Industrial Engineering student experience at the School of Engineering center on consistency, communication, and investment in areas that currently deliver only decent outcomes. First, standardizing teaching quality, assessment practices, and resource provision across all modules would significantly reduce the frustration caused by the wide variability students currently experience between courses. Second, improving the speed and transparency of administrative and financial communications would reduce unnecessary anxiety and wasted time for students. Finally, expanding industry engagement through internship pipelines, career workshops, and alumni networking events would better equip graduates for the increasingly competitive job market they will enter upon graduation."
+    }
+  ]
+}

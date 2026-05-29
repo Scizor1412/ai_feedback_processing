@@ -1,0 +1,72 @@
+{
+  "metadata": {
+    "feedback_id": "PAR-2025-025",
+    "date": "2025-12-13",
+    "type": "PARENTS",
+    "persona": {
+      "id": "PAR0025",
+      "name": "Phan Kim Yen",
+      "role": "parent",
+      "child_name": "Vu Thanh Nam",
+      "child_id": "SV20230025",
+      "child_school": "School of Communication",
+      "child_school_id": "COM",
+      "child_year": 2,
+      "child_program": "Journalism"
+    },
+    "related_schools": [
+      "COM"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "CAREER",
+      "FACILITIES",
+      "FINANCE",
+      "IT_SUPPORT",
+      "STUDENT_AFFAIRS"
+    ],
+    "overall_sentiment": "mostly_positive"
+  },
+  "body": [
+    {
+      "question_1": "How would you rate the university's communication with parents regarding your child's academic progress and welfare?",
+      "answer_1": "As a parent, I find the School of Communication's communication regarding my child's academic progress to be superb and genuinely reassuring. Semester progress reports are issued promptly through the parent portal, and attendance alerts are sent in real time, allowing me to stay informed and intervene early when needed. I particularly applaud the parent information sessions organized each semester, where faculty and administrators present academic expectations, available support services, and the student performance outlook in detail. The level of transparency and proactive communication from the Academic Affairs Office has greatly increased my confidence in the institution's commitment to student success and parental partnership."
+    },
+    {
+      "question_2": "How satisfied are you with the quality of education your child is receiving at this university?",
+      "answer_2": "Teaching quality in my Journalism program at the School of Communication has been reasonable overall, though noticeably inconsistent across different modules this semester. Several lecturers deliver material with clarity and genuine enthusiasm, making those sessions highly productive and intellectually stimulating for the class. However, a few courses suffer from disorganized delivery, limited interaction, and minimal feedback on submitted work, which hampers the learning experience considerably. I would urge the school to standardize teaching quality benchmarks and conduct regular peer evaluations to ensure a more consistent and high-quality educational experience for all students across every module and year level."
+    },
+    {
+      "question_3": "How confident are you in the university's ability to prepare your child for future career opportunities?",
+      "answer_3": "The career preparation support provided by the Career Center at the School of Communication has been excellent and has made a tangible difference to my professional readiness and employment prospects as I approach graduation. Resume writing workshops, mock interviews, and industry networking events have been well-organized, highly practical, and attended by credible industry professionals who provided genuinely actionable feedback. The internship matching program is effective, with clear communication about available placements and strong follow-up support for students during their internship periods. I commend the Career Center's proactive approach and its strong relationships with employers, which have opened real opportunities for students across all programs."
+    },
+    {
+      "question_4": "How would you assess the campus safety measures and student welfare programs in place at this institution?",
+      "answer_4": "Campus safety and student welfare at the School of Communication are remarkable, and I feel confident that my child is studying in a secure and well-monitored environment that prioritizes student well-being. Security personnel are visibly present across campus during all hours, CCTV coverage is comprehensive, and well-lit pathways ensure safe movement even during evening hours. The Student Affairs Office runs an impressive range of student welfare programs including health screenings, mental health workshops, peer support networks, and emergency assistance protocols that demonstrate a genuine institutional commitment to holistic student care. Knowing that these resources exist and are actively promoted gives me great peace of mind as a parent."
+    },
+    {
+      "question_5": "How transparent and straightforward have you found the university's financial policies, fee management, and scholarship communication?",
+      "answer_5": "I have experienced inadequate financial management from the Finance Department at the School of Communication that has caused considerable stress and inconvenience to our family over the course of this academic year. Scholarship disbursements were repeatedly delayed without advance notification, and when I contacted the Finance Department for clarification, responses were slow and sometimes contradictory between staff members. Unexpected additional charges appeared on the fee statement mid-semester without prior written notice, which I find both financially disruptive and contrary to good institutional governance practices. I formally request that the Finance Department implement automated disbursement notifications, enforce accurate billing practices, and establish a clear parent-facing communication protocol for all financial matters."
+    },
+    {
+      "question_6": "How effective do you find the parent portal and digital communication systems provided by the university?",
+      "answer_6": "The parent portal provided by the School of Communication, supported by the IT Support Department, is remarkable in its design, functionality, and reliability, and has become an invaluable tool for staying connected to my child's academic journey throughout the year. The interface is intuitive and well-organized, presenting grade information, attendance records, fee statements, and university announcements in a clear and accessible format that requires no technical expertise. The system is reliably available, with minimal downtime, and notifications are pushed promptly for important academic events and institutional announcements. I praise the university's investment in digital parent engagement tools, which I believe genuinely strengthen the home-university partnership and support better student outcomes."
+    },
+    {
+      "question_7": "How satisfied are you with the academic counseling and advising support your child receives?",
+      "answer_7": "Academic counseling at the School of Communication is adequate, covering essential advising needs without providing the depth and personalization that would truly distinguish the service. My child has found their assigned advisor to be approachable and knowledgeable on the whole, though appointment availability is sometimes limited during peak periods of the academic calendar. The counseling provided tends to be reactive — responding to student-initiated queries rather than proactively identifying and addressing potential challenges before they escalate. A more structured check-in model, combined with a larger and better-trained advising team, would significantly improve the consistency and impact of academic counseling across the institution."
+    },
+    {
+      "question_8": "How well does the university address students' mental health and personal well-being needs?",
+      "answer_8": "Student support services at the School of Communication are adequate in their scope and delivery, covering the essential categories but lacking depth and proactivity in several important areas that affect student well-being. Counseling services exist and are functional, but appointment availability is limited and wait times are often longer than appropriate for students in need. Financial support processes are reasonably accessible but require significant paperwork and involve delays that reduce their effectiveness in urgent situations. Investing in additional counseling staff, simplifying support request processes, and proactively promoting available services — especially during high-stress periods like mid-terms — would markedly improve the student experience."
+    },
+    {
+      "question_9": "How would you evaluate the quality and suitability of the university's physical facilities and campus environment?",
+      "answer_9": "The physical campus environment and facilities managed by the Facilities Management provide a remarkable learning atmosphere that I believe genuinely contributes to academic productivity and student well-being at the School of Communication. Lecture halls are spacious, well-ventilated, and equipped with modern audio-visual technology that facilitates clear and engaging presentations. Study spaces — including individual carrels, group collaboration rooms, and outdoor relaxation areas — are thoughtfully designed and well-maintained throughout the academic week. Cleaning and security standards are consistently high, and campus maintenance requests are typically resolved within a reasonable timeframe. The overall physical environment reflects a commitment to providing students with a safe, comfortable, and inspiring place to learn."
+    },
+    {
+      "question_10": "What improvements would you suggest to enhance the university's support for both students and their families?",
+      "answer_10": "Reflecting on my child's full year of study at the School of Communication, I find myself with inadequate concerns about the institution's ability to consistently deliver on the educational and welfare commitments it promotes to prospective students and their families. Persistent issues with teaching quality in certain departments, administrative responsiveness, digital platform reliability, and student support capacity have collectively made a difficult academic transition more challenging than it needed to be. I would strongly urge university leadership to prioritize meaningful engagement with the concerns raised in parent feedback, establish clear accountability mechanisms, and communicate specific improvement actions transparently to the parent community in the coming semester."
+    }
+  ]
+}

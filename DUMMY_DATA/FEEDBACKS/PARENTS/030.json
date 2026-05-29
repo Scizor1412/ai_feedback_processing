@@ -1,0 +1,72 @@
+{
+  "metadata": {
+    "feedback_id": "PAR-2025-030",
+    "date": "2025-11-26",
+    "type": "PARENTS",
+    "persona": {
+      "id": "PAR0030",
+      "name": "Vu Huu Mai",
+      "role": "parent",
+      "child_name": "Phan Ngoc Cuong",
+      "child_id": "SV20230030",
+      "child_school": "School of Information Technology",
+      "child_school_id": "IT",
+      "child_year": 3,
+      "child_program": "Cybersecurity"
+    },
+    "related_schools": [
+      "IT"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "CAREER",
+      "FACILITIES",
+      "FINANCE",
+      "IT_SUPPORT",
+      "STUDENT_AFFAIRS"
+    ],
+    "overall_sentiment": "mixed"
+  },
+  "body": [
+    {
+      "question_1": "How would you rate the university's communication with parents regarding your child's academic progress and welfare?",
+      "answer_1": "As a parent, I find the School of Information Technology's communication regarding my child's academic progress to be superb and genuinely reassuring. Semester progress reports are issued promptly through the parent portal, and attendance alerts are sent in real time, allowing me to stay informed and intervene early when needed. I particularly recognize the parent information sessions organized each semester, where faculty and administrators present academic expectations, available support services, and the student performance outlook in detail. The level of transparency and proactive communication from the Academic Affairs Office has greatly increased my confidence in the institution's commitment to student success and parental partnership."
+    },
+    {
+      "question_2": "How satisfied are you with the quality of education your child is receiving at this university?",
+      "answer_2": "Teaching quality in my Cybersecurity program at the School of Information Technology has been satisfactory overall, though noticeably inconsistent across different modules this semester. Several lecturers deliver material with clarity and genuine enthusiasm, making those sessions highly productive and intellectually stimulating for the class. However, a few courses suffer from disorganized delivery, limited interaction, and minimal feedback on submitted work, which hampers the learning experience considerably. I would suggest the school to standardize teaching quality benchmarks and conduct regular peer evaluations to ensure a more consistent and high-quality educational experience for all students across every module and year level."
+    },
+    {
+      "question_3": "How confident are you in the university's ability to prepare your child for future career opportunities?",
+      "answer_3": "The career preparation support provided by the Career Center at the School of Information Technology has been exceptional and has made a tangible difference to my professional readiness and employment prospects as I approach graduation. Resume writing workshops, mock interviews, and industry networking events have been well-organized, highly practical, and attended by credible industry professionals who provided genuinely actionable feedback. The internship matching program is effective, with clear communication about available placements and strong follow-up support for students during their internship periods. I recognize the Career Center's proactive approach and its strong relationships with employers, which have opened real opportunities for students across all programs."
+    },
+    {
+      "question_4": "How would you assess the campus safety measures and student welfare programs in place at this institution?",
+      "answer_4": "Campus safety and student welfare at the School of Information Technology are remarkable, and I feel confident that my child is studying in a secure and well-monitored environment that prioritizes student well-being. Security personnel are visibly present across campus during all hours, CCTV coverage is comprehensive, and well-lit pathways ensure safe movement even during evening hours. The Student Affairs Office runs an impressive range of student welfare programs including health screenings, mental health workshops, peer support networks, and emergency assistance protocols that demonstrate a genuine institutional commitment to holistic student care. Knowing that these resources exist and are actively promoted gives me great peace of mind as a parent."
+    },
+    {
+      "question_5": "How transparent and straightforward have you found the university's financial policies, fee management, and scholarship communication?",
+      "answer_5": "I have experienced substandard financial management from the Finance Department at the School of Information Technology that has caused considerable stress and inconvenience to our family over the course of this academic year. Scholarship disbursements were repeatedly delayed without advance notification, and when I contacted the Finance Department for clarification, responses were slow and sometimes contradictory between staff members. Unexpected additional charges appeared on the fee statement mid-semester without prior written notice, which I find both financially disruptive and contrary to good institutional governance practices. I formally request that the Finance Department implement automated disbursement notifications, enforce accurate billing practices, and establish a clear parent-facing communication protocol for all financial matters."
+    },
+    {
+      "question_6": "How effective do you find the parent portal and digital communication systems provided by the university?",
+      "answer_6": "The parent portal at the School of Information Technology, managed by the IT Support Department, is inadequate in its functionality, reliability, and user experience, and has been more of a source of frustration than a useful communication tool. The interface is dated and difficult to navigate, with key information such as grade details and attendance records buried under multiple menu layers. The system experiences frequent downtime — often during critical periods such as grade release and enrollment — and error messages provide no useful guidance for resolving access issues independently. I strongly urge a complete redesign of the parent portal with a focus on intuitive UX, mobile compatibility, and real-time data synchronization to bring it in line with modern digital standards."
+    },
+    {
+      "question_7": "How satisfied are you with the academic counseling and advising support your child receives?",
+      "answer_7": "Academic counseling and advising services at the School of Information Technology, coordinated by the Academic Affairs Office, have been commendable in supporting my child's academic planning and decision-making throughout the year. Assigned academic advisors are knowledgeable, approachable, and proactively schedule meetings at key decision points in the academic calendar — such as course selection, internship planning, and graduation preparation. The quality and consistency of advice my child has received has given our family confidence that their academic trajectory is being thoughtfully guided by experienced professionals who understand both the program requirements and the student's individual goals. This service is clearly a strength of the institution."
+    },
+    {
+      "question_8": "How well does the university address students' mental health and personal well-being needs?",
+      "answer_8": "Student support services at the School of Information Technology, managed by the Student Affairs Office, are insufficient and fall significantly short of what students need to manage the academic, personal, and financial challenges of university life. Mental health support in particular is severely limited — appointment wait times can exceed three weeks, which is unacceptable for students experiencing acute stress. Financial hardship assistance processes are slow, bureaucratic, and poorly communicated, leaving vulnerable students without timely help during critical periods. The university must urgently expand its counseling capacity, simplify hardship application procedures, and raise awareness of available services through more proactive and visible outreach to the student community."
+    },
+    {
+      "question_9": "How would you evaluate the quality and suitability of the university's physical facilities and campus environment?",
+      "answer_9": "Campus facilities at the School of Information Technology, maintained by the Facilities Management, are generally adequate and adequate for day-to-day academic activities, though several areas require attention and investment to meet growing needs. Core academic spaces — including lecture halls and laboratories — are functional and reasonably maintained, though some equipment is beginning to show age and inconsistency in performance. Student study and relaxation spaces are insufficient during peak periods, and the condition of older campus buildings varies considerably. A systematic facilities audit followed by a prioritized improvement plan would help address longstanding issues and ensure the campus environment supports the academic ambitions of all students more effectively."
+    },
+    {
+      "question_10": "What improvements would you suggest to enhance the university's support for both students and their families?",
+      "answer_10": "Reflecting on my child's full year of study at the School of Information Technology, I find myself with concerning concerns about the institution's ability to consistently deliver on the educational and welfare commitments it promotes to prospective students and their families. Persistent issues with teaching quality in certain departments, administrative responsiveness, digital platform reliability, and student support capacity have collectively made a difficult academic transition more challenging than it needed to be. I would strongly urge university leadership to prioritize meaningful engagement with the concerns raised in parent feedback, establish clear accountability mechanisms, and communicate specific improvement actions transparently to the parent community in the coming semester."
+    }
+  ]
+}

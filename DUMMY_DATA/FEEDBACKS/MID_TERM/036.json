@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "feedback_id": "MID-2025-036",
+    "date": "2025-11-27",
+    "type": "MID_TERM",
+    "persona": {
+      "id": "SV20240036",
+      "name": "Cao Thanh Minh",
+      "gender": "Male",
+      "role": "student",
+      "school": "School of Business Administration",
+      "school_id": "BUS",
+      "year": 2,
+      "program": "International Business"
+    },
+    "related_schools": [
+      "BUS"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "FACILITIES",
+      "IT_SUPPORT",
+      "LIBRARY",
+      "STUDENT_AFFAIRS"
+    ],
+    "overall_sentiment": "mostly_negative"
+  },
+  "body": [
+    {
+      "question_1": "How would you rate the overall quality of teaching in your courses this semester so far?",
+      "answer_1": "I have observed several concerning aspects of teaching quality in my International Business courses at the School of Business Administration this semester that I feel compelled to bring to attention. Certain lectures are delivered without adequate structure, making it difficult to follow the logical progression of content, and some lecturers rely heavily on reading directly from slides rather than elaborating or encouraging discussion. Assessment criteria are sometimes communicated after assignments are already underway, which creates unnecessary confusion and unfair evaluation conditions. I strongly suggest the institution to invest in faculty development programs focused on modern pedagogy, student engagement techniques, and constructive feedback practices to address these shortcomings urgently."
+    },
+    {
+      "question_2": "How well does the course content align with current industry standards and your career aspirations?",
+      "answer_2": "The International Business curriculum at the School of Business Administration covers the essential theoretical foundations competently and provides a reasonable structure for academic progression throughout the degree. Core modules are fair in their depth and breadth, covering key concepts that form the basis of professional practice in this field. However, the elective offerings could be significantly expanded to reflect emerging trends and specialized career pathways that students are increasingly interested in. Greater integration of industry collaboration — such as guest lectures, live projects, and sponsored capstone work — would substantially strengthen the curriculum's practical relevance and better prepare graduates for competitive employment."
+    },
+    {
+      "question_3": "How effective are the assessment methods (assignments, quizzes, exams) in evaluating your understanding of the subject matter?",
+      "answer_3": "Assessment practices in my International Business program at the School of Business Administration are generally acceptable, though there is meaningful room for improvement in both consistency and transparency. Some modules employ well-designed assessments that genuinely test comprehension and application, while others rely too heavily on high-stakes end-of-semester examinations that do not adequately reflect students' ongoing learning throughout the term. Timely feedback is provided by some lecturers but is inconsistent across the department. Standardizing minimum feedback turnaround times and encouraging a more diverse portfolio of assessment types would significantly improve the learning experience for all students."
+    },
+    {
+      "question_4": "How would you describe the availability and responsiveness of your lecturers outside of scheduled class time?",
+      "answer_4": "Lecturer availability at the School of Business Administration for my International Business courses is adequate, with noticeable differences between individual faculty members in their accessibility and responsiveness to student needs outside of scheduled class sessions. A number of lecturers are readily available and proactive in offering support, which I find invaluable during intensive assignment and examination periods. Others, however, have limited and poorly communicated office hours, making it challenging to get timely guidance on coursework challenges. Establishing a standardized minimum availability requirement and publishing these schedules on the student portal would greatly improve accessibility for all students."
+    },
+    {
+      "question_5": "How satisfied are you with the learning resources and materials provided for your courses this semester?",
+      "answer_5": "Learning resources for my International Business program at the School of Business Administration are moderate, with some courses providing excellent, well-curated materials and others offering minimal guidance beyond the core required textbook. The library's digital collection is reasonable in scope but has some notable gaps in specialized resources relevant to advanced topics in our field. The LMS functions adequately as a distribution platform, though its use varies significantly between lecturers, creating an inconsistent experience across modules. A more standardized approach to resource provision, with minimum content requirements per course, would considerably improve the consistency and quality of the learning environment."
+    },
+    {
+      "question_6": "How would you rate the IT infrastructure and digital learning tools provided by the university to support your studies?",
+      "answer_6": "The IT infrastructure managed by the IT Support Department presents inconsistent challenges that significantly disrupt the academic experience at the School of Business Administration. Wi-Fi connectivity is unreliable in several key areas of the campus, including the main library, multiple lecture halls, and postgraduate study rooms, making online coursework and research frustrating and inefficient. Computer labs frequently have outdated or malfunctioning equipment, and software licensing issues occasionally prevent students from accessing tools required for coursework. The IT helpdesk response time is substandard, often taking several days to resolve straightforward technical issues. Urgent investment in infrastructure upgrades and improved support staffing is needed."
+    },
+    {
+      "question_7": "How efficient have you found the academic administrative processes such as registration, grade appeals, and scheduling?",
+      "answer_7": "Academic administrative processes at the School of Business Administration are satisfactory in their execution, meeting basic requirements but leaving clear room for improvement in both speed and user-friendliness. The online student portal functions adequately for routine tasks such as registration and fee payment, but navigating more complex requests — such as grade appeals or course exemptions — remains unnecessarily cumbersome. Communication timelines are inconsistent, with some requests handled promptly and others taking weeks without updates or acknowledgment. Streamlining administrative workflows, improving the student portal's UX, and setting clear service-level response standards would meaningfully reduce administrative friction for the entire student body."
+    },
+    {
+      "question_8": "How would you evaluate the quality and accessibility of student support services currently available at this university?",
+      "answer_8": "Student support services at the School of Business Administration, managed by the Student Affairs Office, are disappointing and fall significantly short of what students need to manage the academic, personal, and financial challenges of university life. Mental health support in particular is severely limited — appointment wait times can exceed three weeks, which is unacceptable for students experiencing acute stress. Financial hardship assistance processes are slow, bureaucratic, and poorly communicated, leaving vulnerable students without timely help during critical periods. The university must urgently expand its counseling capacity, simplify hardship application procedures, and raise awareness of available services through more proactive and visible outreach to the student community."
+    },
+    {
+      "question_9": "How well does the university's physical environment and facilities support your daily learning experience?",
+      "answer_9": "The physical campus environment and facilities managed by the Facilities Management provide a outstanding learning atmosphere that I believe genuinely contributes to academic productivity and student well-being at the School of Business Administration. Lecture halls are spacious, well-ventilated, and equipped with modern audio-visual technology that facilitates clear and engaging presentations. Study spaces — including individual carrels, group collaboration rooms, and outdoor relaxation areas — are thoughtfully designed and well-maintained throughout the academic week. Cleaning and security standards are consistently high, and campus maintenance requests are typically resolved within a reasonable timeframe. The overall physical environment reflects a commitment to providing students with a safe, comfortable, and inspiring place to learn."
+    },
+    {
+      "question_10": "What specific improvements would you most like to see implemented for the remainder of this semester?",
+      "answer_10": "My key recommendation for the School of Business Administration is to urgently address the disappointing systemic issues that have affected International Business students this semester, rather than treating them as isolated incidents. A structured, transparent student feedback mechanism — where concerns are acknowledged within a set timeframe and outcomes communicated back to students — would significantly rebuild trust that has been eroded by unaddressed issues. I also strongly point out leadership to conduct a comprehensive curriculum and service quality review in genuine consultation with current students, alumni, and industry partners. Without meaningful action on the concerns raised in this feedback, student satisfaction and the institution's competitive standing will continue to decline in the years ahead."
+    }
+  ]
+}

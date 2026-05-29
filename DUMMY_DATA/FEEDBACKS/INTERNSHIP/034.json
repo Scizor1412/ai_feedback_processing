@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "feedback_id": "INT-2025-034",
+    "date": "2025-04-19",
+    "type": "INTERNSHIP",
+    "persona": {
+      "id": "EMP0034",
+      "company": "VNPT Technology",
+      "industry": "E-Commerce",
+      "evaluator_name": "Huynh Thanh An",
+      "evaluator_role": "Department Head",
+      "role": "employer",
+      "intern_id": "SV20231034",
+      "intern_name": "Dang Le Quang",
+      "intern_school": "School of Business Administration",
+      "intern_school_id": "BUS",
+      "intern_program": "Marketing"
+    },
+    "related_schools": [
+      "BUS"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "CAREER"
+    ],
+    "overall_sentiment": "mostly_negative"
+  },
+  "body": [
+    {
+      "question_1": "How would you rate the technical competency of the student intern in their relevant field of study?",
+      "answer_1": "The intern from the School of Business Administration's Marketing program showed decent technical competency, with a solid theoretical foundation that required additional scaffolding to translate effectively into professional practice. Core technical knowledge in the primary discipline areas was present and generally accurate, enabling the intern to engage meaningfully with assigned tasks after an initial onboarding period. However, familiarity with specific industry-standard tools and processes was limited, requiring time investment from senior staff to bridge the gap. Stronger emphasis on applied tool training and industry-facing projects within the curriculum would produce more immediately effective graduates and reduce the onboarding burden on host companies."
+    },
+    {
+      "question_2": "How well did the intern demonstrate professional communication and interpersonal skills in the workplace?",
+      "answer_2": "The intern's professional conduct required concerning levels of management intervention that were unexpected for a student from the School of Business Administration's Marketing program at this career stage. Punctuality was inconsistent during the first half of the internship period, and proactive communication about delays or challenges was largely absent without repeated prompting from supervisors. Response to constructive feedback was occasionally defensive, and the intern demonstrated some difficulty adapting to workplace expectations around presentation, tone, and professional documentation standards. We recommend the School of Business Administration incorporate more structured professional readiness training — including workplace simulation, communication skills, and feedback-receiving practice — into its curriculum before students enter the workforce."
+    },
+    {
+      "question_3": "How effectively did the intern collaborate with team members and contribute to group projects?",
+      "answer_3": "The intern's ability to collaborate effectively within a team environment was inconsistent and required more management attention than anticipated. Contribution to group tasks was often uneven — the intern sometimes worked in isolation rather than coordinating with colleagues, leading to duplicated effort and avoidable misalignments in shared workstreams. Communication within the team was reactive rather than proactive, and the intern occasionally struggled with the shared accountability and compromise that effective team collaboration demands. We recommend the School of Business Administration incorporate more structured team-based project work and collaborative simulation into the Marketing curriculum to better prepare students for the realities of modern workplace team dynamics."
+    },
+    {
+      "question_4": "How would you assess the intern's problem-solving abilities and approach to challenging or unfamiliar tasks?",
+      "answer_4": "Problem-solving was a concerning area for this intern, representing the most significant gap between the School of Business Administration's Marketing graduates and our professional workforce expectations. The intern often sought direct guidance from supervisors before attempting independent analysis or solution development, limiting their ability to work autonomously on complex assignments. When initial approaches failed, pivoting strategy independently proved difficult, and the intern sometimes became visibly discouraged rather than treating failure as diagnostic information to inform the next attempt. Building a stronger culture of structured problem-solving — through case studies, debugging exercises, and open-ended challenges — in the Marketing curriculum would produce significantly more effective graduates."
+    },
+    {
+      "question_5": "How quickly and effectively did the intern adapt to your company's work culture, tools, and environment?",
+      "answer_5": "This intern showed fair adaptability to our work environment, adjusting reasonably well to most situations while requiring additional support when changes occurred at a faster pace or scale than anticipated. Day-to-day routine adjustments — such as modified task priorities or new tool adoption — were handled efficiently and without notable disruption. More significant changes, such as project pivots or team restructuring, required more guidance to navigate smoothly and confidently. Greater exposure to agile methodologies, sprint-based workflows, and change management principles in the Marketing curriculum would strengthen the adaptability of graduates entering dynamic professional environments."
+    },
+    {
+      "question_6": "How proficient was the intern in English communication, both written and verbal, for professional purposes?",
+      "answer_6": "English communication proficiency was a substandard limitation for this intern from the School of Business Administration's Marketing program that impacted their effectiveness in several key areas of their role. Written communication — including emails and technical documentation — frequently contained grammatical and structural errors that required editing by supervisors before use in internal or external contexts. Verbal participation in English-language meetings was hesitant, limiting the intern's ability to contribute fully to discussions or to represent the team confidently in broader organizational settings. We strongly recommend the School of Business Administration elevate its English communication training requirements — particularly for professional writing and spoken business English — as a core graduation competency for all programs."
+    },
+    {
+      "question_7": "How well did the intern's academic training align with the practical demands and standards of your industry?",
+      "answer_7": "Based on our experience with this intern from the School of Business Administration's Marketing program, we are impressively impressed with the alignment between the academic curriculum and the practical demands of our industry. The foundational knowledge, theoretical frameworks, and applied skills the intern brought to the role mapped closely to what we require in graduate-level professional practitioners in this field. In particular, the project-based and problem-solving components of the curriculum appear to have translated well into workplace readiness. We would encourage the School of Business Administration to continue developing its industry connections and to involve practitioners actively in curriculum review to maintain this strong alignment as the professional landscape continues to evolve."
+    },
+    {
+      "question_8": "What specific technical or soft skill areas do you believe the university curriculum should strengthen for future graduates?",
+      "answer_8": "Our curriculum-related feedback for the School of Business Administration's Marketing program, based on this internship experience, is reasonable: there is a reasonable foundation but meaningful gaps that the institution could address to significantly improve graduate readiness. Core theoretical knowledge is adequately covered, and the intern was able to apply foundational concepts with reasonable effectiveness. However, gaps exist in applied tool proficiency, project management fundamentals, and the professional communication standards expected in industry settings. We recommend more regular and structured industry consultations to ensure the curriculum remains current, and greater emphasis on workplace simulation through live projects, internships, and industry-sponsored assessments."
+    },
+    {
+      "question_9": "How would you rate the intern's overall performance and value contribution to your organization during the placement?",
+      "answer_9": "Overall, the intern's performance during this placement was concerning and fell below the standard we expected based on the School of Business Administration's Marketing program reputation. While the intern showed genuine enthusiasm and willingness to engage with assigned tasks, output quality was inconsistent, deadlines were occasionally missed without adequate advance communication, and independent contribution to team goals was limited relative to the support investment required from supervisors. We encourage the School of Business Administration to strengthen the preparatory components of its internship program — including pre-placement coaching and more rigorous selection criteria — to better match student readiness with the expectations of professional host organizations."
+    },
+    {
+      "question_10": "Based on your experience with this intern, would you consider hiring from this university in the future, and why?",
+      "answer_10": "We would cautiously consider hiring from the School of Business Administration's Marketing program again, with the expectation that the skill and readiness gaps we observed in this internship experience would be addressed through curriculum improvements in the near term. The intern's core attitude and growth potential were positive, and these qualities form a solid basis for future professional development. However, we would want to see stronger applied technical skills, better English communication preparation, and more structured professional readiness training before we significantly expand our intake from this institution. We encourage the School of Business Administration to reach out to us directly to establish a closer industry-academia collaboration that benefits both future interns and our organization's talent development strategy."
+    }
+  ]
+}

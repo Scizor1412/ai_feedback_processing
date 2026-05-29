@@ -1,0 +1,71 @@
+{
+  "metadata": {
+    "feedback_id": "YE-2025-018",
+    "date": "2025-05-07",
+    "type": "YEAR_END",
+    "persona": {
+      "id": "SV20240018",
+      "name": "Luong Kim Khanh",
+      "gender": "Female",
+      "role": "student",
+      "school": "School of Communication",
+      "school_id": "COM",
+      "year": 3,
+      "program": "Advertising & Brand Management"
+    },
+    "related_schools": [
+      "COM"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "CAREER",
+      "FINANCE",
+      "IT_SUPPORT",
+      "LIBRARY",
+      "STUDENT_AFFAIRS"
+    ],
+    "overall_sentiment": "mostly_negative"
+  },
+  "body": [
+    {
+      "question_1": "Reflecting on the full academic year, how would you rate your overall educational experience at this university?",
+      "answer_1": "My overall experience in the Advertising & Brand Management program at the School of Communication during this academic year has been satisfactory, with meaningful highs and some notable lows that I believe the institution has both the capacity and responsibility to address. The academic content, when delivered well, is genuinely rigorous and relevant, and I have formed valuable relationships with peers and some excellent faculty members. However, structural issues — inconsistent teaching quality, administrative inefficiencies, and gaps in student support — have at times undermined what could otherwise be an exceptional educational experience. With targeted improvements and a genuine commitment to acting on student feedback, this institution has the foundations to become truly outstanding."
+    },
+    {
+      "question_2": "How effectively do you believe this year's coursework has prepared you for your future career or further academic studies?",
+      "answer_2": "Career preparation services at the School of Communication, offered through the Career Center, are decent and meet some student needs while falling short in others. Basic resume guidance and periodic career fairs provide a foundation, but more intensive and personalized support would greatly benefit students planning to enter a competitive and rapidly evolving job market. The internship program has room for significant growth — expanding the employer partner network, improving placement matching, and providing structured mentorship during internship periods would make it substantially more valuable. Regular industry panels and alumni engagement events would also meaningfully bridge the gap between academic preparation and professional workplace expectations."
+    },
+    {
+      "question_3": "How would you assess the progression of your academic skills and knowledge throughout this academic year?",
+      "answer_3": "The Advertising & Brand Management curriculum at the School of Communication appears to lag behind current industry standards in several significant areas that I believe require urgent review and revision. Many courses continue to teach outdated tools and methodologies that are rarely used in professional settings today, leaving students underprepared for actual workplace demands. The curriculum also lacks sufficient elective depth and specialization pathways, limiting students' ability to develop expertise in niche areas of growing importance. I suggest the Academic Affairs Office and school leadership to conduct a thorough curriculum audit in close consultation with industry professionals and alumni to ensure course content remains relevant, rigorous, and career-oriented."
+    },
+    {
+      "question_4": "How satisfied are you with the extracurricular activities, student clubs, and personal development opportunities available?",
+      "answer_4": "Extracurricular opportunities at the School of Communication, managed by the Student Affairs Office, are problematic and poorly promoted, limiting student engagement with the broader campus community significantly. The range of active student clubs is narrow, with minimal support for students wishing to establish new interest groups or activities that reflect the diversity of the student population. Events are inconsistently organized and inadequately funded, resulting in low attendance and limited impact on the student community's sense of belonging and engagement. I strongly point out the Student Affairs Office to take a more proactive and well-resourced approach to extracurricular programming, recognizing its critical role in student retention and overall satisfaction."
+    },
+    {
+      "question_5": "How well has the university's Career Center prepared you for internship opportunities and graduate employment?",
+      "answer_5": "Career preparation support from the Career Center at the School of Communication has been disappointing and has left many students — including myself — feeling ill-equipped for the competitive graduate employment market. Career workshops are infrequent, poorly promoted, and often scheduled at times that conflict with lecture commitments, reducing student participation. The internship database is outdated and contains many positions that are no longer active, and support for students during internship placements is minimal to nonexistent. I suggest the university to substantially reinvest in the Career Center — expanding its employer network, modernizing its tools, and increasing the frequency and quality of career development programming across all academic programs and year levels."
+    },
+    {
+      "question_6": "How would you rate the university's financial services, including tuition fee management and scholarship support?",
+      "answer_6": "Financial services at the School of Communication, managed by the Finance Department, operate at a adequate level that fulfills basic requirements without particular distinction in either efficiency or student-centeredness. Tuition fee management and billing are generally accurate, though occasional discrepancies require follow-up that can be time-consuming. Scholarship and financial aid communication could be significantly improved — students often report uncertainty about disbursement timelines and eligibility criteria that creates unnecessary anxiety during critical financial planning periods. Greater transparency through automated notifications, a clearer scholarship portal, and improved staff responsiveness to financial queries would substantially raise the standard of financial services for the student community."
+    },
+    {
+      "question_7": "How would you evaluate the IT infrastructure and digital services provided by the university over the course of the year?",
+      "answer_7": "The IT infrastructure at the School of Communication, maintained by the IT Support Department, performs at a moderate level that meets basic student needs but falls short of what is required to fully support a modern, technology-dependent academic environment. Wi-Fi connectivity is generally stable in primary teaching spaces but becomes inconsistent during peak usage hours and in peripheral campus locations. Software availability in computer labs is adequate for core coursework but limited for students requiring specialized applications for advanced projects. Expanding bandwidth capacity, updating hardware on a regular replacement cycle, and improving helpdesk responsiveness would meaningfully elevate the digital learning experience for the entire student community."
+    },
+    {
+      "question_8": "How satisfied are you with the library resources — both physical and digital — that were available throughout the academic year?",
+      "answer_8": "The learning resources and materials provided for my Advertising & Brand Management courses at the School of Communication are remarkable and represent a significant strength of the program. Course packs are comprehensive, well-organized, and current, incorporating recent academic publications, industry white papers, and multimedia content that enriches the learning experience beyond traditional textbooks. The university's digital library provides broad access to peer-reviewed journals and e-books, and the Learning Management System is intuitive, well-maintained, and effectively used by lecturers to share materials in a timely manner. I also commend the provision of recorded lectures, which allows students to revisit complex material at their own pace — a genuinely valuable academic resource."
+    },
+    {
+      "question_9": "How effectively did the university communicate important information, deadlines, and updates throughout the academic year?",
+      "answer_9": "The academic administrative processes at the School of Communication, overseen by the Academic Affairs Office, have been a source of considerable frustration for many students this semester. Course registration was plagued by system errors and conflicting timetables that took weeks to resolve, causing students to miss early enrollment advantages. Grade dispute processes are opaque and slow, with students waiting over a month without updates or acknowledgment of their submissions. Communication from administrative offices is reactive rather than proactive, and staff sometimes provide inconsistent information depending on who is contacted. I suggest a comprehensive review of administrative workflows, with investment in both system improvements and staff training as a matter of urgency."
+    },
+    {
+      "question_10": "What are your key recommendations for improving the overall student experience in the coming academic year?",
+      "answer_10": "My key recommendation for the School of Communication is to urgently address the insufficient systemic issues that have affected Advertising & Brand Management students this semester, rather than treating them as isolated incidents. A structured, transparent student feedback mechanism — where concerns are acknowledged within a set timeframe and outcomes communicated back to students — would significantly rebuild trust that has been eroded by unaddressed issues. I also strongly raise concerns about leadership to conduct a comprehensive curriculum and service quality review in genuine consultation with current students, alumni, and industry partners. Without meaningful action on the concerns raised in this feedback, student satisfaction and the institution's competitive standing will continue to decline in the years ahead."
+    }
+  ]
+}

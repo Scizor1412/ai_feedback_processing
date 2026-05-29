@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Design — AI Feedback Process</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #1c2128; --border: #30363d;
+      --accent: #58a6ff; --accent2: #3fb950; --warn: #d29922; --danger: #f85149;
+      --text: #e6edf3; --muted: #8b949e;
+      --mtp: #a371f7; --mup: #58a6ff; --mvp: #3fb950;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 15px; line-height: 1.6; }
+
+    /* Sidebar */
+    .sidebar { position: fixed; top: 0; left: 0; bottom: 0; width: 224px; background: var(--surface); border-right: 1px solid var(--border); padding: 20px 14px; overflow-y: auto; z-index: 100; }
+    .sidebar-logo { font-size: 15px; font-weight: 800; margin-bottom: 4px; }
+    .sidebar-logo span { color: var(--accent); }
+    .sidebar-tagline { font-size: 11px; color: var(--muted); margin-bottom: 22px; }
+    .nav-section { margin-bottom: 18px; }
+    .nav-section h3 { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 6px; }
+    .nav-item { display: block; padding: 6px 10px; border-radius: 6px; font-size: 13px; color: var(--muted); cursor: pointer; margin-bottom: 2px; transition: all .15s; }
+    .nav-item:hover { background: var(--surface2); color: var(--text); }
+    .nav-item.active { background: #0d2137; color: var(--accent); font-weight: 600; }
+    .nav-indent { padding-left: 20px; font-size: 12px; }
+
+    .main { margin-left: 224px; padding: 32px 40px; max-width: 980px; }
+
+    /* Stage bar */
+    .stage-bar { display: flex; align-items: center; gap: 0; margin-bottom: 28px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 4px; width: fit-content; }
+    .stage-btn { padding: 7px 18px; border-radius: 7px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all .15s; color: var(--muted); }
+    .stage-btn:hover { color: var(--text); }
+    .stage-btn.s-mtp.active { background: #1e0f3a; color: var(--mtp); }
+    .stage-btn.s-mup.active { background: #0d2137; color: var(--mup); }
+    .stage-btn.s-mvp.active { background: #0d2d0d; color: var(--mvp); }
+    .stage-connector { color: var(--border); font-size: 18px; padding: 0 2px; }
+
+    /* Stage tags */
+    .stage-tag { font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 10px; text-transform: uppercase; letter-spacing: .5px; white-space: nowrap; }
+    .tag-mtp { background: #1e0f3a; color: var(--mtp); }
+    .tag-mup { background: #0d2137; color: var(--mup); }
+    .tag-mvp { background: #0d2d0d; color: var(--mvp); }
+
+    /* Section */
+    .section { margin-bottom: 44px; }
+    .section-title { font-size: 19px; font-weight: 700; margin-bottom: 4px; display: flex; align-items: center; gap: 10px; }
+    .section-sub { font-size: 13px; color: var(--muted); margin-bottom: 18px; }
+
+    /* Roadmap */
+    .roadmap { display: grid; grid-template-columns: 1fr 36px 1fr 36px 1fr; align-items: start; gap: 0; margin-bottom: 4px; }
+    .roadmap-stage { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
+    .roadmap-stage.r-mtp { border-top: 3px solid var(--mtp); }
+    .roadmap-stage.r-mup { border-top: 3px solid var(--mup); }
+    .roadmap-stage.r-mvp { border-top: 3px solid var(--mvp); }
+    .roadmap-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+    .r-mtp .roadmap-label { color: var(--mtp); }
+    .r-mup .roadmap-label { color: var(--mup); }
+    .r-mvp .roadmap-label { color: var(--mvp); }
+    .roadmap-title { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+    .roadmap-goal { font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+    .roadmap-items { list-style: none; }
+    .roadmap-items li { font-size: 12px; color: var(--muted); padding: 2px 0; display: flex; gap: 6px; }
+    .roadmap-items li::before { content: '›'; color: var(--accent); flex-shrink: 0; }
+    .roadmap-arrow { display: flex; align-items: center; justify-content: center; color: var(--border); font-size: 20px; }
+
+    /* Persona cards */
+    .persona-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+    .persona-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
+    .persona-avatar { width: 46px; height: 46px; border-radius: 50%; background: var(--surface2); border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 12px; }
+    .persona-name { font-weight: 700; font-size: 14px; margin-bottom: 2px; }
+    .persona-role { font-size: 12px; color: var(--accent); margin-bottom: 10px; font-weight: 600; }
+    .persona-detail { font-size: 13px; margin-bottom: 5px; }
+    .persona-detail strong { color: var(--warn); }
+    .persona-stages { display: flex; gap: 4px; margin-top: 10px; flex-wrap: wrap; }
+    .persona-quote { font-size: 12px; color: var(--muted); font-style: italic; margin-top: 10px; padding: 8px 10px; background: var(--bg); border-left: 2px solid var(--border); border-radius: 0 4px 4px 0; }
+
+    /* Stories table */
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 14px; }
+    .story-table { width: 100%; border-collapse: collapse; }
+    .story-table th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); padding: 8px 12px; border-bottom: 1px solid var(--border); }
+    .story-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); font-size: 13px; vertical-align: top; }
+    .story-table tr:last-child td { border-bottom: none; }
+    .story-table tr:hover td { background: var(--surface2); }
+
+    /* Wireframes */
+    .wireframe-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; }
+    .wireframe { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+    .wireframe-bar { background: var(--surface2); border-bottom: 1px solid var(--border); padding: 8px 12px; display: flex; align-items: center; gap: 5px; }
+    .wf-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .wf-close { background: var(--danger); }
+    .wf-min   { background: var(--warn); }
+    .wf-max   { background: var(--accent2); }
+    .wireframe-title { font-size: 11px; color: var(--muted); margin-left: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; }
+    .wireframe-body { padding: 14px; }
+    .wf-block { background: var(--surface2); border: 1px dashed var(--border); border-radius: 4px; padding: 7px 10px; margin-bottom: 7px; font-size: 12px; color: var(--muted); }
+    .wf-block:last-child { margin-bottom: 0; }
+    .wf-header { background: #0d2137; border-color: var(--accent); border-style: solid; color: var(--accent); font-weight: 700; display: flex; align-items: center; justify-content: space-between; }
+    .wf-nav { display: flex; gap: 6px; }
+    .wf-nav span { font-size: 11px; color: var(--muted); padding: 2px 8px; background: var(--surface); border-radius: 4px; }
+    .wf-nav span.active { color: var(--accent); background: #0d2137; }
+    .wf-stat-row { display: flex; gap: 6px; margin-bottom: 7px; }
+    .wf-stat { flex: 1; background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 7px 8px; text-align: center; }
+    .wf-stat .num { font-size: 16px; font-weight: 700; }
+    .wf-stat .lbl { font-size: 10px; color: var(--muted); }
+    .wf-stat.s-pos .num { color: var(--accent2); }
+    .wf-stat.s-neg .num { color: var(--danger); }
+    .wf-stat.s-neu .num { color: var(--warn); }
+    .wf-row { display: flex; gap: 6px; margin-bottom: 7px; }
+    .wf-row .wf-block { flex: 1; margin-bottom: 0; }
+    .wf-btn { background: #0d2137; border: 1px solid var(--accent); border-style: solid; color: var(--accent); text-align: center; font-weight: 600; cursor: default; }
+    .wf-btn.danger { background: #2d1515; border-color: var(--danger); color: var(--danger); }
+    .wf-btn.success { background: #0d2d0d; border-color: var(--accent2); color: var(--accent2); }
+    .wf-list-item { display: flex; align-items: center; gap: 8px; background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 7px 10px; margin-bottom: 5px; }
+    .wf-list-item:last-child { margin-bottom: 0; }
+    .wf-badge { font-size: 10px; padding: 1px 6px; border-radius: 8px; font-weight: 700; }
+    .badge-pos { background: #0d2d0d; color: var(--accent2); }
+    .badge-neg { background: #2d1515; color: var(--danger); }
+    .badge-mix { background: #2d2415; color: var(--warn); }
+    .wf-tag { font-size: 10px; color: var(--muted); margin-left: auto; }
+    .wf-chart-bar { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; }
+    .wf-chart-bar .label { font-size: 11px; color: var(--muted); width: 80px; flex-shrink: 0; text-align: right; }
+    .wf-chart-bar .bar { height: 10px; border-radius: 3px; }
+    .bar-pos { background: var(--accent2); }
+    .bar-neg { background: var(--danger); }
+    .wf-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); margin-bottom: 6px; margin-top: 2px; }
+    .wf-input { border-style: solid; border-color: var(--border); background: var(--bg); color: var(--text); font-style: italic; }
+
+    /* Issues */
+    .issue-stage-block { margin-bottom: 22px; }
+    .issue-stage-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+    .issue-count { font-size: 12px; color: var(--muted); }
+    .issue-list { display: flex; flex-direction: column; gap: 6px; }
+    .issue-item { display: flex; align-items: center; gap: 10px; background: var(--surface); border: 1px solid var(--border); border-radius: 7px; padding: 10px 14px; }
+    .issue-num { font-size: 12px; color: var(--muted); font-family: monospace; white-space: nowrap; }
+    .issue-title { font-size: 13px; flex: 1; }
+    .issue-desc { font-size: 12px; color: var(--muted); }
+    .issue-label { font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 600; white-space: nowrap; }
+    .label-feat { background: #1d4ed8; }
+    .label-infra { background: #374151; }
+
+    hr { border: none; border-top: 1px solid var(--border); margin: 36px 0; }
+    footer { margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<nav class="sidebar">
+  <div class="sidebar-logo"><span>⬡</span> AI Feedback Process</div>
+  <div class="sidebar-tagline">University feedback automation</div>
+  <div class="nav-section">
+    <h3>Overview</h3>
+    <a class="nav-item active" onclick="goto('roadmap')">Roadmap</a>
+    <a class="nav-item" onclick="goto('personas')">Personas</a>
+  </div>
+  <div class="nav-section">
+    <h3>By Stage</h3>
+    <a class="nav-item" onclick="goto('stories')">User Stories</a>
+    <a class="nav-item" onclick="goto('screens')">Screen Designs</a>
+    <a class="nav-item" onclick="goto('issues')">GitHub Issues</a>
+  </div>
+</nav>
+
+<main class="main">
+
+  <!-- Header -->
+  <div style="margin-bottom: 28px;">
+    <h1 style="font-size: 27px; font-weight: 800; margin-bottom: 6px;">AI Feedback Process</h1>
+    <p style="color: var(--muted); font-size: 15px; max-width: 620px;">Automated extraction, classification, and routing of university feedback — replacing manual officer reading with AI-powered batch processing and structured email delivery to school deans and service heads.</p>
+  </div>
+
+  <!-- Stage selector -->
+  <div class="stage-bar">
+    <div class="stage-btn s-mtp active" onclick="setStage('mtp')">MTP</div>
+    <div class="stage-connector">→</div>
+    <div class="stage-btn s-mup" onclick="setStage('mup')">MUP</div>
+    <div class="stage-connector">→</div>
+    <div class="stage-btn s-mvp" onclick="setStage('mvp')">MVP</div>
+  </div>
+
+  <!-- Roadmap -->
+  <div id="roadmap" class="section">
+    <div class="section-title">🗺️ Product Roadmap</div>
+    <div class="section-sub">Three stages from a testable AI hypothesis to a trusted institutional tool</div>
+    <div class="roadmap">
+
+      <div class="roadmap-stage r-mtp">
+        <div class="roadmap-label">MTP — Minimum Testable Product</div>
+        <div class="roadmap-title">Does the AI extract correctly?</div>
+        <div class="roadmap-goal">Validate that AI can reliably identify school/service mentions, classify sentiment, and produce accurate CSVs — before building any UI or email plumbing.</div>
+        <ul class="roadmap-items">
+          <li>Ingest batch of JSON feedback files</li>
+          <li>Extract relevant text per school/service</li>
+          <li>Classify each mention as positive or negative</li>
+          <li>Output: 2 CSVs per school/service (pos/neg mentions + feedback ID)</li>
+          <li>Officer reviews output in a basic UI</li>
+        </ul>
+      </div>
+
+      <div class="roadmap-arrow">→</div>
+
+      <div class="roadmap-stage r-mup">
+        <div class="roadmap-label">MUP — Minimum Usable Product</div>
+        <div class="roadmap-title">Can officers run this in their workflow?</div>
+        <div class="roadmap-goal">Make the tool usable end-to-end: officer triggers batch, reviews AI output, approves, and system sends emails with CSV attachments to deans — with a full audit trail.</div>
+        <ul class="roadmap-items">
+          <li>Web dashboard for batch management</li>
+          <li>Review and approve/reject routing per school/service</li>
+          <li>Automated email dispatch with CSVs attached</li>
+          <li>Audit log of all sent batches</li>
+          <li>Manual batch trigger</li>
+        </ul>
+      </div>
+
+      <div class="roadmap-arrow">→</div>
+
+      <div class="roadmap-stage r-mvp">
+        <div class="roadmap-label">MVP — Minimum Viable Product</div>
+        <div class="roadmap-title">Can leadership trust and use this data?</div>
+        <div class="roadmap-goal">Add historical storage and an analytics layer so officers, deans, and leadership can track sentiment trends, identify systemic issues, and reference past feedback batches.</div>
+        <ul class="roadmap-items">
+          <li>Historical feedback database</li>
+          <li>Sentiment trend chart (per school/service over time)</li>
+          <li>Most complained services/schools ranking</li>
+          <li>Role-based access: officer, dean, leadership</li>
+          <li>Report export (CSV / PDF)</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- Personas -->
+  <div id="personas" class="section">
+    <div class="section-title">👥 User Personas</div>
+    <div class="section-sub">Three distinct users with fundamentally different needs from the same system</div>
+    <div class="persona-grid">
+
+      <div class="persona-card">
+        <div class="persona-avatar">📋</div>
+        <div class="persona-name">Ms. Nguyen Thi Thu</div>
+        <div class="persona-role">Quality Assurance Officer</div>
+        <div class="persona-detail"><strong>Goal:</strong> Process a full feedback batch in one working session, not over several days.</div>
+        <div class="persona-detail"><strong>Pain:</strong> Manually reading 200 feedbacks per cycle, extracting mentions, and formatting CSVs takes 3–4 days and is error-prone.</div>
+        <div class="persona-detail"><strong>Context:</strong> Works in batches at semester milestones. Needs to verify AI accuracy before trusting it to send emails.</div>
+        <div class="persona-quote">"I just need to check that the AI got it right and hit send. I don't want to read every feedback myself."</div>
+        <div class="persona-stages">
+          <span class="stage-tag tag-mtp">MTP</span>
+          <span class="stage-tag tag-mup">MUP</span>
+          <span class="stage-tag tag-mvp">MVP</span>
+        </div>
+      </div>
+
+      <div class="persona-card">
+        <div class="persona-avatar">🎓</div>
+        <div class="persona-name">Dr. Nguyen Minh Tuan</div>
+        <div class="persona-role">School Dean (IT School)</div>
+        <div class="persona-detail"><strong>Goal:</strong> Receive organized, school-specific feedback so he can prepare concrete responses and commitments for students.</div>
+        <div class="persona-detail"><strong>Pain:</strong> Currently receives broad feedback summaries or nothing at all — no specifics to act on, no way to identify recurring issues.</div>
+        <div class="persona-detail"><strong>Context:</strong> Reads feedback after semester ends. Needs positive and negative separated so he can respond specifically to each.</div>
+        <div class="persona-quote">"I need to know what specifically my school is being criticized or praised for — not a general summary."</div>
+        <div class="persona-stages">
+          <span class="stage-tag tag-mup">MUP</span>
+          <span class="stage-tag tag-mvp">MVP</span>
+        </div>
+      </div>
+
+      <div class="persona-card">
+        <div class="persona-avatar">🏛️</div>
+        <div class="persona-name">Prof. Le Van Duc</div>
+        <div class="persona-role">University Leadership (Vice-Rector)</div>
+        <div class="persona-detail"><strong>Goal:</strong> See institutional sentiment trends to guide strategic planning and resource allocation decisions.</div>
+        <div class="persona-detail"><strong>Pain:</strong> Currently has no systematic view across feedback types and schools — decisions are based on anecdote and spot checks.</div>
+        <div class="persona-detail"><strong>Context:</strong> Reviews analytics quarterly. Needs cross-school, cross-service comparisons over time — not individual feedback content.</div>
+        <div class="persona-quote">"Which services are consistently generating complaints? Show me the trend, not just this semester."</div>
+        <div class="persona-stages">
+          <span class="stage-tag tag-mvp">MVP</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- User Stories -->
+  <div id="stories" class="section">
+    <div class="section-title">📋 User Stories</div>
+    <div class="section-sub">Stage-filtered. Switch the stage above to show relevant stories.</div>
+    <div class="card" style="padding: 0; overflow: hidden;">
+      <table class="story-table">
+        <thead>
+          <tr>
+            <th style="width:72px;">Stage</th>
+            <th style="width:130px;">As a…</th>
+            <th>I want to…</th>
+            <th>So that…</th>
+            <th style="width:180px;">Acceptance criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- MTP -->
+          <tr class="story-row" data-stage="mtp">
+            <td><span class="stage-tag tag-mtp">MTP</span></td>
+            <td>Officer</td>
+            <td>Upload a folder of feedback JSON files and trigger AI extraction</td>
+            <td>I don't have to process each file manually</td>
+            <td>All JSONs parsed; extraction runs without manual file-by-file handling</td>
+          </tr>
+          <tr class="story-row" data-stage="mtp">
+            <td><span class="stage-tag tag-mtp">MTP</span></td>
+            <td>Officer</td>
+            <td>See which feedback sections the AI attributed to each school and service</td>
+            <td>I can verify the AI isn't routing things incorrectly</td>
+            <td>Each attribution shows feedback ID + quoted section + school/service name</td>
+          </tr>
+          <tr class="story-row" data-stage="mtp">
+            <td><span class="stage-tag tag-mtp">MTP</span></td>
+            <td>Officer</td>
+            <td>See positive and negative mentions separated for each school/service</td>
+            <td>The CSV output matches what deans need to respond to students</td>
+            <td>Two CSVs per recipient: one positive, one negative, each with feedback ID column</td>
+          </tr>
+          <tr class="story-row" data-stage="mtp">
+            <td><span class="stage-tag tag-mtp">MTP</span></td>
+            <td>Officer</td>
+            <td>Mark a batch review as "checked" after spot-checking the AI output</td>
+            <td>I have a record that a human verified this batch before it was acted on</td>
+            <td>Batch moves from "pending review" to "reviewed" state; timestamp logged</td>
+          </tr>
+
+          <!-- MUP -->
+          <tr class="story-row" data-stage="mup">
+            <td><span class="stage-tag tag-mup">MUP</span></td>
+            <td>Officer</td>
+            <td>Approve or reject routing to specific schools/services before any email is sent</td>
+            <td>I maintain control over what reaches recipients, even if most routing is correct</td>
+            <td>Each school/service routing can be individually approved or skipped; no email sends without approval</td>
+          </tr>
+          <tr class="story-row" data-stage="mup">
+            <td><span class="stage-tag tag-mup">MUP</span></td>
+            <td>Officer</td>
+            <td>Trigger email dispatch to all approved recipients in one action</td>
+            <td>I don't have to compose emails manually for each school and service</td>
+            <td>Each approved recipient gets one email with two CSV attachments; sending confirmed with delivery log</td>
+          </tr>
+          <tr class="story-row" data-stage="mup">
+            <td><span class="stage-tag tag-mup">MUP</span></td>
+            <td>Dean</td>
+            <td>Receive a structured email with my school's positive and negative feedback CSVs</td>
+            <td>I can prepare specific responses and commitments for students</td>
+            <td>Email contains batch date, feedback type, and two attached CSVs; feedback IDs link to source files</td>
+          </tr>
+          <tr class="story-row" data-stage="mup">
+            <td><span class="stage-tag tag-mup">MUP</span></td>
+            <td>Officer</td>
+            <td>View an audit log of all batches that were sent, to whom, and when</td>
+            <td>I can answer questions about what was sent and reference prior batches</td>
+            <td>Log shows batch ID, date, recipients, # of feedbacks, and sent/skipped status per recipient</td>
+          </tr>
+
+          <!-- MVP -->
+          <tr class="story-row" data-stage="mvp">
+            <td><span class="stage-tag tag-mvp">MVP</span></td>
+            <td>Officer</td>
+            <td>Search historical feedback by school, service, date range, or feedback type</td>
+            <td>I can reference past feedback when questions arise from schools or leadership</td>
+            <td>Search returns matching feedbacks with metadata; clicking a result shows the full extracted content</td>
+          </tr>
+          <tr class="story-row" data-stage="mvp">
+            <td><span class="stage-tag tag-mvp">MVP</span></td>
+            <td>Leadership</td>
+            <td>View a sentiment trend chart per school and service over time</td>
+            <td>I can identify whether issues are improving or worsening across semesters</td>
+            <td>Chart filterable by school, service, feedback type, and date range; shows pos/neg ratio per period</td>
+          </tr>
+          <tr class="story-row" data-stage="mvp">
+            <td><span class="stage-tag tag-mvp">MVP</span></td>
+            <td>Leadership</td>
+            <td>See a ranked list of the most complained-about schools and services</td>
+            <td>I can prioritize where to direct improvement resources</td>
+            <td>Ranking shows complaint volume + sentiment score; filterable by feedback type and period</td>
+          </tr>
+          <tr class="story-row" data-stage="mvp">
+            <td><span class="stage-tag tag-mvp">MVP</span></td>
+            <td>Dean</td>
+            <td>Log in and view analytics filtered to my school only</td>
+            <td>I can track my school's feedback trends without needing to contact the officer</td>
+            <td>Dean login shows only their school's data; no cross-school data visible</td>
+          </tr>
+          <tr class="story-row" data-stage="mvp">
+            <td><span class="stage-tag tag-mvp">MVP</span></td>
+            <td>Officer / Leadership</td>
+            <td>Export analytics data as CSV or PDF</td>
+            <td>I can include it in institutional reports and committee presentations</td>
+            <td>Export covers the currently filtered view; PDF includes charts, CSV includes raw numbers</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- Screen Designs -->
+  <div id="screens" class="section">
+    <div class="section-title">🖼️ Screen Designs</div>
+    <div class="section-sub">Key screens per stage. Wireframe-level — layout and content, not final visual design.</div>
+
+    <!-- MTP Screens -->
+    <div style="margin-bottom: 28px;">
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+        <span class="stage-tag tag-mtp">MTP</span>
+        <span style="font-weight:600; font-size:14px;">Batch Ingestion &amp; Extraction Review</span>
+      </div>
+      <div class="wireframe-grid">
+
+        <div class="wireframe">
+          <div class="wireframe-bar"><div class="wf-dot wf-close"></div><div class="wf-dot wf-min"></div><div class="wf-dot wf-max"></div><span class="wireframe-title">Batch Upload</span></div>
+          <div class="wireframe-body">
+            <div class="wf-block wf-header">⬡ AI Feedback Process <div class="wf-nav"><span class="active">Batches</span><span>History</span></div></div>
+            <div class="wf-block wf-input">📁 DUMMY_DATA/FEEDBACKS/MID_TERM/ &nbsp;[Browse]</div>
+            <div class="wf-row">
+              <div class="wf-block" style="flex:1;">Feedback type<br/><strong style="color:var(--text)">MID_TERM ▾</strong></div>
+              <div class="wf-block" style="flex:1;">Files found<br/><strong style="color:var(--accent2)">50 JSON files</strong></div>
+            </div>
+            <div class="wf-block wf-btn">▶ Run AI Extraction</div>
+            <div class="wf-block" style="margin-top:4px; background:var(--bg); border:none; color:var(--muted); font-size:11px;">Last batch: YEAR_END · 2025-05-01 · 50 files</div>
+          </div>
+        </div>
+
+        <div class="wireframe">
+          <div class="wireframe-bar"><div class="wf-dot wf-close"></div><div class="wf-dot wf-min"></div><div class="wf-dot wf-max"></div><span class="wireframe-title">Extraction Review</span></div>
+          <div class="wireframe-body">
+            <div class="wf-block wf-header">Batch MID-2025-A &nbsp;<span style="font-size:11px;color:var(--warn)">⏳ Pending Review</span></div>
+            <div class="wf-stat-row">
+              <div class="wf-stat s-pos"><div class="num">50</div><div class="lbl">Feedbacks</div></div>
+              <div class="wf-stat s-neg"><div class="num">7</div><div class="lbl">Recipients</div></div>
+              <div class="wf-stat s-neu"><div class="num">142</div><div class="lbl">Mentions</div></div>
+            </div>
+            <div class="wf-section-label">School/Service routing</div>
+            <div class="wf-list-item">🎓 School of IT <span class="wf-badge badge-pos">+18 pos</span><span class="wf-badge badge-neg">−9 neg</span><span class="wf-tag">▸ Preview</span></div>
+            <div class="wf-list-item">🏛️ Academic Affairs <span class="wf-badge badge-neg">−14 neg</span><span class="wf-badge badge-pos">+5 pos</span><span class="wf-tag">▸ Preview</span></div>
+            <div class="wf-list-item">💻 IT Support <span class="wf-badge badge-mix">~11 mix</span><span class="wf-tag">▸ Preview</span></div>
+            <div class="wf-list-item" style="color:var(--muted); font-size:12px;">+ 4 more recipients…</div>
+          </div>
+        </div>
+
+        <div class="wireframe">
+          <div class="wireframe-bar"><div class="wf-dot wf-close"></div><div class="wf-dot wf-min"></div><div class="wf-dot wf-max"></div><span class="wireframe-title">Mention Preview</span></div>
+          <div class="wireframe-body">
+            <div class="wf-block wf-header" style="font-size:12px;">🎓 School of IT — Positive Mentions (18)</div>
+            <div class="wf-list-item" style="flex-direction:column; align-items:flex-start; gap:4px;">
+              <div style="display:flex; gap:6px; width:100%;"><span style="font-family:monospace; font-size:11px; color:var(--muted)">MID-2025-003</span><span class="wf-badge badge-pos">positive</span></div>
+              <div style="font-size:12px; color:var(--text);">"The teaching quality in my Software Engineering courses has been exceptional this semester…"</div>
+            </div>
+            <div class="wf-list-item" style="flex-direction:column; align-items:flex-start; gap:4px;">
+              <div style="display:flex; gap:6px; width:100%;"><span style="font-family:monospace; font-size:11px; color:var(--muted)">MID-2025-011</span><span class="wf-badge badge-pos">positive</span></div>
+              <div style="font-size:12px; color:var(--text);">"Lecturers in the IT school consistently demonstrate deep subject matter expertise…"</div>
+            </div>
+            <div class="wf-block" style="margin-top:6px; text-align:center; color:var(--muted); font-size:12px;">↓ 16 more · scroll to view</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MUP Screens -->
+    <div style="margin-bottom: 28px;">
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+        <span class="stage-tag tag-mup">MUP</span>
+        <span style="font-weight:600; font-size:14px;">Officer Dashboard, Routing Approval &amp; Email Dispatch</span>
+      </div>
+      <div class="wireframe-grid">
+
+        <div class="wireframe">
+          <div class="wireframe-bar"><div class="wf-dot wf-close"></div><div class="wf-dot wf-min"></div><div class="wf-dot wf-max"></div><span class="wireframe-title">Officer Dashboard</span></div>
+          <div class="wireframe-body">
+            <div class="wf-block wf-header">⬡ AI Feedback Process <div class="wf-nav"><span class="active">Dashboard</span><span>History</span><span>Analytics</span></div></div>
+            <div class="wf-stat-row">
+              <div class="wf-stat s-neg"><div class="num">2</div><div class="lbl">Awaiting Review</div></div>
+              <div class="wf-stat s-pos"><div class="num">8</div><div class="lbl">Sent Batches</div></div>
+              <div class="wf-stat s-neu"><div class="num">412</div><div class="lbl">Total Processed</div></div>
+            </div>
+            <div class="wf-section-label">Recent batches</div>
+            <div class="wf-list-item"><span style="font-family:monospace; font-size:11px;">MID-2025-A</span><span style="flex:1; padding-left:8px; font-size:13px;">MID_TERM · 50 files</span><span class="wf-badge badge-neg" style="background:#2d1f00; color:var(--warn);">Review</span></div>
+            <div class="wf-list-item"><span style="font-family:monospace; font-size:11px;">YE-2025-A</span><span style="flex:1; padding-left:8px; font-size:13px;">YEAR_END · 50 files</span><span class="wf-badge badge-pos">Sent</span></div>
+            <div class="wf-list-item"><span style="font-family:monospace; font-size:11px;">PAR-2025-A</span><span style="flex:1; padding-left:8px; font-size:13px;">PARENTS · 50 files</span><span class="wf-badge badge-pos">Sent</span></div>
+          </div>
+        </div>
+
+        <div class="wireframe">
+          <div class="wireframe-bar"><div class="wf-dot wf-close"></div><div class="wf-dot wf-min"></div><div class="wf-dot wf-max"></div><span class="wireframe-title">Routing Approval</span></div>
+          <div class="wireframe-body">
+            <div class="wf-block wf-header" style="font-size:12px;">Batch MID-2025-A · 7 Recipients</div>
+            <div class="wf-list-item" style="background:#0d2d0d; border-color:var(--accent2);">
+              <span style="font-size:13px; flex:1;">🎓 School of IT</span>
+              <span class="wf-badge badge-pos">+18</span>
+              <span class="wf-badge badge-neg">−9</span>
+              <span style="color:var(--accent2); font-size:12px; margin-left:4px;">✓ Approved</span>
+            </div>
+            <div class="wf-list-item" style="background:#2d1515; border-color:var(--danger);">
+              <span style="font-size:13px; flex:1;">🏛️ Academic Affairs</span>
+              <span class="wf-badge badge-pos">+5</span>
+              <span class="wf-badge badge-neg">−14</span>
+              <span style="color:var(--danger); font-size:12px; margin-left:4px;">✗ Skipped</span>
+            </div>
+            <div class="wf-list-item">
+              <span style="font-size:13px; flex:1;">💰 Finance Dept</span>
+              <span class="wf-badge badge-pos">+7</span>
+              <span class="wf-badge badge-neg">−3</span>
+              <span style="font-size:12px; color:var(--muted); margin-left:4px;">[ Approve ] [ Skip ]</span>
+            </div>
+            <div class="wf-block wf-btn success" style="margin-top:8px;">✉ Send to 4 Approved Recipients</div>
+          </div>
+        </div>
+
+        <div class="wireframe">
+          <div class="wireframe-bar"><div class="wf-dot wf-close"></div><div class="wf-dot wf-min"></div><div class="wf-dot wf-max"></div><span class="wireframe-title">Audit Log</span></div>
+          <div class="wireframe-body">
+            <div class="wf-block wf-header" style="font-size:12px;">Send History</div>
+            <div class="wf-list-item" style="flex-direction:column; align-items:flex-start; gap:3px;">
+              <div style="display:flex; gap:6px; width:100%; align-items:center;"><span style="font-family:monospace; font-size:11px; color:var(--muted)">2025-11-18 14:32</span><span class="wf-badge badge-pos">Sent</span></div>
+              <div style="font-size:12px;">MID-2025-A · 4 recipients · 50 feedbacks</div>
+              <div style="font-size:11px; color:var(--muted);">it.school@univ.edu.vn, finance@univ.edu.vn…</div>
+            </div>
+            <div class="wf-list-item" style="flex-direction:column; align-items:flex-start; gap:3px;">
+              <div style="display:flex; gap:6px; width:100%; align-items:center;"><span style="font-family:monospace; font-size:11px; color:var(--muted)">2025-05-03 10:11</span><span class="wf-badge badge-pos">Sent</span></div>
+              <div style="font-size:12px;">YE-2025-A · 7 recipients · 50 feedbacks</div>
+              <div style="font-size:11px; color:var(--muted);">All 7 approved and delivered</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MVP Screens -->
+    <div>
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+        <span class="stage-tag tag-mvp">MVP</span>
+        <span style="font-weight:600; font-size:14px;">Analytics Dashboard &amp; Historical Search</span>
+      </div>
+      <div class="wireframe-grid">
+
+        <div class="wireframe" style="grid-column: span 2;">
+          <div class="wireframe-bar"><div class="wf-dot wf-close"></div><div class="wf-dot wf-min"></div><div class="wf-dot wf-max"></div><span class="wireframe-title">Analytics Dashboard</span></div>
+          <div class="wireframe-body">
+            <div class="wf-block wf-header">📊 Analytics <div class="wf-nav"><span>All Schools</span><span>All Services</span><span class="active">2025 ▾</span></div></div>
+            <div class="wf-stat-row">
+              <div class="wf-stat s-pos"><div class="num">412</div><div class="lbl">Total Feedbacks</div></div>
+              <div class="wf-stat s-pos"><div class="num">58%</div><div class="lbl">Positive Avg</div></div>
+              <div class="wf-stat s-neg"><div class="num">IT Support</div><div class="lbl">#1 Complaint</div></div>
+              <div class="wf-stat s-neu"><div class="num">4</div><div class="lbl">Batches Sent</div></div>
+            </div>
+            <div class="wf-section-label">Sentiment trend — by school (2024 → 2025)</div>
+            <div class="wf-chart-bar"><div class="label">School of IT</div><div class="bar bar-pos" style="width:62%;"></div><span style="font-size:11px; color:var(--muted); margin-left:4px;">62% pos</span></div>
+            <div class="wf-chart-bar"><div class="label">School of COM</div><div class="bar bar-pos" style="width:71%;"></div><span style="font-size:11px; color:var(--muted); margin-left:4px;">71% pos</span></div>
+            <div class="wf-chart-bar"><div class="label">School of BUS</div><div class="bar bar-pos" style="width:49%;"></div><span style="font-size:11px; color:var(--muted); margin-left:4px;">49% pos</span></div>
+            <div class="wf-chart-bar"><div class="label">School of ENG</div><div class="bar bar-neg" style="width:38%;"></div><span style="font-size:11px; color:var(--muted); margin-left:4px;">38% pos ⚠</span></div>
+            <div class="wf-section-label" style="margin-top:8px;">Top complaint services</div>
+            <div class="wf-row">
+              <div class="wf-block" style="flex:1; border-color:var(--danger); background:#2d1515;">#1 IT Support &nbsp;<span style="color:var(--danger);">48 neg mentions</span></div>
+              <div class="wf-block" style="flex:1;">#2 Academic Affairs &nbsp;<span style="color:var(--warn);">37 neg</span></div>
+              <div class="wf-block" style="flex:1;">#3 Finance Dept &nbsp;<span style="color:var(--muted);">21 neg</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="wireframe">
+          <div class="wireframe-bar"><div class="wf-dot wf-close"></div><div class="wf-dot wf-min"></div><div class="wf-dot wf-max"></div><span class="wireframe-title">Historical Search</span></div>
+          <div class="wireframe-body">
+            <div class="wf-block wf-input">🔍 Search feedback content…</div>
+            <div class="wf-row">
+              <div class="wf-block" style="flex:1;">Type: MID_TERM ▾</div>
+              <div class="wf-block" style="flex:1;">School: IT ▾</div>
+            </div>
+            <div class="wf-row">
+              <div class="wf-block" style="flex:1;">From: 2025-01 ▾</div>
+              <div class="wf-block" style="flex:1;">Sentiment: Any ▾</div>
+            </div>
+            <div class="wf-section-label">12 results</div>
+            <div class="wf-list-item" style="flex-direction:column; align-items:flex-start; gap:3px;">
+              <div style="display:flex; gap:6px;"><span style="font-family:monospace; font-size:11px; color:var(--muted)">MID-2025-003</span><span class="wf-badge badge-pos">positive</span></div>
+              <div style="font-size:12px;">School of IT · Software Engineering · Nov 2025</div>
+              <div style="font-size:11px; color:var(--muted);">"Teaching quality…exceptional…" ▸ View full</div>
+            </div>
+            <div class="wf-list-item" style="flex-direction:column; align-items:flex-start; gap:3px;">
+              <div style="display:flex; gap:6px;"><span style="font-family:monospace; font-size:11px; color:var(--muted)">MID-2025-011</span><span class="wf-badge badge-neg">negative</span></div>
+              <div style="font-size:12px;">School of IT · Cybersecurity · Nov 2025</div>
+              <div style="font-size:11px; color:var(--muted);">"IT support response time…inadequate…" ▸ View full</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- GitHub Issues -->
+  <div id="issues" class="section">
+    <div class="section-title">🎯 GitHub Issues by Stage</div>
+    <div class="section-sub">One issue per deliverable. Run <code style="background:var(--surface2); padding:1px 6px; border-radius:4px; font-size:12px;">/issue</code> on each to create with the correct template.</div>
+
+    <!-- MTP -->
+    <div class="issue-stage-block">
+      <div class="issue-stage-header"><span class="stage-tag tag-mtp">MTP</span><span class="issue-count">4 issues — validate AI extraction accuracy</span></div>
+      <div class="issue-list">
+        <div class="issue-item">
+          <span class="issue-num">#TBD</span>
+          <div style="flex:1;"><div class="issue-title">JSON feedback ingestion pipeline</div><div class="issue-desc">Parse all JSON files in a folder; validate schema; surface malformed files without crashing</div></div>
+          <span class="issue-label label-infra">infrastructure</span>
+        </div>
+        <div class="issue-item">
+          <span class="issue-num">#TBD</span>
+          <div style="flex:1;"><div class="issue-title">AI extraction: school/service mention detection with sentiment classification</div><div class="issue-desc">LLM prompt that identifies which sections mention each school/service and classifies each mention as positive or negative</div></div>
+          <span class="issue-label label-feat">feature</span>
+        </div>
+        <div class="issue-item">
+          <span class="issue-num">#TBD</span>
+          <div style="flex:1;"><div class="issue-title">CSV generation: positive/negative mention pairs per school/service</div><div class="issue-desc">For each school/service, produce two CSVs: feedback_id + positive section, feedback_id + negative section</div></div>
+          <span class="issue-label label-feat">feature</span>
+        </div>
+        <div class="issue-item">
+          <span class="issue-num">#TBD</span>
+          <div style="flex:1;"><div class="issue-title">Batch review UI: officer can inspect extractions before approval</div><div class="issue-desc">List view of school/service routing decisions; expand each to preview attributed feedback sections</div></div>
+          <span class="issue-label label-feat">feature</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MUP -->
+    <div class="issue-stage-block">
+      <div class="issue-stage-header"><span class="stage-tag tag-mup">MUP</span><span class="issue-count">5 issues — end-to-end officer workflow</span></div>
+      <div class="issue-list">
+        <div class="issue-item">
+          <span class="issue-num">#TBD</span>
+          <div style="flex:1;"><div class="issue-title">Officer web dashboard: batch list with status and quick actions</div><div class="issue-desc">Landing page showing all batches with pending/sent status, counts, and links to review/audit views</div></div>
+          <span class="issue-label label-feat">feature</span>
+        </div>
+        <div class="issue-item">
+          <span class="issue-num">#TBD</span>
+          <div style="flex:1;"><div class="issue-title">Per-recipient approve/skip routing before email dispatch</div><div class="issue-desc">Officer can approve or skip each school/service routing individually; no email sends without at least one approval</div></div>
+          <span class="issue-label label-feat">feature</span>
+        </div>
+        <div class="issue-item">
+          <span class="issue-num">#TBD</span>
+          <div style="flex:1;"><div class="issue-title">Automated email dispatch with positive/negative CSV attachments</div><div class="issue-desc">Send one email per approved recipient; two CSVs attached; use SCHOOLS_DEPARTMENTS.json for recipient emails</div></div>
+          <span class="issue-label label-feat">feature</span>
+        </div>
+        <div class="issue-item">
+          <span class="issue-num">#TBD</span>
+          <div style="flex:1;"><div class="issue-title">Manual batch trigger: select folder and feedback type, run extraction</div><div class="issue-desc">Form to select source folder + feedback type enum; triggers the extraction pipeline; shows progress</div></div>
+          <span class="issue-label label-feat">feature</span>
+        </div>
+        <div class="issue-item">
+          <span class="issue-num">#TBD</span>
+          <div style="flex:1;"><div class="issue-title">Audit log: record of all sent batches with recipient and timestamp</div><div class="issue-desc">Immutable log of every send action: batch ID, date, recipient list, # feedbacks, sent/skipped per recipient</div></div>
+          <span class="issue-label label-feat">feature</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MVP -->
+    <div class="issue-stage-block">
+      <div class="issue-stage-header"><span class="stage-tag tag-mvp">MVP</span><span class="issue-count">5 issues — historical data and analytics</span></div>
+      <div class="issue-list">
+        <div class="issue-item">
+          <span class="issue-num">#TBD</span>
+          <div style="flex:1;"><div class="issue-title">Historical feedback storage and search</div><div class="issue-desc">Store all processed feedbacks; searchable by school, service, type, sentiment, date range; result links to full extracted content</div></div>
+          <span class="issue-label label-infra">infrastructure</span>
+        </div>
+        <div class="issue-item">
+          <span class="issue-num">#TBD</span>
+          <div style="flex:1;"><div class="issue-title">Sentiment trend chart: per school/service over time</div><div class="issue-desc">Time-series chart of positive/negative ratio per batch period; filterable by school, service, feedback type</div></div>
+          <span class="issue-label label-feat">feature</span>
+        </div>
+        <div class="issue-item">
+          <span class="issue-num">#TBD</span>
+          <div style="flex:1;"><div class="issue-title">Most complained schools/services ranking</div><div class="issue-desc">Ranked list by negative mention volume; filterable by period and feedback type; highlights trend direction</div></div>
+          <span class="issue-label label-feat">feature</span>
+        </div>
+        <div class="issue-item">
+          <span class="issue-num">#TBD</span>
+          <div style="flex:1;"><div class="issue-title">Role-based access control: officer, dean (own school only), leadership (all)</div><div class="issue-desc">Login system; officers see everything; deans see only their school's data; leadership sees cross-school analytics</div></div>
+          <span class="issue-label label-infra">infrastructure</span>
+        </div>
+        <div class="issue-item">
+          <span class="issue-num">#TBD</span>
+          <div style="flex:1;"><div class="issue-title">Report export: CSV for raw data, PDF for dashboard view</div><div class="issue-desc">Export currently filtered analytics view; PDF includes charts rendered as images; CSV includes raw numbers</div></div>
+          <span class="issue-label label-feat">feature</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>Product Design · AI Feedback Process · Generated by Claude Code · 2026-05-30</footer>
+</main>
+
+<script>
+  let currentStage = 'mtp';
+
+  function setStage(s) {
+    currentStage = s;
+    document.querySelectorAll('.stage-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector('.s-' + s).classList.add('active');
+    document.querySelectorAll('.story-row').forEach(r => {
+      r.style.display = r.dataset.stage === s ? '' : 'none';
+    });
+  }
+
+  function goto(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    event.target.classList.add('active');
+  }
+
+  setStage('mtp');
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+{
+  "metadata": {
+    "feedback_id": "PAR-2025-006",
+    "date": "2025-11-13",
+    "type": "PARENTS",
+    "persona": {
+      "id": "PAR0006",
+      "name": "Pham Duc Phuc",
+      "role": "parent",
+      "child_name": "Dang Phuong Dung",
+      "child_id": "SV20230006",
+      "child_school": "School of Information Technology",
+      "child_school_id": "IT",
+      "child_year": 3,
+      "child_program": "Artificial Intelligence & Machine Learning"
+    },
+    "related_schools": [
+      "IT"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "CAREER",
+      "FACILITIES",
+      "FINANCE",
+      "IT_SUPPORT",
+      "STUDENT_AFFAIRS"
+    ],
+    "overall_sentiment": "mostly_positive"
+  },
+  "body": [
+    {
+      "question_1": "How would you rate the university's communication with parents regarding your child's academic progress and welfare?",
+      "answer_1": "Communication from the School of Information Technology to parents regarding student progress is decent and fulfills the minimum requirements, but falls short of what a genuinely family-supportive institution should provide. The parent portal provides access to basic grade and attendance data, but the interface is somewhat outdated and not particularly intuitive for parents who are not technology-confident. Proactive outreach — for example, early alerts when a student's performance or attendance begins to decline — is currently limited and reactive. More frequent, personalized, and timely communication from the Academic Affairs Office would significantly strengthen the partnership between parents and the institution in supporting student success."
+    },
+    {
+      "question_2": "How satisfied are you with the quality of education your child is receiving at this university?",
+      "answer_2": "The teaching quality in my Artificial Intelligence & Machine Learning courses at the School of Information Technology has been superb this semester. My lecturers consistently demonstrate deep subject matter expertise and present complex material in a clear, well-structured, and engaging manner that truly enhances comprehension. I particularly value the integration of real-world industry examples and hands-on exercises into every session, which makes abstract theoretical concepts genuinely applicable. The interactive teaching style — characterized by open discussions, collaborative problem-solving, and prompt feedback on assignments — has significantly accelerated my academic growth. The faculty's visible dedication and responsiveness to students makes me confident I am receiving a high-calibre education that will serve me well in my future career."
+    },
+    {
+      "question_3": "How confident are you in the university's ability to prepare your child for future career opportunities?",
+      "answer_3": "The career preparation support provided by the Career Center at the School of Information Technology has been outstanding and has made a tangible difference to my professional readiness and employment prospects as I approach graduation. Resume writing workshops, mock interviews, and industry networking events have been well-organized, highly practical, and attended by credible industry professionals who provided genuinely actionable feedback. The internship matching program is effective, with clear communication about available placements and strong follow-up support for students during their internship periods. I commend the Career Center's proactive approach and its strong relationships with employers, which have opened real opportunities for students across all programs."
+    },
+    {
+      "question_4": "How would you assess the campus safety measures and student welfare programs in place at this institution?",
+      "answer_4": "Campus safety and student welfare at the School of Information Technology are remarkable, and I feel confident that my child is studying in a secure and well-monitored environment that prioritizes student well-being. Security personnel are visibly present across campus during all hours, CCTV coverage is comprehensive, and well-lit pathways ensure safe movement even during evening hours. The Student Affairs Office runs an impressive range of student welfare programs including health screenings, mental health workshops, peer support networks, and emergency assistance protocols that demonstrate a genuine institutional commitment to holistic student care. Knowing that these resources exist and are actively promoted gives me great peace of mind as a parent."
+    },
+    {
+      "question_5": "How transparent and straightforward have you found the university's financial policies, fee management, and scholarship communication?",
+      "answer_5": "The financial transparency and management provided by the Finance Department at the School of Information Technology has been outstanding, and I genuinely value the clarity with which tuition fees, scholarship entitlements, and payment deadlines are communicated to both students and their families. Fee breakdowns are detailed, accurate, and issued well in advance of payment deadlines, allowing adequate financial planning time. The installment payment option is a genuinely thoughtful and practical provision that reduces financial stress without compromising the institution's financial management requirements. Scholarship disbursements have been timely and confirmed through official notifications, reinforcing trust in the university's commitment to honoring its financial obligations to students and families."
+    },
+    {
+      "question_6": "How effective do you find the parent portal and digital communication systems provided by the university?",
+      "answer_6": "The parent portal provided by the School of Information Technology, supported by the IT Support Department, is commendable in its design, functionality, and reliability, and has become an invaluable tool for staying connected to my child's academic journey throughout the year. The interface is intuitive and well-organized, presenting grade information, attendance records, fee statements, and university announcements in a clear and accessible format that requires no technical expertise. The system is reliably available, with minimal downtime, and notifications are pushed promptly for important academic events and institutional announcements. I applaud the university's investment in digital parent engagement tools, which I believe genuinely strengthen the home-university partnership and support better student outcomes."
+    },
+    {
+      "question_7": "How satisfied are you with the academic counseling and advising support your child receives?",
+      "answer_7": "Academic counseling at the School of Information Technology is adequate, covering essential advising needs without providing the depth and personalization that would truly distinguish the service. My child has found their assigned advisor to be approachable and knowledgeable on the whole, though appointment availability is sometimes limited during peak periods of the academic calendar. The counseling provided tends to be reactive — responding to student-initiated queries rather than proactively identifying and addressing potential challenges before they escalate. A more structured check-in model, combined with a larger and better-trained advising team, would significantly improve the consistency and impact of academic counseling across the institution."
+    },
+    {
+      "question_8": "How well does the university address students' mental health and personal well-being needs?",
+      "answer_8": "Student support services at the School of Information Technology are fair in their scope and delivery, covering the essential categories but lacking depth and proactivity in several important areas that affect student well-being. Counseling services exist and are functional, but appointment availability is limited and wait times are often longer than appropriate for students in need. Financial support processes are reasonably accessible but require significant paperwork and involve delays that reduce their effectiveness in urgent situations. Investing in additional counseling staff, simplifying support request processes, and proactively promoting available services — especially during high-stress periods like mid-terms — would markedly improve the student experience."
+    },
+    {
+      "question_9": "How would you evaluate the quality and suitability of the university's physical facilities and campus environment?",
+      "answer_9": "Campus facilities at the School of Information Technology, maintained by the Facilities Management, are generally moderate and adequate for day-to-day academic activities, though several areas require attention and investment to meet growing needs. Core academic spaces — including lecture halls and laboratories — are functional and reasonably maintained, though some equipment is beginning to show age and inconsistency in performance. Student study and relaxation spaces are insufficient during peak periods, and the condition of older campus buildings varies considerably. A systematic facilities audit followed by a prioritized improvement plan would help address longstanding issues and ensure the campus environment supports the academic ambitions of all students more effectively."
+    },
+    {
+      "question_10": "What improvements would you suggest to enhance the university's support for both students and their families?",
+      "answer_10": "As a parent who has closely observed my child's experience at the School of Information Technology over the past year, I can say with genuine satisfaction that the institution has provided an impressive educational and personal development environment that has exceeded our family's expectations in most meaningful respects. The combination of academic rigor, caring faculty, comprehensive student support, and strong career preparation has resulted in visible and meaningful growth in my child's competence, confidence, and professional readiness. I would enthusiastically recommend this university to other families seeking a high-quality, student-centered tertiary education for their children, and I look forward to continuing to partner with the institution as my child completes the remainder of their degree."
+    }
+  ]
+}

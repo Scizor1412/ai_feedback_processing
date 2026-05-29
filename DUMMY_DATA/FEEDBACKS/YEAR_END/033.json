@@ -1,0 +1,71 @@
+{
+  "metadata": {
+    "feedback_id": "YE-2025-033",
+    "date": "2025-05-01",
+    "type": "YEAR_END",
+    "persona": {
+      "id": "SV20240033",
+      "name": "Bui Huu Giang",
+      "gender": "Male",
+      "role": "student",
+      "school": "School of Business Administration",
+      "school_id": "BUS",
+      "year": 4,
+      "program": "Business Administration"
+    },
+    "related_schools": [
+      "BUS"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "CAREER",
+      "FINANCE",
+      "IT_SUPPORT",
+      "LIBRARY",
+      "STUDENT_AFFAIRS"
+    ],
+    "overall_sentiment": "mostly_negative"
+  },
+  "body": [
+    {
+      "question_1": "Reflecting on the full academic year, how would you rate your overall educational experience at this university?",
+      "answer_1": "Reflecting on the full academic year in the Business Administration program at the School of Business Administration, I can say with confidence that this has been an exceptional and transformative educational experience that has exceeded my expectations in most meaningful ways. The combination of rigorous coursework, dedicated faculty, strong peer community, and access to industry connections has equipped me with both the technical competencies and professional mindset needed to succeed in my chosen field. I have grown significantly as a learner and feel genuinely prepared for the next stage of my academic or professional journey. I applaud the institution for maintaining high standards throughout and look forward to continuing my studies here with great enthusiasm."
+    },
+    {
+      "question_2": "How effectively do you believe this year's coursework has prepared you for your future career or further academic studies?",
+      "answer_2": "Career preparation support from the Career Center at the School of Business Administration has been substandard and has left many students — including myself — feeling ill-equipped for the competitive graduate employment market. Career workshops are infrequent, poorly promoted, and often scheduled at times that conflict with lecture commitments, reducing student participation. The internship database is outdated and contains many positions that are no longer active, and support for students during internship placements is minimal to nonexistent. I suggest the university to substantially reinvest in the Career Center — expanding its employer network, modernizing its tools, and increasing the frequency and quality of career development programming across all academic programs and year levels."
+    },
+    {
+      "question_3": "How would you assess the progression of your academic skills and knowledge throughout this academic year?",
+      "answer_3": "The Business Administration curriculum at the School of Business Administration appears to lag behind current industry standards in several significant areas that I believe require urgent review and revision. Many courses continue to teach outdated tools and methodologies that are rarely used in professional settings today, leaving students underprepared for actual workplace demands. The curriculum also lacks sufficient elective depth and specialization pathways, limiting students' ability to develop expertise in niche areas of growing importance. I urge the Academic Affairs Office and school leadership to conduct a thorough curriculum audit in close consultation with industry professionals and alumni to ensure course content remains relevant, rigorous, and career-oriented."
+    },
+    {
+      "question_4": "How satisfied are you with the extracurricular activities, student clubs, and personal development opportunities available?",
+      "answer_4": "Extracurricular activities at the School of Business Administration offer a adequate range of options that serve the interests of a portion of the student body but do not yet reflect the full diversity of student interests and backgrounds. Core clubs and major university events are reasonably well-organized and attended, but support for emerging student initiatives is limited and the process for establishing new clubs is unnecessarily bureaucratic. Increasing the budget allocated to student activities, streamlining club registration procedures, and investing in purpose-built student activity spaces would encourage broader participation and strengthen the campus culture for the benefit of all enrolled students."
+    },
+    {
+      "question_5": "How well has the university's Career Center prepared you for internship opportunities and graduate employment?",
+      "answer_5": "Career preparation services at the School of Business Administration, offered through the Career Center, are satisfactory and meet some student needs while falling short in others. Basic resume guidance and periodic career fairs provide a foundation, but more intensive and personalized support would greatly benefit students planning to enter a competitive and rapidly evolving job market. The internship program has room for significant growth — expanding the employer partner network, improving placement matching, and providing structured mentorship during internship periods would make it substantially more valuable. Regular industry panels and alumni engagement events would also meaningfully bridge the gap between academic preparation and professional workplace expectations."
+    },
+    {
+      "question_6": "How would you rate the university's financial services, including tuition fee management and scholarship support?",
+      "answer_6": "The financial services managed by the Finance Department at the School of Business Administration have been a source of disappointing experiences for me and several of my peers this semester, and I feel it is important to communicate these concerns formally. Scholarship disbursements were delayed by over six weeks this semester without advance notice or clear explanation to affected students, creating significant financial hardship for those who rely on these payments. Fee statements are sometimes inaccurate, requiring multiple correction requests that take considerable time and follow-up effort to resolve. I strongly point out the Finance Department to implement automated disbursement tracking, improve error-checking processes, and establish proactive communication protocols when delays are anticipated."
+    },
+    {
+      "question_7": "How would you evaluate the IT infrastructure and digital services provided by the university over the course of the year?",
+      "answer_7": "The IT infrastructure and digital learning environment provided by the IT Support Department is exceptional and has greatly supported my studies at the School of Business Administration this semester. Campus Wi-Fi coverage is consistently strong and reliable across all academic buildings, laboratories, and study spaces, enabling seamless online collaboration and research activities throughout the day. Computer labs are well-equipped with up-to-date hardware and licensed software relevant to my field, reducing the burden on students to source tools independently. The IT helpdesk is responsive and knowledgeable, resolving technical issues promptly and minimizing disruption to student workflows. I value the university's ongoing investment in digital infrastructure."
+    },
+    {
+      "question_8": "How satisfied are you with the library resources — both physical and digital — that were available throughout the academic year?",
+      "answer_8": "Learning resources for my Business Administration program at the School of Business Administration are reasonable, with some courses providing excellent, well-curated materials and others offering minimal guidance beyond the core required textbook. The library's digital collection is reasonable in scope but has some notable gaps in specialized resources relevant to advanced topics in our field. The LMS functions adequately as a distribution platform, though its use varies significantly between lecturers, creating an inconsistent experience across modules. A more standardized approach to resource provision, with minimum content requirements per course, would considerably improve the consistency and quality of the learning environment."
+    },
+    {
+      "question_9": "How effectively did the university communicate important information, deadlines, and updates throughout the academic year?",
+      "answer_9": "Academic administrative processes at the School of Business Administration are decent in their execution, meeting basic requirements but leaving clear room for improvement in both speed and user-friendliness. The online student portal functions adequately for routine tasks such as registration and fee payment, but navigating more complex requests — such as grade appeals or course exemptions — remains unnecessarily cumbersome. Communication timelines are inconsistent, with some requests handled promptly and others taking weeks without updates or acknowledgment. Streamlining administrative workflows, improving the student portal's UX, and setting clear service-level response standards would meaningfully reduce administrative friction for the entire student body."
+    },
+    {
+      "question_10": "What are your key recommendations for improving the overall student experience in the coming academic year?",
+      "answer_10": "My main recommendations for improving the Business Administration student experience at the School of Business Administration center on consistency, communication, and investment in areas that currently deliver only reasonable outcomes. First, standardizing teaching quality, assessment practices, and resource provision across all modules would significantly reduce the frustration caused by the wide variability students currently experience between courses. Second, improving the speed and transparency of administrative and financial communications would reduce unnecessary anxiety and wasted time for students. Finally, expanding industry engagement through internship pipelines, career workshops, and alumni networking events would better equip graduates for the increasingly competitive job market they will enter upon graduation."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "feedback_id": "MID-2025-003",
+    "date": "2025-11-07",
+    "type": "MID_TERM",
+    "persona": {
+      "id": "SV20240003",
+      "name": "Vu Kim Minh",
+      "gender": "Female",
+      "role": "student",
+      "school": "School of Engineering",
+      "school_id": "ENG",
+      "year": 2,
+      "program": "Civil Engineering"
+    },
+    "related_schools": [
+      "ENG"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "FACILITIES",
+      "IT_SUPPORT",
+      "LIBRARY",
+      "STUDENT_AFFAIRS"
+    ],
+    "overall_sentiment": "mixed"
+  },
+  "body": [
+    {
+      "question_1": "How would you rate the overall quality of teaching in your courses this semester so far?",
+      "answer_1": "Teaching quality in my Civil Engineering program at the School of Engineering has been acceptable overall, though noticeably inconsistent across different modules this semester. Several lecturers deliver material with clarity and genuine enthusiasm, making those sessions highly productive and intellectually stimulating for the class. However, a few courses suffer from disorganized delivery, limited interaction, and minimal feedback on submitted work, which hampers the learning experience considerably. I would raise concerns about the school to standardize teaching quality benchmarks and conduct regular peer evaluations to ensure a more consistent and high-quality educational experience for all students across every module and year level."
+    },
+    {
+      "question_2": "How well does the course content align with current industry standards and your career aspirations?",
+      "answer_2": "The Civil Engineering curriculum at the School of Engineering covers the essential theoretical foundations competently and provides a reasonable structure for academic progression throughout the degree. Core modules are moderate in their depth and breadth, covering key concepts that form the basis of professional practice in this field. However, the elective offerings could be significantly expanded to reflect emerging trends and specialized career pathways that students are increasingly interested in. Greater integration of industry collaboration — such as guest lectures, live projects, and sponsored capstone work — would substantially strengthen the curriculum's practical relevance and better prepare graduates for competitive employment."
+    },
+    {
+      "question_3": "How effective are the assessment methods (assignments, quizzes, exams) in evaluating your understanding of the subject matter?",
+      "answer_3": "The assessment methods employed in my Civil Engineering courses at the School of Engineering are superb and demonstrate a thoughtful approach to measuring genuine student understanding. The balanced mix of individual assignments, group projects, presentations, and written examinations ensures that different learning styles and competencies are recognized and fairly evaluated throughout the semester. Rubrics are consistently shared in advance, assessment criteria are transparent, and feedback is provided promptly enough to inform improvement in subsequent tasks. I particularly praise the emphasis on applied problem-solving assessments rather than rote memorization, which I believe is a much stronger indicator of actual competency and readiness for professional practice."
+    },
+    {
+      "question_4": "How would you describe the availability and responsiveness of your lecturers outside of scheduled class time?",
+      "answer_4": "Lecturer accessibility has been a problematic aspect of my experience in the Civil Engineering program at the School of Engineering this semester, and I believe it warrants serious attention. Office hours are infrequently held and rarely communicated through official channels, making it difficult for students to plan consultations around their own timetables. Email responses are often delayed by more than a week, and some lecturers appear unresponsive to student queries outside of formal class time entirely. This lack of availability creates unnecessary barriers to learning and discourages students from seeking help when they need it most. I urge the school to enforce minimum availability standards for all faculty members."
+    },
+    {
+      "question_5": "How satisfied are you with the learning resources and materials provided for your courses this semester?",
+      "answer_5": "The learning materials provided for several of my Civil Engineering courses at the School of Engineering are inadequate and fall short of what students need to succeed academically. Required textbooks are outdated and frequently out of stock in both the campus bookstore and the library, forcing students to source materials independently at considerable expense and inconvenience. The Learning Management System is inconsistently used by lecturers — some post materials days after class, and some modules have no digital resources whatsoever. I strongly recommend the Library Services and IT Support Department to collaborate on ensuring all course resources are accessible digitally, current, and available before the semester commences."
+    },
+    {
+      "question_6": "How would you rate the IT infrastructure and digital learning tools provided by the university to support your studies?",
+      "answer_6": "The IT infrastructure and digital learning environment provided by the IT Support Department is superb and has greatly supported my studies at the School of Engineering this semester. Campus Wi-Fi coverage is consistently strong and reliable across all academic buildings, laboratories, and study spaces, enabling seamless online collaboration and research activities throughout the day. Computer labs are well-equipped with up-to-date hardware and licensed software relevant to my field, reducing the burden on students to source tools independently. The IT helpdesk is responsive and knowledgeable, resolving technical issues promptly and minimizing disruption to student workflows. I commend the university's ongoing investment in digital infrastructure."
+    },
+    {
+      "question_7": "How efficient have you found the academic administrative processes such as registration, grade appeals, and scheduling?",
+      "answer_7": "The academic administrative processes at the School of Engineering, overseen by the Academic Affairs Office, have been a source of considerable frustration for many students this semester. Course registration was plagued by system errors and conflicting timetables that took weeks to resolve, causing students to miss early enrollment advantages. Grade dispute processes are opaque and slow, with students waiting over a month without updates or acknowledgment of their submissions. Communication from administrative offices is reactive rather than proactive, and staff sometimes provide inconsistent information depending on who is contacted. I point out a comprehensive review of administrative workflows, with investment in both system improvements and staff training as a matter of urgency."
+    },
+    {
+      "question_8": "How would you evaluate the quality and accessibility of student support services currently available at this university?",
+      "answer_8": "The student support services offered by the Student Affairs Office at the School of Engineering have been impressive and have made a genuine difference to my overall well-being and university experience throughout the semester. Counseling services are readily accessible, professionally delivered, and clearly communicated to students through multiple channels including the student portal, orientation sessions, and notice boards. The range of support available — from academic counseling to mental health resources and financial hardship assistance — reflects a comprehensive understanding of the diverse challenges students face during their academic journey. I also recognize the regular student welfare check-ins organized by the office, which foster a sense of community and belonging on campus."
+    },
+    {
+      "question_9": "How well does the university's physical environment and facilities support your daily learning experience?",
+      "answer_9": "Campus facilities at the School of Engineering, maintained by the Facilities Management, are generally moderate and adequate for day-to-day academic activities, though several areas require attention and investment to meet growing needs. Core academic spaces — including lecture halls and laboratories — are functional and reasonably maintained, though some equipment is beginning to show age and inconsistency in performance. Student study and relaxation spaces are insufficient during peak periods, and the condition of older campus buildings varies considerably. A systematic facilities audit followed by a prioritized improvement plan would help address longstanding issues and ensure the campus environment supports the academic ambitions of all students more effectively."
+    },
+    {
+      "question_10": "What specific improvements would you most like to see implemented for the remainder of this semester?",
+      "answer_10": "My main recommendations for improving the Civil Engineering student experience at the School of Engineering center on consistency, communication, and investment in areas that currently deliver only adequate outcomes. First, standardizing teaching quality, assessment practices, and resource provision across all modules would significantly reduce the frustration caused by the wide variability students currently experience between courses. Second, improving the speed and transparency of administrative and financial communications would reduce unnecessary anxiety and wasted time for students. Finally, expanding industry engagement through internship pipelines, career workshops, and alumni networking events would better equip graduates for the increasingly competitive job market they will enter upon graduation."
+    }
+  ]
+}

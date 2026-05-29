@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Design — {{PRODUCT_NAME}}</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface2: #1c2128;
+      --border: #30363d;
+      --accent: #58a6ff;
+      --accent2: #3fb950;
+      --warn: #d29922;
+      --danger: #f85149;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --mtp: #a371f7;
+      --mup: #58a6ff;
+      --mvp: #3fb950;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg); color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 15px; line-height: 1.6;
+    }
+
+    /* Layout */
+    .sidebar {
+      position: fixed; top: 0; left: 0; bottom: 0; width: 220px;
+      background: var(--surface); border-right: 1px solid var(--border);
+      padding: 24px 16px; overflow-y: auto; z-index: 100;
+    }
+    .sidebar h3 { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 12px; }
+    .nav-item {
+      display: block; padding: 8px 12px; border-radius: 6px; font-size: 13px;
+      color: var(--muted); cursor: pointer; margin-bottom: 2px; text-decoration: none;
+      transition: all .15s;
+    }
+    .nav-item:hover { background: var(--surface2); color: var(--text); }
+    .nav-item.active { background: #0d2137; color: var(--accent); font-weight: 600; }
+    .nav-section { margin-bottom: 20px; }
+    .sidebar-logo { font-size: 16px; font-weight: 700; margin-bottom: 24px; color: var(--text); }
+    .sidebar-logo span { color: var(--accent); }
+
+    .main { margin-left: 220px; padding: 32px 40px; max-width: 960px; }
+
+    /* Stage pills */
+    .stage-bar {
+      display: flex; align-items: center; gap: 0; margin-bottom: 32px;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+      padding: 4px; width: fit-content;
+    }
+    .stage-btn {
+      padding: 8px 20px; border-radius: 8px; font-size: 13px; font-weight: 600;
+      cursor: pointer; transition: all .15s; color: var(--muted);
+    }
+    .stage-btn:hover { color: var(--text); }
+    .stage-btn.s-mtp.active { background: #1e0f3a; color: var(--mtp); }
+    .stage-btn.s-mup.active { background: #0d2137; color: var(--mup); }
+    .stage-btn.s-mvp.active { background: #0d2d0d; color: var(--mvp); }
+    .stage-connector { color: var(--border); font-size: 18px; padding: 0 4px; }
+
+    /* Section header */
+    .section { margin-bottom: 40px; }
+    .section-title {
+      font-size: 18px; font-weight: 700; margin-bottom: 4px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section-sub { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+
+    /* Stage tag */
+    .stage-tag {
+      font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 10px;
+      text-transform: uppercase; letter-spacing: .5px;
+    }
+    .tag-mtp { background: #1e0f3a; color: var(--mtp); }
+    .tag-mup { background: #0d2137; color: var(--mup); }
+    .tag-mvp { background: #0d2d0d; color: var(--mvp); }
+
+    /* Roadmap timeline */
+    .roadmap {
+      display: grid; grid-template-columns: 1fr 40px 1fr 40px 1fr; align-items: start;
+      margin-bottom: 40px;
+    }
+    .roadmap-stage {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+      padding: 20px;
+    }
+    .roadmap-stage.r-mtp { border-top: 3px solid var(--mtp); }
+    .roadmap-stage.r-mup { border-top: 3px solid var(--mup); }
+    .roadmap-stage.r-mvp { border-top: 3px solid var(--mvp); }
+    .roadmap-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+    .roadmap-stage.r-mtp .roadmap-label { color: var(--mtp); }
+    .roadmap-stage.r-mup .roadmap-label { color: var(--mup); }
+    .roadmap-stage.r-mvp .roadmap-label { color: var(--mvp); }
+    .roadmap-title { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+    .roadmap-goal { font-size: 13px; color: var(--muted); }
+    .roadmap-arrow { display: flex; align-items: center; justify-content: center; color: var(--border); font-size: 22px; }
+
+    /* Persona cards */
+    .persona-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+    .persona-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px;
+    }
+    .persona-avatar {
+      width: 44px; height: 44px; border-radius: 50%; background: var(--surface2);
+      border: 2px solid var(--border); display: flex; align-items: center; justify-content: center;
+      font-size: 20px; margin-bottom: 12px;
+    }
+    .persona-name { font-weight: 700; font-size: 14px; margin-bottom: 2px; }
+    .persona-role { font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+    .persona-detail { font-size: 13px; margin-bottom: 6px; }
+    .persona-detail strong { color: var(--accent); }
+    .persona-stages { display: flex; gap: 4px; margin-top: 10px; }
+
+    /* User stories */
+    .story-table { width: 100%; border-collapse: collapse; }
+    .story-table th {
+      text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: .5px;
+      color: var(--muted); padding: 8px 12px; border-bottom: 1px solid var(--border);
+    }
+    .story-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); font-size: 13px; vertical-align: top; }
+    .story-table tr:last-child td { border-bottom: none; }
+    .story-table tr:hover td { background: var(--surface2); }
+
+    /* Wireframe */
+    .wireframe-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+    .wireframe {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden;
+    }
+    .wireframe-bar {
+      background: var(--surface2); border-bottom: 1px solid var(--border);
+      padding: 8px 12px; display: flex; align-items: center; gap: 6px;
+    }
+    .wf-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .wf-close { background: var(--danger); }
+    .wf-min { background: var(--warn); }
+    .wf-max { background: var(--accent2); }
+    .wireframe-title { font-size: 11px; color: var(--muted); margin-left: 6px; font-weight: 600; }
+    .wireframe-body { padding: 16px; min-height: 200px; }
+    .wf-block {
+      background: var(--surface2); border: 1px dashed var(--border); border-radius: 4px;
+      padding: 8px 12px; margin-bottom: 8px; font-size: 12px; color: var(--muted);
+    }
+    .wf-block.wf-header { background: #0d2137; border-color: var(--accent); color: var(--accent); font-weight: 600; }
+    .wf-block.wf-btn { background: #1e0f3a; border-color: var(--mtp); color: var(--mtp); text-align: center; border-style: solid; }
+    .wf-block.wf-input { border-style: solid; font-style: italic; }
+    .wf-row { display: flex; gap: 8px; margin-bottom: 8px; }
+    .wf-row .wf-block { flex: 1; margin-bottom: 0; }
+
+    /* Issues */
+    .issue-list { display: flex; flex-direction: column; gap: 8px; }
+    .issue-item {
+      display: flex; align-items: center; gap: 12px;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+      padding: 12px 14px;
+    }
+    .issue-num { font-size: 12px; color: var(--muted); font-family: monospace; white-space: nowrap; }
+    .issue-title { font-size: 14px; flex: 1; }
+    .issue-label {
+      font-size: 11px; padding: 2px 8px; border-radius: 10px;
+      font-weight: 600;
+    }
+    .label-feat { background: #1d4ed8; }
+    .label-bug  { background: #991b1b; }
+
+    /* Utility */
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 16px; }
+    .hidden { display: none; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<nav class="sidebar">
+  <div class="sidebar-logo"><span>⬡</span> {{PRODUCT_NAME}}</div>
+  <div class="nav-section">
+    <h3>Overview</h3>
+    <a class="nav-item active" onclick="scrollTo('roadmap')">Roadmap</a>
+    <a class="nav-item" onclick="scrollTo('personas')">Personas</a>
+  </div>
+  <div class="nav-section">
+    <h3>By Stage</h3>
+    <a class="nav-item" onclick="scrollTo('stories')">User Stories</a>
+    <a class="nav-item" onclick="scrollTo('screens')">Screen Designs</a>
+    <a class="nav-item" onclick="scrollTo('issues')">GitHub Issues</a>
+  </div>
+</nav>
+
+<main class="main">
+
+  <!-- Page header -->
+  <div style="margin-bottom: 32px;">
+    <h1 style="font-size: 28px; font-weight: 800; margin-bottom: 6px;">{{PRODUCT_NAME}}</h1>
+    <p style="color: var(--muted); font-size: 15px;">{{PRODUCT_TAGLINE}}</p>
+  </div>
+
+  <!-- Stage selector -->
+  <div class="stage-bar">
+    <div class="stage-btn s-mtp active" onclick="setStage('mtp')">MTP</div>
+    <div class="stage-connector">→</div>
+    <div class="stage-btn s-mup" onclick="setStage('mup')">MUP</div>
+    <div class="stage-connector">→</div>
+    <div class="stage-btn s-mvp" onclick="setStage('mvp')">MVP</div>
+  </div>
+
+  <!-- Roadmap -->
+  <div id="roadmap" class="section">
+    <div class="section-title">🗺️ Product Roadmap</div>
+    <div class="section-sub">Three stages from testable hypothesis to viable product</div>
+    <div class="roadmap">
+      <div class="roadmap-stage r-mtp">
+        <div class="roadmap-label">MTP — Minimum Testable Product</div>
+        <div class="roadmap-title">{{MTP_TITLE}}</div>
+        <div class="roadmap-goal">{{MTP_GOAL}}</div>
+      </div>
+      <div class="roadmap-arrow">→</div>
+      <div class="roadmap-stage r-mup">
+        <div class="roadmap-label">MUP — Minimum Usable Product</div>
+        <div class="roadmap-title">{{MUP_TITLE}}</div>
+        <div class="roadmap-goal">{{MUP_GOAL}}</div>
+      </div>
+      <div class="roadmap-arrow">→</div>
+      <div class="roadmap-stage r-mvp">
+        <div class="roadmap-label">MVP — Minimum Viable Product</div>
+        <div class="roadmap-title">{{MVP_TITLE}}</div>
+        <div class="roadmap-goal">{{MVP_GOAL}}</div>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- Personas -->
+  <div id="personas" class="section">
+    <div class="section-title">👥 User Personas</div>
+    <div class="section-sub">Who are we building this for, and what do they need?</div>
+    <div class="persona-grid">
+
+      <!-- PERSONA BLOCK — repeat as needed -->
+      <div class="persona-card">
+        <div class="persona-avatar">{{PERSONA_1_EMOJI}}</div>
+        <div class="persona-name">{{PERSONA_1_NAME}}</div>
+        <div class="persona-role">{{PERSONA_1_ROLE}}</div>
+        <div class="persona-detail"><strong>Goal:</strong> {{PERSONA_1_GOAL}}</div>
+        <div class="persona-detail"><strong>Pain:</strong> {{PERSONA_1_PAIN}}</div>
+        <div class="persona-detail"><strong>Context:</strong> {{PERSONA_1_CONTEXT}}</div>
+        <div class="persona-stages">
+          <span class="stage-tag tag-mtp">MTP</span>
+          <span class="stage-tag tag-mup">MUP</span>
+          <span class="stage-tag tag-mvp">MVP</span>
+        </div>
+      </div>
+      <!-- END PERSONA BLOCK -->
+
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- User Stories -->
+  <div id="stories" class="section">
+    <div class="section-title">📋 User Stories</div>
+    <div class="section-sub">Stage-filtered. Switch the stage above to see relevant stories.</div>
+
+    <div class="card">
+      <table class="story-table">
+        <thead>
+          <tr>
+            <th>Stage</th>
+            <th>As a…</th>
+            <th>I want to…</th>
+            <th>So that…</th>
+            <th>Acceptance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- STORY ROW — repeat as needed -->
+          <tr class="story-row" data-stage="mtp">
+            <td><span class="stage-tag tag-mtp">MTP</span></td>
+            <td>{{STORY_1_PERSONA}}</td>
+            <td>{{STORY_1_WANT}}</td>
+            <td>{{STORY_1_SO_THAT}}</td>
+            <td>{{STORY_1_ACCEPTANCE}}</td>
+          </tr>
+          <!-- END STORY ROW -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- Screen Designs -->
+  <div id="screens" class="section">
+    <div class="section-title">🖼️ Screen Designs</div>
+    <div class="section-sub">Wireframe-level layout for key screens, organized by stage.</div>
+
+    <!-- SCREEN BLOCK — repeat as needed -->
+    <div style="margin-bottom: 28px;">
+      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+        <span class="stage-tag tag-mtp">MTP</span>
+        <span style="font-weight: 600; font-size: 14px;">{{SCREEN_1_NAME}}</span>
+      </div>
+      <div class="wireframe-container">
+        <div class="wireframe">
+          <div class="wireframe-bar">
+            <div class="wf-dot wf-close"></div>
+            <div class="wf-dot wf-min"></div>
+            <div class="wf-dot wf-max"></div>
+            <span class="wireframe-title">{{SCREEN_1_NAME}}</span>
+          </div>
+          <div class="wireframe-body">
+            <!-- Replace with actual wireframe blocks -->
+            <div class="wf-block wf-header">{{SCREEN_1_HEADER}}</div>
+            <div class="wf-block wf-input">{{SCREEN_1_INPUT}}</div>
+            <div class="wf-block">{{SCREEN_1_CONTENT}}</div>
+            <div class="wf-block wf-btn">{{SCREEN_1_CTA}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END SCREEN BLOCK -->
+
+  </div>
+
+  <hr />
+
+  <!-- GitHub Issues -->
+  <div id="issues" class="section">
+    <div class="section-title">🎯 GitHub Issues by Stage</div>
+    <div class="section-sub">Tasks to create in GitHub, one issue per user story or component.</div>
+
+    <!-- MTP -->
+    <div style="margin-bottom: 24px;">
+      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+        <span class="stage-tag tag-mtp">MTP</span>
+        <span style="font-size: 13px; color: var(--muted);">{{MTP_ISSUE_COUNT}} issues</span>
+      </div>
+      <div class="issue-list" id="issues-mtp">
+        <!-- ISSUE ITEM — repeat -->
+        <div class="issue-item">
+          <span class="issue-num">#TBD</span>
+          <span class="issue-title">{{MTP_ISSUE_1_TITLE}}</span>
+          <span class="issue-label label-feat">feature</span>
+        </div>
+        <!-- END ISSUE ITEM -->
+      </div>
+    </div>
+
+    <!-- MUP -->
+    <div style="margin-bottom: 24px;">
+      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+        <span class="stage-tag tag-mup">MUP</span>
+        <span style="font-size: 13px; color: var(--muted);">{{MUP_ISSUE_COUNT}} issues</span>
+      </div>
+      <div class="issue-list" id="issues-mup">
+        <div class="issue-item">
+          <span class="issue-num">#TBD</span>
+          <span class="issue-title">{{MUP_ISSUE_1_TITLE}}</span>
+          <span class="issue-label label-feat">feature</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MVP -->
+    <div>
+      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+        <span class="stage-tag tag-mvp">MVP</span>
+        <span style="font-size: 13px; color: var(--muted);">{{MVP_ISSUE_COUNT}} issues</span>
+      </div>
+      <div class="issue-list" id="issues-mvp">
+        <div class="issue-item">
+          <span class="issue-num">#TBD</span>
+          <span class="issue-title">{{MVP_ISSUE_1_TITLE}}</span>
+          <span class="issue-label label-feat">feature</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>Product Design · {{PRODUCT_NAME}} · Generated by Claude Code · {{DATE}}</footer>
+</main>
+
+<script>
+  let currentStage = 'mtp';
+
+  function setStage(s) {
+    currentStage = s;
+    document.querySelectorAll('.stage-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector('.s-' + s).classList.add('active');
+    document.querySelectorAll('.story-row').forEach(r => {
+      r.style.display = (r.dataset.stage === s || s === 'all') ? '' : 'none';
+    });
+  }
+
+  function scrollTo(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    event.target.classList.add('active');
+  }
+
+  // Init: show MTP stories only
+  setStage('mtp');
+</script>
+</body>
+</html>

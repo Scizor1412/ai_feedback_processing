@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "feedback_id": "MID-2025-030",
+    "date": "2025-11-18",
+    "type": "MID_TERM",
+    "persona": {
+      "id": "SV20240030",
+      "name": "Ngo Kim Dung",
+      "gender": "Female",
+      "role": "student",
+      "school": "School of Information Technology",
+      "school_id": "IT",
+      "year": 4,
+      "program": "Artificial Intelligence & Machine Learning"
+    },
+    "related_schools": [
+      "IT"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "FACILITIES",
+      "IT_SUPPORT",
+      "LIBRARY",
+      "STUDENT_AFFAIRS"
+    ],
+    "overall_sentiment": "mostly_negative"
+  },
+  "body": [
+    {
+      "question_1": "How would you rate the overall quality of teaching in your courses this semester so far?",
+      "answer_1": "Teaching quality in my Artificial Intelligence & Machine Learning program at the School of Information Technology has been moderate overall, though noticeably inconsistent across different modules this semester. Several lecturers deliver material with clarity and genuine enthusiasm, making those sessions highly productive and intellectually stimulating for the class. However, a few courses suffer from disorganized delivery, limited interaction, and minimal feedback on submitted work, which hampers the learning experience considerably. I would flag the school to standardize teaching quality benchmarks and conduct regular peer evaluations to ensure a more consistent and high-quality educational experience for all students across every module and year level."
+    },
+    {
+      "question_2": "How well does the course content align with current industry standards and your career aspirations?",
+      "answer_2": "The curriculum for my Artificial Intelligence & Machine Learning program at the School of Information Technology is well-designed and clearly aligned with current industry demands and emerging professional trends in the field. Course structures are logical, building progressively on foundational concepts before introducing advanced topics, which gives students a solid intellectual scaffold. The balance between theoretical foundations and practical application is outstanding, with project-based assessments, case studies, and laboratory work that directly reflect real-world professional scenarios I will encounter in my career. I particularly value the inclusion of contemporary tools and technologies, which ensures graduates are competitive and well-prepared for the demands of the modern job market."
+    },
+    {
+      "question_3": "How effective are the assessment methods (assignments, quizzes, exams) in evaluating your understanding of the subject matter?",
+      "answer_3": "Assessment practices in my Artificial Intelligence & Machine Learning program at the School of Information Technology are generally moderate, though there is meaningful room for improvement in both consistency and transparency. Some modules employ well-designed assessments that genuinely test comprehension and application, while others rely too heavily on high-stakes end-of-semester examinations that do not adequately reflect students' ongoing learning throughout the term. Timely feedback is provided by some lecturers but is inconsistent across the department. Standardizing minimum feedback turnaround times and encouraging a more diverse portfolio of assessment types would significantly improve the learning experience for all students."
+    },
+    {
+      "question_4": "How would you describe the availability and responsiveness of your lecturers outside of scheduled class time?",
+      "answer_4": "Lecturer accessibility has been a insufficient aspect of my experience in the Artificial Intelligence & Machine Learning program at the School of Information Technology this semester, and I believe it warrants serious attention. Office hours are infrequently held and rarely communicated through official channels, making it difficult for students to plan consultations around their own timetables. Email responses are often delayed by more than a week, and some lecturers appear unresponsive to student queries outside of formal class time entirely. This lack of availability creates unnecessary barriers to learning and discourages students from seeking help when they need it most. I urge the school to enforce minimum availability standards for all faculty members."
+    },
+    {
+      "question_5": "How satisfied are you with the learning resources and materials provided for your courses this semester?",
+      "answer_5": "The learning resources and materials provided for my Artificial Intelligence & Machine Learning courses at the School of Information Technology are remarkable and represent a significant strength of the program. Course packs are comprehensive, well-organized, and current, incorporating recent academic publications, industry white papers, and multimedia content that enriches the learning experience beyond traditional textbooks. The university's digital library provides broad access to peer-reviewed journals and e-books, and the Learning Management System is intuitive, well-maintained, and effectively used by lecturers to share materials in a timely manner. I also recognize the provision of recorded lectures, which allows students to revisit complex material at their own pace — a genuinely valuable academic resource."
+    },
+    {
+      "question_6": "How would you rate the IT infrastructure and digital learning tools provided by the university to support your studies?",
+      "answer_6": "The IT infrastructure managed by the IT Support Department presents inadequate challenges that significantly disrupt the academic experience at the School of Information Technology. Wi-Fi connectivity is unreliable in several key areas of the campus, including the main library, multiple lecture halls, and postgraduate study rooms, making online coursework and research frustrating and inefficient. Computer labs frequently have outdated or malfunctioning equipment, and software licensing issues occasionally prevent students from accessing tools required for coursework. The IT helpdesk response time is inadequate, often taking several days to resolve straightforward technical issues. Urgent investment in infrastructure upgrades and improved support staffing is needed."
+    },
+    {
+      "question_7": "How efficient have you found the academic administrative processes such as registration, grade appeals, and scheduling?",
+      "answer_7": "The academic administrative processes at the School of Information Technology, overseen by the Academic Affairs Office, have been a source of considerable frustration for many students this semester. Course registration was plagued by system errors and conflicting timetables that took weeks to resolve, causing students to miss early enrollment advantages. Grade dispute processes are opaque and slow, with students waiting over a month without updates or acknowledgment of their submissions. Communication from administrative offices is reactive rather than proactive, and staff sometimes provide inconsistent information depending on who is contacted. I raise concerns about a comprehensive review of administrative workflows, with investment in both system improvements and staff training as a matter of urgency."
+    },
+    {
+      "question_8": "How would you evaluate the quality and accessibility of student support services currently available at this university?",
+      "answer_8": "Student support services at the School of Information Technology, managed by the Student Affairs Office, are concerning and fall significantly short of what students need to manage the academic, personal, and financial challenges of university life. Mental health support in particular is severely limited — appointment wait times can exceed three weeks, which is unacceptable for students experiencing acute stress. Financial hardship assistance processes are slow, bureaucratic, and poorly communicated, leaving vulnerable students without timely help during critical periods. The university must urgently expand its counseling capacity, simplify hardship application procedures, and raise awareness of available services through more proactive and visible outreach to the student community."
+    },
+    {
+      "question_9": "How well does the university's physical environment and facilities support your daily learning experience?",
+      "answer_9": "The physical facilities at the School of Information Technology, under the responsibility of the Facilities Management, present problematic conditions that negatively impact the daily learning experience of students. Several lecture halls have malfunctioning air conditioning systems that make studying in warm months genuinely uncomfortable and distracting. Toilet facilities in older buildings are poorly maintained and frequently reported without timely resolution from the facilities team. Study spaces are chronically insufficient relative to the student population, particularly during examination periods when demand peaks significantly. I urge the university to prioritize facilities maintenance budgets, establish a transparent issue-reporting system, and expand study space capacity as part of its next capital improvement plan."
+    },
+    {
+      "question_10": "What specific improvements would you most like to see implemented for the remainder of this semester?",
+      "answer_10": "I have very few concerns to raise about my overall experience in the Artificial Intelligence & Machine Learning program at the School of Information Technology, and I genuinely believe this institution provides an outstanding educational environment that prepares students well for their future careers. If I were to recommend any improvement, I would suggest further expanding industry partnership opportunities — additional mentorship programs, sponsored capstone projects, and guest lecture series from senior professionals would enrich an already strong academic offering. Increasing the frequency of student feedback collection and demonstrating visible action on that feedback would further strengthen trust between students and the institution. Overall, I am proud to be a student here and would highly recommend this university to future applicants without hesitation."
+    }
+  ]
+}

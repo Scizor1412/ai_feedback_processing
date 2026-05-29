@@ -1,0 +1,72 @@
+{
+  "metadata": {
+    "feedback_id": "PAR-2025-011",
+    "date": "2025-11-16",
+    "type": "PARENTS",
+    "persona": {
+      "id": "PAR0011",
+      "name": "Dang Minh Long",
+      "role": "parent",
+      "child_name": "Vu Dinh Nga",
+      "child_id": "SV20230011",
+      "child_school": "School of Engineering",
+      "child_school_id": "ENG",
+      "child_year": 3,
+      "child_program": "Chemical Engineering"
+    },
+    "related_schools": [
+      "ENG"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "CAREER",
+      "FACILITIES",
+      "FINANCE",
+      "IT_SUPPORT",
+      "STUDENT_AFFAIRS"
+    ],
+    "overall_sentiment": "mostly_positive"
+  },
+  "body": [
+    {
+      "question_1": "How would you rate the university's communication with parents regarding your child's academic progress and welfare?",
+      "answer_1": "As a parent, I find the School of Engineering's communication regarding my child's academic progress to be outstanding and genuinely reassuring. Semester progress reports are issued promptly through the parent portal, and attendance alerts are sent in real time, allowing me to stay informed and intervene early when needed. I particularly appreciate the parent information sessions organized each semester, where faculty and administrators present academic expectations, available support services, and the student performance outlook in detail. The level of transparency and proactive communication from the Academic Affairs Office has greatly increased my confidence in the institution's commitment to student success and parental partnership."
+    },
+    {
+      "question_2": "How satisfied are you with the quality of education your child is receiving at this university?",
+      "answer_2": "Teaching quality in my Chemical Engineering program at the School of Engineering has been fair overall, though noticeably inconsistent across different modules this semester. Several lecturers deliver material with clarity and genuine enthusiasm, making those sessions highly productive and intellectually stimulating for the class. However, a few courses suffer from disorganized delivery, limited interaction, and minimal feedback on submitted work, which hampers the learning experience considerably. I would urge the school to standardize teaching quality benchmarks and conduct regular peer evaluations to ensure a more consistent and high-quality educational experience for all students across every module and year level."
+    },
+    {
+      "question_3": "How confident are you in the university's ability to prepare your child for future career opportunities?",
+      "answer_3": "Career preparation services at the School of Engineering, offered through the Career Center, are fair and meet some student needs while falling short in others. Basic resume guidance and periodic career fairs provide a foundation, but more intensive and personalized support would greatly benefit students planning to enter a competitive and rapidly evolving job market. The internship program has room for significant growth — expanding the employer partner network, improving placement matching, and providing structured mentorship during internship periods would make it substantially more valuable. Regular industry panels and alumni engagement events would also meaningfully bridge the gap between academic preparation and professional workplace expectations."
+    },
+    {
+      "question_4": "How would you assess the campus safety measures and student welfare programs in place at this institution?",
+      "answer_4": "Campus safety standards at the School of Engineering are reasonable, providing an adequate baseline of physical security and student welfare programming while leaving meaningful room for improvement in several critical areas. Core security measures — including campus access controls, security patrols, and emergency contact systems — are functional and reasonably communicated. However, mental health and counseling resources are stretched and insufficiently staffed relative to the student population, creating unacceptable wait times during periods of peak demand. I would strongly encourage the Student Affairs Office to expand counseling capacity, improve lighting and surveillance in underserved campus areas, and develop a more proactive student welfare outreach program for at-risk individuals."
+    },
+    {
+      "question_5": "How transparent and straightforward have you found the university's financial policies, fee management, and scholarship communication?",
+      "answer_5": "Financial management by the Finance Department at the School of Engineering has been satisfactory from my perspective as a parent, meeting the fundamental requirements of tuition billing and payment processing without notable excellence or failure. Fee statements are generally accurate, though occasional discrepancies have required follow-up that is more time-consuming than it should be. Communication about scholarship timelines could be significantly improved — families benefit greatly from advance notice when disbursement dates shift or eligibility criteria change, and this is currently lacking. I would welcome a dedicated parent-facing financial FAQ and communication channel to reduce the need for direct contact for routine financial queries."
+    },
+    {
+      "question_6": "How effective do you find the parent portal and digital communication systems provided by the university?",
+      "answer_6": "The parent portal provided by the School of Engineering, supported by the IT Support Department, is superb in its design, functionality, and reliability, and has become an invaluable tool for staying connected to my child's academic journey throughout the year. The interface is intuitive and well-organized, presenting grade information, attendance records, fee statements, and university announcements in a clear and accessible format that requires no technical expertise. The system is reliably available, with minimal downtime, and notifications are pushed promptly for important academic events and institutional announcements. I praise the university's investment in digital parent engagement tools, which I believe genuinely strengthen the home-university partnership and support better student outcomes."
+    },
+    {
+      "question_7": "How satisfied are you with the academic counseling and advising support your child receives?",
+      "answer_7": "Academic counseling services at the School of Engineering have been concerning in their availability, quality, and proactivity from my perspective as a parent observing my child's experience this academic year. Appointments with academic advisors are difficult to secure, often requiring weeks of waiting for a short session that does not always result in actionable or personalized guidance. The advice provided is sometimes generic and does not demonstrate familiarity with the student's individual history, goals, or challenges. I strongly urge the Academic Affairs Office to increase its counseling staff capacity, invest in advisor training, and implement proactive outreach to students who may be struggling academically before their situations deteriorate into formal academic difficulties."
+    },
+    {
+      "question_8": "How well does the university address students' mental health and personal well-being needs?",
+      "answer_8": "The student support services offered by the Student Affairs Office at the School of Engineering have been outstanding and have made a genuine difference to my overall well-being and university experience throughout the semester. Counseling services are readily accessible, professionally delivered, and clearly communicated to students through multiple channels including the student portal, orientation sessions, and notice boards. The range of support available — from academic counseling to mental health resources and financial hardship assistance — reflects a comprehensive understanding of the diverse challenges students face during their academic journey. I also applaud the regular student welfare check-ins organized by the office, which foster a sense of community and belonging on campus."
+    },
+    {
+      "question_9": "How would you evaluate the quality and suitability of the university's physical facilities and campus environment?",
+      "answer_9": "The physical campus environment and facilities managed by the Facilities Management provide a impressive learning atmosphere that I believe genuinely contributes to academic productivity and student well-being at the School of Engineering. Lecture halls are spacious, well-ventilated, and equipped with modern audio-visual technology that facilitates clear and engaging presentations. Study spaces — including individual carrels, group collaboration rooms, and outdoor relaxation areas — are thoughtfully designed and well-maintained throughout the academic week. Cleaning and security standards are consistently high, and campus maintenance requests are typically resolved within a reasonable timeframe. The overall physical environment reflects a commitment to providing students with a safe, comfortable, and inspiring place to learn."
+    },
+    {
+      "question_10": "What improvements would you suggest to enhance the university's support for both students and their families?",
+      "answer_10": "My overall assessment of the School of Engineering as a parent is that it offers a decent educational experience with genuine strengths that are unfortunately balanced by structural weaknesses that need sustained attention. The academic programs are broadly well-designed, and there are individual faculty members and support staff who clearly go above and beyond for students. However, system-level inconsistencies in service quality, communication, and resource provision create an uneven experience that depends too heavily on which individual staff members a student encounters. I encourage the institution to invest in building reliable systems and consistent standards that ensure every student — regardless of program or year — receives the same high-quality support and educational experience."
+    }
+  ]
+}

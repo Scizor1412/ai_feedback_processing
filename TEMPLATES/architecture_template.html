@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Architecture — {{PRODUCT_NAME}}</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface2: #1c2128;
+      --border: #30363d;
+      --accent: #58a6ff;
+      --accent2: #3fb950;
+      --warn: #d29922;
+      --danger: #f85149;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --mtp: #a371f7;
+      --mup: #58a6ff;
+      --mvp: #3fb950;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg); color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 15px; line-height: 1.6;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed; top: 0; left: 0; bottom: 0; width: 240px;
+      background: var(--surface); border-right: 1px solid var(--border);
+      padding: 24px 16px; overflow-y: auto; z-index: 100;
+    }
+    .sidebar-logo { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .sidebar-sub { font-size: 12px; color: var(--muted); margin-bottom: 24px; }
+    .nav-section { margin-bottom: 20px; }
+    .nav-section h3 { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 8px; }
+    .nav-item {
+      display: block; padding: 7px 10px; border-radius: 6px; font-size: 13px;
+      color: var(--muted); cursor: pointer; margin-bottom: 2px; text-decoration: none;
+      transition: all .15s;
+    }
+    .nav-item:hover { background: var(--surface2); color: var(--text); }
+    .nav-item.active { background: #0d2137; color: var(--accent); font-weight: 600; }
+    .nav-indent { padding-left: 22px; }
+
+    .main { margin-left: 240px; padding: 32px 40px; max-width: 980px; }
+
+    /* Stage tabs */
+    .stage-bar {
+      display: flex; gap: 4px; margin-bottom: 28px;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+      padding: 4px; width: fit-content;
+    }
+    .stage-btn {
+      padding: 8px 18px; border-radius: 8px; font-size: 13px; font-weight: 600;
+      cursor: pointer; transition: all .15s; color: var(--muted);
+    }
+    .stage-btn:hover { color: var(--text); }
+    .stage-btn.s-all.active  { background: var(--surface2); color: var(--text); }
+    .stage-btn.s-mtp.active  { background: #1e0f3a; color: var(--mtp); }
+    .stage-btn.s-mup.active  { background: #0d2137; color: var(--mup); }
+    .stage-btn.s-mvp.active  { background: #0d2d0d; color: var(--mvp); }
+
+    /* Stage tags */
+    .stage-tag { font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 10px; text-transform: uppercase; letter-spacing: .5px; }
+    .tag-mtp { background: #1e0f3a; color: var(--mtp); }
+    .tag-mup { background: #0d2137; color: var(--mup); }
+    .tag-mvp { background: #0d2d0d; color: var(--mvp); }
+
+    /* Section */
+    .section { margin-bottom: 48px; }
+    .section-title { font-size: 20px; font-weight: 700; margin-bottom: 4px; display: flex; align-items: center; gap: 10px; }
+    .section-sub { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+
+    /* System diagram */
+    .diagram {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+      padding: 24px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 13px;
+      white-space: pre; overflow-x: auto; line-height: 1.8; color: var(--text);
+    }
+
+    /* HLD Component grid */
+    .component-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+    .component-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px;
+      cursor: pointer; transition: border-color .15s;
+    }
+    .component-card:hover { border-color: var(--accent); }
+    .component-card.selected { border-color: var(--accent); background: #0d2137; }
+    .comp-icon { font-size: 24px; margin-bottom: 10px; }
+    .comp-name { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+    .comp-desc { font-size: 13px; color: var(--muted); margin-bottom: 10px; }
+    .comp-why { font-size: 12px; color: var(--accent); }
+    .comp-stages { display: flex; gap: 4px; margin-top: 10px; }
+
+    /* Solution Architecture */
+    .solution-block {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+      margin-bottom: 16px; overflow: hidden;
+    }
+    .solution-header {
+      display: flex; align-items: center; gap: 12px; padding: 16px 20px;
+      cursor: pointer; user-select: none;
+      border-bottom: 1px solid transparent; transition: border-color .15s;
+    }
+    .solution-header:hover { border-bottom-color: var(--border); }
+    .solution-header.open { border-bottom-color: var(--border); }
+    .solution-header-left { flex: 1; }
+    .solution-name { font-size: 15px; font-weight: 700; }
+    .solution-tech { font-size: 12px; color: var(--accent); margin-top: 2px; }
+    .chevron { color: var(--muted); transition: transform .2s; font-size: 14px; }
+    .chevron.open { transform: rotate(90deg); }
+    .solution-body { padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height .3s ease, padding .3s; }
+    .solution-body.open { max-height: 1000px; padding: 20px; }
+
+    /* ADR */
+    .adr { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+    .adr-header {
+      background: var(--surface2); padding: 10px 16px;
+      font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--muted);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .adr-status {
+      font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 700;
+      background: #0d2d0d; color: var(--accent2);
+    }
+    .adr-body { padding: 16px; }
+    .adr-section { margin-bottom: 14px; }
+    .adr-section:last-child { margin-bottom: 0; }
+    .adr-label { font-size: 11px; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); margin-bottom: 4px; }
+    .adr-text { font-size: 13px; }
+    .alternatives { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
+    .alt-item {
+      display: flex; gap: 10px; align-items: flex-start;
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 6px; padding: 8px 12px; font-size: 13px;
+    }
+    .alt-rejected { color: var(--danger); font-weight: 700; font-size: 12px; white-space: nowrap; margin-top: 1px; }
+    .alt-chosen   { color: var(--accent2); font-weight: 700; font-size: 12px; white-space: nowrap; margin-top: 1px; }
+
+    .tradeoffs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+    .tradeoff-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 10px; }
+    .tradeoff-label { font-size: 11px; font-weight: 700; margin-bottom: 4px; }
+    .tradeoff-pros .tradeoff-label { color: var(--accent2); }
+    .tradeoff-cons .tradeoff-label { color: var(--danger); }
+    .tradeoff-item { font-size: 12px; color: var(--muted); margin-bottom: 2px; }
+    .tradeoff-item::before { content: '• '; }
+
+    /* Functional Workflow */
+    .workflow-grid { display: flex; flex-direction: column; gap: 16px; }
+    .workflow-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden;
+    }
+    .workflow-header {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 18px; cursor: pointer; user-select: none;
+      border-bottom: 1px solid transparent; transition: border-color .15s;
+    }
+    .workflow-header:hover, .workflow-header.open { border-bottom-color: var(--border); }
+    .workflow-story { font-size: 14px; font-weight: 600; flex: 1; }
+    .workflow-body { padding: 0; max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+    .workflow-body.open { max-height: 800px; padding: 20px; }
+
+    .flow-steps {
+      display: flex; align-items: flex-start; gap: 0;
+      overflow-x: auto; padding-bottom: 4px;
+    }
+    .flow-step {
+      display: flex; flex-direction: column; align-items: center;
+      min-width: 140px;
+    }
+    .flow-box {
+      background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+      padding: 10px 12px; text-align: center; width: 130px;
+    }
+    .flow-box-comp { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+    .flow-box-action { font-size: 13px; font-weight: 600; }
+    .flow-box-detail { font-size: 11px; color: var(--muted); margin-top: 4px; }
+    .flow-box.flow-trigger { border-color: var(--mtp); background: #1e0f3a; }
+    .flow-box.flow-trigger .flow-box-comp { color: var(--mtp); }
+    .flow-box.flow-end { border-color: var(--accent2); background: #0d2d0d; }
+    .flow-box.flow-end .flow-box-comp { color: var(--accent2); }
+    .flow-connector {
+      display: flex; align-items: center; padding: 0 4px; margin-top: 22px;
+      color: var(--muted); font-size: 18px; min-width: 28px; justify-content: center;
+    }
+    .flow-label { font-size: 11px; color: var(--muted); margin-top: 6px; text-align: center; max-width: 130px; }
+    .flow-note {
+      margin-top: 14px; background: var(--bg); border: 1px solid var(--border);
+      border-radius: 6px; padding: 10px 14px; font-size: 12px; color: var(--muted);
+    }
+    .flow-note strong { color: var(--text); }
+
+    /* Utility */
+    hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<nav class="sidebar">
+  <div class="sidebar-logo">⬡ {{PRODUCT_NAME}}</div>
+  <div class="sidebar-sub">Solution Architecture</div>
+  <div class="nav-section">
+    <h3>Overview</h3>
+    <a class="nav-item active" onclick="goto('diagram')">System Diagram</a>
+    <a class="nav-item" onclick="goto('hld')">High-Level Design</a>
+  </div>
+  <div class="nav-section">
+    <h3>Workflows</h3>
+    <a class="nav-item" onclick="goto('workflows')">Functional Workflows</a>
+  </div>
+  <div class="nav-section">
+    <h3>Solution Arch</h3>
+    <!-- Repeat per component -->
+    <a class="nav-item nav-indent" onclick="goto('sol-{{COMPONENT_1_ID}}')">{{COMPONENT_1_NAME}}</a>
+  </div>
+</nav>
+
+<main class="main">
+  <div style="margin-bottom: 28px;">
+    <h1 style="font-size: 26px; font-weight: 800; margin-bottom: 4px;">Solution Architecture</h1>
+    <p style="color: var(--muted);">{{PRODUCT_NAME}} · Aligned to MTP → MUP → MVP roadmap</p>
+  </div>
+
+  <!-- Stage filter -->
+  <div class="stage-bar">
+    <div class="stage-btn s-all active" onclick="filterStage('all')">All Stages</div>
+    <div class="stage-btn s-mtp" onclick="filterStage('mtp')">MTP</div>
+    <div class="stage-btn s-mup" onclick="filterStage('mup')">MUP</div>
+    <div class="stage-btn s-mvp" onclick="filterStage('mvp')">MVP</div>
+  </div>
+
+  <!-- System Diagram -->
+  <div id="diagram" class="section">
+    <div class="section-title">🗺️ System Diagram</div>
+    <div class="section-sub">Text-based overview of how components relate</div>
+    <div class="diagram">{{SYSTEM_DIAGRAM}}</div>
+  </div>
+
+  <hr />
+
+  <!-- High-Level Design -->
+  <div id="hld" class="section">
+    <div class="section-title">🏗️ High-Level Design</div>
+    <div class="section-sub">Conceptual components and the reason each one exists</div>
+    <div class="component-grid">
+
+      <!-- COMPONENT CARD — repeat as needed -->
+      <div class="component-card" onclick="goto('sol-{{COMPONENT_1_ID}}')">
+        <div class="comp-icon">{{COMPONENT_1_ICON}}</div>
+        <div class="comp-name">{{COMPONENT_1_NAME}}</div>
+        <div class="comp-desc">{{COMPONENT_1_DESC}}</div>
+        <div class="comp-why">Why needed: {{COMPONENT_1_WHY}}</div>
+        <div class="comp-stages">
+          <span class="stage-tag tag-mtp">MTP</span>
+        </div>
+      </div>
+      <!-- END COMPONENT CARD -->
+
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- Functional Workflows -->
+  <div id="workflows" class="section">
+    <div class="section-title">🔄 Functional Workflows</div>
+    <div class="section-sub">How components collaborate to fulfill each user story, stage by stage</div>
+    <div class="workflow-grid">
+
+      <!-- WORKFLOW BLOCK — repeat per user story -->
+      <div class="workflow-card" data-stage="mtp">
+        <div class="workflow-header" onclick="toggleWorkflow(this)">
+          <span class="stage-tag tag-mtp">MTP</span>
+          <span class="workflow-story">{{WORKFLOW_1_STORY}}</span>
+          <span class="chevron">›</span>
+        </div>
+        <div class="workflow-body">
+
+          <div class="flow-steps">
+            <!-- FLOW STEP — repeat per step; use flow-trigger for first, flow-end for last -->
+            <div class="flow-step">
+              <div class="flow-box flow-trigger">
+                <div class="flow-box-comp">{{FLOW_1_STEP_1_COMPONENT}}</div>
+                <div class="flow-box-action">{{FLOW_1_STEP_1_ACTION}}</div>
+                <div class="flow-box-detail">{{FLOW_1_STEP_1_DETAIL}}</div>
+              </div>
+              <div class="flow-label">{{FLOW_1_STEP_1_LABEL}}</div>
+            </div>
+            <div class="flow-connector">→</div>
+            <div class="flow-step">
+              <div class="flow-box">
+                <div class="flow-box-comp">{{FLOW_1_STEP_2_COMPONENT}}</div>
+                <div class="flow-box-action">{{FLOW_1_STEP_2_ACTION}}</div>
+                <div class="flow-box-detail">{{FLOW_1_STEP_2_DETAIL}}</div>
+              </div>
+              <div class="flow-label">{{FLOW_1_STEP_2_LABEL}}</div>
+            </div>
+            <div class="flow-connector">→</div>
+            <div class="flow-step">
+              <div class="flow-box flow-end">
+                <div class="flow-box-comp">{{FLOW_1_STEP_3_COMPONENT}}</div>
+                <div class="flow-box-action">{{FLOW_1_STEP_3_ACTION}}</div>
+                <div class="flow-box-detail">{{FLOW_1_STEP_3_DETAIL}}</div>
+              </div>
+              <div class="flow-label">{{FLOW_1_STEP_3_LABEL}}</div>
+            </div>
+            <!-- END FLOW STEP -->
+          </div>
+
+          <div class="flow-note">
+            <strong>Key assumption:</strong> {{WORKFLOW_1_ASSUMPTION}}<br/>
+            <strong>Failure mode:</strong> {{WORKFLOW_1_FAILURE_MODE}}
+          </div>
+
+        </div>
+      </div>
+      <!-- END WORKFLOW BLOCK -->
+
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- Solution Architecture -->
+  <div class="section">
+    <div class="section-title">⚙️ Solution Architecture</div>
+    <div class="section-sub">Per-component solution with Architecture Decision Records (ADRs)</div>
+
+    <!-- SOLUTION BLOCK — repeat per component -->
+    <div id="sol-{{COMPONENT_1_ID}}" class="solution-block">
+      <div class="solution-header" onclick="toggle(this)">
+        <span style="font-size: 22px;">{{COMPONENT_1_ICON}}</span>
+        <div class="solution-header-left">
+          <div class="solution-name">{{COMPONENT_1_NAME}}</div>
+          <div class="solution-tech">{{COMPONENT_1_TECH}}</div>
+        </div>
+        <div style="display: flex; gap: 6px;">
+          <span class="stage-tag tag-mtp">MTP</span>
+        </div>
+        <span class="chevron">›</span>
+      </div>
+      <div class="solution-body">
+
+        <!-- Solution description -->
+        <div style="margin-bottom: 20px; font-size: 14px;">{{COMPONENT_1_SOLUTION_DESC}}</div>
+
+        <!-- ADR -->
+        <div class="adr">
+          <div class="adr-header">
+            📋 Architecture Decision Record
+            <span class="adr-status">Accepted</span>
+          </div>
+          <div class="adr-body">
+
+            <div class="adr-section">
+              <div class="adr-label">Context</div>
+              <div class="adr-text">{{COMPONENT_1_ADR_CONTEXT}}</div>
+            </div>
+
+            <div class="adr-section">
+              <div class="adr-label">Options Considered</div>
+              <div class="alternatives">
+                <div class="alt-item">
+                  <span class="alt-chosen">✓ Chosen</span>
+                  <span>{{COMPONENT_1_OPTION_CHOSEN}} — {{COMPONENT_1_OPTION_CHOSEN_WHY}}</span>
+                </div>
+                <div class="alt-item">
+                  <span class="alt-rejected">✗ Rejected</span>
+                  <span>{{COMPONENT_1_OPTION_ALT1}} — {{COMPONENT_1_OPTION_ALT1_WHY}}</span>
+                </div>
+                <div class="alt-item">
+                  <span class="alt-rejected">✗ Rejected</span>
+                  <span>{{COMPONENT_1_OPTION_ALT2}} — {{COMPONENT_1_OPTION_ALT2_WHY}}</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="adr-section">
+              <div class="adr-label">Decision</div>
+              <div class="adr-text">{{COMPONENT_1_ADR_DECISION}}</div>
+            </div>
+
+            <div class="adr-section">
+              <div class="adr-label">Trade-offs</div>
+              <div class="tradeoffs">
+                <div class="tradeoff-card tradeoff-pros">
+                  <div class="tradeoff-label">Pros</div>
+                  <div class="tradeoff-item">{{COMPONENT_1_PRO_1}}</div>
+                  <div class="tradeoff-item">{{COMPONENT_1_PRO_2}}</div>
+                </div>
+                <div class="tradeoff-card tradeoff-cons">
+                  <div class="tradeoff-label">Cons / Risks</div>
+                  <div class="tradeoff-item">{{COMPONENT_1_CON_1}}</div>
+                  <div class="tradeoff-item">{{COMPONENT_1_CON_2}}</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="adr-section">
+              <div class="adr-label">Consequences</div>
+              <div class="adr-text">{{COMPONENT_1_ADR_CONSEQUENCES}}</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END SOLUTION BLOCK -->
+
+  </div>
+
+  <footer>Architecture Document · {{PRODUCT_NAME}} · Generated by Claude Code · {{DATE}}</footer>
+</main>
+
+<script>
+  function toggleWorkflow(header) {
+    const body = header.nextElementSibling;
+    const chevron = header.querySelector('.chevron');
+    const isOpen = body.classList.contains('open');
+    body.classList.toggle('open', !isOpen);
+    chevron.classList.toggle('open', !isOpen);
+    header.classList.toggle('open', !isOpen);
+  }
+
+  function toggle(header) {
+    const body = header.nextElementSibling;
+    const chevron = header.querySelector('.chevron');
+    const isOpen = body.classList.contains('open');
+    body.classList.toggle('open', !isOpen);
+    chevron.classList.toggle('open', !isOpen);
+    header.classList.toggle('open', !isOpen);
+  }
+
+  function goto(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Auto-open solution block if it's one
+      const header = el.querySelector('.solution-header');
+      if (header && !el.querySelector('.solution-body.open')) toggle(header);
+    }
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  }
+
+  function filterStage(s) {
+    document.querySelectorAll('.stage-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector('.s-' + s).classList.add('active');
+    // Visual filter: dim cards not matching stage
+    document.querySelectorAll('.component-card, .solution-block, .workflow-card').forEach(el => {
+      const tags = el.querySelectorAll('.stage-tag');
+      const matches = s === 'all' || Array.from(tags).some(t => t.classList.contains('tag-' + s));
+      el.style.opacity = matches ? '1' : '0.3';
+    });
+  }
+
+  // Open first solution block by default
+  const firstHeader = document.querySelector('.solution-header');
+  if (firstHeader) toggle(firstHeader);
+</script>
+</body>
+</html>

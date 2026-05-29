@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Architecture — AI Feedback Process</title>
+  <style>
+    :root {
+      --bg:#0d1117;--surface:#161b22;--surface2:#1c2128;--border:#30363d;
+      --accent:#58a6ff;--accent2:#3fb950;--warn:#d29922;--danger:#f85149;
+      --text:#e6edf3;--muted:#8b949e;--mtp:#a371f7;--mup:#58a6ff;--mvp:#3fb950;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:15px;line-height:1.6;}
+
+    /* Sidebar */
+    .sidebar{position:fixed;top:0;left:0;bottom:0;width:232px;background:var(--surface);border-right:1px solid var(--border);padding:20px 14px;overflow-y:auto;z-index:100;}
+    .sidebar-logo{font-size:15px;font-weight:800;margin-bottom:3px;}
+    .sidebar-logo span{color:var(--accent);}
+    .sidebar-sub{font-size:11px;color:var(--muted);margin-bottom:22px;}
+    .nav-section{margin-bottom:16px;}
+    .nav-section h3{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:6px;}
+    .nav-item{display:block;padding:6px 10px;border-radius:6px;font-size:13px;color:var(--muted);cursor:pointer;margin-bottom:2px;transition:all .15s;}
+    .nav-item:hover{background:var(--surface2);color:var(--text);}
+    .nav-item.active{background:#0d2137;color:var(--accent);font-weight:600;}
+    .nav-indent{padding-left:20px;font-size:12px;}
+
+    .main{margin-left:232px;padding:32px 40px;max-width:980px;}
+
+    /* Stage bar */
+    .stage-bar{display:flex;gap:0;margin-bottom:28px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:4px;width:fit-content;}
+    .stage-btn{padding:7px 18px;border-radius:7px;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;color:var(--muted);}
+    .stage-btn:hover{color:var(--text);}
+    .stage-btn.s-all.active{background:var(--surface2);color:var(--text);}
+    .stage-btn.s-mtp.active{background:#1e0f3a;color:var(--mtp);}
+    .stage-btn.s-mup.active{background:#0d2137;color:var(--mup);}
+    .stage-btn.s-mvp.active{background:#0d2d0d;color:var(--mvp);}
+
+    /* Stage tags */
+    .stage-tag{font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap;}
+    .tag-mtp{background:#1e0f3a;color:var(--mtp);}
+    .tag-mup{background:#0d2137;color:var(--mup);}
+    .tag-mvp{background:#0d2d0d;color:var(--mvp);}
+
+    /* Sections */
+    .section{margin-bottom:44px;}
+    .section-title{font-size:19px;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:10px;}
+    .section-sub{font-size:13px;color:var(--muted);margin-bottom:18px;}
+
+    /* ASCII Diagram */
+    .diagram{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px;font-family:'SF Mono','Fira Code',monospace;font-size:13px;white-space:pre;overflow-x:auto;line-height:1.75;color:var(--text);}
+    .diagram .dim{color:var(--muted);}
+    .diagram .hi{color:var(--accent);}
+    .diagram .hi2{color:var(--accent2);}
+    .diagram .ext{color:var(--warn);}
+
+    /* HLD Component grid */
+    .component-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px;}
+    .component-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px;cursor:pointer;transition:border-color .15s;}
+    .component-card:hover{border-color:var(--accent);}
+    .comp-icon{font-size:26px;margin-bottom:10px;}
+    .comp-name{font-size:14px;font-weight:700;margin-bottom:4px;}
+    .comp-desc{font-size:13px;color:var(--muted);margin-bottom:8px;}
+    .comp-why{font-size:12px;color:var(--accent);margin-bottom:10px;}
+    .comp-stages{display:flex;gap:4px;flex-wrap:wrap;}
+
+    /* Functional Workflows */
+    .workflow-grid{display:flex;flex-direction:column;gap:12px;}
+    .workflow-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+    .workflow-header{display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;user-select:none;border-bottom:1px solid transparent;transition:border-color .15s;}
+    .workflow-header:hover,.workflow-header.open{border-bottom-color:var(--border);}
+    .workflow-story{font-size:14px;font-weight:600;flex:1;}
+    .workflow-body{padding:0;max-height:0;overflow:hidden;transition:max-height .3s ease;}
+    .workflow-body.open{max-height:900px;padding:20px;}
+    .flow-steps{display:flex;align-items:flex-start;gap:0;overflow-x:auto;padding-bottom:6px;}
+    .flow-step{display:flex;flex-direction:column;align-items:center;min-width:148px;}
+    .flow-box{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 12px;text-align:center;width:138px;}
+    .flow-box-comp{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;}
+    .flow-box-action{font-size:13px;font-weight:600;}
+    .flow-box-detail{font-size:11px;color:var(--muted);margin-top:3px;}
+    .flow-box.flow-trigger{border-color:var(--mtp);background:#1e0f3a;}
+    .flow-box.flow-trigger .flow-box-comp{color:var(--mtp);}
+    .flow-box.flow-end{border-color:var(--accent2);background:#0d2d0d;}
+    .flow-box.flow-end .flow-box-comp{color:var(--accent2);}
+    .flow-box.flow-db{border-color:var(--warn);background:#2d2415;}
+    .flow-box.flow-db .flow-box-comp{color:var(--warn);}
+    .flow-box.flow-ext{border-color:var(--accent);background:#0d2137;}
+    .flow-box.flow-ext .flow-box-comp{color:var(--accent);}
+    .flow-connector{display:flex;align-items:center;padding:0 4px;margin-top:22px;color:var(--muted);font-size:18px;min-width:26px;justify-content:center;}
+    .flow-label{font-size:11px;color:var(--muted);margin-top:6px;text-align:center;max-width:138px;}
+    .flow-note{margin-top:14px;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:10px 14px;font-size:12px;color:var(--muted);}
+    .flow-note strong{color:var(--text);}
+
+    /* Solution Architecture */
+    .solution-block{background:var(--surface);border:1px solid var(--border);border-radius:10px;margin-bottom:14px;overflow:hidden;}
+    .solution-header{display:flex;align-items:center;gap:12px;padding:15px 20px;cursor:pointer;user-select:none;border-bottom:1px solid transparent;transition:border-color .15s;}
+    .solution-header:hover,.solution-header.open{border-bottom-color:var(--border);}
+    .sol-name{font-size:15px;font-weight:700;}
+    .sol-tech{font-size:12px;color:var(--accent);margin-top:2px;}
+    .chevron{color:var(--muted);transition:transform .2s;font-size:14px;margin-left:auto;}
+    .chevron.open{transform:rotate(90deg);}
+    .solution-body{padding:0;max-height:0;overflow:hidden;transition:max-height .35s ease;}
+    .solution-body.open{max-height:1200px;padding:20px;}
+    .sol-desc{font-size:14px;margin-bottom:18px;line-height:1.7;}
+
+    /* ADR */
+    .adr{background:var(--bg);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+    .adr-header{background:var(--surface2);padding:10px 16px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);display:flex;align-items:center;gap:8px;}
+    .adr-status{font-size:11px;padding:2px 8px;border-radius:10px;font-weight:700;background:#0d2d0d;color:var(--accent2);}
+    .adr-body{padding:16px;}
+    .adr-section{margin-bottom:14px;}
+    .adr-section:last-child{margin-bottom:0;}
+    .adr-label{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:5px;}
+    .adr-text{font-size:13px;line-height:1.6;}
+    .alternatives{display:flex;flex-direction:column;gap:6px;margin-top:6px;}
+    .alt-item{display:flex;gap:10px;align-items:flex-start;background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:8px 12px;font-size:13px;}
+    .alt-chosen{color:var(--accent2);font-weight:700;font-size:12px;white-space:nowrap;margin-top:1px;}
+    .alt-rejected{color:var(--danger);font-weight:700;font-size:12px;white-space:nowrap;margin-top:1px;}
+    .tradeoffs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;}
+    .tradeoff-card{background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:10px;}
+    .tradeoff-label{font-size:11px;font-weight:700;margin-bottom:5px;}
+    .tradeoff-pros .tradeoff-label{color:var(--accent2);}
+    .tradeoff-cons .tradeoff-label{color:var(--danger);}
+    .tradeoff-item{font-size:12px;color:var(--muted);margin-bottom:3px;}
+    .tradeoff-item::before{content:'• ';}
+
+    hr{border:none;border-top:1px solid var(--border);margin:38px 0;}
+    footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);}
+    code{background:var(--surface2);padding:1px 6px;border-radius:4px;font-size:12px;font-family:'SF Mono','Fira Code',monospace;}
+  </style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<nav class="sidebar">
+  <div class="sidebar-logo"><span>⬡</span> AI Feedback Process</div>
+  <div class="sidebar-sub">Solution Architecture</div>
+  <div class="nav-section">
+    <h3>Overview</h3>
+    <a class="nav-item active" onclick="goto('diagram')">System Diagram</a>
+    <a class="nav-item" onclick="goto('hld')">High-Level Design</a>
+  </div>
+  <div class="nav-section">
+    <h3>Workflows</h3>
+    <a class="nav-item" onclick="goto('workflows')">Functional Workflows</a>
+  </div>
+  <div class="nav-section">
+    <h3>Solution Arch</h3>
+    <a class="nav-item nav-indent" onclick="goto('sol-ingestion')">Ingestion Pipeline</a>
+    <a class="nav-item nav-indent" onclick="goto('sol-ai')">AI Extraction Engine</a>
+    <a class="nav-item nav-indent" onclick="goto('sol-csv')">CSV Generator</a>
+    <a class="nav-item nav-indent" onclick="goto('sol-email')">Email Draft Generator</a>
+    <a class="nav-item nav-indent" onclick="goto('sol-webapp')">Web Application</a>
+    <a class="nav-item nav-indent" onclick="goto('sol-postgres')">Data Store (PostgreSQL)</a>
+    <a class="nav-item nav-indent" onclick="goto('sol-vector')">Vector Store (Qdrant)</a>
+    <a class="nav-item nav-indent" onclick="goto('sol-analytics')">Analytics Engine</a>
+    <a class="nav-item nav-indent" onclick="goto('sol-docker')">Containerisation</a>
+  </div>
+</nav>
+
+<main class="main">
+
+  <!-- Header -->
+  <div style="margin-bottom:28px;">
+    <h1 style="font-size:26px;font-weight:800;margin-bottom:4px;">Solution Architecture</h1>
+    <p style="color:var(--muted);">AI Feedback Process · Python + FastAPI + DeepSeek + Qdrant · Docker Compose · MTP → MUP → MVP</p>
+  </div>
+
+  <!-- Stage filter -->
+  <div class="stage-bar">
+    <div class="stage-btn s-all active" onclick="filterStage('all')">All Stages</div>
+    <div class="stage-btn s-mtp" onclick="filterStage('mtp')">MTP</div>
+    <div class="stage-btn s-mup" onclick="filterStage('mup')">MUP</div>
+    <div class="stage-btn s-mvp" onclick="filterStage('mvp')">MVP</div>
+  </div>
+
+  <!-- System Diagram -->
+  <div id="diagram" class="section">
+    <div class="section-title">🗺️ System Diagram</div>
+    <div class="section-sub">Full MTP→MVP architecture. Stage filter above dims components not yet active.</div>
+    <div class="diagram">
+┌──────────────────────────────── Docker Compose ─────────────────────────────────┐
+│                                                                                  │
+│  ┌───────────────────────────────────────────────┐  ┌─────────────────────┐    │
+│  │              Web App  (FastAPI)               │  │     PostgreSQL      │    │
+│  │                                               │  │                     │    │
+│  │  ┌─────────────────┐   ┌────────────────────┐ │◀▶│  feedbacks          │    │
+│  │  │  Ingestion      │   │  Review UI         │ │  │  batches            │    │
+│  │  │  Pipeline       │   │  (Jinja2 + HTMX)   │ │  │  extractions        │    │
+│  │  ├─────────────────┤   ├────────────────────┤ │  │  batch_recipients   │    │
+│  │  │  AI Extraction  │   │  Analytics         │ │  │  audit_log          │    │
+│  │  │  Engine         │   │  Dashboard  [MVP]  │ │  │  users  [MVP]       │    │
+│  │  ├─────────────────┤   └────────────────────┘ │  └─────────────────────┘    │
+│  │  │  CSV Generator  │                           │                             │
+│  │  ├─────────────────┤                           │  ┌─────────────────────┐    │
+│  │  │  Email Draft    │                           │◀▶│  Qdrant  [MUP]      │    │
+│  │  │  Generator [MUP]│                           │  │  all-MiniLM-L6-v2   │    │
+│  │  ├─────────────────┤                           │  │  embeddings         │    │
+│  │  │  Analytics      │                           │  └─────────────────────┘    │
+│  │  │  Engine  [MVP]  │                           │                             │
+│  │  └─────────────────┘                           │  ┌─────────────────────┐    │
+│  └───────────────────────────────────────────────┘  │  Volume Mount       │    │
+│                       │                             │  /feedback-data/    │    │
+│                       │◀────────────────────────────│  (JSON files)       │    │
+│                       │                             └─────────────────────┘    │
+└───────────────────────┼──────────────────────────────────────────────────────--┘
+                        │ HTTPS
+                        ▼
+               ┌─────────────────┐
+               │  DeepSeek API   │
+               │   (external)    │
+               └─────────────────┘</div>
+  </div>
+
+  <hr />
+
+  <!-- High-Level Design -->
+  <div id="hld" class="section">
+    <div class="section-title">🏗️ High-Level Design</div>
+    <div class="section-sub">Eight conceptual components and why each one must exist. Click any card to jump to its solution.</div>
+    <div class="component-grid">
+
+      <div class="component-card" onclick="goto('sol-ingestion')">
+        <div class="comp-icon">🔄</div>
+        <div class="comp-name">Ingestion Pipeline</div>
+        <div class="comp-desc">Reads and validates all feedback JSON files from a mounted folder on batch trigger.</div>
+        <div class="comp-why">Why: The system needs a reliable entry point that handles malformed files gracefully without losing an entire batch.</div>
+        <div class="comp-stages"><span class="stage-tag tag-mtp">MTP</span></div>
+      </div>
+
+      <div class="component-card" onclick="goto('sol-ai')">
+        <div class="comp-icon">🧠</div>
+        <div class="comp-name">AI Extraction Engine</div>
+        <div class="comp-desc">Calls DeepSeek API once per feedback to identify school/service mentions and classify each as positive or negative.</div>
+        <div class="comp-why">Why: This is the core automation — it replaces the officer's manual reading and extraction entirely.</div>
+        <div class="comp-stages"><span class="stage-tag tag-mtp">MTP</span></div>
+      </div>
+
+      <div class="component-card" onclick="goto('sol-csv')">
+        <div class="comp-icon">📊</div>
+        <div class="comp-name">CSV Generator</div>
+        <div class="comp-desc">Produces two CSVs per school/service recipient: one for positive mentions, one for negative, each with the source feedback ID.</div>
+        <div class="comp-why">Why: Deans need a structured, separated view of feedback — not a dump — to draft their student responses.</div>
+        <div class="comp-stages"><span class="stage-tag tag-mtp">MTP</span></div>
+      </div>
+
+      <div class="component-card" onclick="goto('sol-email')">
+        <div class="comp-icon">✉️</div>
+        <div class="comp-name">Email Draft Generator</div>
+        <div class="comp-desc">Generates a ready-to-send <code>.eml</code> file per approved recipient with CSVs attached. Officer sends manually.</div>
+        <div class="comp-why">Why: Removing SMTP from the system keeps the officer in the loop and legally responsible for what is sent.</div>
+        <div class="comp-stages"><span class="stage-tag tag-mup">MUP</span></div>
+      </div>
+
+      <div class="component-card" onclick="goto('sol-webapp')">
+        <div class="comp-icon">🖥️</div>
+        <div class="comp-name">Web Application</div>
+        <div class="comp-desc">FastAPI backend + Jinja2 + HTMX serving the officer review UI, batch management, audit log, and analytics dashboard.</div>
+        <div class="comp-why">Why: Officers and leadership need a browser interface — not a CLI — to review, approve, and monitor feedback processing.</div>
+        <div class="comp-stages"><span class="stage-tag tag-mtp">MTP</span><span class="stage-tag tag-mup">MUP</span><span class="stage-tag tag-mvp">MVP</span></div>
+      </div>
+
+      <div class="component-card" onclick="goto('sol-postgres')">
+        <div class="comp-icon">🗄️</div>
+        <div class="comp-name">Data Store (PostgreSQL)</div>
+        <div class="comp-desc">Stores raw feedbacks, extraction results, batch state, audit log, and users. Source of truth for all structured data.</div>
+        <div class="comp-why">Why: Relational structure is essential for batch state management, per-recipient approval tracking, and SQL analytics.</div>
+        <div class="comp-stages"><span class="stage-tag tag-mtp">MTP</span><span class="stage-tag tag-mup">MUP</span><span class="stage-tag tag-mvp">MVP</span></div>
+      </div>
+
+      <div class="component-card" onclick="goto('sol-vector')">
+        <div class="comp-icon">🔍</div>
+        <div class="comp-name">Vector Store (Qdrant)</div>
+        <div class="comp-desc">Stores <code>all-MiniLM-L6-v2</code> embeddings of feedback bodies for semantic reference search. Officers can query by meaning, not keyword.</div>
+        <div class="comp-why">Why: Keyword search is brittle for natural-language feedback. Semantic search lets officers ask "Wi-Fi complaints 2024" and find relevant records even if the word "Wi-Fi" isn't used.</div>
+        <div class="comp-stages"><span class="stage-tag tag-mup">MUP</span><span class="stage-tag tag-mvp">MVP</span></div>
+      </div>
+
+      <div class="component-card" onclick="goto('sol-analytics')">
+        <div class="comp-icon">📈</div>
+        <div class="comp-name">Analytics Engine</div>
+        <div class="comp-desc">SQL aggregation queries over the historical feedback store: sentiment trends per school/service over time, complaint volume rankings.</div>
+        <div class="comp-why">Why: Leadership cannot act on individual feedbacks — they need aggregated, time-series views to identify systemic issues and track improvement.</div>
+        <div class="comp-stages"><span class="stage-tag tag-mvp">MVP</span></div>
+      </div>
+
+      <div class="component-card" onclick="goto('sol-docker')">
+        <div class="comp-icon">🐳</div>
+        <div class="comp-name">Containerisation</div>
+        <div class="comp-desc">Docker Compose orchestrates three services: <code>web</code> (FastAPI), <code>db</code> (PostgreSQL), <code>qdrant</code>. Single <code>docker compose up</code> from local to on-prem.</div>
+        <div class="comp-why">Why: Reproducible environment across developer laptop and university on-prem server is non-negotiable for a demo-first product.</div>
+        <div class="comp-stages"><span class="stage-tag tag-mtp">MTP</span><span class="stage-tag tag-mup">MUP</span><span class="stage-tag tag-mvp">MVP</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- Functional Workflows -->
+  <div id="workflows" class="section">
+    <div class="section-title">🔄 Functional Workflows</div>
+    <div class="section-sub">How components collaborate to fulfil each user story. Click to expand.</div>
+    <div class="workflow-grid">
+
+      <!-- Workflow 1 -->
+      <div class="workflow-card" data-stage="mtp">
+        <div class="workflow-header" onclick="toggleWorkflow(this)">
+          <span class="stage-tag tag-mtp">MTP</span>
+          <span class="workflow-story">Officer triggers a batch — AI reads, extracts, and presents routing for review</span>
+          <span class="chevron">›</span>
+        </div>
+        <div class="workflow-body">
+          <div class="flow-steps">
+            <div class="flow-step">
+              <div class="flow-box flow-trigger">
+                <div class="flow-box-comp">Officer → Browser</div>
+                <div class="flow-box-action">Select folder + type → Run</div>
+                <div class="flow-box-detail">POST /batches</div>
+              </div>
+              <div class="flow-label">Manual trigger</div>
+            </div>
+            <div class="flow-connector">→</div>
+            <div class="flow-step">
+              <div class="flow-box">
+                <div class="flow-box-comp">Ingestion Pipeline</div>
+                <div class="flow-box-action">Read + validate JSON files</div>
+                <div class="flow-box-detail">from Docker volume</div>
+              </div>
+              <div class="flow-label">Schema validation; skip malformed</div>
+            </div>
+            <div class="flow-connector">→</div>
+            <div class="flow-step">
+              <div class="flow-box flow-db">
+                <div class="flow-box-comp">PostgreSQL</div>
+                <div class="flow-box-action">Store raw feedbacks</div>
+                <div class="flow-box-detail">batch + feedback rows</div>
+              </div>
+              <div class="flow-label">Persist before AI calls</div>
+            </div>
+            <div class="flow-connector">→</div>
+            <div class="flow-step">
+              <div class="flow-box flow-ext">
+                <div class="flow-box-comp">DeepSeek API</div>
+                <div class="flow-box-action">Extract mentions + sentiment</div>
+                <div class="flow-box-detail">1 call per feedback (async)</div>
+              </div>
+              <div class="flow-label">~50 concurrent API calls</div>
+            </div>
+            <div class="flow-connector">→</div>
+            <div class="flow-step">
+              <div class="flow-box flow-db">
+                <div class="flow-box-comp">PostgreSQL</div>
+                <div class="flow-box-action">Store extraction results</div>
+                <div class="flow-box-detail">extractions + recipients</div>
+              </div>
+              <div class="flow-label">Aggregated per recipient</div>
+            </div>
+            <div class="flow-connector">→</div>
+            <div class="flow-step">
+              <div class="flow-box flow-end">
+                <div class="flow-box-comp">Officer → Browser</div>
+                <div class="flow-box-action">Review extraction output</div>
+                <div class="flow-box-detail">per-recipient mention list</div>
+              </div>
+              <div class="flow-label">Mark batch as reviewed</div>
+            </div>
+          </div>
+          <div class="flow-note">
+            <strong>Key assumption:</strong> DeepSeek API returns valid JSON structured output; retry logic handles occasional malformed responses.<br/>
+            <strong>Failure mode:</strong> API timeout on a feedback → that feedback logged as failed and skipped; batch completes with partial results flagged for officer.
+          </div>
+        </div>
+      </div>
+
+      <!-- Workflow 2 -->
+      <div class="workflow-card" data-stage="mup">
+        <div class="workflow-header" onclick="toggleWorkflow(this)">
+          <span class="stage-tag tag-mup">MUP</span>
+          <span class="workflow-story">Officer approves routing and downloads email drafts to send manually</span>
+          <span class="chevron">›</span>
+        </div>
+        <div class="workflow-body">
+          <div class="flow-steps">
+            <div class="flow-step">
+              <div class="flow-box flow-trigger">
+                <div class="flow-box-comp">Officer → Browser</div>
+                <div class="flow-box-action">Approve / skip per recipient</div>
+                <div class="flow-box-detail">PATCH /batches/{id}/recipients</div>
+              </div>
+              <div class="flow-label">Granular per-recipient control</div>
+            </div>
+            <div class="flow-connector">→</div>
+            <div class="flow-step">
+              <div class="flow-box">
+                <div class="flow-box-comp">CSV Generator</div>
+                <div class="flow-box-action">Build 2 CSVs per recipient</div>
+                <div class="flow-box-detail">positive.csv + negative.csv</div>
+              </div>
+              <div class="flow-label">From approved extractions in DB</div>
+            </div>
+            <div class="flow-connector">→</div>
+            <div class="flow-step">
+              <div class="flow-box">
+                <div class="flow-box-comp">Email Draft Generator</div>
+                <div class="flow-box-action">Build .eml (MIME multipart)</div>
+                <div class="flow-box-detail">CSVs as attachments</div>
+              </div>
+              <div class="flow-label">Python email.mime stdlib</div>
+            </div>
+            <div class="flow-connector">→</div>
+            <div class="flow-step">
+              <div class="flow-box flow-db">
+                <div class="flow-box-comp">PostgreSQL</div>
+                <div class="flow-box-action">Log audit record</div>
+                <div class="flow-box-detail">drafted_at + recipient list</div>
+              </div>
+              <div class="flow-label">Immutable audit trail</div>
+            </div>
+            <div class="flow-connector">→</div>
+            <div class="flow-step">
+              <div class="flow-box flow-end">
+                <div class="flow-box-comp">Officer → Email Client</div>
+                <div class="flow-box-action">Download .eml → send</div>
+                <div class="flow-box-detail">Officer takes responsibility</div>
+              </div>
+              <div class="flow-label">No SMTP in system</div>
+            </div>
+          </div>
+          <div class="flow-note">
+            <strong>Key assumption:</strong> Officer's email client (Outlook / Thunderbird / Gmail) can open .eml files with attachments — universally true.<br/>
+            <strong>Failure mode:</strong> Officer closes browser before downloading — drafts regenerable on demand from DB; no data lost.
+          </div>
+        </div>
+      </div>
+
+      <!-- Workflow 3 -->
+      <div class="workflow-card" data-stage="mup">
+        <div class="workflow-header" onclick="toggleWorkflow(this)">
+          <span class="stage-tag tag-mup">MUP</span>
+          <span class="workflow-story">Feedback bodies embedded and stored in vector store during ingestion</span>
+          <span class="chevron">›</span>
+        </div>
+        <div class="workflow-body">
+          <div class="flow-steps">
+            <div class="flow-step">
+              <div class="flow-box flow-trigger">
+                <div class="flow-box-comp">Ingestion Pipeline</div>
+                <div class="flow-box-action">After PostgreSQL write</div>
+                <div class="flow-box-detail">feedback body text</div>
+              </div>
+              <div class="flow-label">Piggybacks on batch ingestion</div>
+            </div>
+            <div class="flow-connector">→</div>
+            <div class="flow-step">
+              <div class="flow-box">
+                <div class="flow-box-comp">sentence-transformers</div>
+                <div class="flow-box-action">Generate 384-dim embedding</div>
+                <div class="flow-box-detail">all-MiniLM-L6-v2 (local)</div>
+              </div>
+              <div class="flow-label">Loaded once at app startup</div>
+            </div>
+            <div class="flow-connector">→</div>
+            <div class="flow-step">
+              <div class="flow-box flow-db" style="border-color:var(--accent);background:#0d2137;">
+                <div class="flow-box-comp" style="color:var(--accent);">Qdrant</div>
+                <div class="flow-box-action">Upsert vector + payload</div>
+                <div class="flow-box-detail">feedback_id, type, school, sentiment, date</div>
+              </div>
+              <div class="flow-label">Filterable metadata stored alongside vector</div>
+            </div>
+            <div class="flow-connector">→</div>
+            <div class="flow-step">
+              <div class="flow-box flow-end">
+                <div class="flow-box-comp">System</div>
+                <div class="flow-box-action">Ready for semantic search</div>
+                <div class="flow-box-detail">from MUP onwards</div>
+              </div>
+              <div class="flow-label">No user-facing action needed</div>
+            </div>
+          </div>
+          <div class="flow-note">
+            <strong>Key assumption:</strong> ~300ms CPU embedding time per feedback is acceptable within a batch (50 feedbacks ≈ 15s total embedding time).<br/>
+            <strong>Failure mode:</strong> Qdrant unreachable → embedding step logged as failed, batch continues; re-embed on Qdrant recovery without re-running DeepSeek.
+          </div>
+        </div>
+      </div>
+
+      <!-- Workflow 4 -->
+      <div class="workflow-card" data-stage="mvp">
+        <div class="workflow-header" onclick="toggleWorkflow(this)">
+          <span class="stage-tag tag-mvp">MVP</span>
+          <span class="workflow-story">Officer or dean searches historical feedback by semantic meaning</span>
+          <span class="chevron">›</span>
+        </div>
+        <div class="workflow-body">
+          <div class="flow-steps">
+            <div class="flow-step">
+              <div class="flow-box flow-trigger">
+                <div class="flow-box-comp">User → Browser</div>
+                <div class="flow-box-action">Enter query + set filters</div>
+                <div class="flow-box-detail">school / type / date / sentiment</div>
+              </div>
+              <div class="flow-label">Natural language query</div>
+            </div>
+            <div class="flow-connector">→</div>
+            <div class="flow-step">
+              <div class="flow-box">
+                <div class="flow-box-comp">sentence-transformers</div>
+                <div class="flow-box-action">Embed query text</div>
+                <div class="flow-box-detail">384-dim vector</div>
+              </div>
+              <div class="flow-label">Same model as ingestion</div>
+            </div>
+            <div class="flow-connector">→</div>
+            <div class="flow-step">
+              <div class="flow-box flow-db" style="border-color:var(--accent);background:#0d2137;">
+                <div class="flow-box-comp" style="color:var(--accent);">Qdrant</div>
+                <div class="flow-box-action">Nearest-neighbour search</div>
+                <div class="flow-box-detail">with metadata filter</div>
+              </div>
+              <div class="flow-label">Top-10 by cosine similarity</div>
+            </div>
+            <div class="flow-connector">→</div>
+            <div class="flow-step">
+              <div class="flow-box flow-db">
+                <div class="flow-box-comp">PostgreSQL</div>
+                <div class="flow-box-action">Fetch full feedback details</div>
+                <div class="flow-box-detail">by feedback_id list</div>
+              </div>
+              <div class="flow-label">Full text + metadata</div>
+            </div>
+            <div class="flow-connector">→</div>
+            <div class="flow-step">
+              <div class="flow-box flow-end">
+                <div class="flow-box-comp">User → Browser</div>
+                <div class="flow-box-action">View ranked results</div>
+                <div class="flow-box-detail">similarity score + full content</div>
+              </div>
+              <div class="flow-label">Click to view source JSON</div>
+            </div>
+          </div>
+          <div class="flow-note">
+            <strong>Key assumption:</strong> RBAC applied at query time — dean role filters Qdrant payload by their school before returning results.<br/>
+            <strong>Failure mode:</strong> No results above similarity threshold → fall back to keyword search on PostgreSQL <code>body</code> JSON field.
+          </div>
+        </div>
+      </div>
+
+      <!-- Workflow 5 -->
+      <div class="workflow-card" data-stage="mvp">
+        <div class="workflow-header" onclick="toggleWorkflow(this)">
+          <span class="stage-tag tag-mvp">MVP</span>
+          <span class="workflow-story">Leadership views sentiment trends and complaint rankings on analytics dashboard</span>
+          <span class="chevron">›</span>
+        </div>
+        <div class="workflow-body">
+          <div class="flow-steps">
+            <div class="flow-step">
+              <div class="flow-box flow-trigger">
+                <div class="flow-box-comp">Leadership → Browser</div>
+                <div class="flow-box-action">Open analytics dashboard</div>
+                <div class="flow-box-detail">set filters (date, type, school)</div>
+              </div>
+              <div class="flow-label">Role verified on request</div>
+            </div>
+            <div class="flow-connector">→</div>
+            <div class="flow-step">
+              <div class="flow-box">
+                <div class="flow-box-comp">Analytics Engine</div>
+                <div class="flow-box-action">Run aggregation SQL</div>
+                <div class="flow-box-detail">GROUP BY school/service/period</div>
+              </div>
+              <div class="flow-label">Sentiment ratio + complaint counts</div>
+            </div>
+            <div class="flow-connector">→</div>
+            <div class="flow-step">
+              <div class="flow-box flow-db">
+                <div class="flow-box-comp">PostgreSQL</div>
+                <div class="flow-box-action">Return aggregated rows</div>
+                <div class="flow-box-detail">from extractions table</div>
+              </div>
+              <div class="flow-label">Indexed on school/service/date</div>
+            </div>
+            <div class="flow-connector">→</div>
+            <div class="flow-step">
+              <div class="flow-box flow-end">
+                <div class="flow-box-comp">Leadership → Browser</div>
+                <div class="flow-box-action">View charts + rankings → export</div>
+                <div class="flow-box-detail">CSV or PDF</div>
+              </div>
+              <div class="flow-label">Trend chart + top complaints list</div>
+            </div>
+          </div>
+          <div class="flow-note">
+            <strong>Key assumption:</strong> Analytics queries run against PostgreSQL directly — no separate OLAP store needed at current data volume (&lt;10k feedbacks/year).<br/>
+            <strong>Failure mode:</strong> Slow query as data grows → add indexes on <code>(school_id, batch_date, sentiment)</code>; materialized views as a future optimisation.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- Solution Architecture -->
+  <div class="section">
+    <div class="section-title">⚙️ Solution Architecture</div>
+    <div class="section-sub">Per-component decisions with Architecture Decision Records. Click to expand.</div>
+
+    <!-- Ingestion Pipeline -->
+    <div id="sol-ingestion" class="solution-block" data-stage="mtp">
+      <div class="solution-header" onclick="toggle(this)">
+        <span style="font-size:22px;">🔄</span>
+        <div style="flex:1;">
+          <div class="sol-name">Ingestion Pipeline</div>
+          <div class="sol-tech">Python · asyncio · pathlib · pydantic schema validation</div>
+        </div>
+        <div style="display:flex;gap:6px;"><span class="stage-tag tag-mtp">MTP</span></div>
+        <span class="chevron">›</span>
+      </div>
+      <div class="solution-body">
+        <div class="sol-desc">A Python async function triggered by the officer's "Run Batch" action. It walks the mounted <code>/feedback-data/&lt;TYPE&gt;/</code> directory, reads each <code>.json</code> file, validates it against a Pydantic schema (metadata + body structure), and persists valid records to PostgreSQL in bulk. Malformed files are logged with their filename and error reason — the batch continues without them. A batch record is created upfront so the UI can show processing status in real time via polling.</div>
+        <div class="adr">
+          <div class="adr-header">📋 Architecture Decision Record <span class="adr-status">Accepted</span></div>
+          <div class="adr-body">
+            <div class="adr-section">
+              <div class="adr-label">Context</div>
+              <div class="adr-text">Officers have 50 feedback files per batch sitting on the local filesystem. The system needs to read them reliably, skip bad files, and persist them before making any API calls — so a crash mid-batch doesn't lose data.</div>
+            </div>
+            <div class="adr-section">
+              <div class="adr-label">Options Considered</div>
+              <div class="alternatives">
+                <div class="alt-item"><span class="alt-chosen">✓ Chosen</span> Docker volume mount + server-side file walk — officer selects folder path in UI, server reads directly from the mount.</div>
+                <div class="alt-item"><span class="alt-rejected">✗ Rejected</span> Browser file upload (multipart form) — uploading 50 × 1,200-word JSON files through the browser is slow and brittle; impractical for on-prem where files are already local.</div>
+                <div class="alt-item"><span class="alt-rejected">✗ Rejected</span> Watch folder with inotify daemon — adds always-on complexity; batch is triggered manually so no benefit.</div>
+              </div>
+            </div>
+            <div class="adr-section">
+              <div class="adr-label">Decision</div>
+              <div class="adr-text">Mount the host feedback directory into the container at <code>/feedback-data</code> via <code>docker-compose.yml</code> volume. Officer enters the subfolder path in the UI. Server walks it with <code>pathlib.Path.glob("*.json")</code>, validates with Pydantic, bulk-inserts to PostgreSQL. Same path works on local and on-prem — only the mount source changes.</div>
+            </div>
+            <div class="adr-section">
+              <div class="adr-label">Trade-offs</div>
+              <div class="tradeoffs">
+                <div class="tradeoff-card tradeoff-pros"><div class="tradeoff-label">Pros</div><div class="tradeoff-item">No upload overhead for large batches</div><div class="tradeoff-item">Malformed files skipped without crashing batch</div><div class="tradeoff-item">Same code path local → on-prem</div></div>
+                <div class="tradeoff-card tradeoff-cons"><div class="tradeoff-label">Cons / Risks</div><div class="tradeoff-item">Requires correct volume mount config per environment</div><div class="tradeoff-item">Path must be configured in .env; typos cause silent empty batches</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Extraction Engine -->
+    <div id="sol-ai" class="solution-block" data-stage="mtp">
+      <div class="solution-header" onclick="toggle(this)">
+        <span style="font-size:22px;">🧠</span>
+        <div style="flex:1;">
+          <div class="sol-name">AI Extraction Engine</div>
+          <div class="sol-tech">DeepSeek API · openai Python SDK (base_url override) · structured JSON output · asyncio gather</div>
+        </div>
+        <div style="display:flex;gap:6px;"><span class="stage-tag tag-mtp">MTP</span></div>
+        <span class="chevron">›</span>
+      </div>
+      <div class="solution-body">
+        <div class="sol-desc">One DeepSeek API call per feedback using a system prompt that instructs the model to return a structured JSON array of mentions. Each mention contains: <code>entity</code> (school/service name), <code>entity_type</code> (<code>"school"</code> or <code>"service"</code>), <code>extracted_text</code> (verbatim section from the feedback), and <code>sentiment</code> (<code>"positive"</code> or <code>"negative"</code>). All 50 calls in a batch are dispatched concurrently with <code>asyncio.gather()</code>. Failed calls are retried once; persistent failures are logged and skipped.</div>
+        <div class="adr">
+          <div class="adr-header">📋 Architecture Decision Record <span class="adr-status">Accepted</span></div>
+          <div class="adr-body">
+            <div class="adr-section">
+              <div class="adr-label">Context</div>
+              <div class="adr-text">Each ~1,200-word feedback mentions multiple schools and services across 10 Q&A pairs. We need reliable extraction of which entity is mentioned, what was said, and the sentiment — without 14+ API calls per feedback.</div>
+            </div>
+            <div class="adr-section">
+              <div class="adr-label">Options Considered</div>
+              <div class="alternatives">
+                <div class="alt-item"><span class="alt-chosen">✓ Chosen</span> Single prompt per feedback with structured JSON output schema — one DeepSeek call extracts all mentions at once.</div>
+                <div class="alt-item"><span class="alt-rejected">✗ Rejected</span> One call per entity (school/service) × 11 entities × 50 feedbacks = 550 API calls per batch. Latency and cost are unacceptable.</div>
+                <div class="alt-item"><span class="alt-rejected">✗ Rejected</span> Fine-tuned NER model — requires labelled training data we don't have; maintenance burden exceeds benefit for this scale.</div>
+              </div>
+            </div>
+            <div class="adr-section">
+              <div class="adr-label">Decision</div>
+              <div class="adr-text">Use DeepSeek via the <code>openai</code> Python SDK with <code>base_url="https://api.deepseek.com"</code>. System prompt lists all known school/service names explicitly so the model doesn't hallucinate entity names. Response forced to JSON via <code>response_format={"type":"json_object"}</code>. Pydantic validates the response shape before DB insert.</div>
+            </div>
+            <div class="adr-section">
+              <div class="adr-label">Trade-offs</div>
+              <div class="tradeoffs">
+                <div class="tradeoff-card tradeoff-pros"><div class="tradeoff-label">Pros</div><div class="tradeoff-item">1 API call per feedback — 50 total per batch</div><div class="tradeoff-item">Concurrent dispatch keeps batch time low (~10–30s for 50 files)</div><div class="tradeoff-item">Swappable to any OpenAI-compatible LLM by changing base_url</div></div>
+                <div class="tradeoff-card tradeoff-cons"><div class="tradeoff-label">Cons / Risks</div><div class="tradeoff-item">Prompt engineering required; prompt must stay updated when new schools/services are added</div><div class="tradeoff-item">Occasional JSON parsing failure requires retry logic</div><div class="tradeoff-item">External API dependency — batch fails if DeepSeek is unreachable</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CSV Generator -->
+    <div id="sol-csv" class="solution-block" data-stage="mtp">
+      <div class="solution-header" onclick="toggle(this)">
+        <span style="font-size:22px;">📊</span>
+        <div style="flex:1;">
+          <div class="sol-name">CSV Generator</div>
+          <div class="sol-tech">Python csv module · in-memory generation · FastAPI StreamingResponse</div>
+        </div>
+        <div style="display:flex;gap:6px;"><span class="stage-tag tag-mtp">MTP</span></div>
+        <span class="chevron">›</span>
+      </div>
+      <div class="solution-body">
+        <div class="sol-desc">Queries PostgreSQL for all extractions belonging to an approved batch recipient, groups by sentiment, and writes two CSVs: <code>positive.csv</code> (columns: <code>feedback_id, extracted_text</code>) and <code>negative.csv</code> (same columns). Generated in-memory on demand — no files written to disk. Served via <code>StreamingResponse</code> to the Email Draft Generator or directly to the officer as a download.</div>
+        <div class="adr">
+          <div class="adr-header">📋 Architecture Decision Record <span class="adr-status">Accepted</span></div>
+          <div class="adr-body">
+            <div class="adr-section">
+              <div class="adr-label">Context</div>
+              <div class="adr-text">Deans need positive and negative mentions separated, each with the source feedback ID so they can reference-check the original file. The output must be re-generatable if the officer re-downloads.</div>
+            </div>
+            <div class="adr-section">
+              <div class="adr-label">Options Considered</div>
+              <div class="alternatives">
+                <div class="alt-item"><span class="alt-chosen">✓ Chosen</span> In-memory generation via Python <code>csv</code> stdlib, regenerated on each download request from DB data.</div>
+                <div class="alt-item"><span class="alt-rejected">✗ Rejected</span> Pre-generated files stored on disk — adds file lifecycle management (cleanup, uniqueness); unnecessary when DB is the source of truth.</div>
+                <div class="alt-item"><span class="alt-rejected">✗ Rejected</span> Excel (.xlsx) via openpyxl — heavier dependency; CSV is simpler and universally compatible with dean's email clients and tools.</div>
+              </div>
+            </div>
+            <div class="adr-section">
+              <div class="adr-label">Decision</div>
+              <div class="adr-text">Generate CSVs on demand from PostgreSQL extractions. Always reflects current approval state. Officer can re-generate after editing approvals without reprocessing.</div>
+            </div>
+            <div class="adr-section">
+              <div class="adr-label">Trade-offs</div>
+              <div class="tradeoffs">
+                <div class="tradeoff-card tradeoff-pros"><div class="tradeoff-label">Pros</div><div class="tradeoff-item">No disk storage management needed</div><div class="tradeoff-item">Always current — reflects latest approval state</div><div class="tradeoff-item">Zero extra dependencies</div></div>
+                <div class="tradeoff-card tradeoff-cons"><div class="tradeoff-label">Cons / Risks</div><div class="tradeoff-item">DB query on each download (negligible for 50-file batches)</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Email Draft Generator -->
+    <div id="sol-email" class="solution-block" data-stage="mup">
+      <div class="solution-header" onclick="toggle(this)">
+        <span style="font-size:22px;">✉️</span>
+        <div style="flex:1;">
+          <div class="sol-name">Email Draft Generator</div>
+          <div class="sol-tech">Python email.mime stdlib · RFC 2822 .eml · MIMEMultipart with CSV attachments</div>
+        </div>
+        <div style="display:flex;gap:6px;"><span class="stage-tag tag-mup">MUP</span></div>
+        <span class="chevron">›</span>
+      </div>
+      <div class="solution-body">
+        <div class="sol-desc">For each approved recipient, generates an <code>.eml</code> file containing: a pre-filled <code>To</code> header (from <code>SCHOOLS_DEPARTMENTS.json</code>), a structured HTML email body summarising the batch and mention counts, and the two CSVs as MIME attachments. The officer downloads the <code>.eml</code>, opens it in any email client (Outlook, Thunderbird, Gmail via drag-and-drop), and sends it — taking full responsibility for the content.</div>
+        <div class="adr">
+          <div class="adr-header">📋 Architecture Decision Record <span class="adr-status">Accepted</span></div>
+          <div class="adr-body">
+            <div class="adr-section">
+              <div class="adr-label">Context</div>
+              <div class="adr-text">The system must not send emails directly. The officer is the responsible sender. But the system should eliminate all manual composition work — the officer should only need to open and click Send.</div>
+            </div>
+            <div class="adr-section">
+              <div class="adr-label">Options Considered</div>
+              <div class="alternatives">
+                <div class="alt-item"><span class="alt-chosen">✓ Chosen</span> Generate <code>.eml</code> file (RFC 2822) with CSVs as MIME attachments — officer opens in any email client and sends.</div>
+                <div class="alt-item"><span class="alt-rejected">✗ Rejected</span> SMTP integration — explicitly out of scope; removes officer control and legal accountability.</div>
+                <div class="alt-item"><span class="alt-rejected">✗ Rejected</span> Display-only HTML body for copy-paste — cannot carry file attachments; officer would need to attach CSVs manually.</div>
+              </div>
+            </div>
+            <div class="adr-section">
+              <div class="adr-label">Decision</div>
+              <div class="adr-text">Use Python's <code>email.mime.multipart.MIMEMultipart</code> to build the email, attach both CSVs as <code>text/csv</code> parts, pre-fill <code>To</code>, <code>Subject</code>, and <code>Body</code>. Serve as <code>application/octet-stream</code> download. Zero external dependencies.</div>
+            </div>
+            <div class="adr-section">
+              <div class="adr-label">Trade-offs</div>
+              <div class="tradeoffs">
+                <div class="tradeoff-card tradeoff-pros"><div class="tradeoff-label">Pros</div><div class="tradeoff-item">No SMTP server required</div><div class="tradeoff-item">Works with any email client</div><div class="tradeoff-item">Officer retains full send control</div><div class="tradeoff-item">Zero additional dependencies</div></div>
+                <div class="tradeoff-card tradeoff-cons"><div class="tradeoff-label">Cons / Risks</div><div class="tradeoff-item">Officer must manually open .eml (by design — this is the review gate)</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Web Application -->
+    <div id="sol-webapp" class="solution-block" data-stage="mtp">
+      <div class="solution-header" onclick="toggle(this)">
+        <span style="font-size:22px;">🖥️</span>
+        <div style="flex:1;">
+          <div class="sol-name">Web Application</div>
+          <div class="sol-tech">FastAPI · Jinja2 templates · HTMX · SQLAlchemy ORM · Alembic migrations</div>
+        </div>
+        <div style="display:flex;gap:6px;"><span class="stage-tag tag-mtp">MTP</span><span class="stage-tag tag-mup">MUP</span><span class="stage-tag tag-mvp">MVP</span></div>
+        <span class="chevron">›</span>
+      </div>
+      <div class="solution-body">
+        <div class="sol-desc">Single FastAPI application serving all UI and API routes. Jinja2 renders server-side HTML — no separate frontend build. HTMX provides just enough interactivity: progress polling during batch extraction, inline approve/skip toggles, live search results. SQLAlchemy handles all DB access with Alembic managing schema migrations. At MTP it serves only the review UI; MUP adds approval and audit views; MVP adds analytics dashboard and role-gated access.</div>
+        <div class="adr">
+          <div class="adr-header">📋 Architecture Decision Record <span class="adr-status">Accepted</span></div>
+          <div class="adr-body">
+            <div class="adr-section">
+              <div class="adr-label">Context</div>
+              <div class="adr-text">Need a Python web UI that handles async LLM API calls, renders a review dashboard, and ships as a single Docker container. The demo audience is officers and leadership — not developers — so the UI must work out of the box.</div>
+            </div>
+            <div class="adr-section">
+              <div class="adr-label">Options Considered</div>
+              <div class="alternatives">
+                <div class="alt-item"><span class="alt-chosen">✓ Chosen</span> FastAPI + Jinja2 + HTMX — async backend, server-rendered HTML, no separate JS build step.</div>
+                <div class="alt-item"><span class="alt-rejected">✗ Rejected</span> Flask — no native async support; LLM batch calls would block worker threads and freeze the UI during extraction.</div>
+                <div class="alt-item"><span class="alt-rejected">✗ Rejected</span> React/Next.js SPA + FastAPI API — requires a separate frontend container and build pipeline; overkill for this use case; adds Docker Compose complexity for a demo.</div>
+              </div>
+            </div>
+            <div class="adr-section">
+              <div class="adr-label">Decision</div>
+              <div class="adr-text">FastAPI for async LLM handling; Jinja2 for HTML templating with no build step; HTMX for interactivity via <code>hx-get</code> / <code>hx-post</code> without writing JavaScript. Single <code>web</code> container in Docker Compose.</div>
+            </div>
+            <div class="adr-section">
+              <div class="adr-label">Trade-offs</div>
+              <div class="tradeoffs">
+                <div class="tradeoff-card tradeoff-pros"><div class="tradeoff-label">Pros</div><div class="tradeoff-item">Async LLM calls don't block UI</div><div class="tradeoff-item">Single Docker container, no build pipeline</div><div class="tradeoff-item">HTMX interactivity without JavaScript framework</div></div>
+                <div class="tradeoff-card tradeoff-cons"><div class="tradeoff-label">Cons / Risks</div><div class="tradeoff-item">HTMX limits complex client-side state (acceptable here)</div><div class="tradeoff-item">Server-side rendering is less snappy than SPA for analytics charts (use Chart.js CDN to compensate)</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PostgreSQL -->
+    <div id="sol-postgres" class="solution-block" data-stage="mtp">
+      <div class="solution-header" onclick="toggle(this)">
+        <span style="font-size:22px;">🗄️</span>
+        <div style="flex:1;">
+          <div class="sol-name">Data Store (PostgreSQL)</div>
+          <div class="sol-tech">PostgreSQL 16 · SQLAlchemy ORM · Alembic · Docker volume for persistence</div>
+        </div>
+        <div style="display:flex;gap:6px;"><span class="stage-tag tag-mtp">MTP</span><span class="stage-tag tag-mup">MUP</span><span class="stage-tag tag-mvp">MVP</span></div>
+        <span class="chevron">›</span>
+      </div>
+      <div class="solution-body">
+        <div class="sol-desc">PostgreSQL stores five core tables: <code>feedbacks</code> (raw JSON body + metadata), <code>batches</code> (processing state + trigger info), <code>extractions</code> (per-mention extraction results), <code>batch_recipients</code> (approval state per school/service per batch), <code>audit_log</code> (immutable record of drafts generated). MVP adds <code>users</code> and <code>roles</code>. Indexes on <code>(school_id, sentiment, batch_date)</code> support analytics aggregation queries efficiently.</div>
+        <div class="adr">
+          <div class="adr-header">📋 Architecture Decision Record <span class="adr-status">Accepted</span></div>
+          <div class="adr-body">
+            <div class="adr-section">
+              <div class="adr-label">Context</div>
+              <div class="adr-text">Need relational storage for batch state (with per-recipient approval tracking), structured extraction results queryable for analytics, and an audit log — plus multi-user access in MVP.</div>
+            </div>
+            <div class="adr-section">
+              <div class="adr-label">Options Considered</div>
+              <div class="alternatives">
+                <div class="alt-item"><span class="alt-chosen">✓ Chosen</span> PostgreSQL 16 in Docker Compose with named volume for persistence across container restarts.</div>
+                <div class="alt-item"><span class="alt-rejected">✗ Rejected</span> SQLite — write-locks under concurrent access break multi-user MVP; not suitable for on-prem deployment with multiple simultaneous users.</div>
+                <div class="alt-item"><span class="alt-rejected">✗ Rejected</span> MongoDB — document store adds no benefit over PostgreSQL's JSON column support; SQL aggregation for analytics is superior to MongoDB's aggregation pipeline for this use case.</div>
+              </div>
+            </div>
+            <div class="adr-section">
+              <div class="adr-label">Decision</div>
+              <div class="adr-text">PostgreSQL 16 official Docker image. Data persisted via named volume <code>postgres_data</code>. Alembic handles schema migrations so upgrades from MTP → MUP → MVP don't require manual SQL. SQLAlchemy ORM used throughout.</div>
+            </div>
+            <div class="adr-section">
+              <div class="adr-label">Trade-offs</div>
+              <div class="tradeoffs">
+                <div class="tradeoff-card tradeoff-pros"><div class="tradeoff-label">Pros</div><div class="tradeoff-item">ACID transactions for batch state</div><div class="tradeoff-item">SQL analytics without extra infrastructure</div><div class="tradeoff-item">Alembic migrations for MTP→MVP schema evolution</div></div>
+                <div class="tradeoff-card tradeoff-cons"><div class="tradeoff-label">Cons / Risks</div><div class="tradeoff-item">Heavier than SQLite (~200MB RAM) — acceptable given machine specs</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vector Store -->
+    <div id="sol-vector" class="solution-block" data-stage="mup">
+      <div class="solution-header" onclick="toggle(this)">
+        <span style="font-size:22px;">🔍</span>
+        <div style="flex:1;">
+          <div class="sol-name">Vector Store (Qdrant)</div>
+          <div class="sol-tech">Qdrant Docker · qdrant-client Python SDK · sentence-transformers all-MiniLM-L6-v2 · 384-dim cosine similarity</div>
+        </div>
+        <div style="display:flex;gap:6px;"><span class="stage-tag tag-mup">MUP</span><span class="stage-tag tag-mvp">MVP</span></div>
+        <span class="chevron">›</span>
+      </div>
+      <div class="solution-body">
+        <div class="sol-desc">Qdrant runs as a separate service in Docker Compose. During ingestion, <code>all-MiniLM-L6-v2</code> (loaded once at FastAPI startup via <code>sentence-transformers</code>) generates a 384-dimensional embedding for each feedback's body text. The vector is upserted to Qdrant alongside a payload: <code>{feedback_id, type, school_id, related_services, sentiment, date}</code>. At search time, the query is embedded with the same model and a filtered nearest-neighbour search is run. PostgreSQL provides full feedback content; Qdrant only holds vectors + payload for lookup.</div>
+        <div class="adr">
+          <div class="adr-header">📋 Architecture Decision Record <span class="adr-status">Accepted</span></div>
+          <div class="adr-body">
+            <div class="adr-section">
+              <div class="adr-label">Context</div>
+              <div class="adr-text">Officers need to find relevant historical feedbacks by meaning (e.g. "students unhappy with registration process"). Keyword search fails when different words express the same complaint. Two decisions required: vector store choice and embedding model choice.</div>
+            </div>
+            <div class="adr-section">
+              <div class="adr-label">Options Considered</div>
+              <div class="alternatives">
+                <div class="alt-item"><span class="alt-chosen">✓ Chosen</span> Qdrant (separate Docker service) + all-MiniLM-L6-v2 (local, CPU) — production-ready, airgap-safe, zero API cost.</div>
+                <div class="alt-item"><span class="alt-rejected">✗ Rejected</span> pgvector extension on PostgreSQL — complicates PostgreSQL setup; mixes concerns; Qdrant's filtering and indexing is purpose-built and superior.</div>
+                <div class="alt-item"><span class="alt-rejected">✗ Rejected</span> DeepSeek embeddings API — requires outbound internet from on-prem server, which may be restricted at the university. Deployment blocker.</div>
+                <div class="alt-item"><span class="alt-rejected">✗ Rejected</span> Chroma — weaker persistence guarantees; less production-ready for on-prem than Qdrant.</div>
+              </div>
+            </div>
+            <div class="adr-section">
+              <div class="adr-label">Decision</div>
+              <div class="adr-text">Qdrant <code>qdrant/qdrant</code> Docker image with named volume <code>qdrant_data</code>. <code>all-MiniLM-L6-v2</code> loaded at startup (~80MB). Embedding runs on CPU at ~50–200ms per feedback — 50 feedbacks ≈ 10–15s total, acceptable within a batch. RBAC filter applied at Qdrant query time via payload filter on <code>school_id</code>.</div>
+            </div>
+            <div class="adr-section">
+              <div class="adr-label">Trade-offs</div>
+              <div class="tradeoffs">
+                <div class="tradeoff-card tradeoff-pros"><div class="tradeoff-label">Pros</div><div class="tradeoff-item">Airgap-safe — no internet required for embeddings</div><div class="tradeoff-item">Zero API cost for search</div><div class="tradeoff-item">Qdrant persists across restarts with named volume</div><div class="tradeoff-item">Filterable by school/type/sentiment at vector search time</div></div>
+                <div class="tradeoff-card tradeoff-cons"><div class="tradeoff-label">Cons / Risks</div><div class="tradeoff-item">384 dimensions vs 3072 (DeepSeek) — lower precision for very nuanced queries (acceptable for &lt;10k feedbacks/year corpus)</div><div class="tradeoff-item">~300MB additional RAM for model + Qdrant service</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Analytics Engine -->
+    <div id="sol-analytics" class="solution-block" data-stage="mvp">
+      <div class="solution-header" onclick="toggle(this)">
+        <span style="font-size:22px;">📈</span>
+        <div style="flex:1;">
+          <div class="sol-name">Analytics Engine</div>
+          <div class="sol-tech">SQLAlchemy SQL aggregation · Chart.js (CDN) · role-gated queries · CSV/PDF export</div>
+        </div>
+        <div style="display:flex;gap:6px;"><span class="stage-tag tag-mvp">MVP</span></div>
+        <span class="chevron">›</span>
+      </div>
+      <div class="solution-body">
+        <div class="sol-desc">SQL aggregation queries over the <code>extractions</code> table — grouped by <code>school_id</code> or <code>service_id</code>, <code>sentiment</code>, and <code>batch_date</code> period — produce the two key views: sentiment trend over time and complaint volume ranking. Results are serialised to JSON and rendered client-side by Chart.js (loaded from CDN, no build step). Role-based filters are applied server-side: deans see only their school; leadership sees all. PDF export uses <code>weasyprint</code>; CSV uses Python <code>csv</code> stdlib.</div>
+        <div class="adr">
+          <div class="adr-header">📋 Architecture Decision Record <span class="adr-status">Accepted</span></div>
+          <div class="adr-body">
+            <div class="adr-section">
+              <div class="adr-label">Context</div>
+              <div class="adr-text">Leadership needs sentiment trend charts and complaint rankings from historical data. The question is whether to add a dedicated analytics database or use PostgreSQL directly.</div>
+            </div>
+            <div class="adr-section">
+              <div class="adr-label">Options Considered</div>
+              <div class="alternatives">
+                <div class="alt-item"><span class="alt-chosen">✓ Chosen</span> Direct SQL aggregation queries on PostgreSQL with indexes — no additional infrastructure.</div>
+                <div class="alt-item"><span class="alt-rejected">✗ Rejected</span> Dedicated OLAP store (ClickHouse, DuckDB) — significant infrastructure overhead for &lt;10,000 feedbacks per year; premature optimisation.</div>
+                <div class="alt-item"><span class="alt-rejected">✗ Rejected</span> Pandas in-memory aggregation — loads entire table into memory on each request; worse than SQL for filtered queries; no query optimisation.</div>
+              </div>
+            </div>
+            <div class="adr-section">
+              <div class="adr-label">Decision</div>
+              <div class="adr-text">SQL <code>GROUP BY</code> aggregations on indexed <code>extractions</code> table. Indexes on <code>(school_id, sentiment, batch_date)</code> added in MTP so data is index-ready at MVP. Chart.js renders trend line and bar charts from JSON endpoint. Materialized views added if query time exceeds 500ms as corpus grows.</div>
+            </div>
+            <div class="adr-section">
+              <div class="adr-label">Trade-offs</div>
+              <div class="tradeoffs">
+                <div class="tradeoff-card tradeoff-pros"><div class="tradeoff-label">Pros</div><div class="tradeoff-item">No additional Docker services</div><div class="tradeoff-item">SQL is well-understood; easy to extend</div><div class="tradeoff-item">Chart.js from CDN requires no build step</div></div>
+                <div class="tradeoff-card tradeoff-cons"><div class="tradeoff-label">Cons / Risks</div><div class="tradeoff-item">Query performance degrades with large datasets — mitigated by indexes and future materialized views</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Containerisation -->
+    <div id="sol-docker" class="solution-block" data-stage="mtp">
+      <div class="solution-header" onclick="toggle(this)">
+        <span style="font-size:22px;">🐳</span>
+        <div style="flex:1;">
+          <div class="sol-name">Containerisation</div>
+          <div class="sol-tech">Docker Compose · 3 services: web, db, qdrant · .env config · named volumes</div>
+        </div>
+        <div style="display:flex;gap:6px;"><span class="stage-tag tag-mtp">MTP</span><span class="stage-tag tag-mup">MUP</span><span class="stage-tag tag-mvp">MVP</span></div>
+        <span class="chevron">›</span>
+      </div>
+      <div class="solution-body">
+        <div class="sol-desc">Three Docker Compose services: <code>web</code> (FastAPI app, built from <code>Dockerfile</code>), <code>db</code> (PostgreSQL 16 official image), <code>qdrant</code> (<code>qdrant/qdrant</code> official image). Named volumes <code>postgres_data</code> and <code>qdrant_data</code> persist data across restarts. <code>.env</code> file controls <code>DEEPSEEK_API_KEY</code>, <code>FEEDBACK_DATA_PATH</code>, <code>DATABASE_URL</code>. Same <code>docker-compose.yml</code> works on local dev machine and on-prem university server — only the volume source path and <code>.env</code> values change.</div>
+        <div class="adr">
+          <div class="adr-header">📋 Architecture Decision Record <span class="adr-status">Accepted</span></div>
+          <div class="adr-body">
+            <div class="adr-section">
+              <div class="adr-label">Context</div>
+              <div class="adr-text">Product must demo on a local developer machine and then deploy identically to an on-prem university server with no DevOps infrastructure. Environment reproducibility is non-negotiable.</div>
+            </div>
+            <div class="adr-section">
+              <div class="adr-label">Options Considered</div>
+              <div class="alternatives">
+                <div class="alt-item"><span class="alt-chosen">✓ Chosen</span> Docker Compose — single <code>docker compose up</code> starts the full stack on any machine with Docker installed.</div>
+                <div class="alt-item"><span class="alt-rejected">✗ Rejected</span> Kubernetes — massive operational overhead for a 3-service application at &lt;30 concurrent users; university IT team is unlikely to have Kubernetes expertise.</div>
+                <div class="alt-item"><span class="alt-rejected">✗ Rejected</span> Bare-metal / virtualenv deployment — environment drift between developer machine and on-prem server causes "works on my machine" failures; no isolation between system Python and app dependencies.</div>
+              </div>
+            </div>
+            <div class="adr-section">
+              <div class="adr-label">Decision</div>
+              <div class="adr-text"><code>docker-compose.yml</code> with three services. MTP ships with <code>web</code> + <code>db</code>. MUP adds <code>qdrant</code>. All environment variables in <code>.env</code> (gitignored). Volume mounts for feedback data configurable per environment. <code>sentence-transformers</code> model downloaded into image at build time so it is available offline on on-prem server.</div>
+            </div>
+            <div class="adr-section">
+              <div class="adr-label">Trade-offs</div>
+              <div class="tradeoffs">
+                <div class="tradeoff-card tradeoff-pros"><div class="tradeoff-label">Pros</div><div class="tradeoff-item">Single command to start full stack</div><div class="tradeoff-item">Identical environment local → on-prem</div><div class="tradeoff-item">Model baked into image — works offline after first build</div></div>
+                <div class="tradeoff-card tradeoff-cons"><div class="tradeoff-label">Cons / Risks</div><div class="tradeoff-item">Docker image with sentence-transformers model is ~1.5GB — one-time download at build</div><div class="tradeoff-item">No horizontal scaling (not needed at this user count)</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Architecture Document · AI Feedback Process · Python + FastAPI + DeepSeek + Qdrant + Docker · Generated by Claude Code · 2026-05-30</footer>
+</main>
+
+<script>
+  function toggleWorkflow(header) {
+    const body = header.nextElementSibling;
+    const ch = header.querySelector('.chevron');
+    const open = body.classList.contains('open');
+    body.classList.toggle('open', !open);
+    ch.classList.toggle('open', !open);
+    header.classList.toggle('open', !open);
+  }
+
+  function toggle(header) {
+    const body = header.nextElementSibling;
+    const ch = header.querySelector('.chevron');
+    const open = body.classList.contains('open');
+    body.classList.toggle('open', !open);
+    ch.classList.toggle('open', !open);
+    header.classList.toggle('open', !open);
+  }
+
+  function goto(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const h = el.querySelector('.solution-header, .workflow-header');
+    if (h && !el.querySelector('.solution-body.open, .workflow-body.open')) {
+      (el.querySelector('.solution-header') ? toggle : toggleWorkflow)(h);
+    }
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  }
+
+  function filterStage(s) {
+    document.querySelectorAll('.stage-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector('.s-' + s).classList.add('active');
+    document.querySelectorAll('.component-card, .solution-block, .workflow-card').forEach(el => {
+      const tags = el.querySelectorAll('.stage-tag');
+      const match = s === 'all' || Array.from(tags).some(t => t.classList.contains('tag-' + s));
+      el.style.opacity = match ? '1' : '0.25';
+      el.style.pointerEvents = match ? '' : 'none';
+    });
+  }
+
+  // Open first solution block on load
+  const first = document.querySelector('.solution-header');
+  if (first) toggle(first);
+  const firstW = document.querySelector('.workflow-header');
+  if (firstW) toggleWorkflow(firstW);
+</script>
+</body>
+</html>

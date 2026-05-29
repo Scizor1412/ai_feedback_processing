@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "feedback_id": "INT-2025-016",
+    "date": "2025-08-03",
+    "type": "INTERNSHIP",
+    "persona": {
+      "id": "EMP0016",
+      "company": "Samsung Vietnam R&D",
+      "industry": "Software Development",
+      "evaluator_name": "Truong Thanh Vy",
+      "evaluator_role": "Internship Coordinator",
+      "role": "employer",
+      "intern_id": "SV20231016",
+      "intern_name": "Do Thanh Vy",
+      "intern_school": "School of Engineering",
+      "intern_school_id": "ENG",
+      "intern_program": "Mechanical Engineering"
+    },
+    "related_schools": [
+      "ENG"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "CAREER"
+    ],
+    "overall_sentiment": "mixed"
+  },
+  "body": [
+    {
+      "question_1": "How would you rate the technical competency of the student intern in their relevant field of study?",
+      "answer_1": "The intern from the School of Engineering's Mechanical Engineering program demonstrated superb technical competency that significantly exceeded our initial expectations for a student at this stage of their academic career. Their foundational knowledge in core discipline areas was solid, well-structured, and readily applicable to real workplace challenges encountered during the internship period. They adapted quickly to our internal tools, methodologies, and technical standards, requiring minimal remedial instruction before becoming a productive and largely self-directed contributor to assigned projects. The depth of practical skills, particularly in applied problem-solving and technical documentation, was notably strong and reflects well on the quality of the School of Engineering's curriculum design and delivery."
+    },
+    {
+      "question_2": "How well did the intern demonstrate professional communication and interpersonal skills in the workplace?",
+      "answer_2": "This intern's professionalism was moderate, showing genuine commitment and a positive attitude that formed a solid foundation, with some areas requiring coaching and development during the placement period. Reliability and punctuality were good overall, though proactive communication about progress and obstacles was inconsistent and required encouragement from supervisors. The intern engaged positively with team members and accepted feedback constructively in most situations, demonstrating the willingness to learn that is essential for professional growth. Additional preparation in formal workplace communication — particularly written reporting standards and stakeholder update practices — would improve the professional impact of graduates from this program."
+    },
+    {
+      "question_3": "How effectively did the intern collaborate with team members and contribute to group projects?",
+      "answer_3": "This intern's teamwork skills were decent, with a genuine willingness to collaborate balanced by some developmental areas that became apparent as project complexity increased. The intern worked well in low-ambiguity team tasks with clear role definitions, but required additional support when navigating more complex team dynamics involving competing priorities, unclear ownership, or conflicting perspectives. Communication within the team improved noticeably over the internship duration, which is an encouraging sign of learning and adaptability. Further emphasis on collaborative project work, cross-functional team exercises, and conflict resolution skills in the Mechanical Engineering curriculum would produce more team-ready graduates for the professional environment."
+    },
+    {
+      "question_4": "How would you assess the intern's problem-solving abilities and approach to challenging or unfamiliar tasks?",
+      "answer_4": "Problem-solving capabilities for this intern from the School of Engineering's Mechanical Engineering program were fair, reflecting a sound foundational analytical approach with room for development in handling more complex, ambiguous challenges. For well-defined problems with clear parameters, the intern performed competently and demonstrated sound logical reasoning and structured analysis. However, when problems were ambiguous, multi-layered, or required creative reframing of assumptions, the intern benefited significantly from supervisor guidance to stay productive. Incorporating more open-ended, ill-defined problem scenarios into coursework and assessments would better prepare graduates for the messy, constraint-rich challenges of professional practice."
+    },
+    {
+      "question_5": "How quickly and effectively did the intern adapt to your company's work culture, tools, and environment?",
+      "answer_5": "This intern showed adequate adaptability to our work environment, adjusting reasonably well to most situations while requiring additional support when changes occurred at a faster pace or scale than anticipated. Day-to-day routine adjustments — such as modified task priorities or new tool adoption — were handled efficiently and without notable disruption. More significant changes, such as project pivots or team restructuring, required more guidance to navigate smoothly and confidently. Greater exposure to agile methodologies, sprint-based workflows, and change management principles in the Mechanical Engineering curriculum would strengthen the adaptability of graduates entering dynamic professional environments."
+    },
+    {
+      "question_6": "How proficient was the intern in English communication, both written and verbal, for professional purposes?",
+      "answer_6": "English communication proficiency was a problematic limitation for this intern from the School of Engineering's Mechanical Engineering program that impacted their effectiveness in several key areas of their role. Written communication — including emails and technical documentation — frequently contained grammatical and structural errors that required editing by supervisors before use in internal or external contexts. Verbal participation in English-language meetings was hesitant, limiting the intern's ability to contribute fully to discussions or to represent the team confidently in broader organizational settings. We strongly recommend the School of Engineering elevate its English communication training requirements — particularly for professional writing and spoken business English — as a core graduation competency for all programs."
+    },
+    {
+      "question_7": "How well did the intern's academic training align with the practical demands and standards of your industry?",
+      "answer_7": "Our experience with this intern has highlighted concerning gaps between what the School of Engineering's Mechanical Engineering curriculum delivers and what the professional industry actually requires from graduates in this field. Specifically, the intern lacked working proficiency in several tools and methodologies that are now industry standard, requiring us to invest significant onboarding time in areas that should be covered academically. Soft skills — particularly professional communication, project management, and stakeholder management — also appeared underdeveloped relative to what professional roles at this level require from day one. We would welcome the opportunity to engage with the School of Engineering's curriculum design team to provide specific, actionable recommendations for improvement."
+    },
+    {
+      "question_8": "What specific technical or soft skill areas do you believe the university curriculum should strengthen for future graduates?",
+      "answer_8": "Based on our experience with this intern from the School of Engineering's Mechanical Engineering program, we are impressively impressed with the alignment between the academic curriculum and the practical demands of our industry. The foundational knowledge, theoretical frameworks, and applied skills the intern brought to the role mapped closely to what we require in graduate-level professional practitioners in this field. In particular, the project-based and problem-solving components of the curriculum appear to have translated well into workplace readiness. We would encourage the School of Engineering to continue developing its industry connections and to involve practitioners actively in curriculum review to maintain this strong alignment as the professional landscape continues to evolve."
+    },
+    {
+      "question_9": "How would you rate the intern's overall performance and value contribution to your organization during the placement?",
+      "answer_9": "This intern's overall performance was reasonable, delivering a useful contribution to the team while also clearly indicating areas where additional academic preparation would improve professional readiness. Assigned tasks were generally completed to a functional standard, with quality improving progressively as the intern built familiarity with our tools, processes, and expectations over the placement period. The growth trajectory was positive and suggests genuine potential that a stronger academic foundation would help realize more quickly. We see this internship as a successful learning experience for the student and encourage the School of Engineering to continue building practical readiness into its curriculum to produce even more effective graduates."
+    },
+    {
+      "question_10": "Based on your experience with this intern, would you consider hiring from this university in the future, and why?",
+      "answer_10": "We would cautiously consider hiring from the School of Engineering's Mechanical Engineering program again, with the expectation that the skill and readiness gaps we observed in this internship experience would be addressed through curriculum improvements in the near term. The intern's core attitude and growth potential were positive, and these qualities form a solid basis for future professional development. However, we would want to see stronger applied technical skills, better English communication preparation, and more structured professional readiness training before we significantly expand our intake from this institution. We encourage the School of Engineering to reach out to us directly to establish a closer industry-academia collaboration that benefits both future interns and our organization's talent development strategy."
+    }
+  ]
+}

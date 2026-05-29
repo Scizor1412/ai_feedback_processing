@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "feedback_id": "MID-2025-049",
+    "date": "2025-11-03",
+    "type": "MID_TERM",
+    "persona": {
+      "id": "SV20240049",
+      "name": "Le Quoc Dung",
+      "gender": "Male",
+      "role": "student",
+      "school": "School of Engineering",
+      "school_id": "ENG",
+      "year": 3,
+      "program": "Mechanical Engineering"
+    },
+    "related_schools": [
+      "ENG"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "FACILITIES",
+      "IT_SUPPORT",
+      "LIBRARY",
+      "STUDENT_AFFAIRS"
+    ],
+    "overall_sentiment": "mixed"
+  },
+  "body": [
+    {
+      "question_1": "How would you rate the overall quality of teaching in your courses this semester so far?",
+      "answer_1": "I have observed several inconsistent aspects of teaching quality in my Mechanical Engineering courses at the School of Engineering this semester that I feel compelled to bring to attention. Certain lectures are delivered without adequate structure, making it difficult to follow the logical progression of content, and some lecturers rely heavily on reading directly from slides rather than elaborating or encouraging discussion. Assessment criteria are sometimes communicated after assignments are already underway, which creates unnecessary confusion and unfair evaluation conditions. I strongly raise concerns about the institution to invest in faculty development programs focused on modern pedagogy, student engagement techniques, and constructive feedback practices to address these shortcomings urgently."
+    },
+    {
+      "question_2": "How well does the course content align with current industry standards and your career aspirations?",
+      "answer_2": "The curriculum for my Mechanical Engineering program at the School of Engineering is well-designed and clearly aligned with current industry demands and emerging professional trends in the field. Course structures are logical, building progressively on foundational concepts before introducing advanced topics, which gives students a solid intellectual scaffold. The balance between theoretical foundations and practical application is excellent, with project-based assessments, case studies, and laboratory work that directly reflect real-world professional scenarios I will encounter in my career. I particularly value the inclusion of contemporary tools and technologies, which ensures graduates are competitive and well-prepared for the demands of the modern job market."
+    },
+    {
+      "question_3": "How effective are the assessment methods (assignments, quizzes, exams) in evaluating your understanding of the subject matter?",
+      "answer_3": "The assessment methods employed in my Mechanical Engineering courses at the School of Engineering are exceptional and demonstrate a thoughtful approach to measuring genuine student understanding. The balanced mix of individual assignments, group projects, presentations, and written examinations ensures that different learning styles and competencies are recognized and fairly evaluated throughout the semester. Rubrics are consistently shared in advance, assessment criteria are transparent, and feedback is provided promptly enough to inform improvement in subsequent tasks. I particularly praise the emphasis on applied problem-solving assessments rather than rote memorization, which I believe is a much stronger indicator of actual competency and readiness for professional practice."
+    },
+    {
+      "question_4": "How would you describe the availability and responsiveness of your lecturers outside of scheduled class time?",
+      "answer_4": "Lecturer accessibility has been a substandard aspect of my experience in the Mechanical Engineering program at the School of Engineering this semester, and I believe it warrants serious attention. Office hours are infrequently held and rarely communicated through official channels, making it difficult for students to plan consultations around their own timetables. Email responses are often delayed by more than a week, and some lecturers appear unresponsive to student queries outside of formal class time entirely. This lack of availability creates unnecessary barriers to learning and discourages students from seeking help when they need it most. I urge the school to enforce minimum availability standards for all faculty members."
+    },
+    {
+      "question_5": "How satisfied are you with the learning resources and materials provided for your courses this semester?",
+      "answer_5": "The learning materials provided for several of my Mechanical Engineering courses at the School of Engineering are substandard and fall short of what students need to succeed academically. Required textbooks are outdated and frequently out of stock in both the campus bookstore and the library, forcing students to source materials independently at considerable expense and inconvenience. The Learning Management System is inconsistently used by lecturers — some post materials days after class, and some modules have no digital resources whatsoever. I strongly suggest the Library Services and IT Support Department to collaborate on ensuring all course resources are accessible digitally, current, and available before the semester commences."
+    },
+    {
+      "question_6": "How would you rate the IT infrastructure and digital learning tools provided by the university to support your studies?",
+      "answer_6": "The IT infrastructure managed by the IT Support Department presents inadequate challenges that significantly disrupt the academic experience at the School of Engineering. Wi-Fi connectivity is unreliable in several key areas of the campus, including the main library, multiple lecture halls, and postgraduate study rooms, making online coursework and research frustrating and inefficient. Computer labs frequently have outdated or malfunctioning equipment, and software licensing issues occasionally prevent students from accessing tools required for coursework. The IT helpdesk response time is inconsistent, often taking several days to resolve straightforward technical issues. Urgent investment in infrastructure upgrades and improved support staffing is needed."
+    },
+    {
+      "question_7": "How efficient have you found the academic administrative processes such as registration, grade appeals, and scheduling?",
+      "answer_7": "The academic administrative processes managed by the Academic Affairs Office at the School of Engineering have been exceptional this semester, and I applaud the efficiency and transparency with which they are handled. Course registration was smooth and intuitive via the student portal, with clear instructions provided well in advance of enrollment deadlines. Grade appeals and transcript requests are processed promptly and communicated through official channels with regular status updates that reduce student anxiety. Administrative staff are approachable, knowledgeable, and genuinely helpful when students encounter difficulties navigating university policies or procedures. The overall administrative experience reflects a student-centered approach that I believe enhances the broader university experience significantly."
+    },
+    {
+      "question_8": "How would you evaluate the quality and accessibility of student support services currently available at this university?",
+      "answer_8": "The student support services offered by the Student Affairs Office at the School of Engineering have been remarkable and have made a genuine difference to my overall well-being and university experience throughout the semester. Counseling services are readily accessible, professionally delivered, and clearly communicated to students through multiple channels including the student portal, orientation sessions, and notice boards. The range of support available — from academic counseling to mental health resources and financial hardship assistance — reflects a comprehensive understanding of the diverse challenges students face during their academic journey. I also recognize the regular student welfare check-ins organized by the office, which foster a sense of community and belonging on campus."
+    },
+    {
+      "question_9": "How well does the university's physical environment and facilities support your daily learning experience?",
+      "answer_9": "The physical campus environment and facilities managed by the Facilities Management provide a impressive learning atmosphere that I believe genuinely contributes to academic productivity and student well-being at the School of Engineering. Lecture halls are spacious, well-ventilated, and equipped with modern audio-visual technology that facilitates clear and engaging presentations. Study spaces — including individual carrels, group collaboration rooms, and outdoor relaxation areas — are thoughtfully designed and well-maintained throughout the academic week. Cleaning and security standards are consistently high, and campus maintenance requests are typically resolved within a reasonable timeframe. The overall physical environment reflects a commitment to providing students with a safe, comfortable, and inspiring place to learn."
+    },
+    {
+      "question_10": "What specific improvements would you most like to see implemented for the remainder of this semester?",
+      "answer_10": "My key recommendation for the School of Engineering is to urgently address the inconsistent systemic issues that have affected Mechanical Engineering students this semester, rather than treating them as isolated incidents. A structured, transparent student feedback mechanism — where concerns are acknowledged within a set timeframe and outcomes communicated back to students — would significantly rebuild trust that has been eroded by unaddressed issues. I also strongly raise concerns about leadership to conduct a comprehensive curriculum and service quality review in genuine consultation with current students, alumni, and industry partners. Without meaningful action on the concerns raised in this feedback, student satisfaction and the institution's competitive standing will continue to decline in the years ahead."
+    }
+  ]
+}

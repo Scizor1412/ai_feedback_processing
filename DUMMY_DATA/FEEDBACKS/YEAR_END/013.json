@@ -1,0 +1,71 @@
+{
+  "metadata": {
+    "feedback_id": "YE-2025-013",
+    "date": "2025-04-07",
+    "type": "YEAR_END",
+    "persona": {
+      "id": "SV20240013",
+      "name": "Truong Thanh Dung",
+      "gender": "Female",
+      "role": "student",
+      "school": "School of Communication",
+      "school_id": "COM",
+      "year": 3,
+      "program": "Public Relations"
+    },
+    "related_schools": [
+      "COM"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "CAREER",
+      "FINANCE",
+      "IT_SUPPORT",
+      "LIBRARY",
+      "STUDENT_AFFAIRS"
+    ],
+    "overall_sentiment": "positive"
+  },
+  "body": [
+    {
+      "question_1": "Reflecting on the full academic year, how would you rate your overall educational experience at this university?",
+      "answer_1": "My overall academic year experience in the Public Relations program at the School of Communication has unfortunately been inconsistent and has fallen considerably short of the expectations I had when I enrolled. Persistent issues with teaching quality, administrative responsiveness, infrastructure reliability, and student support have collectively impacted my ability to learn and thrive in this environment. I feel that despite making this feedback heard through multiple channels, meaningful change has been slow and the institution's response to student concerns has lacked urgency and accountability. I sincerely hope the upcoming academic year brings substantive improvements in all the areas I have identified, not only for my own benefit but for all students who will follow in future cohorts."
+    },
+    {
+      "question_2": "How effectively do you believe this year's coursework has prepared you for your future career or further academic studies?",
+      "answer_2": "The career preparation support provided by the Career Center at the School of Communication has been excellent and has made a tangible difference to my professional readiness and employment prospects as I approach graduation. Resume writing workshops, mock interviews, and industry networking events have been well-organized, highly practical, and attended by credible industry professionals who provided genuinely actionable feedback. The internship matching program is effective, with clear communication about available placements and strong follow-up support for students during their internship periods. I acknowledge the Career Center's proactive approach and its strong relationships with employers, which have opened real opportunities for students across all programs."
+    },
+    {
+      "question_3": "How would you assess the progression of your academic skills and knowledge throughout this academic year?",
+      "answer_3": "The curriculum for my Public Relations program at the School of Communication is well-designed and clearly aligned with current industry demands and emerging professional trends in the field. Course structures are logical, building progressively on foundational concepts before introducing advanced topics, which gives students a solid intellectual scaffold. The balance between theoretical foundations and practical application is impressive, with project-based assessments, case studies, and laboratory work that directly reflect real-world professional scenarios I will encounter in my career. I particularly value the inclusion of contemporary tools and technologies, which ensures graduates are competitive and well-prepared for the demands of the modern job market."
+    },
+    {
+      "question_4": "How satisfied are you with the extracurricular activities, student clubs, and personal development opportunities available?",
+      "answer_4": "The extracurricular opportunities available at the School of Communication, coordinated by the Student Affairs Office, are outstanding and represent a genuinely important complement to the formal academic curriculum. A wide and diverse range of student clubs, cultural societies, sports teams, and volunteer programs are actively supported and well-resourced by the university, enabling students to develop leadership skills, build social connections, and pursue interests outside their academic programs. Events are well-promoted, regularly scheduled, and inclusive in their design, welcoming students from all backgrounds and programs to participate equally. I praise the institution's recognition that holistic student development extends beyond classroom performance and into every dimension of campus life."
+    },
+    {
+      "question_5": "How well has the university's Career Center prepared you for internship opportunities and graduate employment?",
+      "answer_5": "The career preparation support provided by the Career Center at the School of Communication has been outstanding and has made a tangible difference to my professional readiness and employment prospects as I approach graduation. Resume writing workshops, mock interviews, and industry networking events have been well-organized, highly practical, and attended by credible industry professionals who provided genuinely actionable feedback. The internship matching program is effective, with clear communication about available placements and strong follow-up support for students during their internship periods. I recognize the Career Center's proactive approach and its strong relationships with employers, which have opened real opportunities for students across all programs."
+    },
+    {
+      "question_6": "How would you rate the university's financial services, including tuition fee management and scholarship support?",
+      "answer_6": "The financial services provided by the Finance Department at the School of Communication have been excellent this semester, and I genuinely recognize the clarity, transparency, and efficiency with which they are managed. Fee statements are issued promptly and accurately, with clear breakdowns of tuition, facility charges, and any applicable scholarship deductions that make it easy to verify and plan payments. Payment options are flexible and well-communicated, including installment plans that meaningfully reduce financial pressure on students and families. Scholarship disbursements are processed on time and confirmed through official notifications, removing uncertainty around critical financial support. The finance office staff are professional, patient, and genuinely helpful when navigating complex financial queries."
+    },
+    {
+      "question_7": "How would you evaluate the IT infrastructure and digital services provided by the university over the course of the year?",
+      "answer_7": "The IT infrastructure managed by the IT Support Department presents insufficient challenges that significantly disrupt the academic experience at the School of Communication. Wi-Fi connectivity is unreliable in several key areas of the campus, including the main library, multiple lecture halls, and postgraduate study rooms, making online coursework and research frustrating and inefficient. Computer labs frequently have outdated or malfunctioning equipment, and software licensing issues occasionally prevent students from accessing tools required for coursework. The IT helpdesk response time is inconsistent, often taking several days to resolve straightforward technical issues. Urgent investment in infrastructure upgrades and improved support staffing is needed."
+    },
+    {
+      "question_8": "How satisfied are you with the library resources — both physical and digital — that were available throughout the academic year?",
+      "answer_8": "The learning resources and materials provided for my Public Relations courses at the School of Communication are commendable and represent a significant strength of the program. Course packs are comprehensive, well-organized, and current, incorporating recent academic publications, industry white papers, and multimedia content that enriches the learning experience beyond traditional textbooks. The university's digital library provides broad access to peer-reviewed journals and e-books, and the Learning Management System is intuitive, well-maintained, and effectively used by lecturers to share materials in a timely manner. I also commend the provision of recorded lectures, which allows students to revisit complex material at their own pace — a genuinely valuable academic resource."
+    },
+    {
+      "question_9": "How effectively did the university communicate important information, deadlines, and updates throughout the academic year?",
+      "answer_9": "Academic administrative processes at the School of Communication are adequate in their execution, meeting basic requirements but leaving clear room for improvement in both speed and user-friendliness. The online student portal functions adequately for routine tasks such as registration and fee payment, but navigating more complex requests — such as grade appeals or course exemptions — remains unnecessarily cumbersome. Communication timelines are inconsistent, with some requests handled promptly and others taking weeks without updates or acknowledgment. Streamlining administrative workflows, improving the student portal's UX, and setting clear service-level response standards would meaningfully reduce administrative friction for the entire student body."
+    },
+    {
+      "question_10": "What are your key recommendations for improving the overall student experience in the coming academic year?",
+      "answer_10": "I have very few concerns to raise about my overall experience in the Public Relations program at the School of Communication, and I genuinely believe this institution provides an commendable educational environment that prepares students well for their future careers. If I were to recommend any improvement, I would suggest further expanding industry partnership opportunities — additional mentorship programs, sponsored capstone projects, and guest lecture series from senior professionals would enrich an already strong academic offering. Increasing the frequency of student feedback collection and demonstrating visible action on that feedback would further strengthen trust between students and the institution. Overall, I am proud to be a student here and would highly recommend this university to future applicants without hesitation."
+    }
+  ]
+}

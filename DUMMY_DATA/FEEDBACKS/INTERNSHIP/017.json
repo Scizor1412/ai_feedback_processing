@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "feedback_id": "INT-2025-017",
+    "date": "2025-05-11",
+    "type": "INTERNSHIP",
+    "persona": {
+      "id": "EMP0017",
+      "company": "FPT Software",
+      "industry": "Consulting",
+      "evaluator_name": "Truong Van Dung",
+      "evaluator_role": "Senior Engineer",
+      "role": "employer",
+      "intern_id": "SV20231017",
+      "intern_name": "Bui Huu Tuan",
+      "intern_school": "School of Business Administration",
+      "intern_school_id": "BUS",
+      "intern_program": "International Business"
+    },
+    "related_schools": [
+      "BUS"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "CAREER"
+    ],
+    "overall_sentiment": "mostly_negative"
+  },
+  "body": [
+    {
+      "question_1": "How would you rate the technical competency of the student intern in their relevant field of study?",
+      "answer_1": "The intern's technical competency revealed inadequate gaps between what the School of Business Administration's International Business curriculum covers and the practical skills required in a professional workplace environment. While the intern possessed a reasonable theoretical grounding in core concepts, they struggled to translate this knowledge into practical application without significant guidance and hand-holding from senior team members. Proficiency in industry-standard tools and workflows was below the level we typically expect from graduates at a comparable stage, and several foundational technical skills needed to be reinforced on the job. We strongly recommend the School of Business Administration review its curriculum to better align academic content with current industry tool and practice standards."
+    },
+    {
+      "question_2": "How well did the intern demonstrate professional communication and interpersonal skills in the workplace?",
+      "answer_2": "This intern's professionalism was acceptable, showing genuine commitment and a positive attitude that formed a solid foundation, with some areas requiring coaching and development during the placement period. Reliability and punctuality were good overall, though proactive communication about progress and obstacles was inconsistent and required encouragement from supervisors. The intern engaged positively with team members and accepted feedback constructively in most situations, demonstrating the willingness to learn that is essential for professional growth. Additional preparation in formal workplace communication — particularly written reporting standards and stakeholder update practices — would improve the professional impact of graduates from this program."
+    },
+    {
+      "question_3": "How effectively did the intern collaborate with team members and contribute to group projects?",
+      "answer_3": "The intern's ability to collaborate effectively within a team environment was problematic and required more management attention than anticipated. Contribution to group tasks was often uneven — the intern sometimes worked in isolation rather than coordinating with colleagues, leading to duplicated effort and avoidable misalignments in shared workstreams. Communication within the team was reactive rather than proactive, and the intern occasionally struggled with the shared accountability and compromise that effective team collaboration demands. We recommend the School of Business Administration incorporate more structured team-based project work and collaborative simulation into the International Business curriculum to better prepare students for the realities of modern workplace team dynamics."
+    },
+    {
+      "question_4": "How would you assess the intern's problem-solving abilities and approach to challenging or unfamiliar tasks?",
+      "answer_4": "Problem-solving was a disappointing area for this intern, representing the most significant gap between the School of Business Administration's International Business graduates and our professional workforce expectations. The intern often sought direct guidance from supervisors before attempting independent analysis or solution development, limiting their ability to work autonomously on complex assignments. When initial approaches failed, pivoting strategy independently proved difficult, and the intern sometimes became visibly discouraged rather than treating failure as diagnostic information to inform the next attempt. Building a stronger culture of structured problem-solving — through case studies, debugging exercises, and open-ended challenges — in the International Business curriculum would produce significantly more effective graduates."
+    },
+    {
+      "question_5": "How quickly and effectively did the intern adapt to your company's work culture, tools, and environment?",
+      "answer_5": "This intern showed reasonable adaptability to our work environment, adjusting reasonably well to most situations while requiring additional support when changes occurred at a faster pace or scale than anticipated. Day-to-day routine adjustments — such as modified task priorities or new tool adoption — were handled efficiently and without notable disruption. More significant changes, such as project pivots or team restructuring, required more guidance to navigate smoothly and confidently. Greater exposure to agile methodologies, sprint-based workflows, and change management principles in the International Business curriculum would strengthen the adaptability of graduates entering dynamic professional environments."
+    },
+    {
+      "question_6": "How proficient was the intern in English communication, both written and verbal, for professional purposes?",
+      "answer_6": "English communication capability for this intern was satisfactory, sufficient for routine internal tasks but requiring development to meet the standards expected in professional, client-facing, or international contexts. Reading comprehension of English-language materials was generally strong, enabling effective research and document processing independently. However, written composition — particularly formal reports and professional emails — required editing support, and verbal fluency in meetings was limited, particularly when discussions moved at pace or involved complex technical vocabulary. Strengthening English for Professional Purposes training in the International Business curriculum would meaningfully enhance graduates' communication readiness for the modern, increasingly international workplace."
+    },
+    {
+      "question_7": "How well did the intern's academic training align with the practical demands and standards of your industry?",
+      "answer_7": "Our experience with this intern has highlighted concerning gaps between what the School of Business Administration's International Business curriculum delivers and what the professional industry actually requires from graduates in this field. Specifically, the intern lacked working proficiency in several tools and methodologies that are now industry standard, requiring us to invest significant onboarding time in areas that should be covered academically. Soft skills — particularly professional communication, project management, and stakeholder management — also appeared underdeveloped relative to what professional roles at this level require from day one. We would welcome the opportunity to engage with the School of Business Administration's curriculum design team to provide specific, actionable recommendations for improvement."
+    },
+    {
+      "question_8": "What specific technical or soft skill areas do you believe the university curriculum should strengthen for future graduates?",
+      "answer_8": "Our curriculum-related feedback for the School of Business Administration's International Business program, based on this internship experience, is moderate: there is a reasonable foundation but meaningful gaps that the institution could address to significantly improve graduate readiness. Core theoretical knowledge is adequately covered, and the intern was able to apply foundational concepts with reasonable effectiveness. However, gaps exist in applied tool proficiency, project management fundamentals, and the professional communication standards expected in industry settings. We recommend more regular and structured industry consultations to ensure the curriculum remains current, and greater emphasis on workplace simulation through live projects, internships, and industry-sponsored assessments."
+    },
+    {
+      "question_9": "How would you rate the intern's overall performance and value contribution to your organization during the placement?",
+      "answer_9": "This intern's overall performance was fair, delivering a useful contribution to the team while also clearly indicating areas where additional academic preparation would improve professional readiness. Assigned tasks were generally completed to a functional standard, with quality improving progressively as the intern built familiarity with our tools, processes, and expectations over the placement period. The growth trajectory was positive and suggests genuine potential that a stronger academic foundation would help realize more quickly. We see this internship as a successful learning experience for the student and encourage the School of Business Administration to continue building practical readiness into its curriculum to produce even more effective graduates."
+    },
+    {
+      "question_10": "Based on your experience with this intern, would you consider hiring from this university in the future, and why?",
+      "answer_10": "While we respect the School of Business Administration as an institution and do not question its academic credentials, our experience with this particular intern from the International Business program has given us disappointing reservations about recruiting heavily from this cohort in the near future. The skill gaps and professional readiness challenges encountered during this placement represent a significant onboarding investment that strains our capacity as a host organization. We would encourage the School of Business Administration to engage directly with industry partners — including ourselves — to understand the specific competency gaps and develop targeted solutions before we could confidently increase our intake of graduates from this program. We remain open to future engagement if meaningful curriculum improvements are implemented and communicated to the industry community."
+    }
+  ]
+}

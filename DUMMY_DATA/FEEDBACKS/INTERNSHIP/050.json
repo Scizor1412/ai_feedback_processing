@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "feedback_id": "INT-2025-050",
+    "date": "2025-07-01",
+    "type": "INTERNSHIP",
+    "persona": {
+      "id": "EMP0050",
+      "company": "Shopee Vietnam",
+      "industry": "Digital Marketing",
+      "evaluator_name": "Cao Quoc Hai",
+      "evaluator_role": "Team Lead",
+      "role": "employer",
+      "intern_id": "SV20231050",
+      "intern_name": "Luong Thanh Nga",
+      "intern_school": "School of Information Technology",
+      "intern_school_id": "IT",
+      "intern_program": "Computer Science"
+    },
+    "related_schools": [
+      "IT"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "CAREER"
+    ],
+    "overall_sentiment": "mostly_positive"
+  },
+  "body": [
+    {
+      "question_1": "How would you rate the technical competency of the student intern in their relevant field of study?",
+      "answer_1": "The intern's technical competency revealed substandard gaps between what the School of Information Technology's Computer Science curriculum covers and the practical skills required in a professional workplace environment. While the intern possessed a reasonable theoretical grounding in core concepts, they struggled to translate this knowledge into practical application without significant guidance and hand-holding from senior team members. Proficiency in industry-standard tools and workflows was below the level we typically expect from graduates at a comparable stage, and several foundational technical skills needed to be reinforced on the job. We strongly recommend the School of Information Technology review its curriculum to better align academic content with current industry tool and practice standards."
+    },
+    {
+      "question_2": "How well did the intern demonstrate professional communication and interpersonal skills in the workplace?",
+      "answer_2": "The professional attitude demonstrated by this intern from the School of Information Technology's Computer Science program was remarkable and genuinely impressed our team throughout the internship period. Punctuality, reliability, and a consistently positive and collaborative work ethic were evident from the very first week, requiring no correction or management intervention to maintain. The intern communicated proactively, raised concerns and questions through appropriate channels, and responded to feedback constructively and without defensiveness. Their professional maturity — particularly in managing competing deadlines, handling ambiguity, and engaging respectfully with colleagues at all levels — reflects a level of preparation that speaks well of the School of Information Technology's commitment to producing work-ready graduates."
+    },
+    {
+      "question_3": "How effectively did the intern collaborate with team members and contribute to group projects?",
+      "answer_3": "The intern's ability to collaborate effectively within a team environment was inadequate and required more management attention than anticipated. Contribution to group tasks was often uneven — the intern sometimes worked in isolation rather than coordinating with colleagues, leading to duplicated effort and avoidable misalignments in shared workstreams. Communication within the team was reactive rather than proactive, and the intern occasionally struggled with the shared accountability and compromise that effective team collaboration demands. We recommend the School of Information Technology incorporate more structured team-based project work and collaborative simulation into the Computer Science curriculum to better prepare students for the realities of modern workplace team dynamics."
+    },
+    {
+      "question_4": "How would you assess the intern's problem-solving abilities and approach to challenging or unfamiliar tasks?",
+      "answer_4": "The intern's problem-solving abilities were among the most exceptional attributes they brought to our organization from the School of Information Technology's Computer Science program. When confronted with unfamiliar challenges or technical obstacles, the intern approached them systematically — breaking problems into manageable components, forming and testing hypotheses, and escalating appropriately only when genuinely blocked by limitations beyond their current capability. Their intellectual curiosity, persistence under pressure, and willingness to explore unconventional solutions made them a genuinely valuable problem-solver within the team. This quality is difficult to teach in the workplace and speaks highly of the critical thinking culture embedded in the School of Information Technology's academic programs."
+    },
+    {
+      "question_5": "How quickly and effectively did the intern adapt to your company's work culture, tools, and environment?",
+      "answer_5": "The intern's adaptability to our workplace culture, processes, and evolving project requirements was remarkable and demonstrated a level of professional resilience and flexibility that we consistently value in permanent hires. Changes to project scope, team structure, and delivery timelines were managed with composure, and the intern made adjustments to their work approach quickly and effectively without requiring extended support or reassurance from management. They were proactive in seeking to understand the context behind changes rather than simply executing instructions, which allowed them to contribute meaningfully even in fluid project environments. This quality reflects a well-rounded education at the School of Information Technology that extends beyond technical training to genuine professional agility."
+    },
+    {
+      "question_6": "How proficient was the intern in English communication, both written and verbal, for professional purposes?",
+      "answer_6": "The intern's English communication proficiency — both written and spoken — was commendable and met the professional standards required for effective participation in our bilingual team environment. Written reports, emails, and documentation were consistently clear, professionally structured, and free of errors that would compromise understanding or credibility in a client-facing context. Verbal communication in meetings and collaborative sessions was confident and coherent, enabling full participation in discussions with both local and international colleagues. The intern's English proficiency reflects well on the language preparation embedded in the School of Information Technology's Computer Science program and is a strong asset in our increasingly international work environment."
+    },
+    {
+      "question_7": "How well did the intern's academic training align with the practical demands and standards of your industry?",
+      "answer_7": "Our curriculum-related feedback for the School of Information Technology's Computer Science program, based on this internship experience, is moderate: there is a reasonable foundation but meaningful gaps that the institution could address to significantly improve graduate readiness. Core theoretical knowledge is adequately covered, and the intern was able to apply foundational concepts with reasonable effectiveness. However, gaps exist in applied tool proficiency, project management fundamentals, and the professional communication standards expected in industry settings. We recommend more regular and structured industry consultations to ensure the curriculum remains current, and greater emphasis on workplace simulation through live projects, internships, and industry-sponsored assessments."
+    },
+    {
+      "question_8": "What specific technical or soft skill areas do you believe the university curriculum should strengthen for future graduates?",
+      "answer_8": "Our curriculum-related feedback for the School of Information Technology's Computer Science program, based on this internship experience, is acceptable: there is a reasonable foundation but meaningful gaps that the institution could address to significantly improve graduate readiness. Core theoretical knowledge is adequately covered, and the intern was able to apply foundational concepts with reasonable effectiveness. However, gaps exist in applied tool proficiency, project management fundamentals, and the professional communication standards expected in industry settings. We recommend more regular and structured industry consultations to ensure the curriculum remains current, and greater emphasis on workplace simulation through live projects, internships, and industry-sponsored assessments."
+    },
+    {
+      "question_9": "How would you rate the intern's overall performance and value contribution to your organization during the placement?",
+      "answer_9": "The overall performance of this intern from the School of Information Technology's Computer Science program has been remarkable and has added genuine value to our organization during the internship period in ways we did not fully anticipate at the outset. Key deliverables were completed on time, to the required quality standard, and in some cases with additional initiative that exceeded the brief. The intern's contributions to ongoing team projects have been meaningful and will have a lasting impact beyond the duration of their placement. We are very satisfied with the investment we made in hosting this intern and have recommended internally that we continue and expand our partnership with the School of Information Technology's internship program in the coming academic year."
+    },
+    {
+      "question_10": "Based on your experience with this intern, would you consider hiring from this university in the future, and why?",
+      "answer_10": "While we respect the School of Information Technology as an institution and do not question its academic credentials, our experience with this particular intern from the Computer Science program has given us inconsistent reservations about recruiting heavily from this cohort in the near future. The skill gaps and professional readiness challenges encountered during this placement represent a significant onboarding investment that strains our capacity as a host organization. We would encourage the School of Information Technology to engage directly with industry partners — including ourselves — to understand the specific competency gaps and develop targeted solutions before we could confidently increase our intake of graduates from this program. We remain open to future engagement if meaningful curriculum improvements are implemented and communicated to the industry community."
+    }
+  ]
+}

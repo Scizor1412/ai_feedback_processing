@@ -1,0 +1,72 @@
+{
+  "metadata": {
+    "feedback_id": "PAR-2025-035",
+    "date": "2025-12-02",
+    "type": "PARENTS",
+    "persona": {
+      "id": "PAR0035",
+      "name": "Dinh Quoc Nga",
+      "role": "parent",
+      "child_name": "Luong Thi An",
+      "child_id": "SV20230035",
+      "child_school": "School of Business Administration",
+      "child_school_id": "BUS",
+      "child_year": 2,
+      "child_program": "Finance & Accounting"
+    },
+    "related_schools": [
+      "BUS"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "CAREER",
+      "FACILITIES",
+      "FINANCE",
+      "IT_SUPPORT",
+      "STUDENT_AFFAIRS"
+    ],
+    "overall_sentiment": "mostly_negative"
+  },
+  "body": [
+    {
+      "question_1": "How would you rate the university's communication with parents regarding your child's academic progress and welfare?",
+      "answer_1": "I am problematicly concerned about the lack of meaningful communication from the School of Business Administration regarding my child's academic progress and overall welfare. The parent portal is difficult to navigate, frequently displays outdated information, and does not provide the real-time updates that are essential for engaged parental monitoring. I have sent multiple queries to the Academic Affairs Office over the past term and received responses that were delayed by weeks or were entirely generic. As a parent who has invested significantly in my child's education, I expect timely, accurate, and personalized communication that reflects a genuine partnership between the university and the families it serves. Urgent improvements to both the portal and communication processes are needed."
+    },
+    {
+      "question_2": "How satisfied are you with the quality of education your child is receiving at this university?",
+      "answer_2": "Teaching quality in my Finance & Accounting program at the School of Business Administration has been fair overall, though noticeably inconsistent across different modules this semester. Several lecturers deliver material with clarity and genuine enthusiasm, making those sessions highly productive and intellectually stimulating for the class. However, a few courses suffer from disorganized delivery, limited interaction, and minimal feedback on submitted work, which hampers the learning experience considerably. I would recommend the school to standardize teaching quality benchmarks and conduct regular peer evaluations to ensure a more consistent and high-quality educational experience for all students across every module and year level."
+    },
+    {
+      "question_3": "How confident are you in the university's ability to prepare your child for future career opportunities?",
+      "answer_3": "Career preparation services at the School of Business Administration, offered through the Career Center, are moderate and meet some student needs while falling short in others. Basic resume guidance and periodic career fairs provide a foundation, but more intensive and personalized support would greatly benefit students planning to enter a competitive and rapidly evolving job market. The internship program has room for significant growth — expanding the employer partner network, improving placement matching, and providing structured mentorship during internship periods would make it substantially more valuable. Regular industry panels and alumni engagement events would also meaningfully bridge the gap between academic preparation and professional workplace expectations."
+    },
+    {
+      "question_4": "How would you assess the campus safety measures and student welfare programs in place at this institution?",
+      "answer_4": "Campus safety standards at the School of Business Administration are satisfactory, providing an adequate baseline of physical security and student welfare programming while leaving meaningful room for improvement in several critical areas. Core security measures — including campus access controls, security patrols, and emergency contact systems — are functional and reasonably communicated. However, mental health and counseling resources are stretched and insufficiently staffed relative to the student population, creating unacceptable wait times during periods of peak demand. I would strongly encourage the Student Affairs Office to expand counseling capacity, improve lighting and surveillance in underserved campus areas, and develop a more proactive student welfare outreach program for at-risk individuals."
+    },
+    {
+      "question_5": "How transparent and straightforward have you found the university's financial policies, fee management, and scholarship communication?",
+      "answer_5": "Financial management by the Finance Department at the School of Business Administration has been acceptable from my perspective as a parent, meeting the fundamental requirements of tuition billing and payment processing without notable excellence or failure. Fee statements are generally accurate, though occasional discrepancies have required follow-up that is more time-consuming than it should be. Communication about scholarship timelines could be significantly improved — families benefit greatly from advance notice when disbursement dates shift or eligibility criteria change, and this is currently lacking. I would welcome a dedicated parent-facing financial FAQ and communication channel to reduce the need for direct contact for routine financial queries."
+    },
+    {
+      "question_6": "How effective do you find the parent portal and digital communication systems provided by the university?",
+      "answer_6": "The parent portal at the School of Business Administration functions at a fair level that provides access to essential information but lacks the polish and reliability expected of a modern institutional digital platform. Grade and attendance data are generally accessible, though refresh rates can be slow and the interface requires familiarity before becoming navigable. The portal is not optimized for mobile devices, which is a significant limitation given that most parents primarily use smartphones for digital access. Push notification functionality exists but is inconsistently triggered, meaning important updates are sometimes missed. A targeted UX improvement initiative — focusing on mobile responsiveness, navigation clarity, and reliable notifications — would greatly increase parental engagement and satisfaction with the digital experience."
+    },
+    {
+      "question_7": "How satisfied are you with the academic counseling and advising support your child receives?",
+      "answer_7": "Academic counseling services at the School of Business Administration have been inadequate in their availability, quality, and proactivity from my perspective as a parent observing my child's experience this academic year. Appointments with academic advisors are difficult to secure, often requiring weeks of waiting for a short session that does not always result in actionable or personalized guidance. The advice provided is sometimes generic and does not demonstrate familiarity with the student's individual history, goals, or challenges. I strongly recommend the Academic Affairs Office to increase its counseling staff capacity, invest in advisor training, and implement proactive outreach to students who may be struggling academically before their situations deteriorate into formal academic difficulties."
+    },
+    {
+      "question_8": "How well does the university address students' mental health and personal well-being needs?",
+      "answer_8": "Student support services at the School of Business Administration are acceptable in their scope and delivery, covering the essential categories but lacking depth and proactivity in several important areas that affect student well-being. Counseling services exist and are functional, but appointment availability is limited and wait times are often longer than appropriate for students in need. Financial support processes are reasonably accessible but require significant paperwork and involve delays that reduce their effectiveness in urgent situations. Investing in additional counseling staff, simplifying support request processes, and proactively promoting available services — especially during high-stress periods like mid-terms — would markedly improve the student experience."
+    },
+    {
+      "question_9": "How would you evaluate the quality and suitability of the university's physical facilities and campus environment?",
+      "answer_9": "The physical facilities at the School of Business Administration, under the responsibility of the Facilities Management, present substandard conditions that negatively impact the daily learning experience of students. Several lecture halls have malfunctioning air conditioning systems that make studying in warm months genuinely uncomfortable and distracting. Toilet facilities in older buildings are poorly maintained and frequently reported without timely resolution from the facilities team. Study spaces are chronically insufficient relative to the student population, particularly during examination periods when demand peaks significantly. I urge the university to prioritize facilities maintenance budgets, establish a transparent issue-reporting system, and expand study space capacity as part of its next capital improvement plan."
+    },
+    {
+      "question_10": "What improvements would you suggest to enhance the university's support for both students and their families?",
+      "answer_10": "Reflecting on my child's full year of study at the School of Business Administration, I find myself with concerning concerns about the institution's ability to consistently deliver on the educational and welfare commitments it promotes to prospective students and their families. Persistent issues with teaching quality in certain departments, administrative responsiveness, digital platform reliability, and student support capacity have collectively made a difficult academic transition more challenging than it needed to be. I would strongly urge university leadership to prioritize meaningful engagement with the concerns raised in parent feedback, establish clear accountability mechanisms, and communicate specific improvement actions transparently to the parent community in the coming semester."
+    }
+  ]
+}

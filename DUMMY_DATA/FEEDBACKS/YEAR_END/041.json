@@ -1,0 +1,71 @@
+{
+  "metadata": {
+    "feedback_id": "YE-2025-041",
+    "date": "2025-04-22",
+    "type": "YEAR_END",
+    "persona": {
+      "id": "SV20240041",
+      "name": "Nguyen Le Huong",
+      "gender": "Female",
+      "role": "student",
+      "school": "School of Engineering",
+      "school_id": "ENG",
+      "year": 2,
+      "program": "Civil Engineering"
+    },
+    "related_schools": [
+      "ENG"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "CAREER",
+      "FINANCE",
+      "IT_SUPPORT",
+      "LIBRARY",
+      "STUDENT_AFFAIRS"
+    ],
+    "overall_sentiment": "mostly_positive"
+  },
+  "body": [
+    {
+      "question_1": "Reflecting on the full academic year, how would you rate your overall educational experience at this university?",
+      "answer_1": "My overall experience in the Civil Engineering program at the School of Engineering during this academic year has been reasonable, with meaningful highs and some notable lows that I believe the institution has both the capacity and responsibility to address. The academic content, when delivered well, is genuinely rigorous and relevant, and I have formed valuable relationships with peers and some excellent faculty members. However, structural issues — inconsistent teaching quality, administrative inefficiencies, and gaps in student support — have at times undermined what could otherwise be an exceptional educational experience. With targeted improvements and a genuine commitment to acting on student feedback, this institution has the foundations to become truly outstanding."
+    },
+    {
+      "question_2": "How effectively do you believe this year's coursework has prepared you for your future career or further academic studies?",
+      "answer_2": "Career preparation services at the School of Engineering, offered through the Career Center, are fair and meet some student needs while falling short in others. Basic resume guidance and periodic career fairs provide a foundation, but more intensive and personalized support would greatly benefit students planning to enter a competitive and rapidly evolving job market. The internship program has room for significant growth — expanding the employer partner network, improving placement matching, and providing structured mentorship during internship periods would make it substantially more valuable. Regular industry panels and alumni engagement events would also meaningfully bridge the gap between academic preparation and professional workplace expectations."
+    },
+    {
+      "question_3": "How would you assess the progression of your academic skills and knowledge throughout this academic year?",
+      "answer_3": "The curriculum for my Civil Engineering program at the School of Engineering is well-designed and clearly aligned with current industry demands and emerging professional trends in the field. Course structures are logical, building progressively on foundational concepts before introducing advanced topics, which gives students a solid intellectual scaffold. The balance between theoretical foundations and practical application is impressive, with project-based assessments, case studies, and laboratory work that directly reflect real-world professional scenarios I will encounter in my career. I particularly value the inclusion of contemporary tools and technologies, which ensures graduates are competitive and well-prepared for the demands of the modern job market."
+    },
+    {
+      "question_4": "How satisfied are you with the extracurricular activities, student clubs, and personal development opportunities available?",
+      "answer_4": "The extracurricular opportunities available at the School of Engineering, coordinated by the Student Affairs Office, are excellent and represent a genuinely important complement to the formal academic curriculum. A wide and diverse range of student clubs, cultural societies, sports teams, and volunteer programs are actively supported and well-resourced by the university, enabling students to develop leadership skills, build social connections, and pursue interests outside their academic programs. Events are well-promoted, regularly scheduled, and inclusive in their design, welcoming students from all backgrounds and programs to participate equally. I recognize the institution's recognition that holistic student development extends beyond classroom performance and into every dimension of campus life."
+    },
+    {
+      "question_5": "How well has the university's Career Center prepared you for internship opportunities and graduate employment?",
+      "answer_5": "Career preparation services at the School of Engineering, offered through the Career Center, are reasonable and meet some student needs while falling short in others. Basic resume guidance and periodic career fairs provide a foundation, but more intensive and personalized support would greatly benefit students planning to enter a competitive and rapidly evolving job market. The internship program has room for significant growth — expanding the employer partner network, improving placement matching, and providing structured mentorship during internship periods would make it substantially more valuable. Regular industry panels and alumni engagement events would also meaningfully bridge the gap between academic preparation and professional workplace expectations."
+    },
+    {
+      "question_6": "How would you rate the university's financial services, including tuition fee management and scholarship support?",
+      "answer_6": "The financial services provided by the Finance Department at the School of Engineering have been commendable this semester, and I genuinely applaud the clarity, transparency, and efficiency with which they are managed. Fee statements are issued promptly and accurately, with clear breakdowns of tuition, facility charges, and any applicable scholarship deductions that make it easy to verify and plan payments. Payment options are flexible and well-communicated, including installment plans that meaningfully reduce financial pressure on students and families. Scholarship disbursements are processed on time and confirmed through official notifications, removing uncertainty around critical financial support. The finance office staff are professional, patient, and genuinely helpful when navigating complex financial queries."
+    },
+    {
+      "question_7": "How would you evaluate the IT infrastructure and digital services provided by the university over the course of the year?",
+      "answer_7": "The IT infrastructure and digital learning environment provided by the IT Support Department is exceptional and has greatly supported my studies at the School of Engineering this semester. Campus Wi-Fi coverage is consistently strong and reliable across all academic buildings, laboratories, and study spaces, enabling seamless online collaboration and research activities throughout the day. Computer labs are well-equipped with up-to-date hardware and licensed software relevant to my field, reducing the burden on students to source tools independently. The IT helpdesk is responsive and knowledgeable, resolving technical issues promptly and minimizing disruption to student workflows. I value the university's ongoing investment in digital infrastructure."
+    },
+    {
+      "question_8": "How satisfied are you with the library resources — both physical and digital — that were available throughout the academic year?",
+      "answer_8": "The learning materials provided for several of my Civil Engineering courses at the School of Engineering are inconsistent and fall short of what students need to succeed academically. Required textbooks are outdated and frequently out of stock in both the campus bookstore and the library, forcing students to source materials independently at considerable expense and inconvenience. The Learning Management System is inconsistently used by lecturers — some post materials days after class, and some modules have no digital resources whatsoever. I strongly point out the Library Services and IT Support Department to collaborate on ensuring all course resources are accessible digitally, current, and available before the semester commences."
+    },
+    {
+      "question_9": "How effectively did the university communicate important information, deadlines, and updates throughout the academic year?",
+      "answer_9": "The academic administrative processes managed by the Academic Affairs Office at the School of Engineering have been commendable this semester, and I applaud the efficiency and transparency with which they are handled. Course registration was smooth and intuitive via the student portal, with clear instructions provided well in advance of enrollment deadlines. Grade appeals and transcript requests are processed promptly and communicated through official channels with regular status updates that reduce student anxiety. Administrative staff are approachable, knowledgeable, and genuinely helpful when students encounter difficulties navigating university policies or procedures. The overall administrative experience reflects a student-centered approach that I believe enhances the broader university experience significantly."
+    },
+    {
+      "question_10": "What are your key recommendations for improving the overall student experience in the coming academic year?",
+      "answer_10": "My main recommendations for improving the Civil Engineering student experience at the School of Engineering center on consistency, communication, and investment in areas that currently deliver only acceptable outcomes. First, standardizing teaching quality, assessment practices, and resource provision across all modules would significantly reduce the frustration caused by the wide variability students currently experience between courses. Second, improving the speed and transparency of administrative and financial communications would reduce unnecessary anxiety and wasted time for students. Finally, expanding industry engagement through internship pipelines, career workshops, and alumni networking events would better equip graduates for the increasingly competitive job market they will enter upon graduation."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "feedback_id": "INT-2025-039",
+    "date": "2025-05-18",
+    "type": "INTERNSHIP",
+    "persona": {
+      "id": "EMP0039",
+      "company": "Shopee Vietnam",
+      "industry": "Manufacturing",
+      "evaluator_name": "Do Duc Mai",
+      "evaluator_role": "Internship Coordinator",
+      "role": "employer",
+      "intern_id": "SV20231039",
+      "intern_name": "Vu Le Bao",
+      "intern_school": "School of Engineering",
+      "intern_school_id": "ENG",
+      "intern_program": "Civil Engineering"
+    },
+    "related_schools": [
+      "ENG"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "CAREER"
+    ],
+    "overall_sentiment": "mostly_negative"
+  },
+  "body": [
+    {
+      "question_1": "How would you rate the technical competency of the student intern in their relevant field of study?",
+      "answer_1": "The intern from the School of Engineering's Civil Engineering program showed acceptable technical competency, with a solid theoretical foundation that required additional scaffolding to translate effectively into professional practice. Core technical knowledge in the primary discipline areas was present and generally accurate, enabling the intern to engage meaningfully with assigned tasks after an initial onboarding period. However, familiarity with specific industry-standard tools and processes was limited, requiring time investment from senior staff to bridge the gap. Stronger emphasis on applied tool training and industry-facing projects within the curriculum would produce more immediately effective graduates and reduce the onboarding burden on host companies."
+    },
+    {
+      "question_2": "How well did the intern demonstrate professional communication and interpersonal skills in the workplace?",
+      "answer_2": "This intern's professionalism was reasonable, showing genuine commitment and a positive attitude that formed a solid foundation, with some areas requiring coaching and development during the placement period. Reliability and punctuality were good overall, though proactive communication about progress and obstacles was inconsistent and required encouragement from supervisors. The intern engaged positively with team members and accepted feedback constructively in most situations, demonstrating the willingness to learn that is essential for professional growth. Additional preparation in formal workplace communication — particularly written reporting standards and stakeholder update practices — would improve the professional impact of graduates from this program."
+    },
+    {
+      "question_3": "How effectively did the intern collaborate with team members and contribute to group projects?",
+      "answer_3": "The intern's ability to collaborate effectively within a team environment was inadequate and required more management attention than anticipated. Contribution to group tasks was often uneven — the intern sometimes worked in isolation rather than coordinating with colleagues, leading to duplicated effort and avoidable misalignments in shared workstreams. Communication within the team was reactive rather than proactive, and the intern occasionally struggled with the shared accountability and compromise that effective team collaboration demands. We recommend the School of Engineering incorporate more structured team-based project work and collaborative simulation into the Civil Engineering curriculum to better prepare students for the realities of modern workplace team dynamics."
+    },
+    {
+      "question_4": "How would you assess the intern's problem-solving abilities and approach to challenging or unfamiliar tasks?",
+      "answer_4": "The intern's problem-solving abilities were among the most commendable attributes they brought to our organization from the School of Engineering's Civil Engineering program. When confronted with unfamiliar challenges or technical obstacles, the intern approached them systematically — breaking problems into manageable components, forming and testing hypotheses, and escalating appropriately only when genuinely blocked by limitations beyond their current capability. Their intellectual curiosity, persistence under pressure, and willingness to explore unconventional solutions made them a genuinely valuable problem-solver within the team. This quality is difficult to teach in the workplace and speaks highly of the critical thinking culture embedded in the School of Engineering's academic programs."
+    },
+    {
+      "question_5": "How quickly and effectively did the intern adapt to your company's work culture, tools, and environment?",
+      "answer_5": "Adaptability to changing conditions and evolving requirements was a problematic challenge for this intern from the School of Engineering's Civil Engineering program, and it became a recurring obstacle during the internship period. When project scope or priorities shifted — as they regularly do in a professional environment — the intern's response was often slow and required significant reassurance and directive guidance from supervisors. Tolerance for ambiguity and the ability to operate effectively without complete information or a fully defined task specification were noticeably underdeveloped relative to our expectations. We recommend the School of Engineering expose students to more dynamic, ambiguity-tolerant project environments during their studies to develop this critical professional competency before graduation."
+    },
+    {
+      "question_6": "How proficient was the intern in English communication, both written and verbal, for professional purposes?",
+      "answer_6": "The intern's English communication proficiency — both written and spoken — was remarkable and met the professional standards required for effective participation in our bilingual team environment. Written reports, emails, and documentation were consistently clear, professionally structured, and free of errors that would compromise understanding or credibility in a client-facing context. Verbal communication in meetings and collaborative sessions was confident and coherent, enabling full participation in discussions with both local and international colleagues. The intern's English proficiency reflects well on the language preparation embedded in the School of Engineering's Civil Engineering program and is a strong asset in our increasingly international work environment."
+    },
+    {
+      "question_7": "How well did the intern's academic training align with the practical demands and standards of your industry?",
+      "answer_7": "Our experience with this intern has highlighted problematic gaps between what the School of Engineering's Civil Engineering curriculum delivers and what the professional industry actually requires from graduates in this field. Specifically, the intern lacked working proficiency in several tools and methodologies that are now industry standard, requiring us to invest significant onboarding time in areas that should be covered academically. Soft skills — particularly professional communication, project management, and stakeholder management — also appeared underdeveloped relative to what professional roles at this level require from day one. We would welcome the opportunity to engage with the School of Engineering's curriculum design team to provide specific, actionable recommendations for improvement."
+    },
+    {
+      "question_8": "What specific technical or soft skill areas do you believe the university curriculum should strengthen for future graduates?",
+      "answer_8": "Based on our experience with this intern from the School of Engineering's Civil Engineering program, we are exceptionally impressed with the alignment between the academic curriculum and the practical demands of our industry. The foundational knowledge, theoretical frameworks, and applied skills the intern brought to the role mapped closely to what we require in graduate-level professional practitioners in this field. In particular, the project-based and problem-solving components of the curriculum appear to have translated well into workplace readiness. We would encourage the School of Engineering to continue developing its industry connections and to involve practitioners actively in curriculum review to maintain this strong alignment as the professional landscape continues to evolve."
+    },
+    {
+      "question_9": "How would you rate the intern's overall performance and value contribution to your organization during the placement?",
+      "answer_9": "This intern's overall performance was moderate, delivering a useful contribution to the team while also clearly indicating areas where additional academic preparation would improve professional readiness. Assigned tasks were generally completed to a functional standard, with quality improving progressively as the intern built familiarity with our tools, processes, and expectations over the placement period. The growth trajectory was positive and suggests genuine potential that a stronger academic foundation would help realize more quickly. We see this internship as a successful learning experience for the student and encourage the School of Engineering to continue building practical readiness into its curriculum to produce even more effective graduates."
+    },
+    {
+      "question_10": "Based on your experience with this intern, would you consider hiring from this university in the future, and why?",
+      "answer_10": "While we respect the School of Engineering as an institution and do not question its academic credentials, our experience with this particular intern from the Civil Engineering program has given us concerning reservations about recruiting heavily from this cohort in the near future. The skill gaps and professional readiness challenges encountered during this placement represent a significant onboarding investment that strains our capacity as a host organization. We would encourage the School of Engineering to engage directly with industry partners — including ourselves — to understand the specific competency gaps and develop targeted solutions before we could confidently increase our intake of graduates from this program. We remain open to future engagement if meaningful curriculum improvements are implemented and communicated to the industry community."
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "schools": [
+    {
+      "id": "IT",
+      "name": "School of Information Technology",
+      "email": "it.school@univ.edu.vn",
+      "pic": "Dr. Nguyen Minh Tuan",
+      "pic_title": "Dean",
+      "programs": [
+        "Software Engineering",
+        "Computer Science",
+        "Data Science",
+        "Cybersecurity",
+        "Artificial Intelligence & Machine Learning"
+      ]
+    },
+    {
+      "id": "COM",
+      "name": "School of Communication",
+      "email": "com.school@univ.edu.vn",
+      "pic": "Dr. Le Thi Hoa",
+      "pic_title": "Dean",
+      "programs": [
+        "Journalism",
+        "Public Relations",
+        "Advertising & Brand Management",
+        "Media Studies",
+        "Digital Communication"
+      ]
+    },
+    {
+      "id": "BUS",
+      "name": "School of Business Administration",
+      "email": "bus.school@univ.edu.vn",
+      "pic": "Dr. Tran Van Hung",
+      "pic_title": "Dean",
+      "programs": [
+        "Business Administration",
+        "International Business",
+        "Finance & Accounting",
+        "Marketing",
+        "Human Resource Management"
+      ]
+    },
+    {
+      "id": "ENG",
+      "name": "School of Engineering",
+      "email": "eng.school@univ.edu.vn",
+      "pic": "Dr. Pham Quoc Cuong",
+      "pic_title": "Dean",
+      "programs": [
+        "Mechanical Engineering",
+        "Electrical Engineering",
+        "Civil Engineering",
+        "Chemical Engineering",
+        "Industrial Engineering"
+      ]
+    }
+  ],
+  "services": [
+    {
+      "id": "FINANCE",
+      "name": "Finance Department",
+      "email": "finance@univ.edu.vn",
+      "pic": "Ms. Nguyen Thi Lan",
+      "pic_title": "Head of Finance",
+      "responsibilities": [
+        "Tuition fee management",
+        "Scholarship disbursement",
+        "Student financial aid",
+        "Payment receipts and invoicing"
+      ]
+    },
+    {
+      "id": "ACADEMIC",
+      "name": "Academic Affairs Office",
+      "email": "academic@univ.edu.vn",
+      "pic": "Mr. Vo Van Minh",
+      "pic_title": "Director of Academic Affairs",
+      "responsibilities": [
+        "Course registration",
+        "Grade appeals and transcripts",
+        "Curriculum management",
+        "Exam scheduling"
+      ]
+    },
+    {
+      "id": "IT_SUPPORT",
+      "name": "IT Support Department",
+      "email": "itsupport@univ.edu.vn",
+      "pic": "Mr. Bui Dinh Long",
+      "pic_title": "Head of IT Support",
+      "responsibilities": [
+        "Learning Management System (LMS) support",
+        "Campus Wi-Fi and network",
+        "Computer lab maintenance",
+        "Digital tool licensing"
+      ]
+    },
+    {
+      "id": "STUDENT_AFFAIRS",
+      "name": "Student Affairs Office",
+      "email": "studentaffairs@univ.edu.vn",
+      "pic": "Ms. Phan Thi Thu",
+      "pic_title": "Director of Student Affairs",
+      "responsibilities": [
+        "Student clubs and activities",
+        "Mental health and counseling",
+        "Dormitory management",
+        "Disciplinary matters"
+      ]
+    },
+    {
+      "id": "LIBRARY",
+      "name": "Library Services",
+      "email": "library@univ.edu.vn",
+      "pic": "Ms. Do Thi Bich",
+      "pic_title": "Chief Librarian",
+      "responsibilities": [
+        "Physical and digital resource access",
+        "Research support",
+        "Study space management",
+        "Inter-library loan"
+      ]
+    },
+    {
+      "id": "CAREER",
+      "name": "Career Center",
+      "email": "career@univ.edu.vn",
+      "pic": "Mr. Hoang Van Nam",
+      "pic_title": "Director of Career Development",
+      "responsibilities": [
+        "Internship program coordination",
+        "Industry partnership management",
+        "Resume and interview coaching",
+        "Graduate employment tracking"
+      ]
+    },
+    {
+      "id": "FACILITIES",
+      "name": "Facilities Management",
+      "email": "facilities@univ.edu.vn",
+      "pic": "Mr. Nguyen Van Duc",
+      "pic_title": "Head of Facilities",
+      "responsibilities": [
+        "Classroom and lab maintenance",
+        "Campus cleaning and security",
+        "Sports and recreation facilities",
+        "Building infrastructure"
+      ]
+    }
+  ]
+}

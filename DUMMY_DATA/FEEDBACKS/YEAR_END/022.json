@@ -1,0 +1,71 @@
+{
+  "metadata": {
+    "feedback_id": "YE-2025-022",
+    "date": "2025-04-22",
+    "type": "YEAR_END",
+    "persona": {
+      "id": "SV20240022",
+      "name": "Le Dinh Dung",
+      "gender": "Male",
+      "role": "student",
+      "school": "School of Business Administration",
+      "school_id": "BUS",
+      "year": 4,
+      "program": "Finance & Accounting"
+    },
+    "related_schools": [
+      "BUS"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "CAREER",
+      "FINANCE",
+      "IT_SUPPORT",
+      "LIBRARY",
+      "STUDENT_AFFAIRS"
+    ],
+    "overall_sentiment": "mostly_positive"
+  },
+  "body": [
+    {
+      "question_1": "Reflecting on the full academic year, how would you rate your overall educational experience at this university?",
+      "answer_1": "Reflecting on the full academic year in the Finance & Accounting program at the School of Business Administration, I can say with confidence that this has been an outstanding and transformative educational experience that has exceeded my expectations in most meaningful ways. The combination of rigorous coursework, dedicated faculty, strong peer community, and access to industry connections has equipped me with both the technical competencies and professional mindset needed to succeed in my chosen field. I have grown significantly as a learner and feel genuinely prepared for the next stage of my academic or professional journey. I recognize the institution for maintaining high standards throughout and look forward to continuing my studies here with great enthusiasm."
+    },
+    {
+      "question_2": "How effectively do you believe this year's coursework has prepared you for your future career or further academic studies?",
+      "answer_2": "Career preparation services at the School of Business Administration, offered through the Career Center, are acceptable and meet some student needs while falling short in others. Basic resume guidance and periodic career fairs provide a foundation, but more intensive and personalized support would greatly benefit students planning to enter a competitive and rapidly evolving job market. The internship program has room for significant growth — expanding the employer partner network, improving placement matching, and providing structured mentorship during internship periods would make it substantially more valuable. Regular industry panels and alumni engagement events would also meaningfully bridge the gap between academic preparation and professional workplace expectations."
+    },
+    {
+      "question_3": "How would you assess the progression of your academic skills and knowledge throughout this academic year?",
+      "answer_3": "The Finance & Accounting curriculum at the School of Business Administration covers the essential theoretical foundations competently and provides a reasonable structure for academic progression throughout the degree. Core modules are satisfactory in their depth and breadth, covering key concepts that form the basis of professional practice in this field. However, the elective offerings could be significantly expanded to reflect emerging trends and specialized career pathways that students are increasingly interested in. Greater integration of industry collaboration — such as guest lectures, live projects, and sponsored capstone work — would substantially strengthen the curriculum's practical relevance and better prepare graduates for competitive employment."
+    },
+    {
+      "question_4": "How satisfied are you with the extracurricular activities, student clubs, and personal development opportunities available?",
+      "answer_4": "Extracurricular activities at the School of Business Administration offer a fair range of options that serve the interests of a portion of the student body but do not yet reflect the full diversity of student interests and backgrounds. Core clubs and major university events are reasonably well-organized and attended, but support for emerging student initiatives is limited and the process for establishing new clubs is unnecessarily bureaucratic. Increasing the budget allocated to student activities, streamlining club registration procedures, and investing in purpose-built student activity spaces would encourage broader participation and strengthen the campus culture for the benefit of all enrolled students."
+    },
+    {
+      "question_5": "How well has the university's Career Center prepared you for internship opportunities and graduate employment?",
+      "answer_5": "Career preparation services at the School of Business Administration, offered through the Career Center, are reasonable and meet some student needs while falling short in others. Basic resume guidance and periodic career fairs provide a foundation, but more intensive and personalized support would greatly benefit students planning to enter a competitive and rapidly evolving job market. The internship program has room for significant growth — expanding the employer partner network, improving placement matching, and providing structured mentorship during internship periods would make it substantially more valuable. Regular industry panels and alumni engagement events would also meaningfully bridge the gap between academic preparation and professional workplace expectations."
+    },
+    {
+      "question_6": "How would you rate the university's financial services, including tuition fee management and scholarship support?",
+      "answer_6": "Financial services at the School of Business Administration, managed by the Finance Department, operate at a moderate level that fulfills basic requirements without particular distinction in either efficiency or student-centeredness. Tuition fee management and billing are generally accurate, though occasional discrepancies require follow-up that can be time-consuming. Scholarship and financial aid communication could be significantly improved — students often report uncertainty about disbursement timelines and eligibility criteria that creates unnecessary anxiety during critical financial planning periods. Greater transparency through automated notifications, a clearer scholarship portal, and improved staff responsiveness to financial queries would substantially raise the standard of financial services for the student community."
+    },
+    {
+      "question_7": "How would you evaluate the IT infrastructure and digital services provided by the university over the course of the year?",
+      "answer_7": "The IT infrastructure managed by the IT Support Department presents insufficient challenges that significantly disrupt the academic experience at the School of Business Administration. Wi-Fi connectivity is unreliable in several key areas of the campus, including the main library, multiple lecture halls, and postgraduate study rooms, making online coursework and research frustrating and inefficient. Computer labs frequently have outdated or malfunctioning equipment, and software licensing issues occasionally prevent students from accessing tools required for coursework. The IT helpdesk response time is substandard, often taking several days to resolve straightforward technical issues. Urgent investment in infrastructure upgrades and improved support staffing is needed."
+    },
+    {
+      "question_8": "How satisfied are you with the library resources — both physical and digital — that were available throughout the academic year?",
+      "answer_8": "Learning resources for my Finance & Accounting program at the School of Business Administration are reasonable, with some courses providing excellent, well-curated materials and others offering minimal guidance beyond the core required textbook. The library's digital collection is reasonable in scope but has some notable gaps in specialized resources relevant to advanced topics in our field. The LMS functions adequately as a distribution platform, though its use varies significantly between lecturers, creating an inconsistent experience across modules. A more standardized approach to resource provision, with minimum content requirements per course, would considerably improve the consistency and quality of the learning environment."
+    },
+    {
+      "question_9": "How effectively did the university communicate important information, deadlines, and updates throughout the academic year?",
+      "answer_9": "The academic administrative processes managed by the Academic Affairs Office at the School of Business Administration have been commendable this semester, and I praise the efficiency and transparency with which they are handled. Course registration was smooth and intuitive via the student portal, with clear instructions provided well in advance of enrollment deadlines. Grade appeals and transcript requests are processed promptly and communicated through official channels with regular status updates that reduce student anxiety. Administrative staff are approachable, knowledgeable, and genuinely helpful when students encounter difficulties navigating university policies or procedures. The overall administrative experience reflects a student-centered approach that I believe enhances the broader university experience significantly."
+    },
+    {
+      "question_10": "What are your key recommendations for improving the overall student experience in the coming academic year?",
+      "answer_10": "I have very few concerns to raise about my overall experience in the Finance & Accounting program at the School of Business Administration, and I genuinely believe this institution provides an excellent educational environment that prepares students well for their future careers. If I were to recommend any improvement, I would suggest further expanding industry partnership opportunities — additional mentorship programs, sponsored capstone projects, and guest lecture series from senior professionals would enrich an already strong academic offering. Increasing the frequency of student feedback collection and demonstrating visible action on that feedback would further strengthen trust between students and the institution. Overall, I am proud to be a student here and would highly recommend this university to future applicants without hesitation."
+    }
+  ]
+}

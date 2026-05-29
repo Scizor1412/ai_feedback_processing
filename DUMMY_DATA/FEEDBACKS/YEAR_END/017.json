@@ -1,0 +1,71 @@
+{
+  "metadata": {
+    "feedback_id": "YE-2025-017",
+    "date": "2025-05-07",
+    "type": "YEAR_END",
+    "persona": {
+      "id": "SV20240017",
+      "name": "Nguyen Quoc Long",
+      "gender": "Male",
+      "role": "student",
+      "school": "School of Information Technology",
+      "school_id": "IT",
+      "year": 4,
+      "program": "Computer Science"
+    },
+    "related_schools": [
+      "IT"
+    ],
+    "related_services": [
+      "ACADEMIC",
+      "CAREER",
+      "FINANCE",
+      "IT_SUPPORT",
+      "LIBRARY",
+      "STUDENT_AFFAIRS"
+    ],
+    "overall_sentiment": "mostly_negative"
+  },
+  "body": [
+    {
+      "question_1": "Reflecting on the full academic year, how would you rate your overall educational experience at this university?",
+      "answer_1": "My overall academic year experience in the Computer Science program at the School of Information Technology has unfortunately been substandard and has fallen considerably short of the expectations I had when I enrolled. Persistent issues with teaching quality, administrative responsiveness, infrastructure reliability, and student support have collectively impacted my ability to learn and thrive in this environment. I feel that despite making this feedback heard through multiple channels, meaningful change has been slow and the institution's response to student concerns has lacked urgency and accountability. I sincerely hope the upcoming academic year brings substantive improvements in all the areas I have identified, not only for my own benefit but for all students who will follow in future cohorts."
+    },
+    {
+      "question_2": "How effectively do you believe this year's coursework has prepared you for your future career or further academic studies?",
+      "answer_2": "The career preparation support provided by the Career Center at the School of Information Technology has been commendable and has made a tangible difference to my professional readiness and employment prospects as I approach graduation. Resume writing workshops, mock interviews, and industry networking events have been well-organized, highly practical, and attended by credible industry professionals who provided genuinely actionable feedback. The internship matching program is effective, with clear communication about available placements and strong follow-up support for students during their internship periods. I applaud the Career Center's proactive approach and its strong relationships with employers, which have opened real opportunities for students across all programs."
+    },
+    {
+      "question_3": "How would you assess the progression of your academic skills and knowledge throughout this academic year?",
+      "answer_3": "The Computer Science curriculum at the School of Information Technology appears to lag behind current industry standards in several significant areas that I believe require urgent review and revision. Many courses continue to teach outdated tools and methodologies that are rarely used in professional settings today, leaving students underprepared for actual workplace demands. The curriculum also lacks sufficient elective depth and specialization pathways, limiting students' ability to develop expertise in niche areas of growing importance. I highlight the Academic Affairs Office and school leadership to conduct a thorough curriculum audit in close consultation with industry professionals and alumni to ensure course content remains relevant, rigorous, and career-oriented."
+    },
+    {
+      "question_4": "How satisfied are you with the extracurricular activities, student clubs, and personal development opportunities available?",
+      "answer_4": "Extracurricular opportunities at the School of Information Technology, managed by the Student Affairs Office, are inconsistent and poorly promoted, limiting student engagement with the broader campus community significantly. The range of active student clubs is narrow, with minimal support for students wishing to establish new interest groups or activities that reflect the diversity of the student population. Events are inconsistently organized and inadequately funded, resulting in low attendance and limited impact on the student community's sense of belonging and engagement. I strongly recommend the Student Affairs Office to take a more proactive and well-resourced approach to extracurricular programming, recognizing its critical role in student retention and overall satisfaction."
+    },
+    {
+      "question_5": "How well has the university's Career Center prepared you for internship opportunities and graduate employment?",
+      "answer_5": "Career preparation support from the Career Center at the School of Information Technology has been insufficient and has left many students — including myself — feeling ill-equipped for the competitive graduate employment market. Career workshops are infrequent, poorly promoted, and often scheduled at times that conflict with lecture commitments, reducing student participation. The internship database is outdated and contains many positions that are no longer active, and support for students during internship placements is minimal to nonexistent. I flag the university to substantially reinvest in the Career Center — expanding its employer network, modernizing its tools, and increasing the frequency and quality of career development programming across all academic programs and year levels."
+    },
+    {
+      "question_6": "How would you rate the university's financial services, including tuition fee management and scholarship support?",
+      "answer_6": "Financial services at the School of Information Technology, managed by the Finance Department, operate at a moderate level that fulfills basic requirements without particular distinction in either efficiency or student-centeredness. Tuition fee management and billing are generally accurate, though occasional discrepancies require follow-up that can be time-consuming. Scholarship and financial aid communication could be significantly improved — students often report uncertainty about disbursement timelines and eligibility criteria that creates unnecessary anxiety during critical financial planning periods. Greater transparency through automated notifications, a clearer scholarship portal, and improved staff responsiveness to financial queries would substantially raise the standard of financial services for the student community."
+    },
+    {
+      "question_7": "How would you evaluate the IT infrastructure and digital services provided by the university over the course of the year?",
+      "answer_7": "The IT infrastructure at the School of Information Technology, maintained by the IT Support Department, performs at a reasonable level that meets basic student needs but falls short of what is required to fully support a modern, technology-dependent academic environment. Wi-Fi connectivity is generally stable in primary teaching spaces but becomes inconsistent during peak usage hours and in peripheral campus locations. Software availability in computer labs is adequate for core coursework but limited for students requiring specialized applications for advanced projects. Expanding bandwidth capacity, updating hardware on a regular replacement cycle, and improving helpdesk responsiveness would meaningfully elevate the digital learning experience for the entire student community."
+    },
+    {
+      "question_8": "How satisfied are you with the library resources — both physical and digital — that were available throughout the academic year?",
+      "answer_8": "Learning resources for my Computer Science program at the School of Information Technology are moderate, with some courses providing excellent, well-curated materials and others offering minimal guidance beyond the core required textbook. The library's digital collection is reasonable in scope but has some notable gaps in specialized resources relevant to advanced topics in our field. The LMS functions adequately as a distribution platform, though its use varies significantly between lecturers, creating an inconsistent experience across modules. A more standardized approach to resource provision, with minimum content requirements per course, would considerably improve the consistency and quality of the learning environment."
+    },
+    {
+      "question_9": "How effectively did the university communicate important information, deadlines, and updates throughout the academic year?",
+      "answer_9": "The academic administrative processes at the School of Information Technology, overseen by the Academic Affairs Office, have been a source of considerable frustration for many students this semester. Course registration was plagued by system errors and conflicting timetables that took weeks to resolve, causing students to miss early enrollment advantages. Grade dispute processes are opaque and slow, with students waiting over a month without updates or acknowledgment of their submissions. Communication from administrative offices is reactive rather than proactive, and staff sometimes provide inconsistent information depending on who is contacted. I raise concerns about a comprehensive review of administrative workflows, with investment in both system improvements and staff training as a matter of urgency."
+    },
+    {
+      "question_10": "What are your key recommendations for improving the overall student experience in the coming academic year?",
+      "answer_10": "My key recommendation for the School of Information Technology is to urgently address the problematic systemic issues that have affected Computer Science students this semester, rather than treating them as isolated incidents. A structured, transparent student feedback mechanism — where concerns are acknowledged within a set timeframe and outcomes communicated back to students — would significantly rebuild trust that has been eroded by unaddressed issues. I also strongly point out leadership to conduct a comprehensive curriculum and service quality review in genuine consultation with current students, alumni, and industry partners. Without meaningful action on the concerns raised in this feedback, student satisfaction and the institution's competitive standing will continue to decline in the years ahead."
+    }
+  ]
+}
