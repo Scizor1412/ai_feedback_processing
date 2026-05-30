@@ -77,9 +77,12 @@ EOF
 ```bash
 TOKEN=$(grep GITHUB_TOKEN .env | cut -d= -f2 | tr -d '"' | tr -d "'")
 BRANCH=$(git branch --show-current)
-REPO=$(git remote get-url origin | sed 's/https:\/\/[^@]*@//' | sed 's/https:\/\///' | sed 's/\.git$//')
-git push "https://${TOKEN}@github.com/${REPO}.git" HEAD:"${BRANCH}" --set-upstream
+REPO=$(git remote get-url origin | sed 's|.*github\.com[:/]||' | sed 's|\.git$||')
+git push "https://${TOKEN}@github.com/${REPO}.git" HEAD:"${BRANCH}" --set-upstream 2>&1 \
+  | grep -v "github_pat\|github_token\|://.*@github"
 ```
+
+`sed 's|.*github\.com[:/]||'` strips everything up to and including `github.com/` (or `github.com:` for SSH remotes), leaving `owner/repo`. The `grep -v` strips any output line containing the token so it never appears in the terminal.
 
 ### Step 4 — Comment on the GitHub issue
 
