@@ -18,7 +18,10 @@ class FeedbackType(str, enum.Enum):
 class BatchStatus(str, enum.Enum):
     PENDING = "pending"
     PROCESSING = "processing"
-    COMPLETE = "complete"
+    COMPLETE = "complete"       # ingestion done
+    EXTRACTING = "extracting"  # AI extraction in progress
+    EXTRACTED = "extracted"    # extraction done, ready for review
+    REVIEWED = "reviewed"      # officer marked as reviewed
     FAILED = "failed"
 
 

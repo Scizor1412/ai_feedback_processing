@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solution — #4: Batch Review UI</title>
+  <style>
+    :root{--bg:#0d1117;--surface:#161b22;--surface2:#1c2128;--border:#30363d;--accent:#58a6ff;--accent2:#3fb950;--warn:#d29922;--danger:#f85149;--text:#e6edf3;--muted:#8b949e;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:15px;line-height:1.6;padding:32px 16px;}
+    .container{max-width:860px;margin:0 auto;}
+    .header{display:flex;align-items:flex-start;gap:16px;padding:24px;background:var(--surface);border:1px solid var(--border);border-radius:12px;margin-bottom:24px;}
+    .issue-badge{background:var(--accent);color:var(--bg);font-weight:700;font-size:13px;padding:4px 10px;border-radius:20px;white-space:nowrap;margin-top:4px;}
+    .header-text h1{font-size:22px;font-weight:700;margin-bottom:6px;}
+    .header-meta{display:flex;gap:10px;flex-wrap:wrap;}
+    .tag{font-size:12px;font-weight:600;padding:2px 10px;border-radius:12px;text-transform:uppercase;letter-spacing:.5px;}
+    .tag-feature{background:#1d4ed8;}.tag-muted{background:var(--surface2);color:var(--muted);}
+    .tabs{display:flex;gap:4px;margin-bottom:20px;}
+    .tab{flex:1;padding:10px 16px;border:1px solid var(--border);background:var(--surface);color:var(--muted);border-radius:8px;cursor:pointer;font-size:14px;font-weight:600;text-align:center;transition:all .15s;}
+    .tab.active{border-color:var(--accent);color:var(--accent);background:#0d2137;}
+    .phase{display:none;}.phase.active{display:block;}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:16px;}
+    .card-header{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+    .card-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+    .icon-problem{background:#2d1515;}.icon-solution{background:#0d2137;}.icon-arch{background:#1a2d1a;}.icon-drift{background:#2d2415;}.icon-test{background:#1a1a2e;}
+    .card h2{font-size:15px;font-weight:700;}.card-hint{font-size:12px;color:var(--muted);margin-top:2px;}
+    .content-block{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:14px;font-size:14px;color:var(--text);min-height:60px;white-space:pre-wrap;}
+    .impact-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:10px;}
+    .impact-cell{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:12px;text-align:center;}
+    .impact-cell .label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;}
+    .impact-cell .value{font-size:14px;font-weight:600;margin-top:4px;}
+    .impact-none{color:var(--accent2);}.impact-minor{color:var(--warn);}
+    .status-banner{display:flex;align-items:center;gap:12px;padding:14px 18px;border-radius:8px;margin-bottom:16px;font-size:14px;font-weight:600;}
+    .status-pending{background:#2d1f00;border:1px solid var(--warn);color:var(--warn);}
+    .status-approved{background:#0d2d0d;border:1px solid var(--accent2);color:var(--accent2);}
+    .timeline{position:relative;padding-left:24px;}
+    .timeline::before{content:'';position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:var(--border);}
+    .timeline-item{position:relative;margin-bottom:14px;}
+    .timeline-dot{position:absolute;left:-20px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--bg);}
+    .timeline-label{font-size:12px;color:var(--muted);margin-bottom:2px;}.timeline-text{font-size:14px;}
+    footer{margin-top:32px;text-align:center;font-size:12px;color:var(--muted);}
+  </style>
+</head>
+<body><div class="container">
+  <div class="header">
+    <div class="issue-badge">#4</div>
+    <div class="header-text">
+      <h1>Batch Review UI</h1>
+      <div class="header-meta">
+        <span class="tag tag-feature">Feature</span>
+        <span class="tag tag-muted">MTP</span>
+        <span class="tag tag-muted">2026-05-30</span>
+        <span class="tag tag-muted">Claude</span>
+      </div>
+    </div>
+  </div>
+  <div class="tabs">
+    <div class="tab active" onclick="switchTab('plan')">Planning</div>
+    <div class="tab" onclick="switchTab('impl')">Implementation</div>
+  </div>
+
+  <div class="phase active" id="tab-plan">
+    <div class="status-banner status-approved">✅ Solution approved — implementation in progress< solution approval before implementation begins</div>
+
+    <div class="card">
+      <div class="card-header"><div class="card-icon icon-problem">🔍</div><div><h2>Problem Statement</h2></div></div>
+      <div class="content-block">Without a review interface, AI extraction errors would silently reach school deans. Officers need to inspect what was attributed to each school/service before any action is taken. This is the MTP validation gate — the screen that lets us confirm the AI is working correctly before building MUP email dispatch.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><div class="card-icon icon-solution">💡</div><div><h2>Proposed Solution</h2></div></div>
+      <div class="content-block">New files:
+  app/templates/base.html            — base Jinja2 layout (dark theme matching solution docs)
+  app/templates/batches/trigger.html — batch trigger form (folder path + type dropdown)
+  app/templates/batches/review.html  — per-batch review page
+  app/templates/batches/preview.html — HTMX partial: mention list for one recipient
+
+Modified files:
+  app/routers/batches.py  — add GET / (trigger form) and GET /batches/{id}/review
+  app/main.py             — mount Jinja2 templates, add StaticFiles if needed
+  requirements.txt        — add jinja2, python-multipart (for form POST)
+  tests/test_review_ui.py — 4 tests using FastAPI TestClient
+
+━━━ PAGES ━━━
+
+GET /
+  Batch trigger form: folder_path text input + feedback_type dropdown + Submit
+  On submit → POST /batches (existing endpoint) → redirect to /batches/{id}/review
+
+GET /batches/{id}/review
+  Renders review.html:
+  - Batch metadata (type, date, file counts, status)
+  - Table: one row per unique entity_id found in extractions
+    Columns: Entity name | Type | Positive count | Negative count | [Preview ▶]
+  - "Mark as Reviewed" button → POST /batches/{id}/mark-reviewed
+  - CSV download links per entity (uses issue #3 endpoints)
+
+GET /batches/{id}/recipients/{entity_id}/preview   (HTMX partial)
+  Returns preview.html fragment:
+  - Positive mentions list (feedback_id + source_question + first 200 chars of source_answer)
+  - Negative mentions list (same)
+  Loaded inline via hx-get on [Preview ▶] click
+
+POST /batches/{id}/mark-reviewed
+  Sets batch.status = "reviewed"
+  Redirects back to /batches/{id}/review with success banner
+
+━━━ BATCH STATUS ENUM ADDITION ━━━
+  Add "extracted" and "reviewed" to BatchStatus enum</div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><div class="card-icon icon-arch">🏗️</div><div><h2>Architecture Fit</h2></div></div>
+      <div class="content-block">Implements the Web Application component (FastAPI + Jinja2 + HTMX, ADR: accepted). Adds jinja2 and python-multipart — both are in the ADR-approved tech stack. No new data layer: reads from batches, feedbacks, extractions tables already established. This is the only issue that adds HTML templates to the project.</div>
+      <div class="impact-grid">
+        <div class="impact-cell"><div class="label">Architecture Alignment</div><div class="value impact-none">Aligned</div></div>
+        <div class="impact-cell"><div class="label">Other Functions Affected</div><div class="value impact-minor">Minor</div></div>
+        <div class="impact-cell"><div class="label">Effect Direction</div><div class="value">Beneficial</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase" id="tab-impl">
+    <div class="status-banner status-approved">✅ Solution approved — implementation complete</div>
+    <div class="card">
+      <div class="card-header"><div class="card-icon icon-drift">⚡</div><div><h2>Implementation Drifts</h2></div></div>
+      <div class="timeline">
+        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Drift 1 — StaticPool added to conftest</div><div class="timeline-text">SQLite in-memory DB was invisible across threads when TestClient dispatched routes. Fixed by adding poolclass=StaticPool so all connections share one in-memory DB. No impact on production code.</div></div>
+        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Drift 2 — httpx pinned to 0.23.3</div><div class="timeline-text">starlette 0.27 TestClient incompatible with httpx 0.28. Pinned httpx==0.23.3 for test compatibility. requirements.txt updated.</div></div>
+        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Drift 3 — Dual POST /batches routes</div><div class="timeline-text">Added a second POST /batches handler for HTML form submissions (returns redirect) alongside the JSON API handler. Both required because the trigger form uses HTML form POST while tests use JSON body.</div></div>
+      </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header"><div class="card-icon icon-test">🧪</div><div><h2>Test Evidence</h2></div></div>
+      <div class="content-block">4/4 tests pass — python3 -m pytest tests/test_review_ui.py -v
+
+test_trigger_form_renders               PASSED — GET / returns 200, "Run a Feedback Batch" in body
+test_review_page_renders_recipients     PASSED — GET /batches/{id}/review shows IT school in table
+test_preview_partial_returns_mentions   PASSED — HTMX partial returns "Teaching is great." text
+test_mark_reviewed_updates_status       PASSED — POST mark-reviewed → 303 redirect, batch.status=REVIEWED</div>
+    </div>
+  </div>
+
+  <footer>Solution document · Issue #4 · Generated by Claude Code</footer>
+</div>
+<script>
+  function switchTab(t){document.querySelectorAll('.tab').forEach((e,i)=>e.classList.toggle('active',(i===0&&t==='plan')||(i===1&&t==='impl')));document.querySelectorAll('.phase').forEach((e,i)=>e.classList.toggle('active',(i===0&&t==='plan')||(i===1&&t==='impl')));}
+</script></body></html>

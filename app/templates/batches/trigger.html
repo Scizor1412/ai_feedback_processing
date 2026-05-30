@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}New Batch — AI Feedback Process{% endblock %}
+{% block nav_batches %}active{% endblock %}
+
+{% block content %}
+<div class="page-title">Run a Feedback Batch</div>
+<div class="page-sub">Select a folder and feedback type to begin AI extraction.</div>
+
+{% if batches %}
+<div class="card" style="margin-bottom: 24px;">
+  <div class="card-title">Recent Batches</div>
+  <table>
+    <thead><tr>
+      <th>ID</th><th>Type</th><th>Files</th><th>Status</th><th>Date</th><th></th>
+    </tr></thead>
+    <tbody>
+      {% for b in batches %}
+      <tr>
+        <td><code>{{ b.id[:8] }}…</code></td>
+        <td>{{ b.feedback_type }}</td>
+        <td>{{ b.successful_count }} / {{ b.total_files }}</td>
+        <td><span class="badge badge-{{ b.status }}">{{ b.status }}</span></td>
+        <td>{{ b.created_at.strftime('%Y-%m-%d %H:%M') if b.created_at else '—' }}</td>
+        <td><a class="btn btn-ghost btn-sm" href="/batches/{{ b.id }}/review">Review</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+
+<div class="card" style="max-width: 520px;">
+  <div class="card-title">📁 New Batch</div>
+  <form method="post" action="/batches">
+    <div class="form-group">
+      <label for="folder_path">Feedback folder path</label>
+      <input type="text" id="folder_path" name="folder_path"
+             placeholder="/feedback-data/MID_TERM" required />
+      <div style="font-size: 12px; color: var(--muted); margin-top: 4px;">
+        Path inside the container (mounted from host DUMMY_DATA/FEEDBACKS/)
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="feedback_type">Feedback type</label>
+      <select id="feedback_type" name="feedback_type" required>
+        <option value="MID_TERM">MID_TERM</option>
+        <option value="YEAR_END">YEAR_END</option>
+        <option value="PARENTS">PARENTS</option>
+        <option value="INTERNSHIP">INTERNSHIP</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">▶ Run Ingestion</button>
+  </form>
+</div>
+{% endblock %}

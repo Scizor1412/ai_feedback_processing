@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block title %}Review Batch {{ batch.id[:8] }} — AI Feedback Process{% endblock %}
+{% block nav_batches %}active{% endblock %}
+
+{% block content %}
+<div style="display: flex; align-items: center; gap: 12px; margin-bottom: 4px;">
+  <div class="page-title">Batch Review</div>
+  <span class="badge badge-{{ batch.status }}">{{ batch.status }}</span>
+</div>
+<div class="page-sub">
+  {{ batch.feedback_type }} · {{ batch.created_at.strftime('%Y-%m-%d %H:%M') if batch.created_at else '' }} ·
+  <code>{{ batch.folder_path }}</code>
+</div>
+
+{% if reviewed %}
+<div class="alert alert-success">✅ Batch marked as reviewed.</div>
+{% endif %}
+
+<div class="stat-row">
+  <div class="stat"><div class="stat-num">{{ batch.total_files }}</div><div class="stat-lbl">Total files</div></div>
+  <div class="stat"><div class="stat-num" style="color:var(--accent2)">{{ batch.successful_count }}</div><div class="stat-lbl">Ingested</div></div>
+  <div class="stat"><div class="stat-num" style="color:var(--danger)">{{ batch.failed_count }}</div><div class="stat-lbl">Skipped</div></div>
+  <div class="stat"><div class="stat-num" style="color:var(--accent)">{{ total_extractions }}</div><div class="stat-lbl">Mentions found</div></div>
+</div>
+
+{% if batch.status == "complete" %}
+<div class="alert alert-warn">
+  ⚙️ Ingestion complete. Run AI extraction to populate mentions.
+  <form method="post" action="/batches/{{ batch.id }}/extract" style="display:inline; margin-left: 12px;">
+    <button class="btn btn-primary btn-sm" type="submit">Run Extraction</button>
+  </form>
+</div>
+{% endif %}
+
+{% if recipients %}
+<div class="card">
+  <div class="card-title">🎯 Extraction Results by Recipient</div>
+  <table>
+    <thead><tr>
+      <th>School / Service</th><th>Type</th>
+      <th style="color:var(--accent2)">Positive</th>
+      <th style="color:var(--danger)">Negative</th>
+      <th>Downloads</th>
+      <th>Preview</th>
+    </tr></thead>
+    <tbody>
+      {% for r in recipients %}
+      <tr>
+        <td><strong>{{ r.entity_name }}</strong></td>
+        <td><span class="badge badge-{{ 'complete' if r.entity_type == 'school' else 'extracting' }}">{{ r.entity_type }}</span></td>
+        <td><span class="badge badge-pos">+{{ r.pos_count }}</span></td>
+        <td><span class="badge badge-neg">−{{ r.neg_count }}</span></td>
+        <td>
+          <a class="btn btn-ghost btn-sm" href="/batches/{{ batch.id }}/recipients/{{ r.entity_id }}/csv/positive">↓ pos</a>
+          <a class="btn btn-ghost btn-sm" href="/batches/{{ batch.id }}/recipients/{{ r.entity_id }}/csv/negative">↓ neg</a>
+        </td>
+        <td>
+          <button class="btn btn-ghost btn-sm"
+                  hx-get="/batches/{{ batch.id }}/recipients/{{ r.entity_id }}/preview"
+                  hx-target="#preview-{{ r.entity_id }}"
+                  hx-swap="innerHTML"
+                  hx-indicator="#spin-{{ r.entity_id }}">
+            ▶ Preview <span id="spin-{{ r.entity_id }}" class="htmx-indicator">⏳</span>
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="6" style="padding: 0 12px 10px; border-bottom: 1px solid var(--border);">
+          <div id="preview-{{ r.entity_id }}"></div>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% if batch.status == "extracted" %}
+<form method="post" action="/batches/{{ batch.id }}/mark-reviewed">
+  <button class="btn btn-success" type="submit">✓ Mark as Reviewed</button>
+</form>
+{% endif %}
+
+{% elif batch.status in ("extracted", "reviewed") %}
+<div class="card">
+  <div class="preview-empty">No entity mentions found in this batch.</div>
+</div>
+{% endif %}
+{% endblock %}
