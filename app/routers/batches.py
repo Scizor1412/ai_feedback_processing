@@ -4,7 +4,7 @@ from pathlib import Path
 from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, Request
 from fastapi.responses import RedirectResponse, StreamingResponse
 from fastapi.templating import Jinja2Templates
-from pydantic import BaseModel
+
 from sqlalchemy import func
 from sqlalchemy.orm import Session
 
@@ -96,38 +96,29 @@ def preview_mentions(batch_id: str, entity_id: str, request: Request, db: Sessio
 
 # ── Action routes ─────────────────────────────────────────────────────────────
 
-class CreateBatchRequest(BaseModel):
-    folder_path: str
-    feedback_type: FeedbackType
 
-
-@router.post("/batches", status_code=202)
-def create_batch(request_body: CreateBatchRequest, background_tasks: BackgroundTasks, db: Session = Depends(get_db)):
-    if not Path(request_body.folder_path).is_dir():
-        raise HTTPException(status_code=400, detail=f"Folder not found: {request_body.folder_path}")
-
-    batch = Batch(feedback_type=request_body.feedback_type, folder_path=request_body.folder_path)
-    db.add(batch)
-    db.commit()
-    db.refresh(batch)
-
-    background_tasks.add_task(walk_and_ingest, batch.id, request_body.folder_path)
-    return {"batch_id": batch.id, "status": batch.status}
-
-
-@router.post("/batches", include_in_schema=False)
-async def create_batch_form(request: Request, background_tasks: BackgroundTasks, db: Session = Depends(get_db)):
-    """Handle HTML form POST from the trigger page."""
-    form = await request.form()
-    folder_path = str(form.get("folder_path", ""))
-    feedback_type_str = str(form.get("feedback_type", "MID_TERM"))
+@router.post("/batches")
+async def create_batch(request: Request, background_tasks: BackgroundTasks, db: Session = Depends(get_db)):
+    content_type = request.headers.get("content-type", "")
+    if "application/json" in content_type:
+        body = await request.json()
+        folder_path = body.get("folder_path", "")
+        feedback_type_str = body.get("feedback_type", "MID_TERM")
+        is_form = False
+    else:
+        form = await request.form()
+        folder_path = str(form.get("folder_path", ""))
+        feedback_type_str = str(form.get("feedback_type", "MID_TERM"))
+        is_form = True
 
     if not Path(folder_path).is_dir():
-        batches = db.query(Batch).order_by(Batch.created_at.desc()).limit(10).all()
-        return templates.TemplateResponse("batches/trigger.html", {
-            "request": request, "batches": batches,
-            "error": f"Folder not found: {folder_path}",
-        }, status_code=400)
+        if is_form:
+            batches = db.query(Batch).order_by(Batch.created_at.desc()).limit(10).all()
+            return templates.TemplateResponse("batches/trigger.html", {
+                "request": request, "batches": batches,
+                "error": f"Folder not found: {folder_path}",
+            }, status_code=400)
+        raise HTTPException(status_code=400, detail=f"Folder not found: {folder_path}")
 
     batch = Batch(feedback_type=FeedbackType(feedback_type_str), folder_path=folder_path)
     db.add(batch)
@@ -135,7 +126,10 @@ async def create_batch_form(request: Request, background_tasks: BackgroundTasks,
     db.refresh(batch)
 
     background_tasks.add_task(walk_and_ingest, batch.id, folder_path)
-    return RedirectResponse(url=f"/batches/{batch.id}/review", status_code=303)
+
+    if is_form:
+        return RedirectResponse(url=f"/batches/{batch.id}/review", status_code=303)
+    return {"batch_id": batch.id, "status": batch.status}
 
 
 @router.post("/batches/{batch_id}/extract")

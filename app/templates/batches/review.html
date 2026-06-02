@@ -2,6 +2,10 @@
 {% block title %}Review Batch {{ batch.id[:8] }} — AI Feedback Process{% endblock %}
 {% block nav_batches %}active{% endblock %}
 
+{% if batch.status in ("pending", "processing", "extracting") %}
+<meta http-equiv="refresh" content="3">
+{% endif %}
+
 {% block content %}
 <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 4px;">
   <div class="page-title">Batch Review</div>
@@ -23,7 +27,15 @@
   <div class="stat"><div class="stat-num" style="color:var(--accent)">{{ total_extractions }}</div><div class="stat-lbl">Mentions found</div></div>
 </div>
 
-{% if batch.status == "complete" %}
+{% if batch.status in ("pending", "processing") %}
+<div class="alert alert-warn">
+  ⏳ Ingestion in progress — page refreshes automatically every 3 seconds…
+</div>
+{% elif batch.status == "extracting" %}
+<div class="alert alert-warn">
+  ⏳ AI extraction in progress — page refreshes automatically every 3 seconds…
+</div>
+{% elif batch.status == "complete" %}
 <div class="alert alert-warn">
   ⚙️ Ingestion complete. Run AI extraction to populate mentions.
   <form method="post" action="/batches/{{ batch.id }}/extract" style="display:inline; margin-left: 12px;">

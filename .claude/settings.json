@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(gh issue list --state all 2>$null)"
+    ]
+  }
+}
