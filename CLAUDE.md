@@ -83,6 +83,9 @@ See [TEMPLATES/DOC_STANDARDS.md](TEMPLATES/DOC_STANDARDS.md) for the full rule.
 |---|---|---|
 | Requirements | `/requirements` | Elicit product requirements; output interactive HTML in `PRODUCT_DESIGN/` with personas, user stories, wireframes, and a MTP→MUP→MVP roadmap |
 | Architecture | `/architecture` | Design solution architecture; output HTML in `ARCHITECTURE/` with HLD, functional workflows, and ADRs per component |
-| Issue | `/issue` | Create or update GitHub issues using the correct template |
+| Issue | `/issue` | Create or update GitHub issues; supports bulk creation from product design doc via Python script |
 | Dev | `/dev` | Implement work tracked in an open issue, producing a solution doc first |
+| Commit Push | `/commit-push` | Commit and push a completed issue; enforces gates: solution doc updated, tests confirmed passing, not on main |
+| PR | `/pr` | Create a pull request when all issues in a milestone are closed; one PR per milestone |
+| PR Review | `/pr-review` | Review PR diff against correctness, Karpathy's rules, architecture ADRs, and security; triggers `/dev` to fix blocking issues |
 | Skill Review | `/skill-review` | Review the last skill run for quality and improvements |

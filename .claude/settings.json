@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(gh issue list --state all 2>$null)",
+      "PowerShell(docker --version)",
+      "PowerShell(docker compose version)",
+      "PowerShell(docker compose up -d --build)",
+      "PowerShell(docker compose ps)",
+      "PowerShell(docker compose logs web --tail 30)",
+      "Bash(xargs -I{} echo {})",
+      "Bash(curl -s \"http://localhost:8000/batches\")",
+      "PowerShell(docker compose exec db psql -U postgres -d ai_feedback -c \"SELECT id, feedback_type, status, total_files, successful_count, failed_count FROM batches ORDER BY created_at DESC LIMIT 5;\")",
+      "PowerShell(docker compose exec db psql -U postgres -d ai_feedback -c \"SELECT filename, error_reason FROM batch_errors WHERE batch_id='7610bfd3-66fc-45d9-9a82-48264e6a2483' LIMIT 3;\")",
+      "PowerShell(Invoke-RestMethod -Uri \"http://localhost:8000/batches\" -Method Post -ContentType \"application/json\" -Body '{\"folder_path\": \"/feedback-data/INTERNSHIP\", \"feedback_type\": \"INTERNSHIP\"}')",
+      "PowerShell(Invoke-RestMethod -Uri \"http://localhost:8000/batches/171a01f3-5824-4ec4-94cb-e4582d15a0a3/status\")"
+    ]
+  }
+}

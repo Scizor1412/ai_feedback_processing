@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}AI Feedback Process{% endblock %}</title>
+  <script src="https://unpkg.com/htmx.org@1.9.10" defer></script>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #1c2128; --border: #30363d;
+      --accent: #58a6ff; --accent2: #3fb950; --warn: #d29922; --danger: #f85149;
+      --text: #e6edf3; --muted: #8b949e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 15px; line-height: 1.6; min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code { background: var(--surface2); padding: 1px 6px; border-radius: 4px; font-family: monospace; font-size: 13px; }
+
+    /* Nav */
+    nav { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 24px; display: flex; align-items: center; gap: 24px; height: 52px; position: sticky; top: 0; z-index: 50; }
+    .nav-logo { font-weight: 800; font-size: 15px; color: var(--text); }
+    .nav-logo span { color: var(--accent); }
+    .nav-link { font-size: 13px; color: var(--muted); padding: 4px 0; border-bottom: 2px solid transparent; }
+    .nav-link:hover, .nav-link.active { color: var(--text); border-bottom-color: var(--accent); text-decoration: none; }
+
+    /* Layout */
+    .page { max-width: 960px; margin: 0 auto; padding: 32px 24px; }
+    .page-title { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+    .page-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+
+    /* Cards */
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 16px; }
+    .card-title { font-size: 15px; font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+
+    /* Badges */
+    .badge { font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 10px; text-transform: uppercase; letter-spacing: .5px; white-space: nowrap; }
+    .badge-pending    { background: #2d2415; color: var(--warn); }
+    .badge-processing { background: #2d2415; color: var(--warn); }
+    .badge-complete   { background: #0d2137; color: var(--accent); }
+    .badge-extracting { background: #1e0f3a; color: #a371f7; }
+    .badge-extracted  { background: #0d2d0d; color: var(--accent2); }
+    .badge-reviewed   { background: #0d2d0d; color: var(--accent2); }
+    .badge-failed     { background: #2d1515; color: var(--danger); }
+    .badge-pos { background: #0d2d0d; color: var(--accent2); }
+    .badge-neg { background: #2d1515; color: var(--danger); }
+
+    /* Table */
+    table { width: 100%; border-collapse: collapse; }
+    th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); padding: 8px 12px; border-bottom: 1px solid var(--border); }
+    td { padding: 10px 12px; border-bottom: 1px solid var(--border); font-size: 13px; vertical-align: middle; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--surface2); }
+
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 7px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; transition: opacity .15s; text-decoration: none; }
+    .btn:hover { opacity: .85; text-decoration: none; }
+    .btn-primary { background: var(--accent); color: var(--bg); }
+    .btn-success { background: #1a4a1a; color: var(--accent2); border: 1px solid var(--accent2); }
+    .btn-ghost   { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+    .btn-sm { padding: 4px 10px; font-size: 12px; }
+
+    /* Form */
+    .form-group { margin-bottom: 16px; }
+    label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+    input[type=text], select { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 7px; padding: 9px 12px; color: var(--text); font-size: 14px; outline: none; }
+    input[type=text]:focus, select:focus { border-color: var(--accent); }
+    select option { background: var(--surface); }
+
+    /* Alerts */
+    .alert { padding: 12px 16px; border-radius: 7px; font-size: 13px; font-weight: 600; margin-bottom: 16px; }
+    .alert-success { background: #0d2d0d; border: 1px solid var(--accent2); color: var(--accent2); }
+    .alert-warn    { background: #2d2415; border: 1px solid var(--warn); color: var(--warn); }
+
+    /* Stat row */
+    .stat-row { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+    .stat { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; min-width: 120px; }
+    .stat-num { font-size: 22px; font-weight: 700; }
+    .stat-lbl { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; margin-top: 2px; }
+
+    /* Preview pane */
+    .preview-pane { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 14px; margin-top: 8px; }
+    .preview-section { margin-bottom: 14px; }
+    .preview-section:last-child { margin-bottom: 0; }
+    .preview-section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 8px; }
+    .preview-item { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 10px 12px; margin-bottom: 6px; }
+    .preview-item:last-child { margin-bottom: 0; }
+    .preview-fid { font-family: monospace; font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+    .preview-q { font-size: 12px; color: var(--accent); margin-bottom: 4px; }
+    .preview-a { font-size: 13px; color: var(--text); }
+    .preview-empty { font-size: 13px; color: var(--muted); font-style: italic; }
+    .htmx-indicator { display: none; }
+    .htmx-request .htmx-indicator { display: inline; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="/"><span>⬡</span> AI Feedback Process</a>
+    <a class="nav-link {% block nav_batches %}{% endblock %}" href="/">Batches</a>
+  </nav>
+  <div class="page">
+    {% block content %}{% endblock %}
+  </div>
+</body>
+</html>

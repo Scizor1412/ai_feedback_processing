@@ -1,0 +1,34 @@
+{# HTMX partial — rendered inline when officer clicks Preview #}
+<div class="preview-pane">
+
+  <div class="preview-section">
+    <div class="preview-section-title" style="color: var(--accent2)">Positive mentions ({{ positives|length }})</div>
+    {% if positives %}
+      {% for row in positives %}
+      <div class="preview-item">
+        <div class="preview-fid">{{ row.feedback_id }}</div>
+        <div class="preview-q">{{ row.source_question }}</div>
+        <div class="preview-a">{{ row.source_answer[:300] }}{% if row.source_answer|length > 300 %}…{% endif %}</div>
+      </div>
+      {% endfor %}
+    {% else %}
+      <div class="preview-empty">No positive mentions.</div>
+    {% endif %}
+  </div>
+
+  <div class="preview-section">
+    <div class="preview-section-title" style="color: var(--danger)">Negative mentions ({{ negatives|length }})</div>
+    {% if negatives %}
+      {% for row in negatives %}
+      <div class="preview-item">
+        <div class="preview-fid">{{ row.feedback_id }}</div>
+        <div class="preview-q">{{ row.source_question }}</div>
+        <div class="preview-a">{{ row.source_answer[:300] }}{% if row.source_answer|length > 300 %}…{% endif %}</div>
+      </div>
+      {% endfor %}
+    {% else %}
+      <div class="preview-empty">No negative mentions.</div>
+    {% endif %}
+  </div>
+
+</div>
