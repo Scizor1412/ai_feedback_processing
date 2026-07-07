@@ -207,12 +207,13 @@ This issue establishes the database schema (batches, feedbacks, batch_errors tab
         <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Drift 1 — JSON vs JSONB</div><div class="timeline-text">Solution doc specified JSONB (PostgreSQL-only). Changed to JSON type so tests run on SQLite in-memory without Docker. Acceptable at MTP; switch to JSONB with GIN index at MVP if JSON query performance becomes a concern.</div></div>
         <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Drift 2 — No Alembic at MTP</div><div class="timeline-text">Solution doc mentioned Alembic migrations. Using Base.metadata.create_all() at startup instead. Simpler for MTP where there is no prod data to migrate. Alembic added before MVP when schema evolution matters.</div></div>
         <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Drift 3 — _run() extracted for testability</div><div class="timeline-text">walk_and_ingest() creates its own DB session (required for BackgroundTask isolation). Tests call the internal _run() directly with a fixture session to avoid spawning real DB sessions. Keeps tests fast and session-safe.</div></div>
+        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Drift 4 — Persona shape varies by feedback type</div><div class="timeline-text">A single shared persona schema assumed every persona has a plain `name` field. Real DUMMY_DATA proved otherwise: PARENTS adds `child_name`, INTERNSHIP has no `name` at all (uses `evaluator_name`/`intern_name` instead). This silently failed validation for 100% of INTERNSHIP files (50/50) — the entire feedback type was being dropped. Fixed by dispatching to a per-type persona schema (StudentPersona/ParentPersona/EmployerPersona) keyed off `metadata.type` via a model_validator. Verified against all 200 real DUMMY_DATA files (0 failures) and confirmed the bug was real by reverting the fix and re-running (50/50 INTERNSHIP files failed on old code).</div></div>
       </div>
     </div>
 
     <div class="card">
       <div class="card-header"><div class="card-icon icon-test">🧪</div><div><h2>Test Evidence</h2><div class="card-hint">Unit tests required and results</div></div></div>
-      <div class="content-block" id="test-evidence">All 5 tests pass — python3 -m pytest tests/test_ingestion.py -v (0.28s)
+      <div class="content-block" id="test-evidence">All 7 tests pass — docker compose exec web python -m pytest tests/test_ingestion.py -v (1.58s for full suite; 20/20 across all test files)
 
 test_valid_file_inserted                    PASSED
   → Feedback row inserted with correct feedback_id, type, related_schools, body_json
@@ -229,7 +230,17 @@ test_empty_folder_fails_gracefully         PASSED
   → batch.status=FAILED, no crash, no Feedback rows
 
 test_batch_status_transitions              PASSED
-  → Starts PENDING → ends COMPLETE, completed_at is set, total_files=1</div>
+  → Starts PENDING → ends COMPLETE, completed_at is set, total_files=1
+
+test_parents_persona_shape_accepted         PASSED (new — Drift 4 regression test)
+  → PARENTS persona with child_name field validates and ingests successfully
+
+test_internship_persona_shape_accepted      PASSED (new — Drift 4 regression test)
+  → INTERNSHIP persona (evaluator_name/intern_name, no `name`) validates and ingests successfully
+
+End-to-end confirmation via running Docker stack (not just unit tests):
+  → POST /batches for all 4 feedback types against real DUMMY_DATA/FEEDBACKS/* (200 files total)
+  → Result: MID_TERM 50/50, YEAR_END 50/50, PARENTS 50/50, INTERNSHIP 50/50 — 0 failures across the board</div>
     </div>
   </div>
 

@@ -138,3 +138,62 @@ def test_batch_status_transitions(db, tmp_path):
     assert batch.status == BatchStatus.COMPLETE
     assert batch.completed_at is not None
     assert batch.total_files == 1
+
+
+# ── Test 6: Per-type persona shapes (PARENTS, INTERNSHIP) validate correctly ─
+# Regression test: PARENTS and INTERNSHIP personas don't have a plain `name`
+# field like MID_TERM/YEAR_END, so a single shared persona schema rejects them.
+
+def test_parents_persona_shape_accepted(db, tmp_path):
+    feedback = {
+        "metadata": {
+            "feedback_id": "PAR-2025-001",
+            "date": "2025-11-15",
+            "type": "PARENTS",
+            "persona": {"id": "PA001", "name": "Tran Thi Binh", "role": "parent", "child_name": "Tran Van Cuong"},
+            "related_schools": ["IT"],
+            "related_services": ["ACADEMIC"],
+            "overall_sentiment": "positive",
+        },
+        "body": [{"question_1": "How is teaching quality?", "answer_1": "Good."}],
+    }
+    write_file(tmp_path, "001.json", feedback)
+    batch = Batch(feedback_type=FeedbackType.PARENTS, folder_path=str(tmp_path))
+    db.add(batch)
+    db.commit()
+
+    _run(batch.id, str(tmp_path), db)
+
+    db.refresh(batch)
+    assert batch.successful_count == 1
+    assert batch.failed_count == 0
+
+
+def test_internship_persona_shape_accepted(db, tmp_path):
+    feedback = {
+        "metadata": {
+            "feedback_id": "INT-2025-001",
+            "date": "2025-11-15",
+            "type": "INTERNSHIP",
+            "persona": {
+                "id": "EMP001",
+                "role": "employer",
+                "evaluator_name": "Vo Kim Khanh",
+                "intern_name": "Huynh Thi Lan",
+            },
+            "related_schools": ["BUS"],
+            "related_services": ["CAREER"],
+            "overall_sentiment": "mostly_positive",
+        },
+        "body": [{"question_1": "How is the intern's competency?", "answer_1": "Good."}],
+    }
+    write_file(tmp_path, "001.json", feedback)
+    batch = Batch(feedback_type=FeedbackType.INTERNSHIP, folder_path=str(tmp_path))
+    db.add(batch)
+    db.commit()
+
+    _run(batch.id, str(tmp_path), db)
+
+    db.refresh(batch)
+    assert batch.successful_count == 1
+    assert batch.failed_count == 0

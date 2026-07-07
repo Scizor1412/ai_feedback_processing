@@ -97,7 +97,7 @@ def _ingest_file(file: Path, batch_id: str, db: Session) -> str | None:
             feedback_type=validated.metadata.type,
             source_file=file.name,
             date=feedback_date,
-            persona_json=validated.metadata.persona.model_dump(),
+            persona_json=validated.metadata.persona,
             body_json=validated.body,
             related_schools=validated.metadata.related_schools,
             related_services=validated.metadata.related_services,
