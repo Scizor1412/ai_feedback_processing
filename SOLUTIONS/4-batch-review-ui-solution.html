@@ -127,17 +127,19 @@ POST /batches/{id}/mark-reviewed
         <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Drift 1 — StaticPool added to conftest</div><div class="timeline-text">SQLite in-memory DB was invisible across threads when TestClient dispatched routes. Fixed by adding poolclass=StaticPool so all connections share one in-memory DB. No impact on production code.</div></div>
         <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Drift 2 — httpx pinned to 0.23.3</div><div class="timeline-text">starlette 0.27 TestClient incompatible with httpx 0.28. Pinned httpx==0.23.3 for test compatibility. requirements.txt updated.</div></div>
         <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Drift 3 — Dual POST /batches routes</div><div class="timeline-text">Added a second POST /batches handler for HTML form submissions (returns redirect) alongside the JSON API handler. Both required because the trigger form uses HTML form POST while tests use JSON body.</div></div>
+        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Drift 4 — Mark as Reviewed unreachable on zero-mention batches</div><div class="timeline-text">Found during PR review: the "Mark as Reviewed" button was nested inside the {% if recipients %} block, so a batch that completes extraction with zero entity mentions (a legitimate outcome, not an error) had no reachable button in the UI to close it out — permanently stuck in "extracted" status. Moved the button outside the recipients-table conditional so it renders for status=="extracted" regardless of mention count. Added regression test.</div></div>
       </div>
       </div>
     </div>
     <div class="card">
       <div class="card-header"><div class="card-icon icon-test">🧪</div><div><h2>Test Evidence</h2></div></div>
-      <div class="content-block">4/4 tests pass — python3 -m pytest tests/test_review_ui.py -v
+      <div class="content-block">5/5 tests pass — docker compose exec web python -m pytest tests/test_review_ui.py -v
 
 test_trigger_form_renders               PASSED — GET / returns 200, "Run a Feedback Batch" in body
 test_review_page_renders_recipients     PASSED — GET /batches/{id}/review shows IT school in table
 test_preview_partial_returns_mentions   PASSED — HTMX partial returns "Teaching is great." text
-test_mark_reviewed_updates_status       PASSED — POST mark-reviewed → 303 redirect, batch.status=REVIEWED</div>
+test_mark_reviewed_updates_status       PASSED — POST mark-reviewed → 303 redirect, batch.status=REVIEWED
+test_review_page_empty_batch_shows_mark_reviewed  PASSED (new — Drift 4 regression test) — empty-mention batch still renders reachable Mark as Reviewed button</div>
     </div>
   </div>
 

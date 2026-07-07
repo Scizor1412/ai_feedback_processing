@@ -86,15 +86,15 @@
   </table>
 </div>
 
-{% if batch.status == "extracted" %}
-<form method="post" action="/batches/{{ batch.id }}/mark-reviewed">
-  <button class="btn btn-success" type="submit">✓ Mark as Reviewed</button>
-</form>
-{% endif %}
-
 {% elif batch.status in ("extracted", "reviewed") %}
 <div class="card">
   <div class="preview-empty">No entity mentions found in this batch.</div>
 </div>
+{% endif %}
+
+{% if batch.status == "extracted" %}
+<form method="post" action="/batches/{{ batch.id }}/mark-reviewed">
+  <button class="btn btn-success" type="submit">✓ Mark as Reviewed</button>
+</form>
 {% endif %}
 {% endblock %}

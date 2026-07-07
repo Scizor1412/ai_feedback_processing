@@ -103,3 +103,16 @@ def test_mark_reviewed_updates_status(client, db):
 
     db.refresh(batch)
     assert batch.status == BatchStatus.REVIEWED
+
+
+# ── Test 5: Empty batch (no extractions) still shows Mark as Reviewed ────────
+# Regression: the button was nested inside the recipients table block, so a
+# batch with zero mentions had no reachable path to "reviewed" status.
+
+def test_review_page_empty_batch_shows_mark_reviewed(client, db):
+    batch = seed_batch(db, status=BatchStatus.EXTRACTED)  # no extractions seeded
+
+    resp = client.get(f"/batches/{batch.id}/review")
+    assert resp.status_code == 200
+    assert "No entity mentions found" in resp.text
+    assert "Mark as Reviewed" in resp.text
